@@ -34,3 +34,9 @@ A clean directory reproduction used only the included optional adapter and its p
 The [screenshot fixture](../examples/portable-deck/assets/reference-screenshot.png) demonstrates visible identity evidence without embedded font/master metadata. A screenshot-only run should mark the precise font family as unknown/inferred even though the separate HTML source declares it. This interpretation was evaluated in the current session; no separate Claude/Gemini run was performed.
 
 Real-brand extraction and native PowerPoint/Google Slides/Keynote editing remain untested. Do not turn this local fixture into a broader compatibility claim.
+
+## Adaptive art-direction evaluation
+
+The [three-direction study](../examples/art-direction-study/README.md) was rendered locally in Chrome and each PNG was inspected after font/image loading. It holds the visible factual anchors constant while varying audience, register, and visual argument. It demonstrates analytical, editorial, and restrained organic treatments rather than adding an organic preset to every brand.
+
+Evaluate future runs for specific reasoning: why this crop, hierarchy, density, and image role fit the content. Include a rigid institutional template that should remain precise, a softer observational brief that permits organic cadence, a dense evidence slide, and a deliberately repeated comparison that should not be “fixed” for novelty. No automatic aesthetic score or detection of AI authorship is claimed.

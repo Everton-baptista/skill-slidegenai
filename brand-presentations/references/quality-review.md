@@ -16,6 +16,10 @@ Inspect every slide at reading size and the overview for rhythm. Check clipped t
 
 For solid backgrounds, [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) provides useful reference ratios of 4.5:1 for normal text and 3:1 for qualifying large text. This does not certify a slide deck. The helper warns below 4.5:1 regardless of size; it does not classify large text or inspect transparency, images, gradients, or actual font rendering. Inspect those cases manually.
 
+## Authored composition
+
+Use the critique in [art direction](art-direction.md) for new directions or creative adaptations. Inspect reading order, specific image contribution, line breaks, deliberate empty areas, and deck-level cadence. Remove generic filler and unsupported “human” annotations. An organic gesture must serve the subject and survive export; do not add randomness to satisfy an originality claim.
+
 ## Images and export
 
 Check actual image resolution, provider branding/watermarks, provenance, and allowed use. Ensure downloaded assets are present and external references do not silently disappear. Inspect the exported PPTX/PDF itself for substitutions, SVG differences, lost overlays, transparency, and layer order. A source preview alone is insufficient.

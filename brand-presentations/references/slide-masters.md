@@ -19,6 +19,10 @@ Set canvas dimensions and a safe content area. Define measurable regions for hea
 
 This is a repertoire, not a required sequence. Do not force photographic slides, red backgrounds, serif type, or another institution's signature onto every brand. Vary the deck according to meaning rather than mechanical alternation.
 
+## Compose beyond a catalog
+
+For a new direction, read [adaptive art direction](art-direction.md). A master is a construction aid, not a style ceiling. Start with the content's visual argument, then retain or derive measured regions. A formal table can remain precise within a warm deck; a quiet typographic pause can belong in an image-led narrative. New composition must preserve readability and the user's reference.
+
 ## Topic covers and rhythm
 
 Reserve covers for major sections when the total allows. They count as slides. Preserve strict outline-to-slide correspondence; integrate a topic heading into a content slide when a separate cover would displace required content. Keep section numbering separate from global slide numbering.

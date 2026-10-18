@@ -80,6 +80,16 @@ Provide `brand-presentations/SKILL.md` as task instructions and make its `refere
 
 Tell the assistant what tools it has and request an honest capability check. With no browsing, supply reference files or screenshots. With no file authoring, request a storyboard. With no renderer, expect an unverified visual draft. Do not paste secrets or private brand material into a service without permission.
 
+## Adaptive composition and art direction
+
+For a creative adaptation, the skill now directs the assistant to define a concrete concept and visual argument before choosing layouts. It adapts to evidence, audience, available imagery, and brand latitude. Typography, image scale, whitespace, crop, and rhythm become deliberate decisions. Organic treatment is used when it serves the subject, without requiring blobs, beige/green colors, rounded cards, or decorative handwriting.
+
+Explore [one subject, three visual arguments](examples/art-direction-study/README.md): analytical, editorial, and human-scale organic alternatives with the same factual anchors and source image. They are browser-rendered studies with recorded decisions, not native PPTX exports or an automatic style picker.
+
+![Organic composition study](examples/art-direction-study/previews/organic.png)
+
+For a new direction, the assistant may compare representative alternatives and choose one autonomously. Faithful templates and focused edits retain their original design. The optional `review_composition.py` flags declared repetition for judgment; it does not rate beauty, generate a layout, detect AI authorship, or guarantee originality.
+
 ## Complete example and measured layouts
 
 Explore the [eight-slide example](examples/portable-deck/README.md): editable PPTX, rendered PDF, eight PNG previews, local HTML, storyboard, identity profile, measured design system, and a reproducible optional adapter. It includes a topic cover, editorial image, native comparison table/chart, process, and closing.
@@ -202,6 +212,7 @@ brand-presentations/
   scripts/                 Profile/design/deck validation and brand packaging
 examples/demo-brand/       Original minimal contract fixture
 examples/portable-deck/    Complete 8-slide editable example and previews
+examples/art-direction-study/  Three context-led composition alternatives
 tests/                    Standard-library regression tests
 docs/                     Validation and manual evaluation guides
 .github/workflows/         Automated helper and documentation checks

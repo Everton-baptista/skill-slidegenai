@@ -16,3 +16,5 @@ Required fields:
 A deck linked with `--design` must use the same canvas/unit, existing layout IDs, and compatible declared slot kinds when an element includes `slot_id`. Actual content/geometry stays in the deck plan; repair layouts intentionally rather than forcing every slide into one master.
 
 The validator checks declared measures, references, assets, and evidence. It does not measure fonts, certify logo clear space visually, or enforce a universal aesthetic. See the repository example for complete data.
+
+Optional `art_direction` working metadata is described in [adaptive art direction](art-direction.md). It records the concept and controlled latitude; it does not change version 1 or impose an additional required field. Layout coordinates remain the construction contract.

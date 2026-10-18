@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "date": "2026-10-18",
+  "host": "Codex desktop on macOS; local Chrome headless",
+  "artifacts": {
+    "precise": "352eae9e7bb105a285de5bad4e158dd049db0485e5b802bd08e155cbfe557c03",
+    "editorial": "d2b841e927283390b251702639ce71f5f2ac605943ebea5f3c79c7cbbfa786c5",
+    "organic": "8e4b341f760440957ef93a2d56ea77158a5ef103ce6102155a9e82491704bdb0"
+  },
+  "inspected": [
+    "precise",
+    "editorial",
+    "organic"
+  ],
+  "checks": [
+    "All local images loaded",
+    "Text regions stayed inside each 1280x720 canvas after fonts loaded",
+    "All three final PNGs visually inspected for fit, hierarchy, crop, contrast and intent"
+  ],
+  "boundaries": [
+    "HTML/browser rendering only; no native PPTX export was created for this study",
+    "A controlled fictional comparison, not a model beauty score or AI-authorship test",
+    "Alternative briefs permit different typography/palettes; real-brand fidelity may restrict them"
+  ]
+}

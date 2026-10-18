@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "kind": "alternative-brief-study",
+  "factual_anchors": [
+    "Shared table",
+    "Books within reach",
+    "Daylight from the side"
+  ],
+  "cases": [
+    {
+      "id": "precise",
+      "art_direction": {
+        "concept": "A clear observation sheet about a learning room",
+        "audience": "Facilities and design reviewers",
+        "register": "Measured and explicit",
+        "signature": [
+          "A stable relationship between the heading and the image edge"
+        ],
+        "fixed": [
+          "The same source photograph and visible factual anchors",
+          "Readable text and preserved image proportions"
+        ],
+        "flexible": [
+          "Composition, type scale, palette, crop, and one image edge in this explicitly fictional study"
+        ],
+        "avoid": [
+          "Invented outcomes, testimonials, or handwritten evidence",
+          "Decorative motifs without a content role"
+        ],
+        "organic": {
+          "use": false,
+          "reason": "The audience needs to compare visible features, not interpret an expressive gesture."
+        }
+      },
+      "slide_record": {
+        "layout": "study-precise",
+        "visual_intent": {
+          "purpose": "Inspect visible features",
+          "focal_point": "The photograph and aligned observations",
+          "composition": "Wide image beside three aligned observations",
+          "density": "balanced",
+          "image_role": "evidence",
+          "organic": false,
+          "rationale": "The audience needs to compare visible features, not interpret an expressive gesture.",
+          "repeat_intent": "The same image is intentionally reused across alternative briefs in a controlled study, not repeated in a production deck."
+        },
+        "elements": []
+      }
+    },
+    {
+      "id": "editorial",
+      "art_direction": {
+        "concept": "A photographic place study with a typographic proposition",
+        "audience": "A cultural or architectural readership",
+        "register": "Direct and photographic",
+        "signature": [
+          "A stable relationship between the heading and the image edge"
+        ],
+        "fixed": [
+          "The same source photograph and visible factual anchors",
+          "Readable text and preserved image proportions"
+        ],
+        "flexible": [
+          "Composition, type scale, palette, crop, and one image edge in this explicitly fictional study"
+        ],
+        "avoid": [
+          "Invented outcomes, testimonials, or handwritten evidence",
+          "Decorative motifs without a content role"
+        ],
+        "organic": {
+          "use": false,
+          "reason": "Scale and crop carry the place-based proposition without invented evidence."
+        }
+      },
+      "slide_record": {
+        "layout": "study-editorial",
+        "visual_intent": {
+          "purpose": "Establish a place and an editorial proposition",
+          "focal_point": "The large title and full-height photograph",
+          "composition": "Stable dark text field beside a full-height crop",
+          "density": "sparse",
+          "image_role": "context",
+          "organic": false,
+          "rationale": "Scale and crop carry the place-based proposition without invented evidence.",
+          "repeat_intent": "The same image is intentionally reused across alternative briefs in a controlled study, not repeated in a production deck."
+        },
+        "elements": []
+      }
+    },
+    {
+      "id": "organic",
+      "art_direction": {
+        "concept": "An open field notebook observing the room at human scale",
+        "audience": "Design educators exploring an atmosphere",
+        "register": "Quiet, observant, and gentle",
+        "signature": [
+          "A stable relationship between the heading and the image edge"
+        ],
+        "fixed": [
+          "The same source photograph and visible factual anchors",
+          "Readable text and preserved image proportions"
+        ],
+        "flexible": [
+          "Composition, type scale, palette, crop, and one image edge in this explicitly fictional study"
+        ],
+        "avoid": [
+          "Invented outcomes, testimonials, or handwritten evidence",
+          "Decorative motifs without a content role"
+        ],
+        "organic": {
+          "use": true,
+          "reason": "A human-scale observational brief supports softer cadence; there is no need to distort evidence."
+        }
+      },
+      "slide_record": {
+        "layout": "study-organic",
+        "visual_intent": {
+          "purpose": "Observe the room in a softer register",
+          "focal_point": "Conversational serif cadence balanced by an offset image",
+          "composition": "Generous uneven whitespace and one softened photographic edge",
+          "density": "sparse",
+          "image_role": "context",
+          "organic": true,
+          "rationale": "A human-scale observational brief supports softer cadence; there is no need to distort evidence.",
+          "repeat_intent": "The same image is intentionally reused across alternative briefs in a controlled study, not repeated in a production deck."
+        },
+        "elements": []
+      }
+    }
+  ]
+}

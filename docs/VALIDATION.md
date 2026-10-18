@@ -46,3 +46,9 @@ python3 -B -m unittest discover -s tests -v
 ```
 
 Tests cover valid examples, malformed and adversarial fields, path containment, hash/version drift, geometry, count/order, review-state consistency, packager exclusions, local documentation links, and expected native skill structure. They also inspect the checked-in PPTX for native text/table/chart/workbook data and exercise a scoped OOXML text edit without changing other parts. These tests do not execute an AI model or renderer. The separately recorded local example rendering/inspection is not certification of other hosts.
+
+## Advisory composition review
+
+`python3 brand-presentations/scripts/review_composition.py PATH_TO_PLAN --design PATH_TO_DESIGN` checks optional `visual_intent`/`art_direction` metadata and surfaces repeated declared layouts/images or a uniform declared density for inspection. Omit `--design` when absent. Existing plans without metadata remain supported.
+
+Only malformed supplied metadata causes failure; repetition notices return success. `repeat_intent` documents deliberate recurring evidence/comparison frames. Logo reuse is excluded. These are inexpensive pattern notices, not image analysis, visual-fit validation, taste enforcement, or automatic beauty/AI detection. Never discard valid slides just to silence them.

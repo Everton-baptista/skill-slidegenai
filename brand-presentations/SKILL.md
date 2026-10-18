@@ -12,7 +12,7 @@ Build presentations from evidenced identity, measured layouts, and faithful cont
 | Request | Read when needed | Deliver |
 | --- | --- | --- |
 | Extract identity | [Intake](references/reference-intake.md), [profile](references/brand-profile.md) | Evidence-backed profile, asset inventory, gaps |
-| Create slides | [Design system](references/design-system.md), [masters](references/slide-masters.md), [components](references/component-system.md) | Supported editable deck, preview, useful working state |
+| Create slides | [Art direction](references/art-direction.md), [design system](references/design-system.md), [masters](references/slide-masters.md), [components](references/component-system.md) | Supported editable deck, preview, useful working state |
 | Edit existing slides | [Editing](references/edit-existing.md), then relevant component/host guidance | Focused changes preserving the existing visual system |
 | Create a brand skill | [Packaging](references/brand-packaging.md) | Self-contained brand instructions, profile, permitted assets |
 
@@ -34,6 +34,12 @@ Follow explicit user choices first; prefer applicable brand-guide rules for iden
 
 Preserve originals and use permitted copies. Do not recolor or distort logos without support. Check assets for hidden dependencies, watermarks, readability, and usage restrictions. Do not remove required attribution or promise watermark-free/unlimited generation.
 
+## Direct before composing
+
+For a new deck or creative adaptation, use [adaptive art direction](references/art-direction.md): identify the content's visual argument, choose a concrete concept, and let image, typography, spacing, and rhythm express it. Explore a few representative alternatives only when that choice is useful; proceed without adding an approval gate. Preserve exact templates and focused edits.
+
+Make organic decisions when the subject, reference, or user intent supports them. Organic may be a crop, asymmetry, cadence, or image edge; it is not a mandatory palette, blob, or rounded-card treatment. Keep evidence and logos precise. Use the [SlideGenAI lessons](references/slidegen-lessons.md) when transferring a template idea rather than copying its entire aesthetic.
+
 ## Compose and repair
 
 Choose a useful master by meaning and fit: opening, topic cover, editorial image, explanation, comparison, data, process, or closing. These are options, not a forced sequence. Topic covers count toward the requested total and must not displace required outline items. A single-slide request does not need a separate cover.
@@ -43,6 +49,8 @@ Use large type, image scale, whitespace, and reading surfaces to establish hiera
 Preserve numbers, units, qualifications, and factual sources. Label illustrative data visibly. Fit text to real geometry/font metrics; master-specific budgets are guardrails, not universal character caps. Rewrite faithfully, change composition, then adjust scale moderately. Never conceal overflow with clipping or tiny text.
 
 Keep accepted slides and stable IDs across batches. Repair only affected work, collect related issues, and stop after three unchanged targeted attempts. Inspect existing remote job state before retrying an interrupted paid operation.
+
+An optional `visual_intent` record can explain an unusual composition or intentional repetition. Use `python3 scripts/review_composition.py /path/to/deck-plan.json` to surface repetition patterns for judgment; warnings are suggestions, never a beauty score or a reason to discard valid slides.
 
 ## Verify and deliver
 
