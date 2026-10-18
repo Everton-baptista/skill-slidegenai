@@ -44,7 +44,7 @@ Make organic decisions when the subject, reference, or user intent supports them
 
 Choose a useful master by meaning and fit: opening, topic cover, editorial image, explanation, comparison, data, process, or closing. These are options, not a forced sequence. Topic covers count toward the requested total and must not displace required outline items. A single-slide request does not need a separate cover.
 
-Use large type, image scale, whitespace, and reading surfaces to establish hierarchy when the identity permits. Keep text, required tables, charts, and requested diagrams editable. Decorative imagery may be rasterized; disclose editing limitations.
+Use large type, image scale, whitespace, and reading surfaces to establish hierarchy when the identity permits. For immersive photographs and typographic contrast, use the photograph-led guidance in [art direction](references/art-direction.md); adapt it to the current brand rather than copying a previous deck. Keep text, required tables, charts, and requested diagrams editable. Decorative imagery may be rasterized; disclose editing limitations.
 
 Preserve numbers, units, qualifications, and factual sources. Label illustrative data visibly. Fit text to real geometry/font metrics; master-specific budgets are guardrails, not universal character caps. Rewrite faithfully, change composition, then adjust scale moderately. Never conceal overflow with clipping or tiny text.
 

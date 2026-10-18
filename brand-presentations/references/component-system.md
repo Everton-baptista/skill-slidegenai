@@ -39,7 +39,7 @@ Select a master by meaning and fit. Keep logos, spacing, and type tokens stable;
 
 ## Export adapters
 
-Map components to supported native primitives whenever possible. Preserve valid zero coordinates; do not replace `0` with a default position. Convert units and font sizes explicitly. Check unsupported gradients, transparency, masks, SVG dependencies, missing images, and layer order. Do not swallow element insertion errors and still claim a complete export.
+Map components to supported native primitives whenever possible. Preserve valid zero coordinates; do not replace `0` with a default position. Convert units and font sizes explicitly. Check unsupported gradients, transparency, masks, SVG dependencies, missing images, and layer order. Some SVG renderers drop class-based styles: compare the rendered logo with the source. When needed, resolve its existing CSS properties into equivalent element attributes in a working copy, preserving paths, colors, proportions and the original file. Do not substitute a black silhouette or recolor the mark to hide an import failure. Do not swallow element insertion errors and still claim a complete export.
 
 Record what remains editable. A rasterized background with native text is a possible fallback, not a fully editable reconstruction. Inspect the actual exported artifact before marking it verified.
 
@@ -60,3 +60,17 @@ Use the example's `deck-plan.json` for complete numeric instances. The numbers b
 | Topic cover | Topic ID/label, short title, optional context; title (64,230), 1120×220 | Counts toward total; long substantive content belongs in an explanatory master. Native text; inspect transitions across batches. |
 
 For a native process diagram, keep labels and connectors as editable objects with semantic order. The example's process slide uses three measured columns; it is an illustration of that topic, not a universal requirement for three-part content.
+
+## Full-canvas photograph with a gradient reading layer
+
+Inputs: permitted image, visible focal subject, crop/fit, reading region, brand-compatible overlay color, gradient direction/stops, text roles and supported logo variant. Match the host's unit and angle conventions explicitly. Do not assume CSS angles, gradient offsets or opacity values transfer unchanged to a native presentation API.
+
+For a 1280 × 720 px example, the image may occupy (0,0,1280,720), with a left headline around (64,200,600,250). A native overlay covers the photograph and fades from a dark reading region on the left to low opacity near the subject on the right. These are starting regions, not a compulsory layout or universal stop values. For a bottom composition, reserve space below faces rather than using the same coordinates rotated.
+
+Layer order is image, reading overlay, then native text/logo. Preserve the original photo and logo. Use the host's native gradient with explicit stop offsets and alpha when supported; otherwise retain a permitted background layer and native text, noting that the overlay is not independently editable. Do not add a rendering dependency solely for this effect.
+
+Before export, check the text over the brightest and most detailed areas beneath it. After export, inspect gradient direction, stop interpolation, alpha, logo contrast and image crop. A source preview can differ from PPTX/PDF. Verify editable text and native evidence objects separately from appearance.
+
+## Source display
+
+Keep factual and image provenance in the relevant speaker notes or an accompanying source record when the host permits. Visible source footers are optional unless the user, supplied template, attribution terms or the meaning of the evidence requires them. Honor a request to remove visible source footers without deleting the underlying provenance. Preserve qualifications such as “more than,” the measured population and the reporting period in the audience-facing claim.

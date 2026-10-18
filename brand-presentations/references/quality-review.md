@@ -22,7 +22,7 @@ Use the critique in [art direction](art-direction.md) for new directions or crea
 
 ## Images and export
 
-Check actual image resolution, provider branding/watermarks, provenance, and allowed use. Ensure downloaded assets are present and external references do not silently disappear. Inspect the exported PPTX/PDF itself for substitutions, SVG differences, lost overlays, transparency, and layer order. A source preview alone is insufficient.
+Check actual image resolution, provider branding/watermarks, provenance, and allowed use. Ensure downloaded assets are present and external references do not silently disappear. Inspect the exported PPTX/PDF itself for substitutions, SVG differences, lost overlays, transparency, and layer order. A source preview alone is insufficient. For full-canvas photographs, inspect each reading region over the real image, including gradient direction/alpha, faces beneath text, and logos/page numbers on bright details. Check typographic symbols as well as words.
 
 ## Delivery record
 

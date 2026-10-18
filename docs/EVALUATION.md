@@ -33,10 +33,18 @@ A clean directory reproduction used only the included optional adapter and its p
 
 The [screenshot fixture](../examples/portable-deck/assets/reference-screenshot.png) demonstrates visible identity evidence without embedded font/master metadata. A screenshot-only run should mark the precise font family as unknown/inferred even though the separate HTML source declares it. This interpretation was evaluated in the current session; no separate Claude/Gemini run was performed.
 
-Real-brand extraction and native PowerPoint/Google Slides/Keynote editing remain untested. Do not turn this local fixture into a broader compatibility claim.
+Native PowerPoint/Google Slides/Keynote application editing remains untested. Real-brand extraction was subsequently exercised in the local trial described below; do not turn that run into broader host certification.
 
 ## Adaptive art-direction evaluation
 
 The [three-direction study](../examples/art-direction-study/README.md) was rendered locally in Chrome and each PNG was inspected after font/image loading. It holds the visible factual anchors constant while varying audience, register, and visual argument. It demonstrates analytical, editorial, and restrained organic treatments rather than adding an organic preset to every brand.
 
 Evaluate future runs for specific reasoning: why this crop, hierarchy, density, and image role fit the content. Include a rigid institutional template that should remain precise, a softer observational brief that permits organic cadence, a dense evidence slide, and a deliberately repeated comparison that should not be “fixed” for novelty. No automatic aesthetic score or detection of AI authorship is claimed.
+
+## Website extraction and photographic revision trial
+
+On 2026-10-18, Codex desktop on macOS used the repository skill to inspect the official Insper website and produce a 14-slide Portuguese presentation. A follow-up revision removed visible source footers while retaining note provenance, introduced five full-canvas photographs with native gradient overlays, and refined serif/sans-serif contrast. The final PPTX was structurally checked, reimported with Artifact Tool, rendered through LibreOffice/Poppler, and all 14 slides plus the overview were visually inspected. Native text, one native table and six native gradient fills were confirmed in the revised package.
+
+Repairs addressed page numbers over photographs, ambiguous plus notation and text positioning over a group image. The trial used Georgia/Arial as documented substitutes for unavailable website fonts. It tested website extraction and the local native-object export pipeline, not an official institutional master, a native PowerPoint session, or other providers. Real-brand assets and private trial outputs are intentionally not distributed in this repository. The public fictional example remains the reproducible installation fixture.
+
+A second 16-slide Portuguese trial used the EXM Partners website to test transfer to a different identity: blue sans-serif hierarchy, original monochrome navigation imagery and a distinct service narrative. The initial preview exposed loss of SVG class-based fills; a working-copy conversion of the existing class properties to equivalent inline attributes restored the original mark. Counts with conflicting scopes/versions across the website were not silently merged. Final visual inspection and native-object verification are recorded privately with the trial output; this is not cross-provider certification.

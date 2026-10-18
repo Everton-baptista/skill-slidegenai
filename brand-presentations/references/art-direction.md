@@ -29,6 +29,18 @@ Choose and continue autonomously when the user has delegated design. Do not add 
 
 These are lenses, not a closed theme menu. Combine or depart from them when the content warrants it. Creativity should come from a specific relationship among message, image, and space, not random layout selection.
 
+## Photograph-led pages and typographic contrast
+
+When the subject or user calls for immersive imagery, consider a full-canvas photograph with live text over a directional gradient. Choose this because the photograph carries the idea, not to meet a quota. Keep quieter text/evidence pages so the overview has pauses. A full-page image, a split editorial page, a typographic statement and a native evidence page can belong to the same brand without becoming random themes.
+
+Choose the crop and reading region together. Identify faces, products, signage and factual evidence before placing text. Leave the main subject visible; move the text, change the crop or choose another image if they compete. Do not infer the contents from an asset filename. A historical anniversary banner must not silently become a current age claim.
+
+Use the gradient as a reading layer: strongest behind text, fading toward the photograph's focal area. A bottom gradient may protect a low headline; a lateral gradient may protect a left or right column. Check every line, logo and page marker against its actual local background. Start with brand-compatible colors and the least opacity that gives reliable reading. A visible rectangular panel is also valid when the reference or export constraints call for it.
+
+Create contrast through size, weight, line breaks and whitespace first. Pair families only when supported by the brand or the user's direction. A brand built on sans-serif type should not inherit a previous client's serif. Large numerals, a light headline and a bold key phrase can provide contrast within one family. Confirm accents and mathematical symbols in the final export; replace ambiguous notation with explicit words while preserving its meaning.
+
+Keep image, overlay and text independently editable when the host supports them. Do not flatten a whole slide to achieve the look. See the reading-surface recipe in [components](component-system.md) and export inspection in [quality review](quality-review.md).
+
 ## Organic when appropriate
 
 Organic can mean a gentle change in density, asymmetry balanced by whitespace, a crop that follows the subject, a soft image edge supported by the reference, or typography with a natural reading cadence. It need not involve a leaf, blob, handwritten font, rounded card, or earthy palette.

@@ -82,7 +82,7 @@ Tell the assistant what tools it has and request an honest capability check. Wit
 
 ## Adaptive composition and art direction
 
-For a creative adaptation, the skill now directs the assistant to define a concrete concept and visual argument before choosing layouts. It adapts to evidence, audience, available imagery, and brand latitude. Typography, image scale, whitespace, crop, and rhythm become deliberate decisions. Organic treatment is used when it serves the subject, without requiring blobs, beige/green colors, rounded cards, or decorative handwriting.
+For a creative adaptation, the skill now directs the assistant to define a concrete concept and visual argument before choosing layouts. It adapts to evidence, audience, available imagery, and brand latitude. Typography, image scale, whitespace, crop, and rhythm become deliberate decisions. Full-canvas photographs can use directional gradient reading layers and editable overlaid text; the workflow checks the crop, focal subject, local contrast and export behavior. It also distinguishes source records in notes from optional visible footers. These are adaptive recipes, not a fixed photo quota or a required font pairing. Organic treatment is used when it serves the subject, without requiring blobs, beige/green colors, rounded cards, or decorative handwriting.
 
 Explore [one subject, three visual arguments](examples/art-direction-study/README.md): analytical, editorial, and human-scale organic alternatives with the same factual anchors and source image. They are browser-rendered studies with recorded decisions, not native PPTX exports or an automatic style picker.
 
