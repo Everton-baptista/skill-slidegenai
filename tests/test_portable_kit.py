@@ -22,9 +22,9 @@ NS={'a':'http://schemas.openxmlformats.org/drawingml/2006/main','c':'http://sche
 
 class DesignSystem(unittest.TestCase):
     def setUp(self):
-        self.design=json.loads((EXAMPLE/'design-system.json').read_text())
-        self.brand=json.loads((EXAMPLE/'brand-profile.json').read_text())
-        self.plan=json.loads((EXAMPLE/'deck-plan.json').read_text())
+        self.design=json.loads((EXAMPLE/'design-system.json').read_text(encoding='utf-8'))
+        self.brand=json.loads((EXAMPLE/'brand-profile.json').read_text(encoding='utf-8'))
+        self.plan=json.loads((EXAMPLE/'deck-plan.json').read_text(encoding='utf-8'))
 
     def test_complete_system_and_binding(self):
         self.assertEqual(validate(self.design,EXAMPLE,self.brand)[0],[])
@@ -138,7 +138,7 @@ class Packaging(unittest.TestCase):
         self.pack()
         unpack=self.base/'unpacked'
         with zipfile.ZipFile(self.base/'out.zip') as z:z.extractall(unpack)
-        self.assertEqual(validate(json.loads((unpack/self.root.name/'design-system.json').read_text()),unpack/self.root.name,json.loads((unpack/self.root.name/'brand-profile.json').read_text()))[0],[])
+        self.assertEqual(validate(json.loads((unpack/self.root.name/'design-system.json').read_text(encoding='utf-8')),unpack/self.root.name,json.loads((unpack/self.root.name/'brand-profile.json').read_text(encoding='utf-8')))[0],[])
 
     def test_retained_source_requires_authorization(self):
         shutil.copyfile(EXAMPLE/'example.pdf',self.root/'assets/reference.pdf')
@@ -199,7 +199,7 @@ class Artifact(unittest.TestCase):
             self.assertIn(b'Teaching',edited.read(name))
 
     def test_review_hash_and_previews(self):
-        record=json.loads((EXAMPLE/'review.json').read_text())
+        record=json.loads((EXAMPLE/'review.json').read_text(encoding='utf-8'))
         self.assertEqual(record['pptx_sha256'],hashlib.sha256((EXAMPLE/'example.pptx').read_bytes()).hexdigest())
         self.assertEqual(record['inspected_slides'],list(range(1,9)))
         for n in range(1,9):self.assertTrue((EXAMPLE/f'previews/slide-{n:02d}.png').read_bytes().startswith(b'\x89PNG'))

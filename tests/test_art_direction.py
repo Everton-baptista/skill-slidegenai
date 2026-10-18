@@ -47,7 +47,7 @@ class ArtDirection(unittest.TestCase):
         self.assertEqual(review(self.plan),([],[]))
 
     def test_missing_metadata_is_backward_compatible(self):
-        old=json.loads((ROOT/'examples/demo-brand/deck-plan.json').read_text())
+        old=json.loads((ROOT/'examples/demo-brand/deck-plan.json').read_text(encoding='utf-8'))
         self.assertEqual(review(old)[0],[])
 
     def test_optional_metadata_types(self):
@@ -73,7 +73,7 @@ class ArtDirection(unittest.TestCase):
         before=copy.deepcopy(self.plan);review(self.plan);self.assertEqual(self.plan,before)
 
     def test_study_choices_have_consistent_records(self):
-        cases=json.loads((ROOT/'examples/art-direction-study/briefs.json').read_text())['cases']
+        cases=json.loads((ROOT/'examples/art-direction-study/briefs.json').read_text(encoding='utf-8'))['cases']
         for case in cases:
             self.assertEqual(review({'slides':[case['slide_record']]},{'art_direction':case['art_direction']})[0],[])
         self.assertEqual([case['art_direction']['organic']['use'] for case in cases],[False,False,True])

@@ -23,8 +23,8 @@ class Contracts(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
-        self.brand = json.loads((ROOT / 'examples/demo-brand/brand-profile.json').read_text())
-        self.plan = json.loads((ROOT / 'examples/demo-brand/deck-plan.json').read_text())
+        self.brand = json.loads((ROOT / 'examples/demo-brand/brand-profile.json').read_text(encoding='utf-8'))
+        self.plan = json.loads((ROOT / 'examples/demo-brand/deck-plan.json').read_text(encoding='utf-8'))
         (self.root / 'assets').mkdir()
         (self.root / 'assets/demo-mark.svg').write_bytes((ROOT / 'examples/demo-brand/assets/demo-mark.svg').read_bytes())
         self.fingerprint = self.plan['brand_profile_sha256']
@@ -264,17 +264,17 @@ class Contracts(unittest.TestCase):
 class Distribution(unittest.TestCase):
     def test_local_markdown_links(self):
         for path in ROOT.rglob('*.md'):
-            for target in re.findall(r'\[[^\]]*\]\(([^)]+)\)', path.read_text()):
+            for target in re.findall(r'\[[^\]]*\]\(([^)]+)\)', path.read_text(encoding='utf-8')):
                 if '://' in target or target.startswith('#'):
                     continue
                 target = target.split('#')[0]
                 self.assertTrue((path.parent / target).exists(), f'{path}: {target}')
 
     def test_manifest_and_metadata(self):
-        manifest = (ROOT / 'brand-presentations/SKILL.md').read_text()
+        manifest = (ROOT / 'brand-presentations/SKILL.md').read_text(encoding='utf-8')
         self.assertTrue(manifest.startswith('---\nname: brand-presentations\n'))
         self.assertIn('description:', manifest)
-        self.assertIn('$brand-presentations', (ROOT / 'brand-presentations/agents/openai.yaml').read_text())
+        self.assertIn('$brand-presentations', (ROOT / 'brand-presentations/agents/openai.yaml').read_text(encoding='utf-8'))
         self.assertLess(len(manifest.splitlines()), 500)
 
     def test_distribution_has_no_symlinks_or_credentials(self):
@@ -282,7 +282,7 @@ class Distribution(unittest.TestCase):
             self.assertFalse(path.is_symlink(), str(path))
             self.assertNotEqual(path.name, '.env')
             if path.is_file() and path.suffix in ('.md', '.py', '.json', '.yaml', '.yml'):
-                content = path.read_text()
+                content = path.read_text(encoding='utf-8')
                 self.assertFalse(re.search(r'sk-proj-[A-Za-z0-9]{20,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----', content), str(path))
 
 
