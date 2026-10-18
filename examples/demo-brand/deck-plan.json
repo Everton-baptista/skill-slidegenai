@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "title": "Fictional example storyboard",
+  "language": "en",
+  "expected_slides": 1,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "brand_profile_sha256": "20e9c8edb71f581bd4687f1413900a951db124b3715c948bcf9f6df368824463",
+  "slides": [
+    {
+      "id": "s01",
+      "position": 1,
+      "role": "cover",
+      "layout": "plain-heading",
+      "topic_id": null,
+      "title": "A fictional example",
+      "status": "planned",
+      "elements": [
+        {
+          "id": "heading",
+          "kind": "text",
+          "x": 64,
+          "y": 160,
+          "width": 1000,
+          "height": 200,
+          "text": "A fictional example",
+          "font_size": 64,
+          "color": "#243746",
+          "background": "#FFFFFF"
+        },
+        {
+          "id": "mark",
+          "kind": "logo",
+          "x": 64,
+          "y": 40,
+          "width": 80,
+          "height": 80,
+          "asset": "assets/demo-mark.svg"
+        }
+      ]
+    }
+  ],
+  "review": {
+    "rendered": false,
+    "inspected_slide_ids": [],
+    "issues": []
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Presentations"
+  short_description: "Create presentations from a visual brand reference"
+  default_prompt: "Use $brand-presentations to analyze my visual reference and create a brand-consistent presentation or reusable brand skill."

@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "brand_name": "Fictional Demo Brand",
+  "sources": [
+    {
+      "id": "demo",
+      "location": "assets/demo-mark.svg",
+      "kind": "local-file"
+    }
+  ],
+  "palette": [
+    {
+      "role": "text",
+      "hex": "#243746",
+      "evidence": {
+        "status": "inferred",
+        "source_id": "demo",
+        "detail": "Synthetic design choice for this fictional example; not a real brand observation."
+      }
+    },
+    {
+      "role": "background",
+      "hex": "#FFFFFF",
+      "evidence": {
+        "status": "inferred",
+        "source_id": "demo",
+        "detail": "Synthetic design choice for this fictional example; not a real brand observation."
+      }
+    }
+  ],
+  "typography": [
+    {
+      "role": "headline",
+      "family": null,
+      "fallback": [
+        "Arial",
+        "sans-serif"
+      ],
+      "evidence": {
+        "status": "inferred",
+        "source_id": "demo",
+        "detail": "Synthetic design choice for this fictional example; not a real brand observation."
+      }
+    }
+  ],
+  "logos": [
+    {
+      "path": "assets/demo-mark.svg",
+      "variant": "synthetic-original",
+      "backgrounds": [
+        "white"
+      ],
+      "evidence": {
+        "status": "inferred",
+        "source_id": "demo",
+        "detail": "Synthetic design choice for this fictional example; not a real brand observation."
+      }
+    }
+  ],
+  "imagery": {
+    "direction": "Optional documentary imagery if a future topic needs it.",
+    "evidence": {
+      "status": "inferred",
+      "source_id": "demo",
+      "detail": "Synthetic design choice for this fictional example; not a real brand observation."
+    },
+    "avoid": [
+      "Unrelated decorative photography"
+    ]
+  },
+  "rules": [
+    {
+      "rule": "Preserve the synthetic mark proportions.",
+      "evidence": {
+        "status": "inferred",
+        "source_id": "demo",
+        "detail": "Synthetic design choice for this fictional example; not a real brand observation."
+      }
+    }
+  ],
+  "gaps": [
+    "This is a fictional structural example, not a real identity extraction.",
+    "Exact font is intentionally unspecified; no presentation has been rendered."
+  ]
+}
