@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "date": "2026-10-18",
+  "host": "Codex desktop on macOS; implementation and visual inspection in the active session",
+  "authoring": "Artifact Tool draft, then bounded PptxGenJS 4.0.1 portable reproduction adapter",
+  "rendering": "LibreOffice headless to PDF; Poppler to 1280px PNG",
+  "pptx_sha256": "fbb0bb091f01c2dcc748d2254e89740217f62a2c914c3ff7b8400e9c80ef6503",
+  "pdf_sha256": "5a62474ee81d1134cc614d384436a7ad5c93b75d31ffba55f0eb284913d7b0c9",
+  "inspected_slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "checks": {
+    "package_integrity": "passed; no dangling content-type declarations",
+    "canvas_and_font_policy": "passed; 16:9 and encoded Arial",
+    "native_table": "slide 5, four rows and three columns",
+    "native_chart": "slide 6; categories and values 32/48/65, cached formulas and embedded workbook verified",
+    "artifact_tool_import": "passed, eight slides",
+    "html_text_overflow": "none after fonts loaded in local Chrome",
+    "long_text_fixture": "excessive heading detected as overflow in local Chrome",
+    "visual_review": "all eight final PPTX slides inspected via LibreOffice/Poppler rendering",
+    "focused_edit": "automated scoped text-edit regression preserves all other OOXML parts",
+    "screenshot_only": "fictional screenshot provided; exact font must remain unknown from pixels alone",
+    "batch_continuation": "global numbering and misplaced opening regressions covered",
+    "clean_reproduction": "passed: npm ci from public lockfile in an isolated directory, Node all-format build, native artifact checker",
+    "overview": "contact sheet inspected for rhythm and consistency"
+  },
+  "not_tested": [
+    "Native opening/editing in Microsoft PowerPoint, Google Slides, Keynote",
+    "Claude Code, Gemini, other agent hosts",
+    "End-to-end extraction of a real institution identity"
+  ],
+  "limitations": [
+    "Synthetic identity and illustrative data only",
+    "One generated raster photograph; no real institution depicted",
+    "No embedded font; viewer/font differences remain possible",
+    "HTML chart is an SVG preview; PPTX chart is a native chart",
+    "Helper review flags are self-reported, not proof of inspection"
+  ]
+}

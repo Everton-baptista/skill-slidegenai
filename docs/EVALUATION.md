@@ -24,3 +24,13 @@ For each run, record host/model/version, tool availability, prompt, input proven
 Assess reference fidelity, factual preservation, narrative/count compliance, useful layout variety, readability, component consistency, export integrity, and truthful completion reporting. Inspect every slide at reading size, then the overview for rhythm. A passing JSON check alone earns no visual-quality score.
 
 Use a clearly permitted real-world reference for end-to-end testing. The fictional offline example checks data contracts only; it is not evidence that a real brand has been reproduced successfully.
+
+## Recorded local evaluation
+
+The [complete fictional example](../examples/portable-deck/README.md) was authored and evaluated in Codex desktop on macOS. Its [review record](../examples/portable-deck/review.json) identifies the inspected artifact and exact boundaries. All eight slides and the overview were visually inspected after LibreOffice/Poppler rendering. Chrome found no text-box overflow in the HTML preview and detected an intentionally excessive heading.
+
+A clean directory reproduction used only the included optional adapter and its public npm lockfile, then passed the native-object checker. Automated scenarios cover a scoped existing-deck text edit preserving every unaffected OOXML part, global numbering across split/rejoined batches, and false verification claims. These are targeted regressions, not model behavior certification in every host.
+
+The [screenshot fixture](../examples/portable-deck/assets/reference-screenshot.png) demonstrates visible identity evidence without embedded font/master metadata. A screenshot-only run should mark the precise font family as unknown/inferred even though the separate HTML source declares it. This interpretation was evaluated in the current session; no separate Claude/Gemini run was performed.
+
+Real-brand extraction and native PowerPoint/Google Slides/Keynote editing remain untested. Do not turn this local fixture into a broader compatibility claim.

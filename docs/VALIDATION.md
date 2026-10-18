@@ -1,6 +1,6 @@
 # Data contracts and validation
 
-The authoritative version-1 contracts are [brand profile](../brand-presentations/references/brand-profile.md) and [deck plan](../brand-presentations/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Helpers are Python 3.9+ standard-library tools with no network access.
+The authoritative version-1 contracts are [brand profile](../brand-presentations/references/brand-profile.md) [design system](../brand-presentations/references/design-system.md), and [deck plan](../brand-presentations/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Helpers are Python 3.9+ standard-library tools with no network access.
 
 ## Profile validator
 
@@ -22,14 +22,18 @@ python3 -c "import hashlib,pathlib; print(hashlib.sha256(pathlib.Path('examples/
 
 ## Brand packager
 
+An optional root `design-system.json` adds measured canvas/unit, semantic tokens, typography, logo rules, layout slots, and evidence. Validate it with `validate_design.py FILE --brand PROFILE`; use `validate_deck.py ... --design FILE` to check layout/slot and canvas compatibility. Old inputs without a design system remain valid; omitted plan units mean pixels.
+
 Required root files: `SKILL.md` with simple `name`/`description` front matter and a profile reference, plus a structurally valid `brand-profile.json`. Supported subdirectories/extensions:
 
 | Directory | Extensions |
 | --- | --- |
 | `references/` | `.md`, `.json` |
 | `agents/` | `.yaml`, `.yml` |
-| `scripts/` | `.py` |
-| `assets/` | `.png`, `.jpg`, `.jpeg`, `.webp`, `.svg`, `.gif`, `.ttf`, `.otf`, `.woff`, `.woff2` |
+| `scripts/` | `.py`, `.js`, `.mjs` |
+| `assets/` | `.png`, `.jpg`, `.jpeg`, `.webp`, `.svg`, `.gif`, `.ttf`, `.otf`, `.woff`, `.woff2`, `.pdf`, `.pptx`, `.html`, `.css` |
+
+Authorized retained PPTX/PDF sources and all files under `assets/references/` need entries in `references/retained-sources.json` with `path`, `purpose`, and `distribution_authorized: true`. Missing files, broken/escaping local Markdown links, missing bundled validator imports, and invalid design systems fail. Legitimate names such as `design-tokens.json` are allowed.
 
 Unexpected files/directories fail rather than silently entering the archive. Hidden files, caches, symlinks, and credential-like filenames fail. Only package folders you have reviewed and control; this is not hardened against concurrent filesystem mutation. The helper does not execute bundled scripts, validate their behavior, audit licenses, or scan arbitrary file contents for secrets.
 
@@ -41,4 +45,4 @@ Output is a ZIP containing the source folder name as its top-level directory. Ex
 python3 -B -m unittest discover -s tests -v
 ```
 
-Tests cover valid examples, malformed and adversarial fields, path containment, hash/version drift, geometry, count/order, review-state consistency, packager exclusions, local documentation links, and expected native skill structure. They do not execute an AI model or render a deck. Manual model/output evaluation remains separate.
+Tests cover valid examples, malformed and adversarial fields, path containment, hash/version drift, geometry, count/order, review-state consistency, packager exclusions, local documentation links, and expected native skill structure. They also inspect the checked-in PPTX for native text/table/chart/workbook data and exercise a scoped OOXML text edit without changing other parts. These tests do not execute an AI model or renderer. The separately recorded local example rendering/inspection is not certification of other hosts.

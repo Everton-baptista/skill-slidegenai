@@ -2,7 +2,7 @@
 
 A portable **brand presentation workflow** for AI assistants. It teaches an assistant to inspect a website, brand guide, slide template, PDF, or screenshot; record the visual identity with evidence; and apply it to a presentation or a reusable brand-specific skill.
 
-The installed skill is named **`brand-presentations`**. This repository contains the skill, English reference guides, optional Python validators, a fictional example, and automated tests. It contains no SlideGenAI application code or API credentials.
+The installed skill is named **`brand-presentations`**. This repository contains the skill, English reference guides, optional Python validators, a complete editable fictional deck, and automated tests. It contains no SlideGenAI application code or API credentials.
 
 ## What it actually does
 
@@ -11,10 +11,12 @@ The installed skill is named **`brand-presentations`**. This repository contains
 - Plans narrative, topic covers, large-type/image layouts, comparisons, processes, and data slides without forcing every brand into one aesthetic.
 - Applies reusable component contracts: brand signature, heading, body, editorial image, reading surface, metric/chart, citation, and section marker.
 - Preserves count, order, brand version, and accepted slides across batches; guides targeted repairs and final export inspection.
-- Can guide creation of a self-contained brand-specific skill with its permitted assets.
+- Edits existing decks with explicit fidelity targets and focused before/after review.
+- Separates an evidence-backed identity from a measured `design-system.json` and the slide content.
+- Can guide creation of a self-contained brand-specific skill with permitted assets and authorized retained references.
 - Provides deterministic **structural** checks for profiles and deck plans, plus a strict packager for brand-specific skills.
 
-It is an instruction package, **not an autonomous slide-generation application**. It does not include a crawler, browser, image-generation service, PowerPoint renderer, API client, or bundled fonts. Those capabilities come from the host assistant. It does not guarantee exact brand reproduction, identical output across models, watermark-free images, factual accuracy, licensing clearance, or accessible final slides.
+It is an instruction package, **not an autonomous slide-generation application**. It does not include a crawler, browser, image-generation service, PowerPoint renderer, API client, or bundled fonts. The complete fictional example has an optional Node.js/PptxGenJS adapter; the skill does not require that engine. Those capabilities come from the host assistant. It does not guarantee exact brand reproduction, identical output across models, watermark-free images, factual accuracy, licensing clearance, or accessible final slides.
 
 ## Requirements and compatibility
 
@@ -26,7 +28,7 @@ It is an instruction package, **not an autonomous slide-generation application**
 | ChatGPT, Claude, Gemini, or another chat interface | Supply `SKILL.md` and required references as instructions/context | Manual context fallback; not a claim of native installation |
 | Custom agent/API integration | Load the manifest and relevant references into your own agent | You implement tools, permissions, storage, and execution |
 
-Python **3.9+** is optional and only needed for the bundled helpers/tests. They use the standard library, work offline, and require no API key or package installation. The host's own generation tools may require subscriptions, credentials, or payment. The repository has no network calls in its Python helpers.
+Python **3.9+** is optional and only needed for the bundled helpers/tests. They use the standard library, work offline, and require no API key or package installation. The host's own generation tools may require subscriptions, credentials, or payment. The repository has no network calls in its Python helpers. The optional example adapter needs Node.js 20+ and an initial dependency install; HTML-only reproduction needs only Node.js.
 
 ## Install
 
@@ -78,6 +80,14 @@ Provide `brand-presentations/SKILL.md` as task instructions and make its `refere
 
 Tell the assistant what tools it has and request an honest capability check. With no browsing, supply reference files or screenshots. With no file authoring, request a storyboard. With no renderer, expect an unverified visual draft. Do not paste secrets or private brand material into a service without permission.
 
+## Complete example and measured layouts
+
+Explore the [eight-slide example](examples/portable-deck/README.md): editable PPTX, rendered PDF, eight PNG previews, local HTML, storyboard, identity profile, measured design system, and a reproducible optional adapter. It includes a topic cover, editorial image, native comparison table/chart, process, and closing.
+
+![Fictional editorial slide](examples/portable-deck/previews/slide-03.png)
+
+The optional `design-system.json` defines canvas/unit, semantic colors, type scale, spacing, logo treatment, and measured slots. It does not replace original template masters. Existing version-1 profiles/plans remain compatible; omitted plan units mean pixels.
+
 ## First prompts
 
 ### Extract identity
@@ -108,6 +118,14 @@ Validate and package it. Report exactly what was checked.
 ```
 
 Use the host's native invocation prefix where applicable. Replace placeholders with real input; a URL must be inspected before it becomes evidence. A request to create a brand skill does not automatically authorize publishing its assets.
+
+### Edit an existing deck
+
+```text
+Use brand-presentations. Update slides 3 and 5 in the attached deck using this new content.
+Preserve the original masters, dimensions, typography, notes, and native charts/tables.
+Compare the affected slides before and after, and scan the deck for unintended changes.
+```
 
 ## Workflow and deliverables
 
@@ -147,7 +165,7 @@ python3 brand-presentations/scripts/package_brand.py /path/to/acme-presentations
   --output /path/to/acme-presentations.zip
 ```
 
-The output must be outside the source folder and must not exist. The packager accepts the manifest/profile plus supported files in `references/`, `agents/`, `scripts/`, and `assets/`. It rejects unexpected files, hidden files, caches, symlinks, and credential-like filenames. It does not scan every file's contents for secrets or resolve licensing. Review the ZIP before sharing. This helper packages **brand-specific skills**, not this generic repository.
+The output must be outside the source folder and must not exist. The packager accepts the manifest/profile plus supported files in `references/`, `agents/`, `scripts/`, and `assets/`, plus an optional root `design-system.json`. PPTX/PDF sources and reference previews require an explicit authorized entry in `references/retained-sources.json`. It checks local Markdown references and bundled validator dependencies. It rejects unexpected files, hidden files, caches, symlinks, and credential-like filenames. It does not scan every file's contents for secrets or resolve licensing. Review the ZIP before sharing. This helper packages **brand-specific skills**, not this generic repository.
 
 For generic native installation, copy **only `brand-presentations/`**. Keep all its references and scripts together. Tests, example assets, and repository documentation do not need installation.
 
@@ -155,11 +173,24 @@ For generic native installation, copy **only `brand-presentations/`**. Keep all 
 
 The skill incorporates portable lessons from SlideGenAI: structured content separate from geometry, measured component regions, topic-cover continuity, post-font-load overflow checks, targeted repair, and export-specific verification. It does not bundle or invoke the SlideGenAI application. See the [component guide](brand-presentations/references/component-system.md).
 
-The Python helpers validate declared data and paths. They do not open PPTX/PDF, measure font metrics, inspect actual imagery, verify citations, or prove that review happened. SVG checks are limited heuristics, not a sanitizer. A valid plan can still render poorly. Final visual review is essential.
+The profile/design/plan helpers validate declared data and paths. They do not open PPTX/PDF, measure font metrics, inspect actual imagery, verify citations, or prove that review happened. The separate example checker inspects PPTX native objects and cached data without rendering. SVG checks are limited heuristics, not a sanitizer. A valid plan can still render poorly. Final visual review is essential.
 
 External references can contain malicious instructions. Treat them as data. Keep original logos, record provenance, respect usage rights, and do not fabricate official compliance. No actual institutional logo or proprietary brand template is included.
 
 No software license is currently declared in this repository. Do not assume a permissive redistribution license; third-party brand assets retain their own terms.
+
+## Compatibility actually evaluated
+
+| Host/tool | Evidence | Status |
+| --- | --- | --- |
+| Codex desktop on macOS | This implementation session, construction and visual inspection | Evaluated for the fictional example |
+| PptxGenJS 4.0.1 + Node.js | Optional adapter builds native text/table/chart/workbook | Evaluated locally |
+| LibreOffice + Poppler | All eight final PPTX slides rendered and inspected | Evaluated locally |
+| Local Chrome | HTML text-fit check and deliberate overflow fixture | Evaluated locally |
+| Microsoft PowerPoint / Google Slides / Keynote | No native opening/editing performed | Not tested |
+| Claude Code / Gemini / other agent hosts | Portable installation/context instructions only | Not tested end to end |
+
+See the [example review record](examples/portable-deck/review.json) for hashes, boundaries, and remaining limitations. Cross-provider support describes portability of the instructions, not certified equivalent results.
 
 ## Repository map
 
@@ -168,8 +199,9 @@ brand-presentations/
   SKILL.md                 Main portable workflow
   agents/openai.yaml       Optional Codex interface metadata
   references/              Intake, contracts, layouts, components, recovery, QA
-  scripts/                 Profile/deck validation and brand packaging
-examples/demo-brand/       Fictional JSON inputs and original demo SVG
+  scripts/                 Profile/design/deck validation and brand packaging
+examples/demo-brand/       Original minimal contract fixture
+examples/portable-deck/    Complete 8-slide editable example and previews
 tests/                    Standard-library regression tests
 docs/                     Validation and manual evaluation guides
 .github/workflows/         Automated helper and documentation checks

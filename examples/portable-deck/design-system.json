@@ -1,0 +1,481 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "px"
+  },
+  "colors": {
+    "ink": "#173E38",
+    "paper": "#F6F3EA",
+    "muted": "#52645E",
+    "accent": "#B64B30",
+    "white": "#FFFFFF",
+    "line": "#D9DFD5"
+  },
+  "typography": {
+    "headline": {
+      "family": "Arial",
+      "size": 64,
+      "line_height": 1.08,
+      "bold": true
+    },
+    "body": {
+      "family": "Arial",
+      "size": 28,
+      "line_height": 1.25
+    },
+    "caption": {
+      "family": "Arial",
+      "size": 14,
+      "line_height": 1.2
+    }
+  },
+  "spacing": {
+    "safe": 64,
+    "gutter": 32,
+    "small": 16
+  },
+  "logo": {
+    "asset": "assets/demo-mark.svg",
+    "clear_space": 16,
+    "backgrounds": [
+      "paper",
+      "white"
+    ]
+  },
+  "layouts": [
+    {
+      "id": "opening",
+      "slots": [
+        {
+          "id": "label",
+          "kind": "text",
+          "x": 64,
+          "y": 70,
+          "width": 750,
+          "height": 30,
+          "type_role": "caption"
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 64,
+          "y": 190,
+          "width": 1100,
+          "height": 270,
+          "type_role": "headline"
+        },
+        {
+          "id": "body",
+          "kind": "text",
+          "x": 68,
+          "y": 514,
+          "width": 920,
+          "height": 88,
+          "type_role": "body"
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    },
+    {
+      "id": "topic-cover",
+      "slots": [
+        {
+          "id": "label",
+          "kind": "text",
+          "x": 64,
+          "y": 80,
+          "width": 1000,
+          "height": 35,
+          "type_role": "caption"
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 64,
+          "y": 230,
+          "width": 1120,
+          "height": 220,
+          "type_role": "headline"
+        },
+        {
+          "id": "body",
+          "kind": "text",
+          "x": 68,
+          "y": 520,
+          "width": 1040,
+          "height": 85,
+          "type_role": "body"
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    },
+    {
+      "id": "editorial",
+      "slots": [
+        {
+          "id": "editorial-photo",
+          "kind": "image",
+          "x": 0,
+          "y": 0,
+          "width": 570,
+          "height": 640
+        },
+        {
+          "id": "label",
+          "kind": "text",
+          "x": 640,
+          "y": 78,
+          "width": 570,
+          "height": 30,
+          "type_role": "caption"
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 640,
+          "y": 176,
+          "width": 570,
+          "height": 180,
+          "type_role": "headline"
+        },
+        {
+          "id": "body",
+          "kind": "text",
+          "x": 640,
+          "y": 400,
+          "width": 535,
+          "height": 164,
+          "type_role": "body"
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    },
+    {
+      "id": "explanation",
+      "slots": [
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 64,
+          "y": 68,
+          "width": 1120,
+          "height": 150,
+          "type_role": "headline"
+        },
+        {
+          "id": "identity",
+          "kind": "text",
+          "x": 64,
+          "y": 270,
+          "width": 330,
+          "height": 48,
+          "type_role": "body"
+        },
+        {
+          "id": "identity-body",
+          "kind": "text",
+          "x": 64,
+          "y": 345,
+          "width": 320,
+          "height": 150,
+          "type_role": "body"
+        },
+        {
+          "id": "system",
+          "kind": "text",
+          "x": 458,
+          "y": 270,
+          "width": 350,
+          "height": 48,
+          "type_role": "body"
+        },
+        {
+          "id": "system-body",
+          "kind": "text",
+          "x": 458,
+          "y": 345,
+          "width": 330,
+          "height": 150,
+          "type_role": "body"
+        },
+        {
+          "id": "content",
+          "kind": "text",
+          "x": 860,
+          "y": 270,
+          "width": 350,
+          "height": 48,
+          "type_role": "body"
+        },
+        {
+          "id": "content-body",
+          "kind": "text",
+          "x": 860,
+          "y": 345,
+          "width": 330,
+          "height": 150,
+          "type_role": "body"
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    },
+    {
+      "id": "comparison",
+      "slots": [
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 64,
+          "y": 65,
+          "width": 1120,
+          "height": 145,
+          "type_role": "headline"
+        },
+        {
+          "id": "comparison-table",
+          "kind": "table",
+          "x": 64,
+          "y": 260,
+          "width": 1152,
+          "height": 290
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "slots": [
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 64,
+          "y": 65,
+          "width": 1120,
+          "height": 140,
+          "type_role": "headline"
+        },
+        {
+          "id": "practice-chart",
+          "kind": "chart",
+          "x": 64,
+          "y": 255,
+          "width": 760,
+          "height": 330
+        },
+        {
+          "id": "note",
+          "kind": "text",
+          "x": 900,
+          "y": 280,
+          "width": 300,
+          "height": 60,
+          "type_role": "body"
+        },
+        {
+          "id": "body",
+          "kind": "text",
+          "x": 900,
+          "y": 375,
+          "width": 300,
+          "height": 180,
+          "type_role": "body"
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "slots": [
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 64,
+          "y": 65,
+          "width": 1120,
+          "height": 145,
+          "type_role": "headline"
+        },
+        {
+          "id": "step1",
+          "kind": "text",
+          "x": 64,
+          "y": 300,
+          "width": 320,
+          "height": 60,
+          "type_role": "body"
+        },
+        {
+          "id": "step1-body",
+          "kind": "text",
+          "x": 64,
+          "y": 390,
+          "width": 320,
+          "height": 120,
+          "type_role": "body"
+        },
+        {
+          "id": "step2",
+          "kind": "text",
+          "x": 470,
+          "y": 300,
+          "width": 320,
+          "height": 60,
+          "type_role": "body"
+        },
+        {
+          "id": "step2-body",
+          "kind": "text",
+          "x": 470,
+          "y": 390,
+          "width": 320,
+          "height": 120,
+          "type_role": "body"
+        },
+        {
+          "id": "step3",
+          "kind": "text",
+          "x": 870,
+          "y": 300,
+          "width": 320,
+          "height": 60,
+          "type_role": "body"
+        },
+        {
+          "id": "step3-body",
+          "kind": "text",
+          "x": 870,
+          "y": 390,
+          "width": 320,
+          "height": 120,
+          "type_role": "body"
+        },
+        {
+          "id": "connector1",
+          "kind": "shape",
+          "x": 400,
+          "y": 326,
+          "width": 42,
+          "height": 3
+        },
+        {
+          "id": "connector2",
+          "kind": "shape",
+          "x": 805,
+          "y": 326,
+          "width": 42,
+          "height": 3
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    },
+    {
+      "id": "closing",
+      "slots": [
+        {
+          "id": "label",
+          "kind": "text",
+          "x": 64,
+          "y": 80,
+          "width": 1100,
+          "height": 35,
+          "type_role": "caption"
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "x": 64,
+          "y": 235,
+          "width": 1140,
+          "height": 220,
+          "type_role": "headline"
+        },
+        {
+          "id": "body",
+          "kind": "text",
+          "x": 68,
+          "y": 515,
+          "width": 1070,
+          "height": 95,
+          "type_role": "body"
+        },
+        {
+          "id": "footer",
+          "kind": "text",
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 22,
+          "type_role": "caption"
+        }
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "rule": "Use a 16:9 canvas with a 64px safe region for body text and separate editorial image/text regions.",
+      "evidence": {
+        "status": "inferred",
+        "source_id": "ref",
+        "detail": "Presentation composition inferred from the fictional reference; not an official guideline."
+      }
+    }
+  ]
+}

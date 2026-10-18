@@ -8,3 +8,5 @@
 *.otf binary
 *.woff binary
 *.woff2 binary
+*.pptx binary
+*.pdf binary

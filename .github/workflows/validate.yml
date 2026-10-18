@@ -19,3 +19,19 @@ jobs:
       - run: python -B -m unittest discover -s tests -v
       - run: python -B brand-presentations/scripts/validate_brand.py examples/demo-brand/brand-profile.json
       - run: python -B brand-presentations/scripts/validate_deck.py examples/demo-brand/deck-plan.json --brand examples/demo-brand/brand-profile.json
+      - run: python -B brand-presentations/scripts/validate_design.py examples/portable-deck/design-system.json --brand examples/portable-deck/brand-profile.json
+      - run: python -B brand-presentations/scripts/validate_deck.py examples/portable-deck/deck-plan.json --brand examples/portable-deck/brand-profile.json --design examples/portable-deck/design-system.json --require-reviewed
+  reproduce-example:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: examples/portable-deck
+      - run: node examples/portable-deck/build.mjs --out examples/portable-deck/generated
+      - run: python -B examples/portable-deck/check_pptx.py examples/portable-deck/generated/example.pptx

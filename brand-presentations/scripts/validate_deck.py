@@ -51,6 +51,8 @@ def validate(plan, root, brand=None, brand_hash=None, require_reviewed=False):
     if not isinstance(size, dict) or not all(number(size.get(k), True) for k in ('width', 'height')):
         errors.append('slide_size needs finite positive width/height.')
         size = None
+    if plan.get('unit', 'px') not in ('px', 'pt'):
+        errors.append('unit must be px or pt; omitted means px.')
     fingerprint = plan.get('brand_profile_sha256')
     if fingerprint is None:
         warnings.append('Brand profile is not yet linked by hash.')
@@ -182,6 +184,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('plan', type=Path)
     parser.add_argument('--brand', type=Path)
+    parser.add_argument('--design', type=Path)
     parser.add_argument('--require-reviewed', action='store_true')
     args = parser.parse_args()
     try:
@@ -191,7 +194,7 @@ def main():
         if args.brand:
             brand_path = args.brand.resolve()
             if brand_path.parent != path.parent:
-                raise ValueError('Mantenha plano and ficha de marca na mesma raiz de pacote.')
+                raise ValueError('Keep plan and brand profile in the same package root.')
             raw = brand_path.read_bytes()
             brand = json.loads(raw)
             errors, _ = validate_brand(brand, path.parent)
@@ -199,6 +202,17 @@ def main():
                 raise ValueError('Invalid brand profile: ' + '; '.join(errors))
             fingerprint = hashlib.sha256(raw).hexdigest()
         errors, warnings = validate(plan, path.parent, brand, fingerprint, args.require_reviewed)
+        if args.design:
+            from validate_design import validate as validate_design, validate_binding
+            design_path = args.design.resolve()
+            if design_path.parent != path.parent:
+                raise ValueError('Keep design system and plan in the same package root.')
+            design = json.loads(design_path.read_text(encoding='utf-8'))
+            de, dw = validate_design(design, path.parent, brand)
+            errors.extend(de)
+            warnings.extend(dw)
+            if not de:
+                errors.extend(validate_binding(plan, design))
     except (OSError, ValueError) as exc:
         print(f'ERROR: {exc}', file=sys.stderr)
         return 1

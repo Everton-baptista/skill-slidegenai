@@ -42,3 +42,21 @@ Select a master by meaning and fit. Keep logos, spacing, and type tokens stable;
 Map components to supported native primitives whenever possible. Preserve valid zero coordinates; do not replace `0` with a default position. Convert units and font sizes explicitly. Check unsupported gradients, transparency, masks, SVG dependencies, missing images, and layer order. Do not swallow element insertion errors and still claim a complete export.
 
 Record what remains editable. A rasterized background with native text is a possible fallback, not a fully editable reconstruction. Inspect the actual exported artifact before marking it verified.
+
+## Construction recipes
+
+Use the example's `deck-plan.json` for complete numeric instances. The numbers below describe its 1280 × 720 px canvas only, not every brand. Reuse a master or change it intentionally; keep a 64px body-safe margin and reserve the footer at y=666.
+
+| Recipe | Inputs and measured region | Overflow/editability/review |
+| --- | --- | --- |
+| Heading | Text + headline role; explanation title at (64,68), 1120×150 | Preserve line breaks deliberately; rewrite or enlarge region before shrinking. Native text; compare wrapping after export. |
+| Body | Paragraph or points; editorial body at (640,400), 535×164 | Fit real font metrics; never hide clipped lines. Native text; retain qualifications when shortening. |
+| Editorial image | Local asset + alt text + focal point; (0,0), 570×640 | Crop proportionally; protect important subject matter. Raster image is allowed; verify resolution and permitted use. |
+| Reading surface | Surface role + reading region; editorial text stays on the paper region to the right | Extend contrast across all wrapped lines. Native solid shape/background where supported; inspect gradients in exports. |
+| Logo | Original asset, suitable background, target box + clear_space | For the demo asset, a 64×64 box needs 16px surrounding space. Preserve aspect ratio; no recoloring without support. Missing logo remains a gap. |
+| Chart | Categories, values, units, source/illustrative label; (64,255), 760×330 | Keep a native chart with editable series/workbook. Check categories, scale and values against the source after export. |
+| Table | Full matrix with headers; (64,260), 1152×290 | Preserve all cells. Adjust row heights/column widths before splitting when allowed. Native table; inspect every cell. |
+| Citation/footer | Real source or supplied attribution, global page number; (64,666), 1152×22 | Never invent a citation or shrink below readable size to fit. Longer citations need a larger region or notes when appropriate. |
+| Topic cover | Topic ID/label, short title, optional context; title (64,230), 1120×220 | Counts toward total; long substantive content belongs in an explanatory master. Native text; inspect transitions across batches. |
+
+For a native process diagram, keep labels and connectors as editable objects with semantic order. The example's process slide uses three measured columns; it is an illustration of that topic, not a universal requirement for three-part content.

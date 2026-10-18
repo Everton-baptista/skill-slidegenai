@@ -6,6 +6,8 @@ Use `deck-plan.json` for file production, longer decks, or batches. It is workin
 
 - `version`: integer `1`.
 - `title`, `language`: nonempty strings.
+- Optional `unit`: `px` or `pt`; omission means `px` for backward compatibility. Geometry and font sizes share this unit.
+- Optional element `slot_id`: when checking with `--design`, references a slot in the selected design layout with a matching kind.
 - `expected_slides`: positive integer, including opening, topic covers, and closing.
 - `slide_size`: positive finite `width` and `height`, such as 1280 by 720. Geometry and font sizes share a consistent unit; convert when authoring in points or inches.
 - `brand_profile_sha256`: exact SHA-256 of profile file bytes, or `null` while unbound. Update only after reviewing identity changes. Whitespace changes also change this hash.

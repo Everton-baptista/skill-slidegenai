@@ -5,3 +5,5 @@ __pycache__/
 .env.*
 *.zip
 .venv/
+node_modules/
+generated*/

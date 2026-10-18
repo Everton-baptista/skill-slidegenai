@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "brand_name": "Fieldwork Learning Lab (fictional)",
+  "sources": [
+    {
+      "id": "ref",
+      "location": "reference.html",
+      "kind": "local-file"
+    },
+    {
+      "id": "image",
+      "location": "assets/library.png",
+      "kind": "image"
+    }
+  ],
+  "palette": [
+    {
+      "role": "ink",
+      "hex": "#173E38",
+      "evidence": {
+        "status": "observed",
+        "source_id": "ref",
+        "detail": "Explicit fictional colors and Arial typography in reference.html."
+      }
+    },
+    {
+      "role": "paper",
+      "hex": "#F6F3EA",
+      "evidence": {
+        "status": "observed",
+        "source_id": "ref",
+        "detail": "Explicit fictional colors and Arial typography in reference.html."
+      }
+    },
+    {
+      "role": "muted",
+      "hex": "#52645E",
+      "evidence": {
+        "status": "observed",
+        "source_id": "ref",
+        "detail": "Explicit fictional colors and Arial typography in reference.html."
+      }
+    },
+    {
+      "role": "accent",
+      "hex": "#B64B30",
+      "evidence": {
+        "status": "observed",
+        "source_id": "ref",
+        "detail": "Explicit fictional colors and Arial typography in reference.html."
+      }
+    },
+    {
+      "role": "white",
+      "hex": "#FFFFFF",
+      "evidence": {
+        "status": "observed",
+        "source_id": "ref",
+        "detail": "Explicit fictional colors and Arial typography in reference.html."
+      }
+    },
+    {
+      "role": "line",
+      "hex": "#D9DFD5",
+      "evidence": {
+        "status": "observed",
+        "source_id": "ref",
+        "detail": "Explicit fictional colors and Arial typography in reference.html."
+      }
+    }
+  ],
+  "typography": [
+    {
+      "role": "heading/body",
+      "family": "Arial",
+      "fallback": [
+        "Helvetica",
+        "sans-serif"
+      ],
+      "evidence": {
+        "status": "observed",
+        "source_id": "ref",
+        "detail": "Explicit fictional colors and Arial typography in reference.html."
+      }
+    }
+  ],
+  "logos": [
+    {
+      "path": "assets/demo-mark.svg",
+      "variant": "synthetic-original",
+      "backgrounds": [
+        "paper",
+        "white"
+      ],
+      "evidence": {
+        "status": "inferred",
+        "source_id": "ref",
+        "detail": "Presentation composition inferred from the fictional reference; not an official guideline."
+      }
+    }
+  ],
+  "imagery": {
+    "direction": "Quiet editorial learning environments; synthetic demo image, not a real campus.",
+    "evidence": {
+      "status": "observed",
+      "source_id": "image",
+      "detail": "AI-generated library image included in this example."
+    }
+  },
+  "rules": [
+    {
+      "rule": "Use semantic color roles and generous margins.",
+      "evidence": {
+        "status": "inferred",
+        "source_id": "ref",
+        "detail": "Presentation composition inferred from the fictional reference; not an official guideline."
+      }
+    }
+  ],
+  "gaps": [
+    "Fictional identity; no claim of official affiliation.",
+    "Image is AI-generated; no real institution depicted.",
+    "Font rendering and import fidelity vary by viewer."
+  ]
+}
