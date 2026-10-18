@@ -9,11 +9,11 @@ jobs:
     strategy:
       matrix:
         python-version: ['3.9', '3.13']
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-24.04, windows-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
       - run: python -B -m unittest discover -s tests -v
@@ -22,13 +22,13 @@ jobs:
       - run: python -B brand-presentations/scripts/validate_design.py examples/portable-deck/design-system.json --brand examples/portable-deck/brand-profile.json
       - run: python -B brand-presentations/scripts/validate_deck.py examples/portable-deck/deck-plan.json --brand examples/portable-deck/brand-profile.json --design examples/portable-deck/design-system.json --require-reviewed
   reproduce-example:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '22'
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7.0.0
         with:
           python-version: '3.13'
       - run: npm ci --ignore-scripts --no-audit --no-fund
