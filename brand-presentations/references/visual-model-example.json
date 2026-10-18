@@ -1,0 +1,435 @@
+{
+  "version": 1,
+  "charts": [
+    {
+      "id": "ranking",
+      "type": "grouped-bar",
+      "unit": "completed items",
+      "baseline": 0,
+      "categories": [
+        "North",
+        "East",
+        "South",
+        "West"
+      ],
+      "series": [
+        {
+          "name": "Prior period",
+          "values": [
+            42,
+            36,
+            30,
+            24
+          ]
+        },
+        {
+          "name": "Current period",
+          "values": [
+            56,
+            44,
+            38,
+            32
+          ]
+        }
+      ],
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      }
+    },
+    {
+      "id": "trend",
+      "type": "line",
+      "unit": "days",
+      "categories": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun"
+      ],
+      "series": [
+        {
+          "name": "Standard",
+          "values": [
+            18,
+            17,
+            16,
+            15,
+            14,
+            13
+          ]
+        },
+        {
+          "name": "Pilot",
+          "values": [
+            18,
+            16,
+            14,
+            12,
+            10,
+            9
+          ]
+        }
+      ],
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      }
+    },
+    {
+      "id": "mix",
+      "type": "stacked-share",
+      "unit": "%",
+      "baseline": 0,
+      "categories": [
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "series": [
+        {
+          "name": "Direct",
+          "values": [
+            45,
+            50,
+            55
+          ]
+        },
+        {
+          "name": "Partner",
+          "values": [
+            35,
+            30,
+            25
+          ]
+        },
+        {
+          "name": "Other",
+          "values": [
+            20,
+            20,
+            20
+          ]
+        }
+      ],
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      }
+    },
+    {
+      "id": "scatter",
+      "type": "scatter",
+      "unit": "paired observations",
+      "x_unit": "training hours",
+      "y_unit": "completed items",
+      "series": [
+        {
+          "name": "Teams",
+          "points": [
+            {
+              "x": 2,
+              "y": 18
+            },
+            {
+              "x": 4,
+              "y": 26
+            },
+            {
+              "x": 5,
+              "y": 20
+            },
+            {
+              "x": 7,
+              "y": 35
+            },
+            {
+              "x": 8,
+              "y": 31
+            },
+            {
+              "x": 10,
+              "y": 42
+            },
+            {
+              "x": 12,
+              "y": 40
+            }
+          ]
+        }
+      ],
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      }
+    }
+  ],
+  "diagrams": [
+    {
+      "id": "decision",
+      "type": "decision-flow",
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      },
+      "nodes": [
+        {
+          "id": "receive",
+          "label": "Receive request",
+          "role": "start"
+        },
+        {
+          "id": "review",
+          "label": "Ready?",
+          "role": "decision"
+        },
+        {
+          "id": "prepare",
+          "label": "Prepare delivery",
+          "role": "step"
+        },
+        {
+          "id": "return",
+          "label": "Request details",
+          "role": "step"
+        },
+        {
+          "id": "deliver",
+          "label": "Deliver",
+          "role": "end"
+        }
+      ],
+      "edges": [
+        {
+          "from": "receive",
+          "to": "review",
+          "label": "Review",
+          "directed": true
+        },
+        {
+          "from": "review",
+          "to": "prepare",
+          "label": "Yes",
+          "directed": true
+        },
+        {
+          "from": "review",
+          "to": "return",
+          "label": "No",
+          "directed": true
+        },
+        {
+          "from": "prepare",
+          "to": "deliver",
+          "label": "Release",
+          "directed": true
+        },
+        {
+          "from": "return",
+          "to": "review",
+          "label": "Resubmit",
+          "directed": true
+        }
+      ],
+      "allow_cycles": true
+    },
+    {
+      "id": "handoff",
+      "type": "swimlane",
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      },
+      "lanes": [
+        "Client",
+        "Operations",
+        "Quality"
+      ],
+      "nodes": [
+        {
+          "id": "brief",
+          "label": "Send brief",
+          "lane": "Client"
+        },
+        {
+          "id": "plan",
+          "label": "Plan work",
+          "lane": "Operations"
+        },
+        {
+          "id": "build",
+          "label": "Build",
+          "lane": "Operations"
+        },
+        {
+          "id": "check",
+          "label": "Check output",
+          "lane": "Quality"
+        },
+        {
+          "id": "accept",
+          "label": "Accept delivery",
+          "lane": "Client"
+        }
+      ],
+      "edges": [
+        {
+          "from": "brief",
+          "to": "plan",
+          "label": "Submit",
+          "directed": true
+        },
+        {
+          "from": "plan",
+          "to": "build",
+          "label": "Assign",
+          "directed": true
+        },
+        {
+          "from": "build",
+          "to": "check",
+          "label": "Review",
+          "directed": true
+        },
+        {
+          "from": "check",
+          "to": "accept",
+          "label": "Approve",
+          "directed": true
+        }
+      ]
+    },
+    {
+      "id": "system",
+      "type": "architecture",
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      },
+      "nodes": [
+        {
+          "id": "portal",
+          "label": "Portal"
+        },
+        {
+          "id": "api",
+          "label": "Application API"
+        },
+        {
+          "id": "queue",
+          "label": "Work queue"
+        },
+        {
+          "id": "worker",
+          "label": "Worker"
+        },
+        {
+          "id": "store",
+          "label": "Data store"
+        }
+      ],
+      "edges": [
+        {
+          "from": "portal",
+          "to": "api",
+          "label": "Request",
+          "directed": true
+        },
+        {
+          "from": "api",
+          "to": "queue",
+          "label": "Enqueue",
+          "directed": true
+        },
+        {
+          "from": "queue",
+          "to": "worker",
+          "label": "Consume",
+          "directed": true
+        },
+        {
+          "from": "worker",
+          "to": "store",
+          "label": "Persist",
+          "directed": true
+        },
+        {
+          "from": "api",
+          "to": "store",
+          "label": "Read",
+          "directed": true
+        }
+      ]
+    },
+    {
+      "id": "schedule",
+      "type": "roadmap",
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      },
+      "nodes": [
+        {
+          "id": "discover",
+          "label": "Discover",
+          "start": "2027-01-01",
+          "end": "2027-01-31"
+        },
+        {
+          "id": "pilot",
+          "label": "Pilot",
+          "start": "2027-02-01",
+          "end": "2027-03-31"
+        },
+        {
+          "id": "scale",
+          "label": "Scale",
+          "start": "2027-04-01",
+          "end": "2027-06-30"
+        }
+      ],
+      "edges": []
+    },
+    {
+      "id": "risk",
+      "type": "matrix",
+      "source": {
+        "status": "illustrative",
+        "label": "Fictional example"
+      },
+      "rows": [
+        "Low impact",
+        "Medium impact",
+        "High impact"
+      ],
+      "columns": [
+        "Low likelihood",
+        "Medium likelihood",
+        "High likelihood"
+      ],
+      "nodes": [
+        {
+          "id": "delay",
+          "label": "Supplier delay",
+          "row": 1,
+          "column": 2
+        },
+        {
+          "id": "access",
+          "label": "Access failure",
+          "row": 2,
+          "column": 1
+        },
+        {
+          "id": "typo",
+          "label": "Copy error",
+          "row": 0,
+          "column": 2
+        }
+      ],
+      "edges": []
+    }
+  ]
+}

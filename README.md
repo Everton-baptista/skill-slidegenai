@@ -18,6 +18,14 @@ The installed skill is named **`brand-presentations`**. This repository contains
 
 It is an instruction package, **not an autonomous slide-generation application**. It does not include a crawler, browser, image-generation service, PowerPoint renderer, API client, or bundled fonts. The complete fictional example has an optional Node.js/PptxGenJS adapter; the skill does not require that engine. Those capabilities come from the host assistant. It does not guarantee exact brand reproduction, identical output across models, watermark-free images, factual accuracy, licensing clearance, or accessible final slides.
 
+## Template and analytical repertoire
+
+The [complete catalog](brand-presentations/references/template-catalog.md) indexes **177 SlideGenAI interface templates**, organized into portable families with source coverage and adaptation notes. It is a source inventory, **not 177 bundled PowerPoint masters or individually tested exporters**. User-supplied identity overrides its palette samples. No application installation is required.
+
+[Analytical construction](brand-presentations/references/analytical-construction.md) adds chart choice, data contracts, decision flows with rework paths, swimlanes, system relationships, dated roadmaps, risk matrices and aligned comparisons. Charts are used when evidence supports them; company performance is never invented to make a deck look analytical. The optional [visual-model validator](brand-presentations/scripts/validate_visuals.py) checks data and graph structure, not visual quality or truth.
+
+Explore the [ten-slide analytical study](examples/analytical-patterns/README.md): four native charts, three editable node/connector diagrams, a duration-scaled roadmap, a categorical matrix and a native comparison table. Its source data is fictional and labeled. The review record distinguishes the checked-in artifact from the optional reproduction adapter and lists host limitations.
+
 ## Requirements and compatibility
 
 | Environment | How to use it | Capability boundary |
@@ -197,6 +205,8 @@ No software license is currently declared in this repository. Do not assume a pe
 | PptxGenJS 4.0.1 + Node.js | Optional adapter builds native text/table/chart/workbook | Evaluated locally |
 | LibreOffice + Poppler | All eight final PPTX slides rendered and inspected | Evaluated locally |
 | Local Chrome | HTML text-fit check and deliberate overflow fixture | Evaluated locally |
+| Analytical fixture: Codex desktop on macOS | Four native charts/workbooks, attached diagrams, roadmap/matrix/table; all ten PPTX slides and overview rendered/inspected | Tested for this artifact |
+| Analytical public reproduction adapter | Isolated npm install/build and native chart/workbook/table/source check; free line segments need rerouting after node moves | Tested for generation/data preservation |
 | Microsoft PowerPoint / Google Slides / Keynote | No native opening/editing performed | Not tested |
 | Claude Code / Gemini / other agent hosts | Portable installation/context instructions only | Not tested end to end |
 

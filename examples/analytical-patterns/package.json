@@ -1,0 +1,8 @@
+{
+  "name": "slidegenai-fictional-example",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Optional, bounded example adapter; not a required skill runtime",
+  "dependencies": { "pptxgenjs": "4.0.1", "jszip": "3.10.1" }
+}

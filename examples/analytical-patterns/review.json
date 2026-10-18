@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "date": "2026-10-18",
+  "host": "Codex desktop on macOS",
+  "authoring": "Artifact Tool native presentation API; local finalizer and first-party reimport",
+  "rendering": "LibreOffice headless PPTX to PDF; Poppler 1280x720 PNGs",
+  "pptx_sha256": "7800b519350b58da3c8abfe45f79b0c0e6977492383061150584f3921eb2f259",
+  "pdf_sha256": "42b65e0625630754e8793f8ff1544dcb6940f376bacfae964cc39ffc91354a01",
+  "inspected_slides": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "overview_inspected": true,
+  "native_objects": {
+    "charts": 4,
+    "embedded_chart_workbooks": 4,
+    "tables": 1,
+    "logical_diagram_relationships": 14,
+    "attached_connector_segments": 16
+  },
+  "checks": {
+    "source_model": "validated; finite illustrative data and semantic relationships",
+    "native_chart_data": "cached values, categories, x/y pairs and referenced XLSX cells match the model; shares converted to fractions",
+    "native_objects": "table cells and node/relationship labels match; all 16 connector segments have both attachments",
+    "finalizer": "package integrity, chart/workbook validation, canvas/font policy, layout bounds and first-party reimport passed",
+    "clean_reproduction": "npm ci --ignore-scripts --offline in an isolated directory from public lockfile; build and source/workbook/native-object check passed; optional adapter uses 34 free line segments"
+  },
+  "repairs": [
+    "Set explicit axis text styles for contrast on dark backgrounds.",
+    "Disabled scatter connecting lines and smoothing to preserve paired observations.",
+    "Brought connectors above lane fills and corrected destination arrow ends.",
+    "Reduced the decision label font to fit; routed the rework return outside the node.",
+    "Separated system read and queue paths to reduce ambiguity."
+  ],
+  "not_tested": [
+    "Native application editing in Microsoft PowerPoint, Google Slides or Keynote",
+    "Claude, Gemini or other agent hosts",
+    "Individual rendering/export of the 177 source catalog styles"
+  ],
+  "limitations": [
+    "Fictional data and relationships only.",
+    "Optional public adapter uses editable free line segments without node attachments.",
+    "No embedded font; renderer differences remain possible.",
+    "The source validator accepts more models than this four-chart/five-diagram fixture demonstrates."
+  ]
+}

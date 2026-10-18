@@ -1,0 +1,4846 @@
+{
+  "version": 1,
+  "snapshot_date": "2026-10-18",
+  "scope": "Every VISUAL_TEMPLATES entry in the inspected local SlideGenAI source. Metadata is descriptive, not executable template code or an official third-party brand guide.",
+  "source_files": [
+    {
+      "path": "src/constants/visualTemplates.tsx",
+      "sha256": "412bed996126e9196ce7b92bd4f9d11098e7564ab40f825830f4a30e38fd18aa"
+    },
+    {
+      "path": "backend/src/services/aiService.ts",
+      "sha256": "f1f26da76ba8d46e6c5f4a96e3f7b52b56ed8245910344943370e38e4d1fd6a3"
+    },
+    {
+      "path": "src/types/index.ts",
+      "sha256": "98de32850b972203d3176e449d2e1c4f82b04df6c73b7b96accea33fca0494c8"
+    },
+    {
+      "path": "src/components/features/presentation/chartUtils.ts",
+      "sha256": "1c6ccf2de65f5cd992aa92fab86d4bbb11df164e23828465bc67a80dfe62f999"
+    },
+    {
+      "path": "backend/src/services/diagramService.ts",
+      "sha256": "e21515bdf1fb4a6f7030d747e4283423a2534744d7687d9ba4bce0c1a0b9ad52"
+    }
+  ],
+  "counts": {
+    "interface": 177,
+    "backend_rules": 174,
+    "declared_types": 176
+  },
+  "families": {
+    "analytical": {
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ]
+    },
+    "editorial": {
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ]
+    },
+    "technical": {
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ]
+    },
+    "organic": {
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ]
+    },
+    "minimal": {
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ]
+    },
+    "experimental": {
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ]
+    },
+    "photographic": {
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ]
+    },
+    "institutional": {
+      "keep": "Evidenced identity, original logos and measured master relationships.",
+      "adapt": "A named institution is not a reusable identity for other brands.",
+      "patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow",
+        "roadmap"
+      ]
+    },
+    "custom": {
+      "keep": "The user-selected identity and capability constraints.",
+      "adapt": "Resolve identity and evidence before choosing effects.",
+      "patterns": [
+        "ranked-bar",
+        "trend-line",
+        "decision-flow",
+        "system-architecture",
+        "comparison-table"
+      ]
+    }
+  },
+  "templates": [
+    {
+      "id": "custom",
+      "title": "Create Your Own",
+      "source_category": "Custom",
+      "source_description": "Define your own colors, fonts, and style rules.",
+      "family": "custom",
+      "source_line": 17,
+      "source_rule_present": false,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#1A1A1A"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "decision-flow",
+        "system-architecture",
+        "comparison-table"
+      ],
+      "keep": "The user-selected identity and capability constraints.",
+      "adapt": "Resolve identity and evidence before choosing effects.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "insper-aula",
+      "title": "Insper Aula",
+      "source_category": "Corporate & Education",
+      "source_description": "Identidade visual Insper: branco, vermelho e preto. Tipografia bold moderna, letras vazadas, layouts criativos com imagens de fundo estilosas.",
+      "family": "institutional",
+      "source_line": 33,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "balanced",
+      "preview_hex_colors": [
+        "#E31937"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#000000",
+        "#4B4B4B",
+        "#E31937",
+        "#F5F5F5"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow",
+        "roadmap"
+      ],
+      "keep": "Evidenced identity, original logos and measured master relationships.",
+      "adapt": "A named institution is not a reusable identity for other brands.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "insper-v2",
+      "title": "Insper V2 Modern",
+      "source_category": "Corporate & Education",
+      "source_description": "Insper reimaginado: imagens de fundo em todos os slides, tipografia garrafais ultra-bold, gráficos integrados, layouts assimétricos e editoriais.",
+      "family": "institutional",
+      "source_line": 61,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [
+        "#E31937"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#000000",
+        "#E31937"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow",
+        "roadmap"
+      ],
+      "keep": "Evidenced identity, original logos and measured master relationships.",
+      "adapt": "A named institution is not a reusable identity for other brands.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "insper-institucional",
+      "title": "Insper Institucional",
+      "source_category": "Corporate & Education",
+      "source_description": "12 composições Insper: capas de tópicos, fotos em tela cheia, títulos grandes e contraste entre branco, vermelho e grafite.",
+      "family": "institutional",
+      "source_line": 92,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "balanced",
+      "preview_hex_colors": [
+        "#171717",
+        "#000000",
+        "#E50505"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#3F3F3F",
+        "#171717",
+        "#E50505"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow",
+        "roadmap"
+      ],
+      "keep": "Evidenced identity, original logos and measured master relationships.",
+      "adapt": "A named institution is not a reusable identity for other brands.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "organic-pro",
+      "title": "Organic Designer (Pro)",
+      "source_category": "High-End",
+      "source_description": "New generation engine. Rigid bento grids with abstract organic clip-paths and professional stock photography constraints.",
+      "family": "organic",
+      "source_line": 119,
+      "source_rule_present": true,
+      "declared_type": false,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [
+        "#f8f9fa",
+        "#E2E8F0"
+      ],
+      "rule_hex_colors": [
+        "#f8f9fa"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "organic-modern",
+      "title": "Organic Modern",
+      "source_category": "High-End",
+      "source_description": "Fluid blobs, floating animations, earthy tones.",
+      "family": "organic",
+      "source_line": 144,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [
+        "#F3F0E7",
+        "#D4C5A5",
+        "#A3B18A",
+        "#2C3328"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#1F2937",
+        "#4ADE80",
+        "#D1FAE5"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "modern-saas",
+      "title": "Modern SaaS",
+      "source_category": "High-End",
+      "source_description": "Dark premium UI. Glass cards, neon lime accents, glows.",
+      "family": "technical",
+      "source_line": 160,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "balanced",
+      "preview_hex_colors": [
+        "#CBF400"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#CBF400"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "apple-keynote",
+      "title": "Apple Keynote",
+      "source_category": "High-End",
+      "source_description": "Pure minimalism. Extreme whitespace, single focus.",
+      "family": "minimal",
+      "source_line": 178,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "minimal",
+      "preview_hex_colors": [
+        "#1D1D1F",
+        "#0071E3"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#1D1D1F",
+        "#0071E3"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "linear-app",
+      "title": "Linear App",
+      "source_category": "High-End",
+      "source_description": "Sleek dark mode. Frosted glass, keyboard shortcuts.",
+      "family": "technical",
+      "source_line": 193,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#EDEDED",
+        "#5E6AD2"
+      ],
+      "rule_hex_colors": [
+        "#000000",
+        "#EDEDED",
+        "#5E6AD2"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "spotify-wrapped",
+      "title": "Spotify Wrapped",
+      "source_category": "High-End",
+      "source_description": "Vibrant gradients. Massive typography, storytelling.",
+      "family": "experimental",
+      "source_line": 213,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FF6B9D",
+        "#A855F7",
+        "#3B82F6"
+      ],
+      "rule_hex_colors": [
+        "#FF6B9D",
+        "#A855F7",
+        "#3B82F6"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "stripe-docs",
+      "title": "Stripe Docs",
+      "source_category": "High-End",
+      "source_description": "Technical but friendly. Clean hierarchy, code blocks.",
+      "family": "minimal",
+      "source_line": 227,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F6F9FC",
+        "#0A2540",
+        "#635BFF"
+      ],
+      "rule_hex_colors": [
+        "#F6F9FC",
+        "#425466",
+        "#0A2540",
+        "#635BFF",
+        "#E6EBF1"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "pet",
+      "title": "Pet Care",
+      "source_category": "Industry",
+      "source_description": "Soft beige, playful paw prints, friendly vibes.",
+      "family": "organic",
+      "source_line": 242,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FFF8E1",
+        "#F48FB1"
+      ],
+      "rule_hex_colors": [
+        "#FFF8E1",
+        "#F48FB1",
+        "#81D4FA"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Friendly illustrated motifs and a soft palette favor a human-scale direction."
+    },
+    {
+      "id": "architecture",
+      "title": "Architecture",
+      "source_category": "Industry",
+      "source_description": "Blueprint aesthetic. Precise lines, wide margins.",
+      "family": "technical",
+      "source_line": 255,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#1E3A8A",
+        "#9CA3AF"
+      ],
+      "rule_hex_colors": [
+        "#9CA3AF",
+        "#1E3A8A"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "wildlife",
+      "title": "Wildlife Safari",
+      "source_category": "Industry",
+      "source_description": "Earth tones, National Geographic aesthetic.",
+      "family": "photographic",
+      "source_line": 269,
+      "source_rule_present": false,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#2C1810",
+        "#E67E22",
+        "#F5F0E1"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "The description centers wildlife imagery and an editorial nature aesthetic."
+    },
+    {
+      "id": "halloween-playful",
+      "title": "Halloween Party",
+      "source_category": "Seasonal",
+      "source_description": "Spooky cute ghosts, pumpkins, deep purple & orange.",
+      "family": "experimental",
+      "source_line": 284,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#4C1D95",
+        "#FBBF24",
+        "#2E1065"
+      ],
+      "rule_hex_colors": [
+        "#4C1D95",
+        "#2E1065",
+        "#FBBF24",
+        "#84CC16",
+        "#A855F7",
+        "#FFFFFF",
+        "#E2E8F0",
+        "#5B21B6",
+        "#F59E0B"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "solarpunk",
+      "title": "Solarpunk",
+      "source_category": "Subculture",
+      "source_description": "Eco-futurism, lush greens, stained glass, optimism.",
+      "family": "experimental",
+      "source_line": 305,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#E8F5E9",
+        "#F0FDF4",
+        "#DBEAFE",
+        "#FDE047",
+        "#FCD34D",
+        "#059669",
+        "#10B981",
+        "#064E3B"
+      ],
+      "rule_hex_colors": [
+        "#E8F5E9",
+        "#F0FDF4",
+        "#DBEAFE",
+        "#FDE047",
+        "#FCD34D",
+        "#059669",
+        "#10B981",
+        "#064E3B",
+        "#F59E0B"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "dreamcore",
+      "title": "Dreamcore",
+      "source_category": "Subculture",
+      "source_description": "Liminal spaces, eyes, clouds, fuzzy nostalgia.",
+      "family": "experimental",
+      "source_line": 325,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#BAE6FD",
+        "#FCE7F3",
+        "#BFDBFE",
+        "#F9A8D4",
+        "#D8B4FE"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "steampunk",
+      "title": "Steampunk",
+      "source_category": "Subculture",
+      "source_description": "Brass, gears, Victorian aesthetics, parchment.",
+      "family": "experimental",
+      "source_line": 340,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#5D4037",
+        "#3E2723",
+        "#D7CCC8",
+        "#FFD700",
+        "#8D6E63"
+      ],
+      "rule_hex_colors": [
+        "#92400E",
+        "#78350F",
+        "#FEF3C7",
+        "#FFD700",
+        "#D7CCC8",
+        "#422006",
+        "#D4AF37",
+        "#CD7F32",
+        "#B87333",
+        "#F59E0B"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "weirdcore",
+      "title": "Weirdcore",
+      "source_category": "Subculture",
+      "source_description": "Internet trauma, low-res, amateur editing vibe.",
+      "family": "experimental",
+      "source_line": 358,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "brutal-deconstruct",
+      "title": "Deconstructed",
+      "source_category": "Subculture",
+      "source_description": "Broken grids, raw concrete, orange accents.",
+      "family": "experimental",
+      "source_line": 375,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "magazine-cutout",
+      "title": "Zine Punk",
+      "source_category": "Subculture",
+      "source_description": "Ransom note letters, torn paper, messy glue.",
+      "family": "editorial",
+      "source_line": 382,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "isometric-3d",
+      "title": "Isometric",
+      "source_category": "Subculture",
+      "source_description": "30-degree angles, floating blocks, clean tech.",
+      "family": "experimental",
+      "source_line": 389,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "low-poly",
+      "title": "Low Poly",
+      "source_category": "Subculture",
+      "source_description": "Faceted triangles, gradients, early 3D style.",
+      "family": "experimental",
+      "source_line": 396,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "frutiger-aero",
+      "title": "Frutiger Aero",
+      "source_category": "Hyper-Niche",
+      "source_description": "2000s Tech Utopia. Glossy bubbles, sky blue, nature tech.",
+      "family": "experimental",
+      "source_line": 405,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "anti-design",
+      "title": "Anti-Design",
+      "source_category": "Hyper-Niche",
+      "source_description": "Chaos, clashing colors, raw HTML, broken grids.",
+      "family": "experimental",
+      "source_line": 423,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "biopunk",
+      "title": "Biopunk",
+      "source_category": "Hyper-Niche",
+      "source_description": "Dark organic tech, glowing green veins, slime.",
+      "family": "experimental",
+      "source_line": 444,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#39FF14"
+      ],
+      "rule_hex_colors": [
+        "#39FF14"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "risograph",
+      "title": "Risograph",
+      "source_category": "Hyper-Niche",
+      "source_description": "Grainy print texture, misaligned fluorescent layers.",
+      "family": "experimental",
+      "source_line": 466,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#f0f0f0"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "thermal",
+      "title": "Thermal Vision",
+      "source_category": "Hyper-Niche",
+      "source_description": "Heatmap spectrum. Blue to Red to White.",
+      "family": "experimental",
+      "source_line": 473,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "8bit-rpg",
+      "title": "8-Bit RPG",
+      "source_category": "Hyper-Niche",
+      "source_description": "Pixel art style, blue dialogue boxes.",
+      "family": "experimental",
+      "source_line": 480,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#0000AA"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "ink-blot",
+      "title": "Rorschach",
+      "source_category": "Hyper-Niche",
+      "source_description": "Abstract black ink splatters on paper.",
+      "family": "experimental",
+      "source_line": 487,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "crystal",
+      "title": "Prism Crystal",
+      "source_category": "Hyper-Niche",
+      "source_description": "Sharp refraction, rainbow edges, clarity.",
+      "family": "experimental",
+      "source_line": 494,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "liquid-metal",
+      "title": "Liquid Metal",
+      "source_category": "Avant-Garde",
+      "source_description": "3D Chrome blobs, fluid shapes, silver gradients.",
+      "family": "experimental",
+      "source_line": 503,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "kinetic",
+      "title": "Kinetic",
+      "source_category": "Avant-Garde",
+      "source_description": "Massive typography, repetition, high energy.",
+      "family": "experimental",
+      "source_line": 520,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#EAB308",
+        "#000000"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "aura",
+      "title": "Aura",
+      "source_category": "Avant-Garde",
+      "source_description": "Blurry spiritual gradients, soft pastels.",
+      "family": "experimental",
+      "source_line": 536,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FAF5FF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "holographic",
+      "title": "Holo Void",
+      "source_category": "Avant-Garde",
+      "source_description": "Dark mode with iridescent oil-slick gradients.",
+      "family": "experimental",
+      "source_line": 554,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#101010"
+      ],
+      "rule_hex_colors": [
+        "#0a0a0a"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "collage",
+      "title": "Collage Punk",
+      "source_category": "Experimental",
+      "source_description": "Torn paper, mixed media, messy aesthetic.",
+      "family": "experimental",
+      "source_line": 561,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#E5E5E5"
+      ],
+      "rule_hex_colors": [
+        "#E5E5E5"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "surreal",
+      "title": "Surrealism",
+      "source_category": "Experimental",
+      "source_description": "Dreamlike, illogical, floating elements.",
+      "family": "experimental",
+      "source_line": 568,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#1e1b4b",
+        "#fdf4ff"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "acid-graphix",
+      "title": "Acid Graphix",
+      "source_category": "Experimental",
+      "source_description": "Y2K rave, distorted grids, chrome tribal.",
+      "family": "experimental",
+      "source_line": 575,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#ccff00"
+      ],
+      "rule_hex_colors": [
+        "#ccff00"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "ascii",
+      "title": "ASCII Art",
+      "source_category": "Experimental",
+      "source_description": "Visuals created entirely from text characters.",
+      "family": "experimental",
+      "source_line": 582,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "default",
+      "title": "Neo-Tech",
+      "source_category": "Original",
+      "source_description": "High contrast, neon lime accents, black backgrounds.",
+      "family": "technical",
+      "source_line": 594,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#0F0F0F",
+        "#DDDDDD",
+        "#CBF400"
+      ],
+      "rule_hex_colors": [
+        "#0F0F0F",
+        "#DDDDDD",
+        "#CBF400"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Neon lime on black belongs to the source technical stage, not a data requirement."
+    },
+    {
+      "id": "timeline",
+      "title": "Timeline Journey",
+      "source_category": "Business",
+      "source_description": "Step-by-step progress, journey mapping.",
+      "family": "analytical",
+      "source_line": 601,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#2563EB"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "risk",
+      "title": "Risk Assessment",
+      "source_category": "Business",
+      "source_description": "Heatmaps, alert states, security focus.",
+      "family": "analytical",
+      "source_line": 608,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#DC2626",
+        "#F59E0B",
+        "#16A34A"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "cyberpunk",
+      "title": "Cyberpunk",
+      "source_category": "Tech",
+      "source_description": "Neon pinks, blues, glitches, and dark alleys.",
+      "family": "technical",
+      "source_line": 617,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#050505",
+        "#FF0055",
+        "#06B6D4",
+        "#22D3EE",
+        "#00E5FF",
+        "#F0F0F0"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "synthwave",
+      "title": "Synthwave",
+      "source_category": "Retro",
+      "source_description": "80s sunsets, grids, and purple gradients.",
+      "family": "experimental",
+      "source_line": 642,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#1A0B2E",
+        "#E0E0E0",
+        "#FF00FF",
+        "#FFD300"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "terminal",
+      "title": "Hacker Terminal",
+      "source_category": "Tech",
+      "source_description": "Matrix green text on black. Monospace only.",
+      "family": "technical",
+      "source_line": 649,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#00FF00"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "blueprint",
+      "title": "Blueprint",
+      "source_category": "Engineering",
+      "source_description": "Technical blue grid with white lines.",
+      "family": "technical",
+      "source_line": 656,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#1e40af",
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "crypto",
+      "title": "Blockchain",
+      "source_category": "Finance",
+      "source_description": "Dark mode, gold accents, interconnected nodes.",
+      "family": "analytical",
+      "source_line": 663,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#111827",
+        "#F9FAFB",
+        "#F59E0B"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "ai-lab",
+      "title": "AI Laboratory",
+      "source_category": "Tech",
+      "source_description": "Clean white, scientific dots, indigo accents.",
+      "family": "technical",
+      "source_line": 670,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#1F2937",
+        "#6366F1"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "glitch",
+      "title": "System Error",
+      "source_category": "Art",
+      "source_description": "Distorted text, noise, red/blue color shift.",
+      "family": "experimental",
+      "source_line": 677,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "consulting",
+      "title": "MBB Consulting",
+      "source_category": "Business",
+      "source_description": "Dense, structured, chart-heavy, clean.",
+      "family": "analytical",
+      "source_line": 686,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#0F172A",
+        "#0F766E"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "finance",
+      "title": "Wall Street",
+      "source_category": "Business",
+      "source_description": "Trustworthy greens, serif fonts, data tables.",
+      "family": "analytical",
+      "source_line": 693,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#F8FAFC",
+        "#0F172A",
+        "#15803D"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "legal",
+      "title": "Legal Firm",
+      "source_category": "Business",
+      "source_description": "Solemn black and silver, serif typography.",
+      "family": "institutional",
+      "source_line": 700,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#1C1917",
+        "#F5F5F4",
+        "#D4D4D8"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow",
+        "roadmap"
+      ],
+      "keep": "Evidenced identity, original logos and measured master relationships.",
+      "adapt": "A named institution is not a reusable identity for other brands.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Formal serif hierarchy and sober identity should govern adaptation."
+    },
+    {
+      "id": "medical",
+      "title": "Healthcare",
+      "source_category": "Science",
+      "source_description": "Sterile blues, white, rounded and safe.",
+      "family": "technical",
+      "source_line": 707,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#F0F9FF",
+        "#0C4A6E",
+        "#0EA5E9"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "lux-brand",
+      "title": "Luxury Brand",
+      "source_category": "Business",
+      "source_description": "Minimalist black & white, centered, elegant.",
+      "family": "minimal",
+      "source_line": 714,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Centered black-and-white restraint is more specific than its business category."
+    },
+    {
+      "id": "real-estate",
+      "title": "Real Estate",
+      "source_category": "Business",
+      "source_description": "Gold accents on dark, full bleed images.",
+      "family": "photographic",
+      "source_line": 721,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#18181B",
+        "#FAFAFA",
+        "#C0A062"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "bauhaus",
+      "title": "Bauhaus",
+      "source_category": "Art",
+      "source_description": "Geometric shapes, primary colors (Red/Blue/Yellow).",
+      "family": "experimental",
+      "source_line": 730,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F1F0E6"
+      ],
+      "rule_hex_colors": [
+        "#F1F0E6",
+        "#CC0000",
+        "#1E44AA",
+        "#F2C300"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "brutalist",
+      "title": "Neo-Brutalism",
+      "source_category": "Art",
+      "source_description": "Raw, thick borders, hard shadows, bold.",
+      "family": "experimental",
+      "source_line": 737,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#E0E7FF",
+        "#000000",
+        "#4F46E5"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "pop-art",
+      "title": "Pop Art",
+      "source_category": "Art",
+      "source_description": "Comic dots, vibrant outlines, speech bubbles.",
+      "family": "experimental",
+      "source_line": 744,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "swiss",
+      "title": "Swiss Style",
+      "source_category": "Design",
+      "source_description": "Strict grids, Helvetica, asymmetrical, red accent.",
+      "family": "minimal",
+      "source_line": 751,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#000000",
+        "#EF4444"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "pastel",
+      "title": "Pastel Dream",
+      "source_category": "Design",
+      "source_description": "Soft pinks, mints, friendly and approachable.",
+      "family": "experimental",
+      "source_line": 758,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FDF2F8",
+        "#831843"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "paper-craft",
+      "title": "Paper Cutout",
+      "source_category": "Art",
+      "source_description": "Layers of colored paper with deep shadows.",
+      "family": "experimental",
+      "source_line": 765,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#374151",
+        "#60A5FA",
+        "#34D399"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "fashion",
+      "title": "Runway",
+      "source_category": "Lifestyle",
+      "source_description": "Edgy, bold typography over images, pink accents.",
+      "family": "photographic",
+      "source_line": 783,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#E7E5E4",
+        "#000000",
+        "#EC4899"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "travel",
+      "title": "Wanderlust",
+      "source_category": "Lifestyle",
+      "source_description": "Warm tones, map textures, adventurous.",
+      "family": "photographic",
+      "source_line": 790,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#ECFEFF",
+        "#164E63",
+        "#F59E0B"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "foodie",
+      "title": "Culinary",
+      "source_category": "Lifestyle",
+      "source_description": "Appetizing warm oranges and clean layout.",
+      "family": "photographic",
+      "source_line": 797,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFF7ED",
+        "#7C2D12",
+        "#EA580C"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "sports",
+      "title": "Athletics",
+      "source_category": "Lifestyle",
+      "source_description": "Italicized bold fonts, red/black high energy.",
+      "family": "photographic",
+      "source_line": 804,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#171717",
+        "#FFFFFF",
+        "#EF4444"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "gaming",
+      "title": "E-Sports",
+      "source_category": "Tech",
+      "source_description": "Purple/black gamer aesthetic with RGB vibes.",
+      "family": "technical",
+      "source_line": 811,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#8B5CF6"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "cinema",
+      "title": "Cinema",
+      "source_category": "Art",
+      "source_description": "Letterbox format, dramatic lighting.",
+      "family": "photographic",
+      "source_line": 818,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#E5E5E5",
+        "#B91C1C"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Dramatic lighting and letterbox imagery favor a photographic stage."
+    },
+    {
+      "id": "neumorphism",
+      "title": "Neumorphism",
+      "source_category": "UI",
+      "source_description": "Soft extruded shapes, low contrast.",
+      "family": "experimental",
+      "source_line": 827,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#bebebe",
+        "#ffffff"
+      ],
+      "rule_hex_colors": [
+        "#E0E5EC",
+        "#4A5568"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "claymorphism",
+      "title": "Claymorphism",
+      "source_category": "UI",
+      "source_description": "3D floating white cards, fluffy and friendly.",
+      "family": "experimental",
+      "source_line": 834,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#EEF2FF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "gradient-mesh",
+      "title": "Aurora",
+      "source_category": "UI",
+      "source_description": "Blurry, ethereal multicolor gradients.",
+      "family": "experimental",
+      "source_line": 841,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "duotone",
+      "title": "Duotone",
+      "source_category": "Art",
+      "source_description": "High contrast two-color palette (Blue/Pink).",
+      "family": "experimental",
+      "source_line": 858,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#1e3a8a",
+        "#fca5a5"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "retro-70s",
+      "title": "70s Disco",
+      "source_category": "Retro",
+      "source_description": "Groovy fonts, orange/brown/yellow palette.",
+      "family": "experimental",
+      "source_line": 867,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#3E1F47",
+        "#FCD34D"
+      ],
+      "rule_hex_colors": [
+        "#3E1F47",
+        "#FCD34D"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "vintage-50s",
+      "title": "50s Diner",
+      "source_category": "Retro",
+      "source_description": "Baby blue, cherry red, chrome and checkers.",
+      "family": "experimental",
+      "source_line": 874,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#bfdbfe",
+        "#B91C1C"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "grunge-90s",
+      "title": "90s Grunge",
+      "source_category": "Retro",
+      "source_description": "Dirty textures, dark grey, muted flannel colors.",
+      "family": "experimental",
+      "source_line": 881,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#262626"
+      ],
+      "rule_hex_colors": [
+        "#262626",
+        "#D4D4D4"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "y2k",
+      "title": "Y2K",
+      "source_category": "Retro",
+      "source_description": "Chrome, pinks, holographic, futuristic bubbly.",
+      "family": "experimental",
+      "source_line": 888,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#EC4899"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "fire",
+      "title": "Inferno",
+      "source_category": "Nature",
+      "source_description": "Black background, intense glowing fire gradients.",
+      "family": "experimental",
+      "source_line": 897,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#FDBA74",
+        "#DC2626"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "An intense glowing fire effect is expressive rather than a human-scale organic rule."
+    },
+    {
+      "id": "ice",
+      "title": "Frozen",
+      "source_category": "Nature",
+      "source_description": "Sharp, cold blues, white, frosted glass.",
+      "family": "experimental",
+      "source_line": 917,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#F0F9FF",
+        "#0C4A6E",
+        "#38BDF8"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Sharp frosted effects are an expressive surface, not organic by default."
+    },
+    {
+      "id": "forest",
+      "title": "Deep Woods",
+      "source_category": "Nature",
+      "source_description": "Dark greens, peaceful and organic.",
+      "family": "organic",
+      "source_line": 924,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#022C22",
+        "#D1FAE5",
+        "#10B981"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "sunset",
+      "title": "Vapor Sunset",
+      "source_category": "Nature",
+      "source_description": "Purple to orange gradients, relaxing.",
+      "family": "organic",
+      "source_line": 931,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "midnight",
+      "title": "Midnight",
+      "source_category": "Minimal",
+      "source_description": "Black on dark gray. Extremely stealthy.",
+      "family": "minimal",
+      "source_line": 950,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#09090B",
+        "#71717A",
+        "#27272A"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "startup",
+      "title": "Pitch Deck",
+      "source_category": "Business",
+      "source_description": "Modern gradients, bold typography, clean white.",
+      "family": "analytical",
+      "source_line": 959,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#111827"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "glass",
+      "title": "Glassmorphism",
+      "source_category": "Futuristic",
+      "source_description": "Frosted glass, deep depth, modern UI.",
+      "family": "experimental",
+      "source_line": 973,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "editorial",
+      "title": "Editorial",
+      "source_category": "Minimalist",
+      "source_description": "Serif fonts, warm paper tones, classic.",
+      "family": "editorial",
+      "source_line": 987,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FDFBF7",
+        "#1C1917"
+      ],
+      "rule_hex_colors": [
+        "#FDFBF7",
+        "#1C1917"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "modules",
+      "title": "Grid System",
+      "source_category": "Strategy",
+      "source_description": "Structured layouts, blueprints, blue accents.",
+      "family": "analytical",
+      "source_line": 999,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#F8FAFC",
+        "#1E293B",
+        "#2563EB"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "space",
+      "title": "Cosmic",
+      "source_category": "Futuristic",
+      "source_description": "Deep space blacks, starlight, violet nebulae.",
+      "family": "experimental",
+      "source_line": 1014,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#0B0B15"
+      ],
+      "rule_hex_colors": [
+        "#0B0B15",
+        "#F8FAFC",
+        "#8B5CF6"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "noir",
+      "title": "Noir",
+      "source_category": "Minimalist",
+      "source_description": "Strict black & white, high contrast, cinematic.",
+      "family": "editorial",
+      "source_line": 1028,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "minimal",
+      "title": "Swiss Minimalist",
+      "source_category": "Minimalist",
+      "source_description": "Huge typography, grid alignment, no decoration.",
+      "family": "minimal",
+      "source_line": 1043,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F3F3F3",
+        "#111111"
+      ],
+      "rule_hex_colors": [
+        "#F3F3F3",
+        "#111111"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "The source explicitly calls for large type and no decoration."
+    },
+    {
+      "id": "creative",
+      "title": "Art & Design",
+      "source_category": "Creative",
+      "source_description": "Overlapping elements, circular images, rose accents.",
+      "family": "experimental",
+      "source_line": 1054,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FFF1F2",
+        "#F43F5E",
+        "#881337"
+      ],
+      "rule_hex_colors": [
+        "#FFF1F2",
+        "#881337",
+        "#F43F5E"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "nature",
+      "title": "Eco",
+      "source_category": "Nature",
+      "source_description": "Organic curves, soft borders, green harmony.",
+      "family": "organic",
+      "source_line": 1066,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [
+        "#F0FDF4",
+        "#064E3B"
+      ],
+      "rule_hex_colors": [
+        "#F0FDF4",
+        "#064E3B",
+        "#16A34A"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "strategic",
+      "title": "Strategic Business",
+      "source_category": "Business",
+      "source_description": "Angular overlays, bold typography, consulting aesthetic.",
+      "family": "analytical",
+      "source_line": 1078,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#5D546B"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#F9FAFB",
+        "#000000",
+        "#5D546B"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "innovation-split",
+      "title": "Innovation Showcase",
+      "source_category": "Business",
+      "source_description": "Split color design, modern lowercase typography.",
+      "family": "analytical",
+      "source_line": 1090,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#3B4E87",
+        "#E8968F"
+      ],
+      "rule_hex_colors": [
+        "#3B4E87",
+        "#E8968F"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "title",
+      "title": "Title Slide",
+      "source_category": "Original",
+      "source_description": "Maximum font size, centered, dramatic.",
+      "family": "editorial",
+      "source_line": 1108,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Dramatic type scale is the primary visual argument."
+    },
+    {
+      "id": "pipeline",
+      "title": "Roadmap",
+      "source_category": "Strategy",
+      "source_description": "Horizontal flows, connecting lines, purple accents.",
+      "family": "analytical",
+      "source_line": 1119,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#0F172A",
+        "#A855F7"
+      ],
+      "rule_hex_colors": [
+        "#0F172A",
+        "#E2E8F0",
+        "#A855F7"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "ocean",
+      "title": "Deep Ocean",
+      "source_category": "Nature",
+      "source_description": "Fluid shapes, teal accents, underwater gradients.",
+      "family": "organic",
+      "source_line": 1132,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "rainforest",
+      "title": "Jungle",
+      "source_category": "Nature",
+      "source_description": "Lush gradients, glass overlays, tropical vibes.",
+      "family": "organic",
+      "source_line": 1144,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#064E3B",
+        "#ECFDF5"
+      ],
+      "rule_hex_colors": [
+        "#064E3B",
+        "#ECFDF5",
+        "#34D399"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "dark",
+      "title": "Dark Mode",
+      "source_category": "Minimalist",
+      "source_description": "Modern dark interface, zinc colors, professional.",
+      "family": "minimal",
+      "source_line": 1156,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#18181B",
+        "#F4F4F5",
+        "#71717A"
+      ],
+      "rule_hex_colors": [
+        "#18181B",
+        "#F4F4F5",
+        "#71717A"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Restrained zinc surfaces do not themselves imply editorial storytelling."
+    },
+    {
+      "id": "wireframe",
+      "title": "UX Wireframe",
+      "source_category": "Design",
+      "source_description": "Dashed borders, X placeholders, rough sketch feel.",
+      "family": "technical",
+      "source_line": 1168,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#E5E5E5",
+        "#525252"
+      ],
+      "rule_hex_colors": [
+        "#E5E5E5",
+        "#525252",
+        "#3B82F6"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "engineering",
+      "title": "Industrial",
+      "source_category": "Industry",
+      "source_description": "Bold blocky fonts, warning stripes, sturdy layouts.",
+      "family": "technical",
+      "source_line": 1181,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FFEDD5",
+        "#431407",
+        "#F97316"
+      ],
+      "rule_hex_colors": [
+        "#FFEDD5",
+        "#431407",
+        "#F97316"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "academic",
+      "title": "University",
+      "source_category": "Education",
+      "source_description": "Traditional layout, crests, formal structure.",
+      "family": "institutional",
+      "source_line": 1193,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FEFCE8",
+        "#854D0E",
+        "#422006"
+      ],
+      "rule_hex_colors": [
+        "#FEFCE8",
+        "#422006",
+        "#854D0E"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow",
+        "roadmap"
+      ],
+      "keep": "Evidenced identity, original logos and measured master relationships.",
+      "adapt": "A named institution is not a reusable identity for other brands.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Formal structure and crests need identity-preserving institutional treatment."
+    },
+    {
+      "id": "watercolor",
+      "title": "Watercolor",
+      "source_category": "Artistic",
+      "source_description": "Soft edges, artistic splashes, fluid layout.",
+      "family": "experimental",
+      "source_line": 1204,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FAF5FF"
+      ],
+      "rule_hex_colors": [
+        "#FAF5FF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "sketch",
+      "title": "Hand Drawn",
+      "source_category": "Artistic",
+      "source_description": "Handwritten font, wiggly borders, pencil texture.",
+      "family": "experimental",
+      "source_line": 1216,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#374151"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#374151"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "music",
+      "title": "Album Cover",
+      "source_category": "Entertainment",
+      "source_description": "Grunge textures, experimental typography, vinyl elements.",
+      "family": "experimental",
+      "source_line": 1227,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#F0F0F0"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "monochrome-red",
+      "title": "Red Mono",
+      "source_category": "Monochrome",
+      "source_description": "Intense, alert, singular red hue palette.",
+      "family": "minimal",
+      "source_line": 1239,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#450A0A",
+        "#EF4444"
+      ],
+      "rule_hex_colors": [
+        "#450A0A",
+        "#FECACA",
+        "#EF4444"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "monochrome-blue",
+      "title": "Blue Mono",
+      "source_category": "Monochrome",
+      "source_description": "Corporate, calm, singular blue hue palette.",
+      "family": "minimal",
+      "source_line": 1250,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#172554",
+        "#3B82F6"
+      ],
+      "rule_hex_colors": [
+        "#172554",
+        "#DBEAFE",
+        "#3B82F6"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "desert",
+      "title": "Dune",
+      "source_category": "Nature",
+      "source_description": "Grainy texture, heat haze, organic flow.",
+      "family": "organic",
+      "source_line": 1261,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#78350F",
+        "#FEF3C7"
+      ],
+      "rule_hex_colors": [
+        "#78350F",
+        "#FEF3C7"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "vercel-edge",
+      "title": "Vercel Edge",
+      "source_category": "High-End",
+      "source_description": "Geometric patterns, gradient borders, terminal code.",
+      "family": "minimal",
+      "source_line": 1283,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "airbnb-story",
+      "title": "Airbnb Experience",
+      "source_category": "High-End",
+      "source_description": "Full-bleed photos, rounded cards, heart icons.",
+      "family": "photographic",
+      "source_line": 1297,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FF385C"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#222222",
+        "#FF385C"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Full-bleed photography is the dominant source relationship."
+    },
+    {
+      "id": "tesla-future",
+      "title": "Tesla Energy",
+      "source_category": "Tech",
+      "source_description": "Technical specs, battery indicators, futuristic.",
+      "family": "technical",
+      "source_line": 1312,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#E82127"
+      ],
+      "rule_hex_colors": [
+        "#000000",
+        "#FFFFFF",
+        "#E82127"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "arc-browser",
+      "title": "Arc Browser",
+      "source_category": "High-End",
+      "source_description": "Iridescent surfaces, glass panels, rainbow accents.",
+      "family": "experimental",
+      "source_line": 1324,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "balanced",
+      "preview_hex_colors": [
+        "#2D1B4E",
+        "#1A1B3D"
+      ],
+      "rule_hex_colors": [
+        "#2D1B4E",
+        "#1A1B3D",
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "superhuman-email",
+      "title": "Superhuman",
+      "source_category": "Productivity",
+      "source_description": "Keyboard shortcuts, command palette, inbox-zero.",
+      "family": "minimal",
+      "source_line": 1337,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FAFAFA",
+        "#5865F2",
+        "#2E2E2E"
+      ],
+      "rule_hex_colors": [
+        "#FAFAFA",
+        "#2E2E2E",
+        "#5865F2"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "raycast-cmd",
+      "title": "Raycast",
+      "source_category": "Productivity",
+      "source_description": "Search bars, action lists, gradient accents.",
+      "family": "minimal",
+      "source_line": 1349,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#1A1A1A",
+        "#FF6363",
+        "#FFBD2E"
+      ],
+      "rule_hex_colors": [
+        "#1A1A1A",
+        "#FFFFFF",
+        "#FF6363",
+        "#FFBD2E"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "notion-clean",
+      "title": "Notion Clean",
+      "source_category": "Productivity",
+      "source_description": "Serif headers, emoji anchors, callout boxes.",
+      "family": "minimal",
+      "source_line": 1360,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#37352F",
+        "#2EAADC"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#37352F",
+        "#2EAADC"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "toy-bricks",
+      "title": "Toy Bricks",
+      "source_category": "Playful",
+      "source_description": "Lego-inspired, blocky shapes, primary colors.",
+      "family": "experimental",
+      "source_line": 1373,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#EF4444",
+        "#3B82F6",
+        "#F59E0B",
+        "#10B981"
+      ],
+      "rule_hex_colors": [
+        "#EF4444",
+        "#3B82F6",
+        "#F59E0B",
+        "#10B981"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "urban",
+      "title": "Urban City",
+      "source_category": "Modern",
+      "source_description": "Gritty textures, street photography, industrial typography.",
+      "family": "photographic",
+      "source_line": 1387,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#374151",
+        "#991B1B"
+      ],
+      "rule_hex_colors": [
+        "#374151",
+        "#991B1B"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Street photography and texture carry the visual argument."
+    },
+    {
+      "id": "communication",
+      "title": "Global Communication",
+      "source_category": "Business",
+      "source_description": "Network diagrams, speech bubbles, connecting lines.",
+      "family": "analytical",
+      "source_line": 1399,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#2563EB",
+        "#F97316"
+      ],
+      "rule_hex_colors": [
+        "#2563EB",
+        "#F97316"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "cartoon",
+      "title": "Cartoon",
+      "source_category": "Playful",
+      "source_description": "Thick black outlines, vibrant colors, pop-art energy.",
+      "family": "experimental",
+      "source_line": 1412,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "culinary-dark",
+      "title": "Fine Dining",
+      "source_category": "Food",
+      "source_description": "Moody aesthetic, gold accents, dark luxury.",
+      "family": "photographic",
+      "source_line": 1423,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [
+        "#1F2937",
+        "#D4AF37"
+      ],
+      "rule_hex_colors": [
+        "#1F2937",
+        "#D4AF37"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "streetwear",
+      "title": "Streetwear",
+      "source_category": "Fashion",
+      "source_description": "Massive typography, brutalist, hypebeast aesthetic.",
+      "family": "photographic",
+      "source_line": 1435,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "film-noir",
+      "title": "Classic Cinema",
+      "source_category": "Entertainment",
+      "source_description": "Film grain, dramatic lighting, letterbox bars.",
+      "family": "photographic",
+      "source_line": 1448,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Film grain and dramatic lighting depend on the image treatment."
+    },
+    {
+      "id": "retro-console",
+      "title": "Retro Gaming",
+      "source_category": "Entertainment",
+      "source_description": "16-bit aesthetic, pixel fonts, scanlines.",
+      "family": "experimental",
+      "source_line": 1463,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "strategy-board",
+      "title": "Strategic Planning",
+      "source_category": "Business",
+      "source_description": "Clean squares, arrows, master plan layout.",
+      "family": "analytical",
+      "source_line": 1474,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "tech-saas",
+      "title": "Tech SaaS",
+      "source_category": "Business",
+      "source_description": "Clean dashboard UI, rounded buttons, Stripe-like.",
+      "family": "analytical",
+      "source_line": 1487,
+      "source_rule_present": false,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#6366F1"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "photo-portfolio",
+      "title": "Photo Portfolio",
+      "source_category": "Creative",
+      "source_description": "Full-bleed photography, massive typography.",
+      "family": "photographic",
+      "source_line": 1502,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [
+        "#8B2346"
+      ],
+      "rule_hex_colors": [
+        "#8B2346",
+        "#1A1A1A",
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "travel-adventure",
+      "title": "Travel Adventure",
+      "source_category": "Lifestyle",
+      "source_description": "Full-bleed destination photos, wanderlust.",
+      "family": "photographic",
+      "source_line": 1514,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "fashion-editorial",
+      "title": "Fashion Editorial",
+      "source_category": "Fashion",
+      "source_description": "Split layout, bold red text, yellow accents.",
+      "family": "editorial",
+      "source_line": 1526,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": "always",
+      "preview_hex_colors": [
+        "#FFC107",
+        "#E53935"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#E53935",
+        "#FFC107"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "creative-vibrant",
+      "title": "Creative Vibrant",
+      "source_category": "Creative",
+      "source_description": "Teal/white split, pink accents, organic divider.",
+      "family": "experimental",
+      "source_line": 1551,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#14B8A6",
+        "#EC4899"
+      ],
+      "rule_hex_colors": [
+        "#14B8A6",
+        "#FFFFFF",
+        "#1A1A1A",
+        "#EC4899"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "sunset-waves",
+      "title": "Sunset Ocean",
+      "source_category": "Nature",
+      "source_description": "Serene sunset, wavy divider, purple accents.",
+      "family": "organic",
+      "source_line": 1565,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#1A1A1A",
+        "#8B5CF6"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "dashboard-analytics",
+      "title": "Dashboard Analytics",
+      "source_category": "Data",
+      "source_description": "Modern data dashboard with KPI cards.",
+      "family": "analytical",
+      "source_line": 1578,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#0F172A",
+        "#1E293B"
+      ],
+      "rule_hex_colors": [
+        "#0F172A",
+        "#38BDF8",
+        "#4ADE80"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "financial-report",
+      "title": "Financial Report",
+      "source_category": "Data",
+      "source_description": "Professional financial presentation.",
+      "family": "analytical",
+      "source_line": 1606,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#002B49",
+        "#C5A059"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "data-visualization",
+      "title": "Data Viz",
+      "source_category": "Data",
+      "source_description": "Clean data visualization focus.",
+      "family": "analytical",
+      "source_line": 1635,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#111827"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "metrics-board",
+      "title": "Metrics Board",
+      "source_category": "Data",
+      "source_description": "KPI tracking dashboard.",
+      "family": "analytical",
+      "source_line": 1653,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#111827"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "stock-market",
+      "title": "Stock Market",
+      "source_category": "Data",
+      "source_description": "Trading & market analysis.",
+      "family": "analytical",
+      "source_line": 1675,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#EF4444",
+        "#22C55E"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "infographic-data",
+      "title": "Infographic",
+      "source_category": "Data",
+      "source_description": "Visual data storytelling.",
+      "family": "analytical",
+      "source_line": 1705,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "magazine-layout",
+      "title": "Magazine Layout",
+      "source_category": "Editorial",
+      "source_description": "Editorial magazine spread.",
+      "family": "editorial",
+      "source_line": 1738,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#F9F6F1"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "newsletter",
+      "title": "Newsletter",
+      "source_category": "Editorial",
+      "source_description": "Clean newsletter design.",
+      "family": "editorial",
+      "source_line": 1767,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FAFAFA"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "article-page",
+      "title": "Article Page",
+      "source_category": "Editorial",
+      "source_description": "Long-form content layout.",
+      "family": "editorial",
+      "source_line": 1786,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "publishing-house",
+      "title": "Publishing",
+      "source_category": "Editorial",
+      "source_description": "Book publisher style.",
+      "family": "editorial",
+      "source_line": 1807,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#2C1810",
+        "#D4AF37",
+        "#F5F0E1"
+      ],
+      "rule_hex_colors": [
+        "#4C1D95"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "floor-plan",
+      "title": "Floor Plan",
+      "source_category": "Architecture",
+      "source_description": "Architectural floor plans.",
+      "family": "technical",
+      "source_line": 1824,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "urban-planning",
+      "title": "Urban Planning",
+      "source_category": "Architecture",
+      "source_description": "City planning layouts.",
+      "family": "technical",
+      "source_line": 1852,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#0A3D2C"
+      ],
+      "rule_hex_colors": [
+        "#10B981"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "3d-render",
+      "title": "3D Render",
+      "source_category": "Architecture",
+      "source_description": "Modern 3D architectural render.",
+      "family": "technical",
+      "source_line": 1877,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "geographic-map",
+      "title": "Geographic Map",
+      "source_category": "Map",
+      "source_description": "Location-based visualization.",
+      "family": "technical",
+      "source_line": 1894,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#E8F4F8"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "journey-map",
+      "title": "Journey Map",
+      "source_category": "Map",
+      "source_description": "User journey visualization.",
+      "family": "technical",
+      "source_line": 1923,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "location-pin",
+      "title": "Location Pin",
+      "source_category": "Map",
+      "source_description": "Location marker design.",
+      "family": "technical",
+      "source_line": 1941,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "pitch-deck-modern",
+      "title": "Pitch Deck Pro",
+      "source_category": "Business",
+      "source_description": "Modern startup pitch.",
+      "family": "analytical",
+      "source_line": 1957,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "executive-summary",
+      "title": "Executive Summary",
+      "source_category": "Business",
+      "source_description": "C-level presentation.",
+      "family": "analytical",
+      "source_line": 1984,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "business-plan",
+      "title": "Business Plan",
+      "source_category": "Business",
+      "source_description": "Comprehensive business plan.",
+      "family": "analytical",
+      "source_line": 2008,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "runway",
+      "title": "Runway",
+      "source_category": "Fashion",
+      "source_description": "Fashion show aesthetic.",
+      "family": "photographic",
+      "source_line": 2035,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "lookbook",
+      "title": "Lookbook",
+      "source_category": "Fashion",
+      "source_description": "Fashion catalog style.",
+      "family": "photographic",
+      "source_line": 2047,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F5F5F0"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "fashion-week",
+      "title": "Fashion Week",
+      "source_category": "Fashion",
+      "source_description": "High fashion event.",
+      "family": "photographic",
+      "source_line": 2081,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "beauty-product",
+      "title": "Beauty Product",
+      "source_category": "Beauty",
+      "source_description": "Cosmetics showcase.",
+      "family": "organic",
+      "source_line": 2108,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFEDD5"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "cosmetics",
+      "title": "Cosmetics",
+      "source_category": "Beauty",
+      "source_description": "Beauty brand aesthetic.",
+      "family": "organic",
+      "source_line": 2132,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "spa-wellness",
+      "title": "Spa & Wellness",
+      "source_category": "Beauty",
+      "source_description": "Calm spa atmosphere.",
+      "family": "organic",
+      "source_line": 2149,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "ultra-minimal",
+      "title": "Ultra Minimal",
+      "source_category": "Minimal",
+      "source_description": "Extreme simplicity.",
+      "family": "minimal",
+      "source_line": 2167,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "japanese-minimalism",
+      "title": "Japanese Zen",
+      "source_category": "Minimal",
+      "source_description": "Wabi-sabi aesthetic.",
+      "family": "minimal",
+      "source_line": 2178,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F8F6F0"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "scandinavian",
+      "title": "Scandinavian",
+      "source_category": "Minimal",
+      "source_description": "Nordic simplicity.",
+      "family": "minimal",
+      "source_line": 2191,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#FAFAFA",
+        "#E8DED2"
+      ],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Nordic simplicity prioritizes restraint and measured space."
+    },
+    {
+      "id": "monochrome-elegant",
+      "title": "Monochrome Elegant",
+      "source_category": "Minimal",
+      "source_description": "Black & white sophistication.",
+      "family": "minimal",
+      "source_line": 2207,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "health-nutrition",
+      "title": "Health & Nutrition",
+      "source_category": "Health",
+      "source_description": "Fresh green theme for health and nutrition content.",
+      "family": "organic",
+      "source_line": 2220,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#22C55E"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "education-modern",
+      "title": "Education Modern",
+      "source_category": "Education",
+      "source_description": "Vibrant orange and teal for education presentations.",
+      "family": "technical",
+      "source_line": 2247,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "research-proposal",
+      "title": "Research Proposal",
+      "source_category": "Academic",
+      "source_description": "Modern academic layout with professional imagery.",
+      "family": "technical",
+      "source_line": 2269,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F5F7FA",
+        "#0066FF"
+      ],
+      "rule_hex_colors": [
+        "#F5F7FA",
+        "#0066FF",
+        "#1F2937",
+        "#6B7280"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "corporate-teal",
+      "title": "Corporate Teal",
+      "source_category": "Business",
+      "source_description": "Modern teal corporate presentation style.",
+      "family": "analytical",
+      "source_line": 2298,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#0D9488"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "lifestyle-pink",
+      "title": "Lifestyle Pink",
+      "source_category": "Lifestyle",
+      "source_description": "Vibrant pink for fashion and lifestyle brands.",
+      "family": "photographic",
+      "source_line": 2323,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#D946EF"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "corporate-blue-light",
+      "title": "Corporate Blue Light",
+      "source_category": "Business",
+      "source_description": "Clean light blue corporate design.",
+      "family": "analytical",
+      "source_line": 2343,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#EFF6FF"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "luxury-gold-black",
+      "title": "Luxury Gold & Black",
+      "source_category": "Fashion",
+      "source_description": "Elegant black background with gold accents for luxury brands.",
+      "family": "photographic",
+      "source_line": 2359,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "infographic-modern",
+      "title": "Infographic Modern",
+      "source_category": "Data",
+      "source_description": "Clean infographic layout with charts and data visualization.",
+      "family": "analytical",
+      "source_line": 2380,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "stacked-share",
+        "scatter",
+        "comparison-table",
+        "risk-matrix"
+      ],
+      "keep": "Alignment, clear evidence hierarchy and consistent scales.",
+      "adapt": "Avoid tiny dashboard labels and decorative mini charts.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "portfolio-device",
+      "title": "Portfolio Device Mockup",
+      "source_category": "Portfolio",
+      "source_description": "Professional portfolio with device mockups.",
+      "family": "photographic",
+      "source_line": 2408,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "nature-creative-art",
+      "title": "Nature Creative Art",
+      "source_category": "Creative",
+      "source_description": "Artistic design with bird, leaves and curved split layout.",
+      "family": "organic",
+      "source_line": 2437,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "beauty-serenity",
+      "title": "Beauty Serenity",
+      "source_category": "Beauty",
+      "source_description": "Elegant beauty studio design with gradient sky and natural landscape.",
+      "family": "organic",
+      "source_line": 2488,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FCA5A5",
+        "#F472B6",
+        "#E879F9",
+        "#000000"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "interior-minimal",
+      "title": "Interior Minimal",
+      "source_category": "High-End",
+      "source_description": "Mid-century modern furniture, clean lines, and warm photography.",
+      "family": "minimal",
+      "source_line": 2539,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F4F1EA"
+      ],
+      "rule_hex_colors": [
+        "#F4F1EA",
+        "#2D2D2D"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "wellness-organic",
+      "title": "Wellness Organic",
+      "source_category": "Lifestyle",
+      "source_description": "Soft-focus botanicals, pale sage tones, and fluid shapes.",
+      "family": "organic",
+      "source_line": 2554,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#EDF2ED",
+        "#1A2E1A"
+      ],
+      "rule_hex_colors": [
+        "#EDF2ED",
+        "#1A2E1A"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "sustainable-brand",
+      "title": "Sustainable",
+      "source_category": "Business",
+      "source_description": "Recycled textures, earth tones, and eco-conscious photography.",
+      "family": "organic",
+      "source_line": 2579,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#E8E4D9",
+        "#3C3C3C"
+      ],
+      "rule_hex_colors": [
+        "#E8E4D9",
+        "#3C3C3C"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "innovation-organic",
+      "title": "Bio-Innovation",
+      "source_category": "Tech",
+      "source_description": "Clean biotech aesthetic with fluid glassmorphic shapes.",
+      "family": "organic",
+      "source_line": 2600,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "brutalist-flora",
+      "title": "Brutalist Flora",
+      "source_category": "Creative",
+      "source_description": "Concrete textures meets lush tropical leaves.",
+      "family": "experimental",
+      "source_line": 2616,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#D1D5DB"
+      ],
+      "rule_hex_colors": [
+        "#D1D5DB",
+        "#111827",
+        "#059669"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "comparison-table",
+        "system-architecture",
+        "photo-overlay"
+      ],
+      "keep": "A deliberate expressive gesture suited to the audience.",
+      "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "ethereal-horizons",
+      "title": "Ethereal Horizons",
+      "source_category": "Lifestyle",
+      "source_description": "Dreamy foggy landscapes and soft high-key photography.",
+      "family": "organic",
+      "source_line": 2631,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#2D3748"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "swimlane",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Human scale, softer cadence and image-led variation.",
+      "adapt": "Keep quantitative geometry exact; use texture only outside evidence.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "zen-minimal",
+      "title": "Zen Minimal",
+      "source_category": "High-End",
+      "source_description": "Japanese aesthetic, wood textures, and stone serenity.",
+      "family": "minimal",
+      "source_line": 2648,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#F2F2F2",
+        "#1A1A1A",
+        "#D9C5B2"
+      ],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#1A1A1A"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "decision-flow"
+      ],
+      "keep": "Single focal point, restrained color and generous negative space.",
+      "adapt": "Do not erase units, branches or qualifications for simplicity.",
+      "status": "source-reviewed; not individually rendered or certified",
+      "family_reason": "Quiet wood and stone imagery support a restrained composition."
+    },
+    {
+      "id": "premium-travel",
+      "title": "Premium Escapes",
+      "source_category": "High-End",
+      "source_description": "Luxury resorts, deep navy tones, and gold accents.",
+      "family": "photographic",
+      "source_line": 2676,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#002B45"
+      ],
+      "rule_hex_colors": [
+        "#002B45",
+        "#FFFFFF",
+        "#D4AF37"
+      ],
+      "suggested_patterns": [
+        "photo-overlay",
+        "ranked-bar",
+        "comparison-table",
+        "roadmap"
+      ],
+      "keep": "Specific subject, meaningful crop and image/text relationship.",
+      "adapt": "Do not place data or faces beneath competing labels.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "modern-editorial",
+      "title": "Modern Zine",
+      "source_category": "Creative",
+      "source_description": "High-fashion imagery with bold magazine layouts.",
+      "family": "editorial",
+      "source_line": 2692,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [],
+      "rule_hex_colors": [
+        "#FFFFFF",
+        "#000000"
+      ],
+      "suggested_patterns": [
+        "ranked-bar",
+        "trend-line",
+        "comparison-table",
+        "roadmap",
+        "photo-overlay"
+      ],
+      "keep": "Type scale, purposeful crop and deliberate whitespace.",
+      "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
+      "status": "source-reviewed; not individually rendered or certified"
+    },
+    {
+      "id": "urban-vivid",
+      "title": "Urban Vivid",
+      "source_category": "Tech",
+      "source_description": "Electric night photography and neon light trails.",
+      "family": "technical",
+      "source_line": 2710,
+      "source_rule_present": true,
+      "declared_type": true,
+      "source_image_strategy": null,
+      "preview_hex_colors": [
+        "#0A0A0A"
+      ],
+      "rule_hex_colors": [
+        "#0A0A0A",
+        "#FFFFFF",
+        "#FF007F",
+        "#00FFFF"
+      ],
+      "suggested_patterns": [
+        "decision-flow",
+        "swimlane",
+        "system-architecture",
+        "roadmap",
+        "scatter"
+      ],
+      "keep": "Precise line work, labeled relationships and strong grouping.",
+      "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
+      "status": "source-reviewed; not individually rendered or certified"
+    }
+  ]
+}

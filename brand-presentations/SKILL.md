@@ -42,6 +42,8 @@ Make organic decisions when the subject, reference, or user intent supports them
 
 ## Compose and repair
 
+When content calls for data, decisions or relationships, use [analytical construction](references/analytical-construction.md) to select and build charts, decision flows, swimlanes, architecture, roadmaps, matrices or comparisons. The [complete SlideGenAI catalog](references/template-catalog.md) indexes 177 source styles as optional directions, not 177 certified export implementations. Load specific entries only when useful; preserve brand identity and factual geometry.
+
 Choose a useful master by meaning and fit: opening, topic cover, editorial image, explanation, comparison, data, process, or closing. These are options, not a forced sequence. Topic covers count toward the requested total and must not displace required outline items. A single-slide request does not need a separate cover.
 
 Use large type, image scale, whitespace, and reading surfaces to establish hierarchy when the identity permits. For immersive photographs and typographic contrast, use the photograph-led guidance in [art direction](references/art-direction.md); adapt it to the current brand rather than copying a previous deck. Keep text, required tables, charts, and requested diagrams editable. Decorative imagery may be rasterized; disclose editing limitations.

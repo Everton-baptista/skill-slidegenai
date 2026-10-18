@@ -15,3 +15,7 @@ These are portable observations from the SlideGenAI source reviewed for this ski
 The resulting skill separates identity, measured construction, and content, then adds a small art-direction decision process. Templates are a source of tested visual relationships, not a finite menu that limits every new deck.
 
 The repository includes a controlled three-direction study. The same source proposition is treated as analytical, editorial, and organic when the audience/context permits. It is not a universal style selector or evidence of cross-provider quality.
+
+## Complete source inventory
+
+The [177-entry catalog](template-catalog.md) extends this selective review to every interface template in the inspected source. It records backend/type coverage gaps, observed palette samples and adaptive evidence patterns without bundling application JSX or provider prompts. Use [analytical construction](analytical-construction.md) for native data charts, flows and other evidence structures; the source HTML renderer does not establish native PPTX editability.

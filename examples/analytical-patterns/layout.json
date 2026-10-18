@@ -1,0 +1,1126 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "px"
+  },
+  "source_model": "../../brand-presentations/references/visual-model-example.json",
+  "font_family": "Arial",
+  "slides": [
+    {
+      "id": "s01",
+      "title": "Completed items by region",
+      "subtitle": "Comparable categories, two periods and a zero baseline.",
+      "background": "#FFFFFF",
+      "kind": "chart",
+      "visual_id": "ranking",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Completed items by region",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Comparable categories, two periods and a zero baseline.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "01 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "chart_box": {
+        "x": 64,
+        "y": 300,
+        "width": 1152,
+        "height": 335
+      }
+    },
+    {
+      "id": "s02",
+      "title": "Delivery time over six months",
+      "subtitle": "Two series, a shared time scale and explicit units.",
+      "background": "#172B4D",
+      "kind": "chart",
+      "visual_id": "trend",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#BFCFE1",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Delivery time over six months",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#FFFFFF",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Two series, a shared time scale and explicit units.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#D7E2EF",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#C2D0E1",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "02 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#C2D0E1",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#AEC9E8",
+        "#F29578",
+        "#79C9BD"
+      ],
+      "chart_box": {
+        "x": 64,
+        "y": 300,
+        "width": 1152,
+        "height": 335
+      }
+    },
+    {
+      "id": "s03",
+      "title": "Channel mix",
+      "subtitle": "Each quarter represents the same whole: 100%.",
+      "background": "#FFFFFF",
+      "kind": "chart",
+      "visual_id": "mix",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Channel mix",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Each quarter represents the same whole: 100%.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "03 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "chart_box": {
+        "x": 64,
+        "y": 300,
+        "width": 1152,
+        "height": 335
+      }
+    },
+    {
+      "id": "s04",
+      "title": "Training and output",
+      "subtitle": "Paired observations. Association does not establish causation.",
+      "background": "#FFFFFF",
+      "kind": "chart",
+      "visual_id": "scatter",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Training and output",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Paired observations. Association does not establish causation.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "04 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "chart_box": {
+        "x": 64,
+        "y": 300,
+        "width": 1152,
+        "height": 335
+      }
+    },
+    {
+      "id": "s05",
+      "title": "Decision and rework",
+      "subtitle": "A decision needs both destinations and a visible return path.",
+      "background": "#FFFFFF",
+      "kind": "diagram",
+      "visual_id": "decision",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Decision and rework",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "A decision needs both destinations and a visible return path.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "05 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "nodes": {
+        "receive": [
+          64,
+          365,
+          215,
+          85
+        ],
+        "review": [
+          392,
+          340,
+          190,
+          135
+        ],
+        "prepare": [
+          700,
+          365,
+          220,
+          85
+        ],
+        "return": [
+          382,
+          540,
+          220,
+          80
+        ],
+        "deliver": [
+          1030,
+          365,
+          185,
+          85
+        ]
+      },
+      "routes": [
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            285,
+            355,
+            100,
+            35
+          ]
+        },
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            610,
+            355,
+            90,
+            35
+          ]
+        },
+        {
+          "fromSide": "bottom",
+          "toSide": "top",
+          "label_box": [
+            520,
+            491,
+            80,
+            35
+          ]
+        },
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            934,
+            355,
+            95,
+            35
+          ]
+        },
+        {
+          "fromSide": "left",
+          "toSide": "left",
+          "label_box": [
+            215,
+            548,
+            155,
+            35
+          ],
+          "waypoints": [
+            [
+              320,
+              580
+            ],
+            [
+              320,
+              407
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "title": "Responsibility and handoffs",
+      "subtitle": "Lane membership expresses ownership. Arrows express handoffs.",
+      "background": "#FFFFFF",
+      "kind": "diagram",
+      "visual_id": "handoff",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Responsibility and handoffs",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Lane membership expresses ownership. Arrows express handoffs.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "06 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "lanes": [
+        {
+          "label": "Client",
+          "box": [
+            64,
+            302,
+            1152,
+            104
+          ]
+        },
+        {
+          "label": "Operations",
+          "box": [
+            64,
+            409,
+            1152,
+            104
+          ]
+        },
+        {
+          "label": "Quality",
+          "box": [
+            64,
+            516,
+            1152,
+            104
+          ]
+        }
+      ],
+      "nodes": {
+        "brief": [
+          285,
+          322,
+          175,
+          63
+        ],
+        "plan": [
+          510,
+          429,
+          175,
+          63
+        ],
+        "build": [
+          745,
+          429,
+          175,
+          63
+        ],
+        "check": [
+          975,
+          536,
+          190,
+          63
+        ],
+        "accept": [
+          975,
+          322,
+          190,
+          63
+        ]
+      },
+      "routes": [
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            420,
+            391,
+            110,
+            35
+          ]
+        },
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            690,
+            424,
+            64,
+            30
+          ],
+          "label_font_size": 17
+        },
+        {
+          "fromSide": "right",
+          "toSide": "top",
+          "label_box": [
+            927,
+            466,
+            110,
+            30
+          ]
+        },
+        {
+          "fromSide": "right",
+          "toSide": "right",
+          "label_box": [
+            1088,
+            465,
+            110,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "title": "System relationships",
+      "subtitle": "An asynchronous path and a distinct read connection.",
+      "background": "#172B4D",
+      "kind": "diagram",
+      "visual_id": "system",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#BFCFE1",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "System relationships",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#FFFFFF",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "An asynchronous path and a distinct read connection.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#D7E2EF",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#C2D0E1",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "07 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#C2D0E1",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "nodes": {
+        "portal": [
+          64,
+          365,
+          200,
+          85
+        ],
+        "api": [
+          390,
+          365,
+          230,
+          85
+        ],
+        "queue": [
+          740,
+          300,
+          190,
+          85
+        ],
+        "worker": [
+          1020,
+          300,
+          195,
+          85
+        ],
+        "store": [
+          1020,
+          520,
+          195,
+          85
+        ]
+      },
+      "routes": [
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            280,
+            351,
+            100,
+            35
+          ]
+        },
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            630,
+            301,
+            110,
+            35
+          ]
+        },
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            936,
+            301,
+            90,
+            35
+          ]
+        },
+        {
+          "fromSide": "bottom",
+          "toSide": "top",
+          "label_box": [
+            1131,
+            442,
+            85,
+            35
+          ]
+        },
+        {
+          "fromSide": "right",
+          "toSide": "left",
+          "label_box": [
+            675,
+            423,
+            100,
+            35
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "title": "Roadmap with real durations",
+      "subtitle": "Jan\u2013Jun 2027. Bar widths follow elapsed days, not equal visual slots.",
+      "background": "#FFFFFF",
+      "kind": "roadmap",
+      "visual_id": "schedule",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Roadmap with real durations",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Jan\u2013Jun 2027. Bar widths follow elapsed days, not equal visual slots.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "08 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "timeline": {
+        "x": 290,
+        "y": 315,
+        "width": 920,
+        "height": 290
+      },
+      "month_labels": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun"
+      ]
+    },
+    {
+      "id": "s09",
+      "title": "Categorical risk matrix",
+      "subtitle": "Qualitative placements for a fictional assessment, not numeric probabilities.",
+      "background": "#FFFFFF",
+      "kind": "matrix",
+      "visual_id": "risk",
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Categorical risk matrix",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "Qualitative placements for a fictional assessment, not numeric probabilities.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "09 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "matrix_box": {
+        "x": 300,
+        "y": 300,
+        "width": 900,
+        "height": 315
+      }
+    },
+    {
+      "id": "s10",
+      "title": "Decision criteria",
+      "subtitle": "A comparison preserves common criteria and explicit tradeoffs.",
+      "background": "#FFFFFF",
+      "kind": "table",
+      "visual_id": null,
+      "elements": [
+        {
+          "id": "brand",
+          "kind": "text",
+          "text": "NORTHSTAR / OPERATIONS STUDY",
+          "x": 64,
+          "y": 35,
+          "width": 1100,
+          "height": 30,
+          "font_size": 18,
+          "color": "#53657D",
+          "bold": true
+        },
+        {
+          "id": "title",
+          "kind": "text",
+          "text": "Decision criteria",
+          "x": 60,
+          "y": 108,
+          "width": 1160,
+          "height": 100,
+          "font_size": 55,
+          "color": "#172B4D",
+          "bold": true
+        },
+        {
+          "id": "subtitle",
+          "kind": "text",
+          "text": "A comparison preserves common criteria and explicit tradeoffs.",
+          "x": 64,
+          "y": 211,
+          "width": 1125,
+          "height": 66,
+          "font_size": 25,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "source",
+          "kind": "text",
+          "text": "Fictional example",
+          "x": 64,
+          "y": 674,
+          "width": 700,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        },
+        {
+          "id": "page",
+          "kind": "text",
+          "text": "10 / 10",
+          "x": 1124,
+          "y": 674,
+          "width": 100,
+          "height": 26,
+          "font_size": 17,
+          "color": "#53657D",
+          "bold": false
+        }
+      ],
+      "palette": [
+        "#243A63",
+        "#D15D44",
+        "#1E6A61"
+      ],
+      "table": {
+        "x": 64,
+        "y": 300,
+        "width": 1152,
+        "height": 300,
+        "column_widths": [
+          330,
+          411,
+          411
+        ],
+        "values": [
+          [
+            "Criterion",
+            "Option A",
+            "Option B"
+          ],
+          [
+            "Delivery window",
+            "2 weeks",
+            "4 weeks"
+          ],
+          [
+            "Scope",
+            "Core workflow",
+            "Core + integrations"
+          ],
+          [
+            "Operating model",
+            "Manual review",
+            "Review + automation"
+          ],
+          [
+            "Key constraint",
+            "Team availability",
+            "Integration readiness"
+          ]
+        ]
+      }
+    }
+  ]
+}
