@@ -4,6 +4,31 @@ A portable **brand presentation workflow** for AI assistants. It teaches an assi
 
 The installed skill is named **`brand-presentations`**. This repository contains the skill, English reference guides, optional Python validators, a complete editable fictional deck, and automated tests. It contains no SlideGenAI application code or API credentials.
 
+## Preview: styles and capabilities
+
+Real rendered slides from fictional presentation studies created with this skill. The visual direction changes with the reference, audience and content: expressive posters, editorial fashion, restrained luxury, technical systems and educational presentations.
+
+![Nine presentation directions: Acid Rave, Neo-Tech, Cyberpunk, NOVA, Ultimate Luxury, Neo Tokyo, Bauhaus, Kinetic and Corporate & Education](docs/previews/style-study-9.jpg)
+
+### Beyond the cover
+
+The same construction system extends through the presentation: topic covers, image-led pages, typographic contrast, native evidence and meaningful closing layouts.
+
+![Eight construction examples: outlined typography, full-page photography, topic covers, native charts, editable tables, feedback flows, proportional schedules and time series](docs/previews/capabilities.jpg)
+
+| What you can create | What the skill contributes |
+| --- | --- |
+| A deck that follows a website or supplied template | Evidenced identity, original asset handling and measured layout decisions |
+| Modern typography with personality | Display/body/label pairings, native outlined headlines, contextual tags and 30 bundled font families |
+| Image-led storytelling | Full-page photographs, reading gradients, image windows, editorial crops and contrast |
+| A complete presentation with rhythm | Topic covers, varied content layouts and a closing suited to the story |
+| Analytical and technical slides | Editable charts, tables, decision flows, architecture and duration-scaled schedules |
+| A reusable brand-specific skill | Separate identity, visual system, content and permitted assets |
+
+**Explore:** [editable PowerPoint example](examples/portable-deck/example.pptx) · [reproduction instructions](examples/portable-deck/README.md) · [analytical study](examples/analytical-patterns/README.md) · [visual review and limitations](docs/REPERTOIRE_REVIEW.md).
+
+The images above are previews of completed studies, not downloadable masters for all 177 catalog entries. Native-object editability was checked in the authoring host; rendering and export capabilities depend on the tools available to your assistant. The shared workflow applies across the catalog.
+
 ## What it actually does
 
 - Extracts semantic colors, typography, original logo assets, imagery direction, and composition rules from available references.
