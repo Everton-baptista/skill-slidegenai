@@ -243,7 +243,7 @@ The initial npm install needs network access or a populated cache. Use a new out
 | PowerPoint, Google Slides, Keynote | Native opening/editing not tested |
 | Claude Code, Gemini and other hosts | End-to-end use not tested |
 
-Structural validation does not prove visual quality or factual accuracy. Final rendering and inspection remain part of the workflow. [Detailed validation](docs/VALIDATION.md) · [Visual review](docs/REPERTOIRE_REVIEW.md) · [Installation gap review](docs/GAP_REVIEW.md).
+Structural validation does not prove visual quality or factual accuracy. Final rendering and inspection remain part of the workflow. [Detailed validation](docs/VALIDATION.md) · [Visual review](docs/REPERTOIRE_REVIEW.md).
 
 ## Advanced guides and contributing
 

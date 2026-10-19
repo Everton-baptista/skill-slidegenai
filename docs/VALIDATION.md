@@ -1,6 +1,6 @@
 # Data contracts and validation
 
-The authoritative version-1 contracts are [brand profile](../brand-presentations/references/brand-profile.md) [design system](../brand-presentations/references/design-system.md), and [deck plan](../brand-presentations/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Helpers are Python 3.9+ standard-library tools with no network access.
+The authoritative version-1 contracts are [brand profile](../brand-presentations/references/brand-profile.md), [design system](../brand-presentations/references/design-system.md), and [deck plan](../brand-presentations/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Helpers are Python 3.9+ standard-library tools with no network access.
 
 ## Profile validator
 
@@ -35,7 +35,7 @@ Required root files: `SKILL.md` with simple `name`/`description` front matter an
 
 Authorized retained PPTX/PDF sources and all files under `assets/references/` need entries in `references/retained-sources.json` with `path`, `purpose`, and `distribution_authorized: true`. Missing files, broken/escaping local Markdown links, missing bundled validator imports, and invalid design systems fail. Legitimate names such as `design-tokens.json` are allowed.
 
-Unexpected files/directories fail rather than silently entering the archive. Hidden files, caches, symlinks, and credential-like filenames fail. Only package folders you have reviewed and control; this is not hardened against concurrent filesystem mutation. The helper does not execute bundled scripts, validate their behavior, audit licenses, or scan arbitrary file contents for secrets.
+Unexpected files/directories fail rather than silently entering the archive. Hidden files, caches, symlinks, and credential-like filenames fail. Only package folders you have reviewed and control; this is not hardened against concurrent filesystem mutation. The helper does not execute bundled scripts, validate their behavior, resolve asset rights or scan arbitrary file contents for secrets. Bundled font license files are checked against their manifest hashes.
 
 Output is a ZIP containing the source folder name as its top-level directory. Existing output is never overwritten. Store the output outside the source folder. Check the resulting manifest and asset rights before distribution. Put working deck plans or private source documents outside the distributable skill folder unless intentionally represented in allowed references.
 
@@ -49,7 +49,7 @@ Tests cover valid examples, malformed and adversarial fields, path containment, 
 
 ## Advisory composition review
 
-`python3 brand-presentations/scripts/review_composition.py PATH_TO_PLAN --design PATH_TO_DESIGN` checks optional `visual_intent`/`art_direction` metadata and surfaces repeated declared layouts/images or a uniform declared density for inspection. Omit `--design` when absent. Existing plans without metadata remain supported.
+`python3 -B brand-presentations/scripts/review_composition.py PATH_TO_PLAN --design PATH_TO_DESIGN` checks optional `visual_intent`/`art_direction` metadata and surfaces repeated declared layouts/images or a uniform declared density for inspection. Omit `--design` when absent. Existing plans without metadata remain supported.
 
 Only malformed supplied metadata causes failure; repetition notices return success. `repeat_intent` documents deliberate recurring evidence/comparison frames. Logo reuse is excluded. These are inexpensive pattern notices, not image analysis, visual-fit validation, taste enforcement, or automatic beauty/AI detection. Never discard valid slides just to silence them.
 
@@ -65,32 +65,30 @@ The [analytical example](../examples/analytical-patterns/README.md) separately d
 
 `find_templates.py --name` matches normalized canonical IDs, source titles or source-observed preview labels. Punctuation, case and combining accents normalize. `--id` remains exact. Ambiguous names retain all matches; no fuzzy match silently selects a different template. Categories stay categories and may return several entries through `--query`. Tests cover these distinctions and preserve the 177-entry inventory.
 
-## Composition and typography study
-
-The [repertoire review](REPERTOIRE_REVIEW.md) records the first eight-deck critique and the completed nine-direction, 54-slide local follow-up. The follow-up included final slide/overview inspection, native chart/source checks, table values, attached connector endpoints, font-role refinement and a native outlined text example. This is host-specific qualitative evidence, separate from the 117 helper tests. Optional Google Fonts pairing suggestions were not installed or tested across providers; Mac font binaries are not distributed.
-
 ## Whole-catalog construction coverage
 
-`plan_template.py --coverage` resolves all 177 catalog entries through the same construction contract, across nine families including custom. Automated tests cover each entry in adaptation and faithful modes, source-gap preservation, non-demo lookup, unknown IDs/families and isolation of mutable resources. The eight new planner tests bring the helper suite to 125 tests. This establishes deterministic planning coverage, not visual evaluation of all 177 styles. The nine rendered studies remain the recorded visual subset.
+`plan_template.py --coverage` resolves all 177 catalog entries through the same construction contract, across nine families including custom. Tests cover adaptation and faithful modes, source-gap preservation, non-demo lookup, unknown IDs/families and isolation of mutable resources. This establishes planning coverage, not visual evaluation of all 177 styles. See the [visual review](REPERTOIRE_REVIEW.md) for the rendered subset.
 
-## Offline font pack and neutral educational names
+Educational entries use the neutral public IDs `aula`, `aula-moderno` and `aula-institucional`; source-snapshot hashes preserve provenance.
 
-The repository now includes 30 openly licensed families / 120 original TTF files, covering all 24 families explicitly loaded by the application and six complements. `validate_fonts.py` checks local paths, hashes, sizes, binary signatures, original OFL files, coverage and offline CSS. Preparation with fontTools 4.67.0 parsed every TTF and checked a Portuguese accented-text/numeral cmap sample. This does not certify all-language coverage or native slide-tool registration/embedding. Nine regression tests cover font integrity, missing/altered licenses, unsafe paths, CSS, dry-run/idempotent staging, collision preflight, licensed ZIP retention and neutral educational entry lookup. The suite now has 134 tests.
+## Offline fonts
 
-Educational entries use the public IDs `aula`, `aula-moderno` and `aula-institucional`. The catalog descriptions and public documentation use neutral names; source-snapshot hashes remain provenance records. Current-tree renaming does not rewrite previously published Git history.
+The bundle contains 46 families / 140 original TTFs, totaling 54,064,816 bytes: 24 application families, six pairing/open-alternative complements and 16 expressive families. The pinned upstream sources, exact hashes and original OFL licenses remain in the font manifest. Git attributes preserve original font/license bytes, including line endings.
 
-The included local HTML specimen loaded all 30 family samples successfully in the Codex in-app browser using the bundled CSS/TTFs on 2026-10-18. This confirms that browser path for the specimen, not native desktop registration or every weight in every exporter.
+`validate_fonts.py` checks paths, hashes, sizes, signatures, licenses, coverage and local CSS offline. `install_fonts.py` tests cover dry-run copying, idempotence and collision preflight. The expressive-choice regression verifies bundled companions, actual style/weight availability, variable-axis ranges and recorded Portuguese sample coverage.
 
-A clean Git archive of the final font bundle passed the offline font verifier and all 134 tests. Git attributes preserve the exact upstream font/license bytes, including original line endings, so integrity checks survive a fresh checkout/download.
+Preparation with fontTools 4.67.0 parsed all 140 TTFs and checked a Portuguese accented-text/numeral sample. The Codex in-app browser loaded all 46 regular family specimens and all 16 expressive cover samples, including the supplied Instrument Serif italic. All cover samples and the overview were visually inspected; title bounds stayed inside artboards above captions at the tested desktop width. Family search was exercised. This does not certify all-language support, every weight, native application registration, font embedding or variable-axis export.
 
-## Installation audit
+## Installation and portability
 
-See the [gap review](GAP_REVIEW.md) for the confirmed Windows CI failures, targeted repairs, first-use resource checker, independent installed-copy tests, MIT adoption and broader example reproduction. The current suite has 137 tests; earlier counts in study records describe their historical snapshots.
+From the repository root:
 
-## Expressive type extension — 2026-10-18
+```sh
+python3 -B brand-presentations/scripts/check_installation.py
+```
 
-The current pack adds 16 display families / 20 original TTF files: 46 families, 140 TTFs, 54,064,816 bytes in total. The original 24 application families and six complements remain unchanged. New families use the same pinned Google Fonts snapshot and preserve their original OFL files and upstream binaries. fontTools 4.67.0 parsed all 140 files and confirmed the recorded Portuguese accented-text/numeral sample; hashes, sizes, signatures, local CSS and licenses passed the offline verifier.
+The checker validates the copied skill's licenses, local Markdown resources, Python syntax, all catalog entries and font coverage/integrity. Independent-installation tests run it from a copy containing only the installable folder. A clean Git archive was also checked. The command does not register fonts, contact a provider or render slides. See [troubleshooting](TROUBLESHOOTING.md) for recovery steps.
 
-The local Codex in-app browser loaded all 46 regular family specimens and all 16 expressive title samples, including the supplied Instrument Serif italic. Every cover-scale title and the overview were visually inspected. DOM bounds at the tested desktop width placed all 16 titles inside their artboard and above the caption. A CSS containment repair keeps decorative geometry inside its artboard. The family search was checked against a visible result. These are HTML/CSS compositions with live text, not PPTX masters or evidence of native variable-font export/embedding.
+Inventory comparisons and ZIP members use portable forward-slash paths; root `LICENSE` and `NOTICE.md` files are retained when supplied to brand packaging. CI runs Python 3.9 and 3.13 on Linux and Windows with matrix fail-fast disabled, then reproduces both optional examples using isolated npm installs and native-object checks. The analytical adapter's free line segments remain distinct from the checked-in deck's attached connectors.
 
-The additional regression check verifies that each expressive choice has a bundled body companion and a supplied style/weight, and that declared sample-axis settings lie within the actual file's axes. Historical font counts and browser checks above describe their earlier snapshots. The current suite has 138 tests.
+The current suite contains **138 tests**. Automated validity, host behavior and visual quality are separate checks. Follow the [manual evaluation guide](EVALUATION.md) before relying on another provider or native editor.
