@@ -28,6 +28,8 @@ These previews demonstrate completed studies. The catalog contains **177 style d
 
 ## 1. Install the skill
 
+**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.1.3/brand-presentations-claude-ai-1.1.3.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.1.3/brand-presentations-full-1.1.3.zip). Extract the complete ZIP before copying its brand-presentations folder for local agents.
+
 Choose **one** installation method for the assistant you use. Install the entire `brand-presentations/` folder, including its references, scripts, assets and licenses. Copying only `SKILL.md` leaves resources missing.
 
 ### Download the repository
@@ -43,13 +45,15 @@ Without Git, use **Code → Download ZIP** on GitHub and extract it. Open a term
 
 ### Claude.ai — upload and enable the ZIP
 
-From the downloaded repository folder, with Python 3.9+:
+**[Download the ready-to-install Claude.ai ZIP (v1.1.3)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.1.3/brand-presentations-claude-ai-1.1.3.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v1.1.3). This is a preview release: installation is verified; the full two-host authoring evaluation is incomplete.
+
+To build it yourself from the downloaded repository folder, with Python 3.9+:
 
 ```sh
 python3 -B brand-presentations/scripts/package_skill.py --profile claude-ai --output dist/brand-presentations-claude-ai.zip
 ```
 
-Upload **dist/brand-presentations-claude-ai.zip** in **Customize → Skills → + → Create skill → Upload a skill**, then enable **brand-presentations**. Skills require code execution/file creation and any applicable organization permissions. Start a new conversation, say **“Use brand-presentations”**, and describe the presentation. Ask Claude to identify the installed VERSION and the resources it actually loaded. [Official Claude.ai instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+Upload the downloaded ZIP (or your locally built **dist/brand-presentations-claude-ai.zip**) in **Customize → Skills → + → Create skill → Upload a skill**, then enable **brand-presentations**. Skills require code execution/file creation and any applicable organization permissions. Start a new conversation, say **“Use brand-presentations”**, and describe the presentation. Ask Claude to identify the installed VERSION and the resources it actually loaded. [Official Claude.ai instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
 The Claude.ai ZIP contains one installable folder with every reference/helper, all 46 font families and their original licenses. It selects a smaller set of original faces/weights, with exact inventory in DISTRIBUTION.json and the font manifest. The complete 140-font bundle was rejected by the tested Claude.ai interface because its uncompressed size exceeded 30 MB. The size-limited profile is kept below 29 MB uncompressed and uses portable filenames, with original paths recorded; no font binaries or internal font identities are modified. The packager validates resources before writing and refuses to overwrite an existing ZIP; use a new output filename for another build. The GitHub **Download ZIP** is the repository archive, not this installable package. Reading a repository link or uploading it as chat context does not prove native skill activation.
 
@@ -294,7 +298,7 @@ The initial npm install needs network access or a populated cache. Use a new out
 | Eight-slide portable example | Native text, table, chart/workbook and process objects checked; PPTX rendered and all slides inspected |
 | Ten-slide analytical example | Four native charts, table, diagrams, roadmap and matrix checked; checked-in deck rendered and inspected. The reproduction adapter uses free line segments that need rerouting after nodes move |
 | Nine-style study | 54 final slides and nine overviews inspected, with chart, table, connector and typography checks |
-| Python helpers | Previous 137-test cross-platform run recorded; expanded 157-test suite passed locally. New CI matrix results remain separate |
+| Python helpers and ZIPs | 157 tests and packaging checks passed on Linux/Windows with Python 3.9/3.13; [recorded CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101) |
 | Bundled fonts | All 140 files parsed and integrity checked; browser specimen checks are recorded in the validation guide. OS registration and all native exporters remain host-specific |
 | Catalog | All 177 entries resolve structurally; full decks have not been rendered and inspected for every entry |
 | PowerPoint, Google Slides, Keynote | Native opening/editing not tested |
