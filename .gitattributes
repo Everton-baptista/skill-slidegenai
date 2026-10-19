@@ -10,3 +10,6 @@
 *.woff2 binary
 *.pptx binary
 *.pdf binary
+# Preserve exact upstream bytes used by the font/license integrity manifest.
+/brand-presentations/assets/fonts/**/*.ttf binary
+/brand-presentations/assets/fonts/**/OFL.txt -text -whitespace

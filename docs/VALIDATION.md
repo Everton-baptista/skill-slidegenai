@@ -80,3 +80,5 @@ The repository now includes 30 openly licensed families / 120 original TTF files
 Educational entries use the public IDs `aula`, `aula-moderno` and `aula-institucional`. The catalog descriptions and public documentation use neutral names; source-snapshot hashes remain provenance records. Current-tree renaming does not rewrite previously published Git history.
 
 The included local HTML specimen loaded all 30 family samples successfully in the Codex in-app browser using the bundled CSS/TTFs on 2026-10-18. This confirms that browser path for the specimen, not native desktop registration or every weight in every exporter.
+
+A clean Git archive of the final font bundle passed the offline font verifier and all 134 tests. Git attributes preserve the exact upstream font/license bytes, including original line endings, so integrity checks survive a fresh checkout/download.
