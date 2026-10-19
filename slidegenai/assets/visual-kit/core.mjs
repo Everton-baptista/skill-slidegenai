@@ -118,6 +118,18 @@ export function compose(slide, canvas, design) {
   const c = slide.composition;
   if (!c) return [];
   if (!recipes.has(c.type)) throw Error(`Unsupported composition: ${c.type}`);
+  const variants = {
+    cover: ["default", "image-right"],
+    "topic-cover": ["default", "image-right"],
+    editorial: ["default", "inset-image"],
+    "full-image": ["default", "bottom-caption"],
+    statement: ["default", "offset"],
+    comparison: ["default", "open-columns"],
+    closing: ["default", "image-right", "offset"],
+  };
+  const variant = c.variant ?? "default";
+  if (!variants[c.type].includes(variant))
+    throw Error(`Unsupported ${c.type} variant: ${variant}`);
   const W = canvas.width,
     H = canvas.height,
     k = W / 1280,
@@ -156,7 +168,24 @@ export function compose(slide, canvas, design) {
       ...c.image,
     });
   };
-  if (c.type === "full-image") {
+  if (variant === "image-right") {
+    picture([704, 0, 576, 720]);
+    text("composition-eyebrow", c.eyebrow, [64, 64, 576, 40], 17, "caption");
+    text("composition-title", slide.title, [64, 184, 568, 280], 62, "headline");
+    text("composition-body", c.body, [68, 500, 560, 140], 26);
+    if (c.type === "topic-cover")
+      text("composition-topic", c.number, [64, 116, 576, 48], 32, "caption");
+  } else if (variant === "offset") {
+    text("composition-eyebrow", c.eyebrow, [64, 64, 1056, 40], 17, "caption");
+    text(
+      "composition-title",
+      slide.title,
+      [256, 190, 928, 300],
+      80,
+      "headline",
+    );
+    text("composition-body", c.body, [640, 538, 544, 112], 26);
+  } else if (c.type === "full-image") {
     picture([0, 0, 1280, 720]);
     out.push({
       id: "composition-shade",
@@ -167,16 +196,40 @@ export function compose(slide, canvas, design) {
         gradient: {
           from: "#000000",
           to: "#000000",
-          from_opacity: 0.88,
-          to_opacity: 0.05,
-          direction: "right",
+          from_opacity: variant === "bottom-caption" ? 0.08 : 0.88,
+          to_opacity: variant === "bottom-caption" ? 0.92 : 0.05,
+          direction: variant === "bottom-caption" ? "bottom" : "right",
         },
       },
     });
-    text("composition-title", slide.title, [64, 285, 920, 245], 76, "headline");
-    text("composition-body", c.body, [68, 570, 850, 85], 27);
+    text(
+      "composition-title",
+      slide.title,
+      variant === "bottom-caption" ? [64, 416, 1152, 150] : [64, 285, 920, 245],
+      variant === "bottom-caption" ? 62 : 76,
+      "headline",
+    );
+    text(
+      "composition-body",
+      c.body,
+      variant === "bottom-caption" ? [68, 590, 1100, 78] : [68, 570, 850, 85],
+      27,
+    );
     out.filter((e) => e.kind === "text").forEach((e) => (e.color = "#FFFFFF"));
   } else if (c.type === "editorial") {
+    if (variant === "inset-image") {
+      picture([704, 96, 512, 528]);
+      text("composition-eyebrow", c.eyebrow, [64, 96, 560, 40], 17, "caption");
+      text(
+        "composition-title",
+        slide.title,
+        [64, 182, 560, 230],
+        58,
+        "headline",
+      );
+      text("composition-body", c.body, [68, 460, 544, 180], 26);
+      return out;
+    }
     picture([0, 0, 580, 720]);
     text("composition-eyebrow", c.eyebrow, [640, 72, 560, 40], 17, "caption");
     text(
@@ -203,14 +256,16 @@ export function compose(slide, canvas, design) {
     text("composition-title", slide.title, [64, 58, 1152, 150], 58, "headline");
     c.panels.forEach((p, i) => {
       const x = 64 + i * 592;
+      const open = variant === "open-columns";
       const panelFill = i ? design.colors.accent || "#DCE3EB" : paper;
-      const panelInk = readable(panelFill, ink);
-      out.push({
-        id: `panel-${i}`,
-        kind: "shape",
-        ...box(x, 245, 560, 390),
-        fill: panelFill,
-      });
+      const panelInk = open ? ink : readable(panelFill, ink);
+      if (!open)
+        out.push({
+          id: `panel-${i}`,
+          kind: "shape",
+          ...box(x, 245, 560, 390),
+          fill: panelFill,
+        });
       text(
         `panel-title-${i}`,
         p.title,

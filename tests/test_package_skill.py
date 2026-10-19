@@ -21,7 +21,7 @@ class GenericPackage(unittest.TestCase):
             temp = Path(temp)
             target = temp / 'dist/slidegenai.zip'
             report = package(source, target)
-            self.assertEqual(report['installation']['skill_version'], '2.0.0')
+            self.assertEqual(report['installation']['skill_version'], (source / 'VERSION').read_text().strip())
             self.assertEqual(report['sha256'], hashlib.sha256(target.read_bytes()).hexdigest())
             with zipfile.ZipFile(target) as z:
                 expected = {'slidegenai/' + p.relative_to(source).as_posix() for p in inventory(source)}

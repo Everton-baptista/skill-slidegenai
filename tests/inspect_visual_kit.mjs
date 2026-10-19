@@ -4,12 +4,12 @@ import path from "node:path";
 import os from "node:os";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import assert from "node:assert/strict";
-import {
-  compile,
-  json,
-} from "../slidegenai/assets/visual-kit/core.mjs";
+import { compile, json } from "../slidegenai/assets/visual-kit/core.mjs";
 import { renderHTML } from "../slidegenai/assets/visual-kit/html.mjs";
-import { analyticalFixture } from "./visual-kit-fixtures.mjs";
+import {
+  analyticalFixture,
+  compositionFixture,
+} from "./visual-kit-fixtures.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const { chromium } = await import(
   process.env.SLIDEGENAI_PLAYWRIGHT || "playwright"
@@ -41,7 +41,7 @@ try {
     kind: "Geometry and resource evidence; visual review pending",
     cases: [],
   };
-  for (const name of ["portable", "analytical"]) {
+  for (const name of ["portable", "analytical", "compositions"]) {
     const folder = path.join(root, "examples/portable-deck");
     const { plan, design, model } =
       name === "portable"
@@ -50,12 +50,14 @@ try {
             design: await json(path.join(folder, "design-system.json")),
             model: null,
           }
-        : await analyticalFixture(root);
+        : name === "compositions"
+          ? await compositionFixture(root)
+          : await analyticalFixture(root);
     const scene = await compile(
         plan,
         design,
         model,
-        name === "portable" ? folder : root,
+        name === "analytical" ? root : folder,
       ),
       file = path.join(out, name + ".html");
     await fs.writeFile(file, await renderHTML(scene));

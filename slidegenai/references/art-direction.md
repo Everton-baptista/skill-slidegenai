@@ -31,6 +31,40 @@ Choose and continue autonomously when the user has delegated design. Do not add 
 
 These are lenses, not a closed theme menu. Combine or depart from them when the content warrants it. Creativity should come from a specific relationship among message, image, and space, not random layout selection.
 
+## Turn a direction into visible decisions
+
+Select a spatial relationship before a recipe. For a place, let a meaningful photographic detail anchor the text; for an argument, let the key phrase dominate; for evidence, give the data the most useful area. Choose title width and line breaks from actual words, not an empty template slot. A short title may support a narrow column; a long technical title needs a wider region or a calmer scale.
+
+Resolve display and reading typography as separate roles. Contrast can come from condensed versus wide proportions, serif versus sans, regular versus heavy weight, or scale within one family. Use the bundled expressive faces for short emphasis when their character supports the topic; retain readable text for explanations and evidence. Confirm the chosen face in the actual renderer. Merely naming an unusual font does not create typographic direction.
+
+The optional visual kit supplies alternate geometry, not an automatic style picker:
+
+| Visual need | Possible kit starting point | Adapt before delivery |
+| --- | --- | --- |
+| Introduce a place, person or product while keeping text off the subject | cover/topic-cover/closing + `image-right` | Crop, title width, supporting copy and image relevance |
+| Quiet editorial observation with generous margins | editorial + `inset-image` | Image proportion, caption relationship and reading density |
+| Immersive photograph with a clear lower reading region | full-image + `bottom-caption` | Inspect the actual subject and gradient behind every line |
+| A short proposition or final thought with an asymmetric pause | statement/closing + `offset` | Authored line breaks; long titles need different geometry |
+| Compare ideas without treating them as UI cards | comparison + `open-columns` | Align comparable information; preserve enough separation |
+
+Use custom measured elements when none fits. Do not cycle variants by slide index. Several image-right pages are still repetitive if the argument never changes; several aligned charts can be coherent when their comparison depends on repetition.
+
+## Repair the observed weakness
+
+After rendering, identify the actual cause and change that relationship. Use this as a repair vocabulary, not a checklist of compulsory effects:
+
+| Observed problem | Useful repair |
+| --- | --- |
+| Everything has equal emphasis | Select the main claim or image; change its scale and give it space by reducing secondary competition |
+| A photo feels pasted beside unrelated text | Choose a subject-specific image and connect crop, caption and headline; remove it if it adds nothing |
+| The deck feels like repeated software cards | Express comparisons as aligned open columns, processes as connected steps, evidence as a larger chart, or use a deliberate editorial image |
+| Large headings still feel generic | Set line breaks around meaning, resolve a fitting display face/weight, and reconsider the title's relationship to image and margin |
+| “Organic” looks decorative | Remove unrelated blobs; use asymmetry, a subject-led crop or a material detail while retaining an alignment structure |
+| All slides have the same weight | Give transitions a pause, evidence enough space, and the conclusion a purpose-specific composition; retain shared identity |
+| More effects made the slide noisy | Remove competing gestures and restore a clear first focal point |
+
+Re-render the changed output and inspect the affected slides plus overview. Do not certify attractiveness from geometry checks. If the visible result still misses the brief, report that limitation rather than claiming that a new recipe made it beautiful.
+
 ## Photograph-led pages and typographic contrast
 
 When the subject or user calls for immersive imagery, consider a full-canvas photograph with live text over a directional gradient. Choose this because the photograph carries the idea, not to meet a quota. Keep quieter text/evidence pages so the overview has pauses. A full-page image, a split editorial page, a typographic statement and a native evidence page can belong to the same brand without becoming random themes.

@@ -65,3 +65,15 @@ The same kit is now distributed under the single slidegenai folder/name, with /s
 The pre-rename kit commit also passed all six CI jobs: Linux/Windows with Python 3.9/3.13, existing example reproduction, and native/browser kit regressions. [Recorded CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39257588234). This is code/resource evidence, not native /slidegenai registration in an AI host.
 
 The final v2 namespace source (1b1ebdd940dca4a722bcbed8e5ba7128c75b7e90, also the v2.0.0 release target) passed [all six CI jobs](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39258624605), including independent renamed ZIPs on Linux/Windows, Python 3.9/3.13, native objects and actual offline Chromium inspection checks. Native /slidegenai registration in an AI host remains outside that evidence.
+
+## 2.1 art-direction and composition update
+
+The entry instructions were reduced from 1,217 to 924 whitespace-delimited words (about 24%), moving decisions and targeted visual repairs into the art-direction reference. This is an entry-context reduction, not a measured provider latency or output-quality improvement.
+
+Eight explicit type/variant combinations add five alternate spatial arrangements: image-right (cover/topic-cover/closing), inset-image (editorial), bottom-caption (full-image), offset (statement/closing), and open-columns (comparison). Omitted variants preserve the previous geometry. Unsupported combinations and missing required images fail; text is not silently shrunk. All 177 style IDs still resolve through the shared system.
+
+Validation: 158 Python tests pass. Sixteen JavaScript behavior tests pass with optional native dependencies, including the new variants' measured regions, pixel/point scaling, required images, retained text and independent native picture/text/gradient objects. These test counts overlap through the Python wrapper.
+
+The browser harness reproduced the existing 18 source slides and applied all eight variant combinations to existing portable-study content. Original Manrope fonts and images loaded offline, with zero inspector issues. Each of the eight variant screenshots and their overview was visually inspected in Chrome. Text was readable and the photographed room remained visible; the lower gradient protected the photo caption. This controlled fixture deliberately repeats content and imagery to compare geometry. It is not a newly authored demonstration deck or evidence of narrative variation or beauty across subjects.
+
+The variants' PPTX objects were checked in OOXML; the variants were not newly rendered in PowerPoint, LibreOffice or the Claude editors in this update. Earlier rendered PPTX observations above apply to the existing studies. Claude.ai/Claude Code end-to-end evaluation remains pending; revised guidance and additional geometry do not certify either host.

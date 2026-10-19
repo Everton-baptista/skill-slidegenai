@@ -14,12 +14,12 @@ import {
   local,
   compose,
 } from "../slidegenai/assets/visual-kit/core.mjs";
-import {
-  renderHTML,
-  chartSVG,
-} from "../slidegenai/assets/visual-kit/html.mjs";
+import { renderHTML, chartSVG } from "../slidegenai/assets/visual-kit/html.mjs";
 import { build } from "../slidegenai/assets/visual-kit/build.mjs";
-import { analyticalFixture } from "./visual-kit-fixtures.mjs";
+import {
+  analyticalFixture,
+  compositionFixture,
+} from "./visual-kit-fixtures.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."),
   example = path.join(root, "examples/portable-deck");
 const source = async () => ({
@@ -398,3 +398,94 @@ test("composition foreground contrasts with dark slide and comparison surfaces",
     "#FFFFFF",
   );
 });
+
+test("alternate composition geometry preserves editable content, units and required assets", async () => {
+  const { plan, design, folder } = await compositionFixture(root);
+  const scene = await compile(plan, design, null, folder);
+  assert.equal(scene.slides.length, 8);
+  for (const slide of plan.slides) {
+    const elements = compose(slide, design.canvas, design);
+    assert.equal(
+      elements.find((e) => e.id === "composition-title").text,
+      slide.title,
+    );
+    assert.ok(
+      elements.every(
+        (e) =>
+          e.x >= 0 &&
+          e.y >= 0 &&
+          e.x + e.width <= design.canvas.width &&
+          e.y + e.height <= design.canvas.height,
+      ),
+    );
+    const pt = compose(slide, { width: 960, height: 540 }, design);
+    assert.equal(
+      pt.find((e) => e.id === "composition-title").width,
+      elements.find((e) => e.id === "composition-title").width * 0.75,
+    );
+    const legacy = compose(
+      { ...slide, composition: { ...slide.composition, variant: "default" } },
+      design.canvas,
+      design,
+    );
+    assert.notDeepEqual(elements, legacy);
+    assert.throws(
+      () =>
+        compose(
+          {
+            ...slide,
+            composition: { ...slide.composition, variant: "random" },
+          },
+          design.canvas,
+          design,
+        ),
+      /Unsupported/,
+    );
+    if (slide.composition.variant === "image-right")
+      assert.throws(
+        () =>
+          compose(
+            { ...slide, composition: { ...slide.composition, image: null } },
+            design.canvas,
+            design,
+          ),
+        /requires/,
+      );
+  }
+  const photo = scene.slides[4].elements;
+  assert.equal(
+    photo.find((e) => e.id === "composition-shade").effect.gradient.direction,
+    "bottom",
+  );
+  assert.equal(
+    photo.find((e) => e.id === "composition-title").color,
+    "#FFFFFF",
+  );
+  assert.ok(scene.slides[7].elements.every((e) => e.kind === "text"));
+});
+
+test(
+  "alternate compositions export live native text, independent pictures and a bottom gradient",
+  { skip: !process.env.SLIDEGENAI_NATIVE_KIT },
+  async () => {
+    const { createRequire } = await import("node:module");
+    const require = createRequire(
+      path.join(process.env.SLIDEGENAI_NATIVE_KIT, "package.json"),
+    );
+    const JSZip = require("jszip");
+    const { plan, design, folder } = await compositionFixture(root);
+    const scene = await compile(plan, design, null, folder);
+    const { renderPPTX } = await import(
+      pathToFileURL(path.join(process.env.SLIDEGENAI_NATIVE_KIT, "pptx.mjs"))
+    );
+    const zip = await JSZip.loadAsync(await renderPPTX(scene, []));
+    for (let i = 1; i <= 8; i++) {
+      const xml = await zip.file(`ppt/slides/slide${i}.xml`).async("string");
+      assert.match(xml, /<p:txBody>/);
+      assert.match(xml, /Learning by design/);
+      assert.equal((xml.match(/<p:pic>/g) || []).length, i <= 5 ? 1 : 0);
+      if (i === 5) assert.match(xml, /<a:gradFill/);
+      if (i === 8) assert.match(xml, /Faithful reproduction/);
+    }
+  },
+);

@@ -10,10 +10,7 @@ export async function analyticalFixture(root) {
   );
   const model = JSON.parse(
     await fs.readFile(
-      path.join(
-        root,
-        "slidegenai/references/visual-model-example.json",
-      ),
+      path.join(root, "slidegenai/references/visual-model-example.json"),
       "utf8",
     ),
   );
@@ -101,4 +98,55 @@ export async function analyticalFixture(root) {
     }),
   };
   return { plan, design, model };
+}
+
+/** Alternate geometry with existing portable-study content, not a new authored deck. */
+export async function compositionFixture(root) {
+  const folder = path.join(root, "examples/portable-deck");
+  const plan = JSON.parse(
+    await fs.readFile(path.join(folder, "deck-plan.json"), "utf8"),
+  );
+  const design = JSON.parse(
+    await fs.readFile(path.join(folder, "design-system.json"), "utf8"),
+  );
+  const original = plan.slides[0];
+  const variants = [
+    ["cover", "image-right"],
+    ["topic-cover", "image-right"],
+    ["closing", "image-right"],
+    ["editorial", "inset-image"],
+    ["full-image", "bottom-caption"],
+    ["statement", "offset"],
+    ["closing", "offset"],
+    ["comparison", "open-columns"],
+  ];
+  const texts = original.elements.filter((e) => e.kind === "text");
+  const rows = plan.slides[4].elements.find((e) => e.kind === "table").values;
+  plan.slides = variants.map(([type, variant], i) => ({
+    ...original,
+    id: `variant-${i + 1}`,
+    position: i + 1,
+    status: "generated",
+    composition: {
+      type,
+      variant,
+      eyebrow: texts[0].text,
+      body: texts[2].text,
+      number: "01",
+      image: {
+        asset: plan.slides[2].elements.find((e) => e.kind === "image").asset,
+        alt: "Existing portable study image",
+      },
+      panels: [1, 2].map((column) => ({
+        title: rows[0][column],
+        body: rows
+          .slice(1)
+          .map((row) => row[column])
+          .join("\n"),
+      })),
+    },
+    elements: [],
+  }));
+  plan.expected_slides = plan.slides.length;
+  return { plan, design, model: null, folder };
 }
