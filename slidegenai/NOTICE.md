@@ -7,3 +7,5 @@ The bundled font files are third-party works under **SIL Open Font License 1.1**
 Catalog descriptions and source pointers document visual references; they do not grant rights to a third party's logo, website, imagery, institutional identity or original master. Obtain permission for supplied brand assets as applicable. Fictional example identities and concept images are not endorsements or documentary evidence.
 
 Optional visual-kit and example dependencies retain their own licenses. They are installed separately by npm; the skill does not vendor their runtime code. This repository does not change the license of the separate SlideGenAI application.
+
+The optimized concept images and scene fragments in assets/style-references reproduce the previously created fictitious visual studies. They are generated illustrative artwork, not documentary photographs, official masters or brand affiliations. Their manifest records file hashes and translation limits. They serve as visual references; new presentations should use subject-appropriate material. Font files retain their separate original licenses.

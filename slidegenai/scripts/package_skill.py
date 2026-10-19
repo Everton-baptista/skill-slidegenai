@@ -40,8 +40,11 @@ def inventory(root):
                 allowed = len(rel.parts) == 2
             else:
                 allowed = len(rel.parts) == 3 and rel.name in {
-                    'build.mjs', 'core.mjs', 'html.mjs', 'pptx.mjs',
+                    'build.mjs', 'core.mjs', 'themes.mjs', 'html.mjs', 'pptx.mjs',
                     'inspect.js', 'player.js', 'visual.css', 'package.json', 'package-lock.json'}
+        if tuple(rel.parts[:2]) == ('assets', 'style-references'):
+            identifiers = {'acid-graphix','default','cyberpunk','fashion-editorial','premium-travel','urban-vivid','bauhaus','kinetic','education-modern'}
+            allowed = (path.is_dir() and len(rel.parts) == 2) or (path.is_file() and len(rel.parts) == 3 and (rel.name == 'manifest.json' or any(rel.name == ident + suffix for ident in identifiers for suffix in ('.jpg','.plan.json','.design.json','.visuals.json'))))
         if not allowed or not (path.is_dir() or path.is_file()):
             raise ValueError('Unexpected entry: ' + str(rel))
         if path.is_file():

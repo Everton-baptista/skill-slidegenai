@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "px"
+  },
+  "colors": {
+    "paper": "#0A0A0A",
+    "ink": "#FFFFFF",
+    "accent": "#00FFFF"
+  },
+  "typography": {
+    "headline": {
+      "family": "Barlow Condensed",
+      "size": 88,
+      "line_height": 1.05
+    },
+    "body": {
+      "family": "DM Sans",
+      "size": 26,
+      "line_height": 1.25
+    },
+    "caption": {
+      "family": "IBM Plex Mono",
+      "size": 17,
+      "line_height": 1.2
+    }
+  }
+}

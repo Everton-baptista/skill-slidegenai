@@ -1,5 +1,7 @@
 /** Portable scene compilation. No evaluation of source scripts, HTML or CSS. */
 import fs from "node:fs/promises";
+import { catalogVisual, composeCatalog, readable } from "./themes.mjs";
+export { readable } from "./themes.mjs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 export const home = path.dirname(fileURLToPath(import.meta.url));
@@ -88,22 +90,13 @@ export async function resolveStyle(id) {
   const base = system.families[entry.family];
   if (!base) throw Error("Missing style family");
   const override = pairs.pairings.find((p) => p.source_id === id);
-  return { ...base, ...(override || {}), id, family: entry.family };
-}
-export function readable(background, preferred) {
-  const lum = (hex) =>
-    [1, 3, 5]
-      .map((i) => parseInt(hex.slice(i, i + 2), 16) / 255)
-      .map((v) => (v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4))
-      .reduce((sum, v, i) => sum + v * [0.2126, 0.7152, 0.0722][i], 0);
-  const b = lum(background),
-    p = lum(preferred),
-    ratio = (Math.max(b, p) + 0.05) / (Math.min(b, p) + 0.05);
-  return ratio >= 4.5
-    ? preferred
-    : (b + 0.05) / 0.05 >= 1.05 / (b + 0.05)
-      ? "#000000"
-      : "#FFFFFF";
+  return {
+    ...base,
+    ...(override || {}),
+    id,
+    family: entry.family,
+    visual: catalogVisual(entry),
+  };
 }
 const recipes = new Set([
   "cover",
@@ -117,6 +110,20 @@ const recipes = new Set([
 export function compose(slide, canvas, design) {
   const c = slide.composition;
   if (!c) return [];
+  if (
+    c.variant === "catalog" ||
+    (design.visual_tokens &&
+      c.variant === undefined &&
+      [
+        "cover",
+        "editorial",
+        "topic-cover",
+        "closing",
+        "statement",
+        "evidence",
+      ].includes(c.type))
+  )
+    return composeCatalog(slide, canvas, design);
   if (!recipes.has(c.type)) throw Error(`Unsupported composition: ${c.type}`);
   const variants = {
     cover: ["default", "image-right"],
@@ -324,6 +331,37 @@ export async function compile(plan, design, model, root) {
     warnings = [],
     fonts = [],
     sids = new Set();
+  if (
+    design.catalog_treatment !== undefined &&
+    typeof design.catalog_treatment !== "boolean"
+  )
+    throw Error("catalog_treatment must be boolean");
+  if (design.catalog_treatment) {
+    if (!style.id) throw Error("catalog_treatment requires template_id");
+    const t = style.visual;
+    design = {
+      ...design,
+      visual_tokens: t,
+      colors: {
+        paper: t.paper,
+        ink: t.ink,
+        accent: t.accent,
+        secondary: t.secondary,
+        tertiary: t.tertiary || t.palette[2],
+        surface: t.surface,
+        ...design.colors,
+      },
+      typography: {
+        headline: { family: style.display, size: 88, line_height: 1.02 },
+        body: { family: style.body, size: 26, line_height: 1.25 },
+        caption: { family: style.label, size: 16, line_height: 1.2 },
+        ...design.typography,
+      },
+    };
+    warnings.push(
+      "Catalog treatment is an authored creative adaptation; semantic color roles and geometry are inferred, not a faithful source master.",
+    );
+  }
   for (const v of Object.values(design.colors || {})) color(v);
   const manifest = await json(path.join(skill, "assets/fonts/manifest.json"));
   async function face(request, size, weight, italic) {
@@ -409,6 +447,8 @@ export async function compile(plan, design, model, root) {
         if (e.font_weight > 1000) throw Error("Font weight exceeds 1000");
       }
       if (e.node_color) e.node_color = color(e.node_color);
+      if (e.diagram_radius !== undefined)
+        finite(e.diagram_radius, "diagram radius");
       const defaultRole =
         e.type_role === "headline"
           ? "display"
@@ -480,10 +520,24 @@ export async function compile(plan, design, model, root) {
         e.header_fill = color(
           e.header_fill || design.colors.accent || "#243A63",
         );
-        e.header_color = color(e.header_color || "#FFFFFF");
-        e.body_fill = color(e.body_fill || "#FFFFFF");
+        e.header_color = color(
+          e.header_color || readable(e.header_fill, "#FFFFFF"),
+        );
+        e.body_fill = color(
+          e.body_fill ||
+            (design.catalog_treatment ? design.colors.paper : "#FFFFFF"),
+        );
       }
       if (e.kind === "chart") {
+        if (
+          e.orientation &&
+          !["horizontal", "vertical"].includes(e.orientation)
+        )
+          throw Error("Unsupported chart orientation");
+        if (e.chart_label_size !== undefined)
+          finite(e.chart_label_size, "chart label size", 1);
+        if (e.show_values !== undefined && typeof e.show_values !== "boolean")
+          throw Error("show_values must be boolean");
         e.visual =
           model?.charts?.find((v) => v.id === e.visual_id) ||
           (!e.visual_id && e.values
@@ -500,10 +554,27 @@ export async function compile(plan, design, model, root) {
               }
             : null);
         validateChart(e.visual);
+        if (
+          e.color_by_category !== undefined &&
+          typeof e.color_by_category !== "boolean"
+        )
+          throw Error("color_by_category must be boolean");
+        if (
+          e.color_by_category &&
+          (e.visual.type !== "grouped-bar" || e.visual.series.length !== 1)
+        )
+          throw Error("Category colors require one grouped-bar series");
         if (e.palette && (!Array.isArray(e.palette) || !e.palette.length))
           throw Error("Chart palette must be a nonempty array");
         e.palette = (
-          e.palette || [
+          e.palette ||
+          (design.catalog_treatment
+            ? [
+                design.colors.accent,
+                design.colors.secondary,
+                design.colors.tertiary,
+              ]
+            : null) || [
             design.colors.accent || "#243A63",
             "#B64B30",
             "#798E61",
@@ -528,6 +599,7 @@ export async function compile(plan, design, model, root) {
     });
   }
   return {
+    catalog_treatment: !!design.catalog_treatment,
     title: plan.title,
     language: plan.language || "en",
     canvas,
@@ -837,6 +909,7 @@ export function diagram(d, e) {
       fill,
       line: ink,
       shape: node.role === "decision" ? "diamond" : "rect",
+      radius: e.diagram_radius || 0,
     });
     text(
       `label-${node.id}`,

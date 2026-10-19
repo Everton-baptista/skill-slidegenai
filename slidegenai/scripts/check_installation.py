@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check an installed skill's local resources offline; do not install or contact services."""
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -35,13 +36,23 @@ def check(root):
                 raise ValueError('Missing or external local resource: ' + source.relative_to(root).as_posix() + ' -> ' + target)
             links += 1
     kit = root / 'assets/visual-kit'
-    for name in ('build.mjs', 'core.mjs', 'html.mjs', 'pptx.mjs', 'inspect.js', 'player.js', 'visual.css', 'package.json', 'package-lock.json'):
+    for name in ('build.mjs', 'core.mjs', 'themes.mjs', 'html.mjs', 'pptx.mjs', 'inspect.js', 'player.js', 'visual.css', 'package.json', 'package-lock.json'):
         if not (kit / name).is_file():
             raise ValueError('Missing visual kit resource: ' + name)
     package = json.loads((kit / 'package.json').read_text(encoding='utf-8'))
     lock = json.loads((kit / 'package-lock.json').read_text(encoding='utf-8'))
     if package.get('dependencies') != lock.get('packages', {}).get('', {}).get('dependencies'):
         raise ValueError('Visual kit lockfile differs from package dependencies')
+    reference_root = root / 'assets/style-references'
+    refs = json.loads((reference_root / 'manifest.json').read_text(encoding='utf-8'))
+    for entry in refs['references']:
+        if entry['image'] != entry['id'] + '.jpg' or not re.fullmatch(r'[a-z0-9-]+', entry['id']):
+            raise ValueError('Invalid visual reference asset name')
+        image = reference_root / entry['image']
+        if hashlib.sha256(image.read_bytes()).hexdigest() != entry['sha256']:
+            raise ValueError('Visual reference image hash differs: ' + entry['id'])
+        for suffix in ('.plan.json','.design.json','.visuals.json'):
+            json.loads((reference_root / (entry['id'] + suffix)).read_text(encoding='utf-8'))
     helpers = list((root / 'scripts').glob('*.py'))
     for helper in helpers:
         compile(helper.read_text(encoding='utf-8'), str(helper), 'exec')

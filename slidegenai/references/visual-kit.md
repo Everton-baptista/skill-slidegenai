@@ -100,3 +100,21 @@ api.updateChart(slideId, chartElementId, visual);
 `updateChart` validates the complete visual model with the same rules as compilation, then rebuilds that chart's SVG, axis domain, labels, interactions and data-table model. Invalid input throws before replacing the chart. Supported types remain grouped-bar, line, stacked-share and paired scatter. A changed dataset requires another visual fit/meaning check; this API does not certify it. Negative values retain a zero reference; percentage columns must total 100.
 
 Updates live only in the open browser session. The API does not rewrite the HTML, synchronize PPTX/PDF, connect to databases, poll a live feed or persist changes. Update the source visual model and rebuild the deliverables to save a revision. A genuine live-data integration needs an explicitly chosen and authorized data source plus refresh/error handling; do not claim one exists from an interactive chart alone. PPTX keeps native editable chart objects and workbooks, without the HTML player's tooltips or controls.
+
+## Catalog character and composition
+
+`template_id` alone remains backward-compatible and supplies catalog font suggestions. For a creative catalog starting system, set `catalog_treatment: true` in the design and choose a canonical `template_id` on the plan or design. This opts into authored semantic colors, type roles, composition geometry, chart colors and evidence treatments. Explicit design colors/fonts and element values take precedence. Omitted composition variants use the catalog treatment when supported; an explicit `variant: "default"` retains legacy recipe geometry. Existing explicit elements are not rearranged.
+
+All 177 IDs resolve through the shared treatment factory. The factory combines source color inventories, family starting points and selected authored directions. Semantic roles, missing colors and geometry are creative inferences, recorded as such; they are not imported source masters. Different source styles may share a family layout. This does not reproduce 177 original templates or certify all of them visually. Use specific source relationships and custom measured elements for further differentiation. Preserve faithful-template and brand requirements.
+
+Catalog compositions support cover, topic-cover, editorial, statement, closing and `evidence`. An evidence composition takes an `object` with `kind: chart|diagram|table` and the same `visual_id` or table `values` used by ordinary elements. Pass the model through `--visuals`. Example:
+
+```json
+{"composition":{"type":"evidence","eyebrow":"Existing section label","body":"Existing explanation","caption":"Illustrative data","object":{"kind":"chart","visual_id":"existing-chart-id"}},"elements":[]}
+```
+
+Choose this when its geometry fits the content; use explicit elements otherwise. Charts receive a quiet plotting region while retaining display/body roles and semantic colors. Source units, data and diagram topology stay intact. Native elements and HTML use the same expanded scene; original masters are not imported by this builder.
+
+Charts additionally support `orientation: horizontal|vertical` for grouped bars, `chart_label_size` as a positive measure, and boolean `show_values`. Boolean `color_by_category` is restricted to a single grouped-bar series; an explicit palette colors categories in both adapters. Otherwise colors identify series. Unsupported category-color models fail. Numeric axes use readable tick steps without altering data. Tooltips, the data table and the original source status remain available.
+
+The [executable visual references](visual-reference-library.md) bundle nine existing cover/evidence pairs, measured plans, structured data and optimized concept images. They are the visual reference collection. The analytical-patterns fixture remains a functionality/data regression, not the intended universal art direction or public aesthetic showcase.

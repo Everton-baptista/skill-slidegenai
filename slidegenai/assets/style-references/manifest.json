@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "purpose": "Executable visual references, not a compulsory style menu or new narrative decks",
+  "references": [
+    {
+      "id": "acid-graphix",
+      "name": "Acid Rave",
+      "image": "acid-graphix.jpg",
+      "sha256": "834cd58be15053e0f236eb3d0539d1defdceabace42cbd898aceb50ce3452bd6",
+      "bytes": 302171,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "default",
+      "name": "Neo-Tech",
+      "image": "default.jpg",
+      "sha256": "4fff9544052f1c51206c7fb64940ebd7a845260b1ebc850224acc86031d16eed",
+      "bytes": 100627,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "cyberpunk",
+      "name": "Cyberpunk",
+      "image": "cyberpunk.jpg",
+      "sha256": "22d1b7a8e0905c49e677a447b2b64868f59c4bac3911c7153a02ed27fc0eb5eb",
+      "bytes": 252420,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "fashion-editorial",
+      "name": "NOVA",
+      "image": "fashion-editorial.jpg",
+      "sha256": "24321a5dfd7726dded910156672e2a10a4320ca76802a3c084b594a7542a1ea0",
+      "bytes": 63174,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "premium-travel",
+      "name": "Ultimate Luxury",
+      "image": "premium-travel.jpg",
+      "sha256": "24973a3e4d9f9611e9d10b1937a7411abafcd34910a81e28bea96b818fb4f428",
+      "bytes": 221558,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "urban-vivid",
+      "name": "Neo Tokyo",
+      "image": "urban-vivid.jpg",
+      "sha256": "0dea74fc082f0706f31405d4bff5414a5afa45646512ad58b611f7f25927a00b",
+      "bytes": 316660,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "bauhaus",
+      "name": "Bauhaus",
+      "image": "bauhaus.jpg",
+      "sha256": "2f2ffe1f02baff6619e4445fe6833b6436c91f0847b9143f3ab80af1596b69d4",
+      "bytes": 119311,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "kinetic",
+      "name": "Kinetic",
+      "image": "kinetic.jpg",
+      "sha256": "68f95303dae5fe67a793f2aaf837c4cf88ee7134d1534eea87b99bfe6bb05671",
+      "bytes": 99802,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    },
+    {
+      "id": "education-modern",
+      "name": "Corporate & Education",
+      "image": "education-modern.jpg",
+      "sha256": "becaf80d575b938843007dbaa54413ae7293d1767f4f56545fb6d3411b5fd6df",
+      "bytes": 178288,
+      "source": "Existing 2026-10-18 fictitious style study; cover and evidence fragments retained",
+      "artwork": "Previously generated concept artwork, not documentary photography",
+      "translation": "Original scene geometry and content retained; bundled fonts substituted; supported two-stop reading gradients approximate original overlays"
+    }
+  ]
+}

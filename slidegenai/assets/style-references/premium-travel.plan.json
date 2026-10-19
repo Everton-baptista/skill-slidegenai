@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "premium-travel",
+  "title": "Ultimate Luxury — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "luxury-01",
+      "position": 1,
+      "title": "Reserva Alva",
+      "background": "#002B45",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "premium-travel.jpg",
+          "alt": "Imagem conceitual fictícia para Reserva Alva; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "shape",
+          "fill": "#002B45",
+          "effect": {
+            "gradient": {
+              "from": "#002B45",
+              "to": "#002B45",
+              "from_opacity": 0.02,
+              "to_opacity": 0.78,
+              "direction": "bottom"
+            }
+          }
+        },
+        {
+          "id": "element-3",
+          "x": 99,
+          "y": 470,
+          "width": 1080,
+          "height": 100,
+          "kind": "text",
+          "text": "Reserva Alva",
+          "font_size": 78,
+          "font_family": "Cormorant Garamond",
+          "bold": false,
+          "color": "#FFFFFF",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 104,
+          "y": 584,
+          "width": 1050,
+          "height": 65,
+          "kind": "text",
+          "text": "Uma pausa à beira do tempo",
+          "font_size": 30,
+          "font_family": "Manrope",
+          "bold": false,
+          "color": "#FFFFFF",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-5",
+          "x": 104,
+          "y": 672,
+          "width": 1000,
+          "height": 30,
+          "kind": "text",
+          "text": "Conceito fictício de hospitalidade",
+          "font_size": 20,
+          "font_family": "Manrope",
+          "bold": false,
+          "color": "#FFFFFF",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "luxury-05",
+      "position": 2,
+      "title": "O cuidado aparece nos detalhes",
+      "background": "#F2EDE1",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "O cuidado aparece nos detalhes",
+          "font_size": 49,
+          "font_family": "Cormorant Garamond",
+          "bold": false,
+          "color": "#002B45",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 100,
+          "y": 260,
+          "width": 1080,
+          "height": 305,
+          "kind": "table",
+          "values": [
+            [
+              "Momento",
+              "Intenção",
+              "Expressão proposta"
+            ],
+            [
+              "Chegada",
+              "Orientar com discrição",
+              "Acolhimento pessoal"
+            ],
+            [
+              "Estadia",
+              "Preservar a escolha",
+              "Ritmo sem agenda imposta"
+            ],
+            [
+              "Mesa",
+              "Dar atenção à matéria",
+              "Menu curto e sazonal"
+            ],
+            [
+              "Partida",
+              "Encerrar com cuidado",
+              "Saída simples e clara"
+            ]
+          ],
+          "font_family": "Manrope",
+          "font_size": 24,
+          "color": "#002B45",
+          "header_fill": "#002B45",
+          "header_color": "#FFFFFF",
+          "body_fill": "#F2EDE1"
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Proposta fictícia de serviço; sem afiliação com hotéis reais.",
+          "font_size": 21,
+          "font_family": "Manrope",
+          "bold": false,
+          "color": "#002B45",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

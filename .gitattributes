@@ -13,3 +13,5 @@
 # Preserve exact upstream bytes used by the font/license integrity manifest.
 /slidegenai/assets/fonts/**/*.ttf binary
 /slidegenai/assets/fonts/**/OFL.txt -text -whitespace
+
+/slidegenai/assets/style-references/*.jpg binary

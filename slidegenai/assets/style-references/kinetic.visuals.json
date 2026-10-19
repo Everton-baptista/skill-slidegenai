@@ -1,0 +1,34 @@
+{
+  "charts": [
+    {
+      "id": "kinetic-05",
+      "type": "line",
+      "unit": "Ensaios por semana",
+      "source": {
+        "status": "illustrative",
+        "label": "Programação fictícia · contagens inteiras; nenhuma melhora de desempenho é afirmada."
+      },
+      "categories": [
+        "S1",
+        "S2",
+        "S3",
+        "S4",
+        "S5",
+        "S6"
+      ],
+      "series": [
+        {
+          "name": "Ensaios",
+          "values": [
+            2,
+            2,
+            3,
+            3,
+            4,
+            4
+          ]
+        }
+      ]
+    }
+  ]
+}

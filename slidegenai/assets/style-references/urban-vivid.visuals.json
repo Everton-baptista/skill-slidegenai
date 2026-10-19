@@ -1,0 +1,45 @@
+{
+  "charts": [
+    {
+      "id": "tokyo-04",
+      "type": "line",
+      "unit": "Passagens por hora",
+      "source": {
+        "status": "illustrative",
+        "label": "Série fictícia · passagens, não pessoas únicas; nenhum dado de Tóquio foi coletado."
+      },
+      "categories": [
+        "22h",
+        "23h",
+        "0h",
+        "1h",
+        "2h",
+        "3h"
+      ],
+      "series": [
+        {
+          "name": "Passarela",
+          "values": [
+            180,
+            240,
+            210,
+            150,
+            90,
+            45
+          ]
+        },
+        {
+          "name": "Praça",
+          "values": [
+            110,
+            180,
+            220,
+            170,
+            120,
+            70
+          ]
+        }
+      ]
+    }
+  ]
+}

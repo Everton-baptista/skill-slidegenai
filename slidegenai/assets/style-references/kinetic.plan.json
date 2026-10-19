@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "kinetic",
+  "title": "Kinetic — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "kinetic-01",
+      "position": 1,
+      "title": "MOVE",
+      "background": "#EAB308",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "kinetic.jpg",
+          "alt": "Imagem conceitual fictícia para MOVE; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 0,
+          "y": 0,
+          "width": 745,
+          "height": 720,
+          "kind": "shape",
+          "fill": "#EAB308"
+        },
+        {
+          "id": "element-3",
+          "x": 54,
+          "y": 34,
+          "width": 710,
+          "height": 195,
+          "kind": "text",
+          "text": "MOVE",
+          "font_size": 174,
+          "font_family": "Bebas Neue",
+          "bold": false,
+          "color": "#101010",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 88,
+          "y": 237,
+          "width": 710,
+          "height": 195,
+          "kind": "text",
+          "text": "MOVE",
+          "font_size": 174,
+          "font_family": "Bebas Neue",
+          "bold": false,
+          "color": "#5F4A07",
+          "align": "left",
+          "line_height": 1.05,
+          "effect": {
+            "outline": 2.5
+          }
+        },
+        {
+          "id": "element-5",
+          "x": 122,
+          "y": 440,
+          "width": 710,
+          "height": 195,
+          "kind": "text",
+          "text": "MOVE",
+          "font_size": 174,
+          "font_family": "Bebas Neue",
+          "bold": false,
+          "color": "#101010",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-6",
+          "x": 800,
+          "y": 624,
+          "width": 410,
+          "height": 66,
+          "kind": "text",
+          "text": "MOSTRA DE CORPO E TEMPO",
+          "font_size": 24,
+          "font_family": "Space Grotesk",
+          "bold": true,
+          "color": "#FFFFFF",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "kinetic-05",
+      "position": 2,
+      "title": "A sequência de ensaios",
+      "background": "#101010",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "A sequência de ensaios",
+          "font_size": 49,
+          "font_family": "Bebas Neue",
+          "bold": false,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 76,
+          "y": 220,
+          "width": 1128,
+          "height": 380,
+          "kind": "chart",
+          "visual_id": "kinetic-05",
+          "font_family": "Manrope",
+          "font_size": 27,
+          "color": "#F2F2EA",
+          "palette": [
+            "#EAB308"
+          ],
+          "chart_label_size": 20,
+          "show_values": false,
+          "orientation": "vertical"
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Programação fictícia · contagens inteiras; nenhuma melhora de desempenho é afirmada.",
+          "font_size": 21,
+          "font_family": "Space Grotesk",
+          "bold": false,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

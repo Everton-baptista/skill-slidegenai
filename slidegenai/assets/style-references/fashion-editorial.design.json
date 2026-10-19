@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "px"
+  },
+  "colors": {
+    "paper": "#FFFFFF",
+    "ink": "#191919",
+    "accent": "#E53935"
+  },
+  "typography": {
+    "headline": {
+      "family": "Bodoni Moda",
+      "size": 88,
+      "line_height": 1.05
+    },
+    "body": {
+      "family": "DM Sans",
+      "size": 26,
+      "line_height": 1.25
+    },
+    "caption": {
+      "family": "DM Sans",
+      "size": 17,
+      "line_height": 1.2
+    }
+  }
+}

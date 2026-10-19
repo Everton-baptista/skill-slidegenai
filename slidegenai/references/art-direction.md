@@ -99,6 +99,10 @@ For a non-obvious slide choice, add `visual_intent` to that slide in the plan: `
 
 Use the subject's real names, useful distinctions, supported observations, and appropriate level of detail. A title may name a topic, explain a finding, or make a clearly interpretive proposition. Keep an existing title when it works. Do not convert every slide into a slogan, a forced three-part list, or a “journey” frame. Shorten abstract promotional language into the actual claim, and remove subtitles added only to fill a slot. Natural language may be formal, technical, warm, or spare according to the audience; there is no universal punctuation blacklist that makes writing human.
 
+## Compare with the visual standard
+
+For a catalog-based expressive request, use the relevant [visual reference pair](visual-reference-library.md) to compare type scale, subject-specific imagery, composition and the treatment of evidence. A small title can pass overflow checks and still destroy the design. If a conversion loses the intended hierarchy, restore or recompose it and inspect again. Reference geometry is guidance, not permission to replace content or ignore fit in another language.
+
 ## Editorial critique
 
 After rendering, ask:

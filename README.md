@@ -43,7 +43,7 @@ Claude Code and Antigravity can expose this as a native slash command after inst
 
 **Claude.ai upload limit:** choose the **Claude.ai profile** ZIP. The complete/full ZIP contains more font faces and exceeds the 30 MB uncompressed limit observed in Claude.ai. A ZIP's download size is not its extracted size. Package reports now include `uncompressed_bytes`.
 
-**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.2.0/slidegenai-claude-ai-2.2.0.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.2.0/slidegenai-full-2.2.0.zip). Extract the complete ZIP before copying its slidegenai folder for local agents.
+**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.3.0/slidegenai-claude-ai-2.3.0.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.3.0/slidegenai-full-2.3.0.zip). Extract the complete ZIP before copying its slidegenai folder for local agents.
 
 Choose **one** installation method for the assistant you use. Install the entire `slidegenai/` folder, including its references, scripts, assets and licenses. Copying only `SKILL.md` leaves resources missing.
 
@@ -60,7 +60,7 @@ Without Git, use **Code → Download ZIP** on GitHub and extract it. Open a term
 
 ### Claude.ai — upload and enable the ZIP
 
-**[Download the ready-to-install Claude.ai ZIP (v2.2.0)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.2.0/slidegenai-claude-ai-2.2.0.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v2.2.0). This is a preview release: the previous 1.1.3 installation was verified; the new kit’s full two-host authoring evaluation is incomplete.
+**[Download the ready-to-install Claude.ai ZIP (v2.3.0)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.3.0/slidegenai-claude-ai-2.3.0.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v2.3.0). This is a preview release: the previous 1.1.3 installation was verified; the new kit’s full two-host authoring evaluation is incomplete.
 
 To build it yourself from the downloaded repository folder, with Python 3.9+:
 
@@ -307,9 +307,11 @@ The initial npm install needs network access or a populated cache. Use a new out
 
 ## Optional visual kit: HTML/CSS/SVG and editable PPTX
 
-![Existing source slides reproduced by the adaptive kit: editorial image, trend chart, decision flow and categorical matrix](docs/previews/visual-kit.jpg)
+![Actual HTML reproductions of Acid Rave, NOVA and Bauhaus reference covers with their editable data pages](docs/previews/visual-kit.jpg)
 
 Ask your assistant: **“/slidegenai Use the visual kit when appropriate. Build the presentation with images, expressive typography and layouts that fit the content; render and inspect the actual deliverable.”** The assistant can still use its native editor.
+
+The 2.3 visual correction connects catalog directions to authored composition, semantic color and analytical-object treatment through opt-in `catalog_treatment`. All 177 IDs resolve through the shared factory; explicit brand/design choices win. It also bundles nine executable visual reference pairs with optimized original concept artwork, live expressive type and structured charts/tables. These reproduce existing studies and provide a visible design standard. They are not nine exclusive styles or a certification of 177 source masters. [Reference usage](slidegenai/references/visual-reference-library.md) · [Catalog treatment and limits](slidegenai/references/visual-kit.md#catalog-character-and-composition).
 
 The kit supplies working covers, topic covers, editorial layouts, full-page image/gradient compositions, typographic statements, comparisons and closing slides. It also builds four chart types, tables, processes, decision flows, swimlanes, system relationships, roadmaps and matrices from data. Effects and layout recipes are optional; the content controls their selection.
 
@@ -343,7 +345,7 @@ For PPTX, install the pinned optional dependencies in your local installed copy 
 | Ten-slide analytical example | Four native charts, table, diagrams, roadmap and matrix checked; checked-in deck rendered and inspected. The reproduction adapter uses free line segments that need rerouting after nodes move |
 | Nine-style study | 54 final slides and nine overviews inspected, with chart, table, connector and typography checks |
 | Python helpers and ZIPs | 158 tests, including independently extracted ZIP execution. The renamed v2 source passed [all six CI jobs](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39258624605), covering Linux/Windows, native objects and offline browser regressions. The previous 157-test release passed Linux/Windows with Python 3.9/3.13; [historical CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101) |
-| Adaptive visual kit (v2 public name: slidegenai) | 16 JavaScript behavior tests including native object checks; both existing studies reproduced in HTML/PPTX, browser fonts and offline loading checked, all pages/overviews inspected. See [kit validation](docs/VISUAL_KIT_VALIDATION.md) for differences and host limits |
+| Adaptive visual kit (v2 public name: slidegenai) | 19 JavaScript behavior tests including native object checks; both existing studies reproduced in HTML/PPTX, browser fonts and offline loading checked, all pages/overviews inspected. See [kit validation](docs/VISUAL_KIT_VALIDATION.md) for differences and host limits |
 | Bundled fonts | All 140 files parsed and integrity checked; browser specimen checks are recorded in the validation guide. OS registration and all native exporters remain host-specific |
 | Catalog | All 177 entries resolve structurally; full decks have not been rendered and inspected for every entry |
 | PowerPoint, Google Slides, Keynote | Native opening/editing not tested |

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "px"
+  },
+  "colors": {
+    "paper": "#EAB308",
+    "ink": "#101010",
+    "accent": "#101010"
+  },
+  "typography": {
+    "headline": {
+      "family": "Bebas Neue",
+      "size": 88,
+      "line_height": 1.05
+    },
+    "body": {
+      "family": "Manrope",
+      "size": 26,
+      "line_height": 1.25
+    },
+    "caption": {
+      "family": "Space Grotesk",
+      "size": 17,
+      "line_height": 1.2
+    }
+  }
+}

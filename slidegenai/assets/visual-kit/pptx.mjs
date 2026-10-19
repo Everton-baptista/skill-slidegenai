@@ -69,7 +69,9 @@ export async function renderPPTX(scene, warnings) {
         ? p.ShapeType.diamond
         : e.effect?.mask === "ellipse"
           ? p.ShapeType.ellipse
-          : p.ShapeType.rect,
+          : e.effect?.radius
+            ? p.ShapeType.roundRect
+            : p.ShapeType.rect,
       {
         ...position(e),
         objectName: esc(e.id),
@@ -132,7 +134,10 @@ export async function renderPPTX(scene, warnings) {
       legendFontFace: e.font_family,
       legendFontSize: toPt(e.font_size * 0.65),
       legendColor: rgb(e.color),
-      chartColors: e.palette.slice(0, v.series.length).map(rgb),
+      chartColors: (e.color_by_category
+        ? v.categories.map((_, i) => e.palette[i % e.palette.length])
+        : e.palette.slice(0, v.series.length)
+      ).map(rgb),
       catAxisLabelFontFace: e.font_family,
       catAxisLabelFontSize: toPt(e.font_size * 0.65),
       catAxisLabelColor: rgb(e.color),
@@ -142,7 +147,7 @@ export async function renderPPTX(scene, warnings) {
       valGridLine: { color: "DCE3EB", width: 0.5 },
       valAxisMinVal: lo,
       valAxisMaxVal: hi === lo ? hi + 1 : hi,
-      showValue: false,
+      showValue: !!e.show_values,
       showMarker: true,
       lineDataSymbol: "circle",
       lineSize: v.type === "scatter" ? 0 : 2,
@@ -150,11 +155,14 @@ export async function renderPPTX(scene, warnings) {
       chartArea: { fill: { color: rgb(e.slideBackground) } },
       plotArea: { fill: { color: rgb(e.slideBackground) } },
       ...(v.type === "grouped-bar"
-        ? { barDir: "col", barGrouping: "clustered" }
+        ? {
+            barDir: e.orientation === "horizontal" ? "bar" : "col",
+            barGrouping: "clustered",
+          }
         : {}),
       ...(v.type === "stacked-share"
         ? {
-            barDir: "col",
+            barDir: e.orientation === "horizontal" ? "bar" : "col",
             barGrouping: "stacked",
             barOverlapPct: 100,
             valAxisMinVal: 0,
@@ -229,7 +237,7 @@ export async function renderPPTX(scene, warnings) {
             id: `${e.id}/${q.id}`,
             x: e.x + q.x,
             y: e.y + q.y,
-            effect: {},
+            effect: q.radius ? { radius: q.radius } : {},
             primitives: null,
           };
           if (q.kind === "text") text(s, child);

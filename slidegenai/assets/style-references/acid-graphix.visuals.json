@@ -1,0 +1,28 @@
+{
+  "charts": [
+    {
+      "id": "acid-04",
+      "type": "grouped-bar",
+      "unit": "Sets",
+      "source": {
+        "status": "illustrative",
+        "label": "Programação fictícia · 12 sets no total; não representa um evento real."
+      },
+      "categories": [
+        "Sala 1",
+        "Sala 2",
+        "Pátio"
+      ],
+      "series": [
+        {
+          "name": "Sets",
+          "values": [
+            4,
+            3,
+            5
+          ]
+        }
+      ]
+    }
+  ]
+}

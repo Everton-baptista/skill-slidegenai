@@ -1,0 +1,28 @@
+{
+  "charts": [
+    {
+      "id": "nova-05",
+      "type": "grouped-bar",
+      "unit": "Looks",
+      "source": {
+        "status": "illustrative",
+        "label": "Contagem fictícia · seis looks; categorias definidas para esta demonstração."
+      },
+      "categories": [
+        "Estruturadas",
+        "Fluidas",
+        "Modulares"
+      ],
+      "series": [
+        {
+          "name": "Looks",
+          "values": [
+            2,
+            3,
+            1
+          ]
+        }
+      ]
+    }
+  ]
+}

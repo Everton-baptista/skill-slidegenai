@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "education-modern",
+  "title": "Corporate & Education — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "education-01",
+      "position": 1,
+      "title": "Liderança\nna prática",
+      "background": "#FFFFFF",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 760,
+          "y": 75,
+          "width": 480,
+          "height": 570,
+          "kind": "image",
+          "asset": "education-modern.jpg",
+          "alt": "Imagem conceitual fictícia para Instituto Vértice; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 60,
+          "y": 168,
+          "width": 735,
+          "height": 300,
+          "kind": "text",
+          "text": "Liderança\nna prática",
+          "font_size": 83,
+          "font_family": "Manrope",
+          "bold": true,
+          "color": "#133D48",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 52,
+          "width": 1110,
+          "height": 55,
+          "kind": "text",
+          "text": "INSTITUTO VÉRTICE / FORMAÇÃO EXECUTIVA",
+          "font_size": 23,
+          "font_family": "DM Sans",
+          "bold": true,
+          "color": "#137F86",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 64,
+          "y": 620,
+          "width": 650,
+          "height": 40,
+          "kind": "text",
+          "text": "Programa piloto fictício",
+          "font_size": 25,
+          "font_family": "DM Sans",
+          "bold": true,
+          "color": "#D7693C",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "education-04",
+      "position": 2,
+      "title": "O que cada encontro deixa visível",
+      "background": "#FFFFFF",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "O que cada encontro deixa visível",
+          "font_size": 49,
+          "font_family": "Manrope",
+          "bold": true,
+          "color": "#133D48",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 64,
+          "y": 230,
+          "width": 1152,
+          "height": 350,
+          "kind": "table",
+          "values": [
+            [
+              "Encontro",
+              "Pergunta central",
+              "Produção proposta"
+            ],
+            [
+              "01",
+              "Qual é o problema?",
+              "Recorte e contexto"
+            ],
+            [
+              "02",
+              "Que alternativas existem?",
+              "Comparação de possibilidades"
+            ],
+            [
+              "03",
+              "O que sustenta a escolha?",
+              "Argumento e critérios"
+            ],
+            [
+              "04",
+              "O que precisa ser revisto?",
+              "Decisão comentada"
+            ]
+          ],
+          "font_family": "DM Sans",
+          "font_size": 24,
+          "color": "#133D48",
+          "header_fill": "#133D48",
+          "header_color": "#FFFFFF",
+          "body_fill": "#FFFFFF"
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Currículo fictício · presença e participação não provam aprendizagem.",
+          "font_size": 21,
+          "font_family": "DM Sans",
+          "bold": false,
+          "color": "#133D48",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "charts": [
+    {
+      "id": "neotech-04",
+      "type": "grouped-bar",
+      "unit": "Minutos por pedido",
+      "source": {
+        "status": "illustrative",
+        "label": "Simulação fictícia · totais de 50 e 36 minutos; nenhuma operação real foi medida."
+      },
+      "categories": [
+        "Receber",
+        "Conferir",
+        "Esperar",
+        "Concluir"
+      ],
+      "series": [
+        {
+          "name": "Base",
+          "values": [
+            8,
+            12,
+            20,
+            10
+          ]
+        },
+        {
+          "name": "Piloto",
+          "values": [
+            7,
+            9,
+            11,
+            9
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -244,6 +244,11 @@
     if (!model) throw Error("Unknown slide/chart ID");
     const candidate = structuredClone(visual);
     validateChart(candidate);
+    if (
+      model.element.color_by_category &&
+      (candidate.type !== "grouped-bar" || candidate.series.length !== 1)
+    )
+      throw Error("Category colors require one grouped-bar series");
     const element = { ...model.element, visual: candidate };
     const svg = [...document.querySelectorAll("svg.chart")].find(
       (e) =>

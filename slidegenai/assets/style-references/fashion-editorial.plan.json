@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "fashion-editorial",
+  "title": "NOVA — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "nova-01",
+      "position": 1,
+      "title": "NOVA",
+      "background": "#FFFFFF",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "fashion-editorial.jpg",
+          "alt": "Imagem conceitual fictícia para Coleção Intervalo; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 44,
+          "y": 66,
+          "width": 1030,
+          "height": 300,
+          "kind": "text",
+          "text": "NOVA",
+          "font_size": 230,
+          "font_family": "Bodoni Moda",
+          "bold": false,
+          "color": "#E53935",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 572,
+          "width": 600,
+          "height": 90,
+          "kind": "text",
+          "text": "COLEÇÃO INTERVALO",
+          "font_size": 31,
+          "font_family": "DM Sans",
+          "bold": true,
+          "color": "#191919",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 64,
+          "y": 657,
+          "width": 385,
+          "height": 38,
+          "kind": "shape",
+          "fill": "#FFC107"
+        },
+        {
+          "id": "element-5",
+          "x": 78,
+          "y": 664,
+          "width": 350,
+          "height": 30,
+          "kind": "text",
+          "text": "PROJETO FICTÍCIO",
+          "font_size": 20,
+          "font_family": "DM Sans",
+          "bold": true,
+          "color": "#191919",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "nova-05",
+      "position": 2,
+      "title": "A distribuição das propostas",
+      "background": "#FFFFFF",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "A distribuição das propostas",
+          "font_size": 49,
+          "font_family": "Bodoni Moda",
+          "bold": false,
+          "color": "#191919",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 76,
+          "y": 220,
+          "width": 1128,
+          "height": 380,
+          "kind": "chart",
+          "visual_id": "nova-05",
+          "font_family": "DM Sans",
+          "font_size": 27,
+          "color": "#191919",
+          "palette": [
+            "#E53935",
+            "#FFC107"
+          ],
+          "chart_label_size": 20,
+          "show_values": true,
+          "orientation": "horizontal"
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Contagem fictícia · seis looks; categorias definidas para esta demonstração.",
+          "font_size": 21,
+          "font_family": "DM Sans",
+          "bold": false,
+          "color": "#191919",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

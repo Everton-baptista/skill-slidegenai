@@ -1,0 +1,182 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "cyberpunk",
+  "title": "Cyberpunk — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "cyber-01",
+      "position": 1,
+      "title": "PROTOCOLO\nZERO",
+      "background": "#050505",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "cyberpunk.jpg",
+          "alt": "Imagem conceitual fictícia para Protocolo Zero; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "shape",
+          "fill": "#050505",
+          "effect": {
+            "gradient": {
+              "from": "#050505",
+              "to": "#050505",
+              "from_opacity": 0.74,
+              "to_opacity": 0.03,
+              "direction": "right"
+            }
+          }
+        },
+        {
+          "id": "element-3",
+          "x": 59,
+          "y": 123,
+          "width": 1150,
+          "height": 360,
+          "kind": "text",
+          "text": "PROTOCOLO\nZERO",
+          "font_size": 120,
+          "font_family": "Barlow Condensed",
+          "bold": true,
+          "color": "#00E5FF",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 67,
+          "y": 127,
+          "width": 1150,
+          "height": 360,
+          "kind": "text",
+          "text": "PROTOCOLO\nZERO",
+          "font_size": 120,
+          "font_family": "Barlow Condensed",
+          "bold": true,
+          "color": "#FF0055",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-5",
+          "x": 63,
+          "y": 125,
+          "width": 1150,
+          "height": 360,
+          "kind": "text",
+          "text": "PROTOCOLO\nZERO",
+          "font_size": 120,
+          "font_family": "Barlow Condensed",
+          "bold": true,
+          "color": "#F0F0F0",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-6",
+          "x": 68,
+          "y": 609,
+          "width": 1100,
+          "height": 65,
+          "kind": "text",
+          "text": "UM SISTEMA PRECISA RECONHECER SEUS LIMITES",
+          "font_size": 27,
+          "font_family": "IBM Plex Mono",
+          "bold": true,
+          "color": "#00E5FF",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "cyber-03",
+      "position": 2,
+      "title": "Pacotes e atraso",
+      "background": "#050505",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 86,
+          "width": 390,
+          "height": 190,
+          "kind": "text",
+          "text": "Pacotes e atraso",
+          "font_size": 69,
+          "font_family": "Barlow Condensed",
+          "bold": true,
+          "color": "#F0F0F0",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 68,
+          "y": 361,
+          "width": 330,
+          "height": 100,
+          "kind": "text",
+          "text": "Cada ponto representa\num cenário simulado.",
+          "font_size": 27,
+          "font_family": "Space Grotesk",
+          "bold": false,
+          "color": "#F0F0F0",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 438,
+          "y": 190,
+          "width": 774,
+          "height": 400,
+          "kind": "chart",
+          "visual_id": "cyber-03",
+          "font_family": "Space Grotesk",
+          "font_size": 27,
+          "color": "#F0F0F0",
+          "palette": [
+            "#00E5FF",
+            "#FF0055"
+          ],
+          "chart_label_size": 20,
+          "show_values": false,
+          "orientation": "vertical"
+        },
+        {
+          "id": "element-4",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Pares simulados · não descrevem a capacidade de uma rede real.",
+          "font_size": 21,
+          "font_family": "IBM Plex Mono",
+          "bold": false,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

@@ -13,12 +13,14 @@ import {
   image,
   local,
   compose,
+  readable,
 } from "../slidegenai/assets/visual-kit/core.mjs";
 import { renderHTML, chartSVG } from "../slidegenai/assets/visual-kit/html.mjs";
 import { build } from "../slidegenai/assets/visual-kit/build.mjs";
 import {
   analyticalFixture,
   compositionFixture,
+  catalogFixture,
 } from "./visual-kit-fixtures.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."),
   example = path.join(root, "examples/portable-deck");
@@ -490,6 +492,142 @@ test(
       assert.equal((xml.match(/<p:pic>/g) || []).length, i <= 5 ? 1 : 0);
       if (i === 5) assert.match(xml, /<a:gradFill/);
       if (i === 8) assert.match(xml, /Faithful reproduction/);
+    }
+  },
+);
+
+test("every catalog ID compiles a visual treatment with preserved chart data and explicit overrides", async () => {
+  const catalog = await json(
+    path.join(root, "slidegenai/references/template-catalog.json"),
+  );
+  const signatures = new Set();
+  for (const entry of catalog.templates) {
+    const { plan, design, model, folder } = await catalogFixture(
+      root,
+      entry.id,
+    );
+    plan.slides = [plan.slides[0], { ...plan.slides[3], position: 2 }];
+    plan.expected_slides = 2;
+    const before = JSON.stringify(design);
+    const scene = await compile(plan, design, model, folder);
+    assert.equal(JSON.stringify(design), before);
+    assert.ok(scene.style.visual.provenance.includes("inferred"));
+    assert.deepEqual(
+      scene.slides[1].elements.find((e) => e.kind === "chart").visual.series,
+      model.charts[0].series,
+    );
+    assert.ok(
+      scene.slides.every((s) =>
+        s.elements.every(
+          (e) =>
+            e.x >= 0 &&
+            e.y >= 0 &&
+            e.x + e.width <= 1280 &&
+            e.y + e.height <= 720,
+        ),
+      ),
+    );
+    signatures.add(scene.style.visual.layout);
+  }
+  assert.ok(signatures.size >= 6);
+  const { plan, design, model, folder } = await catalogFixture(
+    root,
+    "acid-graphix",
+  );
+  design.colors = { accent: "#915E31" };
+  design.typography = {
+    headline: { family: "Bodoni Moda", size: 88, line_height: 1.1 },
+  };
+  const scene = await compile(plan, design, model, folder);
+  assert.equal(
+    scene.slides[0].elements.find((e) => e.id === "composition-title")
+      .font_family,
+    "Bodoni Moda",
+  );
+  assert.equal(
+    scene.slides[3].elements.find((e) => e.kind === "chart").palette[0],
+    "#915E31",
+  );
+  design.catalog_treatment = "yes";
+  await assert.rejects(() => compile(plan, design, model, folder), /boolean/);
+});
+
+test("bundled visual references reproduce existing content with separate text, imagery and evidence", async () => {
+  const folder = path.join(root, "slidegenai/assets/style-references");
+  const manifest = await json(path.join(folder, "manifest.json"));
+  assert.equal(manifest.references.length, 9);
+  for (const item of manifest.references) {
+    const plan = await json(path.join(folder, item.id + ".plan.json"));
+    const design = await json(path.join(folder, item.id + ".design.json"));
+    const model = await json(path.join(folder, item.id + ".visuals.json"));
+    const scene = await compile(plan, design, model, folder);
+    assert.equal(scene.slides.length, 2);
+    assert.ok(scene.slides[0].elements.some((e) => e.kind === "image"));
+    assert.ok(scene.slides[0].elements.some((e) => e.kind === "text"));
+    assert.ok(
+      scene.slides[1].elements.some((e) => ["chart", "table"].includes(e.kind)),
+    );
+    if (item.id === "fashion-editorial")
+      assert.ok(
+        scene.slides[0].elements.find((e) => e.text === "NOVA").font_size >=
+          150,
+      );
+    const table = scene.slides[1].elements.find((e) => e.kind === "table");
+    if (table) assert.equal(readable(table.header_fill,table.header_color),table.header_color);
+    const chart = scene.slides[1].elements.find((e) => e.kind === "chart");
+    if (chart) {
+      assert.equal(
+        readable(scene.slides[1].background, chart.color),
+        chart.color,
+      );
+      if (item.id === "kinetic") assert.equal(chart.palette[0], "#EAB308");
+      const svg = chartSVG(chart);
+      assert.doesNotMatch(svg, /NaN|Infinity/);
+      if (chart.color_by_category)
+        for (const fill of chart.palette)
+          assert.ok(svg.includes(`fill="${fill}"`));
+    }
+  }
+});
+
+test(
+  "visual references retain native text, pictures, chart workbooks and tables",
+  { skip: !process.env.SLIDEGENAI_NATIVE_KIT },
+  async () => {
+    const { createRequire } = await import("node:module");
+    const require = createRequire(
+      path.join(process.env.SLIDEGENAI_NATIVE_KIT, "package.json"),
+    );
+    const JSZip = require("jszip");
+    const { renderPPTX } = await import(
+      pathToFileURL(path.join(process.env.SLIDEGENAI_NATIVE_KIT, "pptx.mjs"))
+    );
+    const folder = path.join(root, "slidegenai/assets/style-references");
+    const manifest = await json(path.join(folder, "manifest.json"));
+    for (const item of manifest.references) {
+      const plan = await json(path.join(folder, item.id + ".plan.json")),
+        design = await json(path.join(folder, item.id + ".design.json")),
+        model = await json(path.join(folder, item.id + ".visuals.json"));
+      const scene = await compile(plan, design, model, folder);
+      const zip = await JSZip.loadAsync(await renderPPTX(scene, []));
+      const cover = await zip.file("ppt/slides/slide1.xml").async("string");
+      assert.match(cover, /<p:pic>/);
+      assert.match(cover, /<p:txBody>/);
+      const data = await zip.file("ppt/slides/slide2.xml").async("string");
+      if (model.charts.length) {
+        assert.match(data, /<c:chart/);
+        assert.ok(Object.keys(zip.files).some((n) => n.endsWith(".xlsx")));
+        const chartFiles = Object.keys(zip.files).filter((n) =>
+          /^ppt\/charts\/chart\d+\.xml$/.test(n),
+        );
+        assert.equal(chartFiles.length, 1);
+        const chart = await zip.file(chartFiles[0]).async("string");
+        if (item.id === "fashion-editorial")
+          assert.match(chart, /<c:barDir val="bar"/);
+        if (item.id === "bauhaus")
+          for (const rgb of ["CC0000", "1E44AA", "F2C300"])
+            assert.ok(chart.includes(rgb));
+      } else assert.match(data, /<a:tbl>/);
     }
   },
 );

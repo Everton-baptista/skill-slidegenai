@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "unit": "px"
+  },
+  "colors": {
+    "paper": "#050505",
+    "ink": "#F1F1E9",
+    "accent": "#CCFF00"
+  },
+  "typography": {
+    "headline": {
+      "family": "Bebas Neue",
+      "size": 88,
+      "line_height": 1.05
+    },
+    "body": {
+      "family": "Space Grotesk",
+      "size": 26,
+      "line_height": 1.25
+    },
+    "caption": {
+      "family": "IBM Plex Mono",
+      "size": 17,
+      "line_height": 1.2
+    }
+  }
+}

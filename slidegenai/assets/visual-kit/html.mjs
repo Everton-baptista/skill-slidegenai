@@ -38,8 +38,9 @@ export function chartSVG(e) {
     B = H - 78,
     PW = R - L,
     PH = B - T,
-    font = Math.min(17, H / 18),
+    font = Math.min(e.chart_label_size || 17, H / 18),
     palette = e.palette;
+  const horizontal = v.type === "grouped-bar" && e.orientation === "horizontal";
   let low = 0,
     high = 0,
     xlow = 0,
@@ -56,25 +57,63 @@ export function chartSVG(e) {
     xhigh = Math.max(0, ...xs);
     if (xlow === xhigh) xhigh = xlow + 1;
   }
+  const rawStep = (high - low) / 4;
+  const magnitude = 10 ** Math.floor(Math.log10(rawStep));
+  const step =
+    v.type === "stacked-share"
+      ? 25
+      : ([1, 2, 2.5, 5, 10].find((n) => n >= rawStep / magnitude) || 10) *
+        magnitude;
+  low = Math.floor(low / step) * step;
+  high = Math.ceil(high / step) * step;
+  const ticks = Array.from(
+    { length: Math.round((high - low) / step) + 1 },
+    (_, i) => Number((low + i * step).toPrecision(12)),
+  );
+  if (horizontal) {
+    const left = Math.min(W * 0.3, 230),
+      right = W - 80,
+      bottom = H - 70;
+    const range = high - low || 1,
+      xx = (n) => left + ((n - low) / range) * (right - left);
+    let result = `<svg role="group" data-chart="${esc(e.id)}" aria-label="${esc(v.source.label)}" viewBox="0 0 ${W} ${H}" class="chart" style="${box(e)}color:${e.color};font-family:${esc(e.font_family)}">`;
+    for (const value of ticks) {
+      const x = xx(value);
+      result += `<path d="M ${x} 24 V ${bottom}" stroke="${e.color}" stroke-opacity=".12"/><text x="${x}" y="${bottom + font * 1.5}" fill="${e.color}" font-size="${font}" text-anchor="middle">${value}</text>`;
+    }
+    v.categories.forEach((category, i) => {
+      const slot = (bottom - 24) / v.categories.length,
+        h = (slot * 0.62) / v.series.length;
+      result += `<text x="${left - 18}" y="${24 + (i + 0.5) * slot + font / 3}" fill="${e.color}" font-size="${font}" text-anchor="end">${esc(category)}</text>`;
+      v.series.forEach((series, j) => {
+        const value = series.values[i],
+          y = 24 + i * slot + slot * 0.19 + j * h;
+        result += `<rect ${mark(j, `${series.name} / ${category}: ${value} ${v.unit || ""}`)} x="${Math.min(xx(value), xx(0))}" y="${y}" width="${Math.abs(xx(value) - xx(0))}" height="${h * 0.86}" fill="${palette[j % palette.length]}"/>`;
+        if (e.show_values)
+          result += `<text x="${xx(value) + (value < 0 ? -9 : 9)}" y="${y + h * 0.65}" fill="${e.color}" font-size="${font}" text-anchor="${value < 0 ? "end" : "start"}">${value}</text>`;
+      });
+    });
+    result += `<text x="${left}" y="${font}" fill="${e.color}" font-size="${font}">${esc(v.unit || "Values")}</text>`;
+    if (v.series.length > 1)
+      v.series.forEach((series, j) => {
+        result += `<g class="chart-legend" data-legend="${j}" role="button" tabindex="0" aria-pressed="false" aria-label="${esc(`Highlight ${series.name}`)}"><rect x="${left + (j * (right - left)) / v.series.length}" y="${H - 24}" width="10" height="10" fill="${palette[j % palette.length]}"/><text x="${left + 16 + (j * (right - left)) / v.series.length}" y="${H - 14}" font-size="${font}" fill="${e.color}">${esc(series.name)}</text></g>`;
+      });
+    return result + "</svg>";
+  }
   const Y = (n) => B - ((n - low) / (high - low)) * PH,
     X = (n) => L + ((n - xlow) / (xhigh - xlow)) * PW;
   let svg = `<svg role="group" data-chart="${esc(e.id)}" aria-roledescription="interactive chart" aria-label="${esc(v.source.label)}; ${esc(v.unit || "Values")}" viewBox="0 0 ${W} ${H}" class="chart" style="${box(e)}color:${e.color};font-family:${esc(e.font_family)}"><title>${esc(v.id)}</title>`;
   const text = (x, y, s, anchor = "middle", fill = e.color) =>
     `<text x="${x}" y="${y}" font-size="${font}" fill="${fill}" text-anchor="${anchor}">${esc(s)}</text>`;
-  for (let i = 0; i <= 4; i++) {
-    const value = low + ((high - low) * i) / 4,
-      y = Y(value);
+  for (const value of ticks) {
+    const y = Y(value);
     svg +=
-      `<path d="M ${L} ${y} H ${R}" stroke="${e.color}" stroke-opacity=".18"/>` +
-      text(L - 8, y + font / 3, Number(value.toFixed(2)), "end");
+      `<path d="M ${L} ${y} H ${R}" stroke="${e.color}" stroke-opacity=".12"/>` +
+      text(L - 8, y + font / 3, value, "end");
   }
   if (low < 0 && high > 0) {
     svg += `<path d="M ${L} ${Y(0)} H ${R}" stroke="${e.color}" stroke-opacity=".65"/>`;
-    if (
-      !Array.from({ length: 5 }, (_, i) => low + ((high - low) * i) / 4).some(
-        (n) => Math.abs(n) < 1e-8,
-      )
-    )
+    if (!ticks.some((n) => Math.abs(n) < 1e-8))
       svg += text(L - 8, Y(0) + font / 3, "0", "end");
   }
   const N = v.categories?.length || 1;
@@ -88,7 +127,9 @@ export function chartSVG(e) {
         const slot = PW / N,
           bw = (slot * 0.72) / v.series.length,
           x = L + i * slot + slot * 0.14 + j * bw;
-        svg += `<rect ${mark(j, `${s.name} / ${v.categories[i]}: ${value} ${v.unit || ""}`)} x="${x}" y="${Math.min(Y(value), Y(0))}" width="${bw * 0.9}" height="${Math.abs(Y(value) - Y(0))}" fill="${palette[j % palette.length]}"><title>${esc(s.name)} / ${esc(v.categories[i])}: ${value}</title></rect>`;
+        svg += `<rect ${mark(j, `${s.name} / ${v.categories[i]}: ${value} ${v.unit || ""}`)} x="${x}" y="${Math.min(Y(value), Y(0))}" width="${bw * 0.9}" height="${Math.abs(Y(value) - Y(0))}" fill="${palette[(e.color_by_category ? i : j) % palette.length]}"><title>${esc(s.name)} / ${esc(v.categories[i])}: ${value}</title></rect>`;
+        if (e.show_values && value >= 0)
+          svg += text(x + bw * 0.45, Y(value) - 9, value);
       }),
     );
   if (v.type === "stacked-share")
@@ -123,13 +164,14 @@ export function chartSVG(e) {
       ),
     );
   }
-  v.series.forEach((s, j) => {
-    const x = L + (j * PW) / v.series.length;
-    svg +=
-      `<g class="chart-legend" data-legend="${j}" role="button" tabindex="0" aria-pressed="false" aria-label="${esc(`Highlight ${s.name}`)}"><rect x="${x}" y="${B + font * 2.4}" width="${font * 0.65}" height="${font * 0.65}" fill="${palette[j % palette.length]}"/>` +
-      text(x + font, B + font * 3, s.name, "start") +
-      "</g>";
-  });
+  if (!e.color_by_category)
+    v.series.forEach((s, j) => {
+      const x = L + (j * PW) / v.series.length;
+      svg +=
+        `<g class="chart-legend" data-legend="${j}" role="button" tabindex="0" aria-pressed="false" aria-label="${esc(`Highlight ${s.name}`)}"><rect x="${x}" y="${B + font * 2.4}" width="${font * 0.65}" height="${font * 0.65}" fill="${palette[j % palette.length]}"/>` +
+        text(x + font, B + font * 3, s.name, "start") +
+        "</g>";
+    });
   svg += text(
     L,
     font,
@@ -151,7 +193,7 @@ function primitive(p, parent) {
   if (p.kind === "text")
     return `<div class="element text" data-element="${esc(parent.id + "/" + p.id)}" style="${esc(css(e))}">${esc(p.text)}</div>`;
   if (p.kind === "shape")
-    return `<div class="element" style="${esc(box(e))}background:${p.fill};border:1px solid ${p.line || p.fill};${p.shape === "diamond" ? "clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);" : ""}"></div>`;
+    return `<div class="element" style="${esc(box(e))}background:${p.fill};border:1px solid ${p.line || p.fill};border-radius:${p.radius || 0}px;${p.shape === "diamond" ? "clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%);" : ""}"></div>`;
   const x1 = parent.x + p.a[0],
     y1 = parent.y + p.a[1],
     x2 = parent.x + p.b[0],
@@ -201,5 +243,5 @@ export async function renderHTML(scene) {
     .replace(/</g, "\\u003c")
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
-  return `<!doctype html><html lang="${esc(scene.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(scene.title)}</title><style>${faces.join("\n")}\n${cssFile}\n@media print{@page{size:${(scene.canvas.width * scene.unitScale) / 96}in ${(scene.canvas.height * scene.unitScale) / 96}in;margin:0}.frame{width:${scene.canvas.width * scene.unitScale}px!important;height:${scene.canvas.height * scene.unitScale}px!important}.slide{transform:scale(${scene.unitScale})!important}}</style></head><body><nav aria-label="Presentation controls"><button id="present" aria-pressed="false">Present</button><button id="previous" aria-label="Previous slide">←</button><output id="position" aria-live="polite"></output><button id="next" aria-label="Next slide">→</button><button id="overview" aria-pressed="false">Overview / reading</button><button id="chart-data" ${chartData.length ? "" : "hidden"}>Chart data</button><button id="fullscreen">Fullscreen</button><button id="check">Check fonts and fit</button><output id="result" role="status">Visual inspection pending</output></nav><main>${sections}</main><div id="chart-tooltip" role="status" hidden></div><dialog id="data-dialog" aria-labelledby="data-title"><h2 id="data-title">Chart data</h2><label>Chart <select id="chart-select"></select></label><div id="data-values"></div><button id="close-data">Close</button></dialog><script type="application/json" id="chart-model">${data}</script><script>${chartSVG.toString()}\n${validateChart.toString()}\n${player}\n${runtime}</script></body></html>`;
+  return `<!doctype html><html lang="${esc(scene.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(scene.title)}</title><style>${faces.join("\n")}\n${cssFile}\n@media print{@page{size:${(scene.canvas.width * scene.unitScale) / 96}in ${(scene.canvas.height * scene.unitScale) / 96}in;margin:0}.frame{width:${scene.canvas.width * scene.unitScale}px!important;height:${scene.canvas.height * scene.unitScale}px!important}.slide{transform:scale(${scene.unitScale})!important}}</style></head><body><nav aria-label="Presentation controls"><button id="present" aria-pressed="false">Present</button><button id="previous" aria-label="Previous slide">←</button><output id="position" aria-live="polite"></output><button id="next" aria-label="Next slide">→</button><button id="overview" aria-pressed="false">Overview / reading</button><button id="chart-data" ${chartData.length ? "" : "hidden"}>Chart data</button><button id="fullscreen">Fullscreen</button><button id="check">Check fonts and fit</button><output id="result" role="status"></output></nav><main>${sections}</main><div id="chart-tooltip" role="status" hidden></div><dialog id="data-dialog" aria-labelledby="data-title"><h2 id="data-title">Chart data</h2><label>Chart <select id="chart-select"></select></label><div id="data-values"></div><button id="close-data">Close</button></dialog><script type="application/json" id="chart-model">${data}</script><script>${chartSVG.toString()}\n${validateChart.toString()}\n${player}\n${runtime}</script></body></html>`;
 }

@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "acid-graphix",
+  "title": "Acid Rave — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "acid-01",
+      "position": 1,
+      "title": "ACID\nRAVE",
+      "background": "#050505",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "acid-graphix.jpg",
+          "alt": "Imagem conceitual fictícia para Frequência 03; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 55,
+          "y": 60,
+          "width": 730,
+          "height": 460,
+          "kind": "text",
+          "text": "ACID\nRAVE",
+          "font_size": 190,
+          "font_family": "Bebas Neue",
+          "bold": false,
+          "color": "#CCFF00",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 627,
+          "width": 1100,
+          "height": 50,
+          "kind": "text",
+          "text": "FREQUÊNCIA 03 / NOITE EXPERIMENTAL",
+          "font_size": 25,
+          "font_family": "IBM Plex Mono",
+          "bold": true,
+          "color": "#CCFF00",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "acid-04",
+      "position": 2,
+      "title": "Três palcos, doze sets",
+      "background": "#050505",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 61,
+          "y": 222,
+          "width": 290,
+          "height": 240,
+          "kind": "text",
+          "text": "12",
+          "font_size": 190,
+          "font_family": "Bebas Neue",
+          "bold": false,
+          "color": "#CCFF00",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 70,
+          "y": 470,
+          "width": 320,
+          "height": 65,
+          "kind": "text",
+          "text": "SETS NO TOTAL",
+          "font_size": 25,
+          "font_family": "Bebas Neue",
+          "bold": true,
+          "color": "#F1F1E9",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "Três palcos, doze sets",
+          "font_size": 49,
+          "font_family": "Bebas Neue",
+          "bold": false,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 395,
+          "y": 215,
+          "width": 808,
+          "height": 375,
+          "kind": "chart",
+          "visual_id": "acid-04",
+          "font_family": "Space Grotesk",
+          "font_size": 27,
+          "color": "#F1F1E9",
+          "palette": [
+            "#CCFF00",
+            "#D6E6B1"
+          ],
+          "chart_label_size": 20,
+          "show_values": true,
+          "orientation": "vertical"
+        },
+        {
+          "id": "element-5",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Programação fictícia · 12 sets no total; não representa um evento real.",
+          "font_size": 21,
+          "font_family": "IBM Plex Mono",
+          "bold": false,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

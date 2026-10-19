@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "bauhaus",
+  "title": "Bauhaus — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "bauhaus-01",
+      "position": 1,
+      "title": "FORMA",
+      "background": "#F1F0E6",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "bauhaus.jpg",
+          "alt": "Imagem conceitual fictícia para Oficina Forma; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 59,
+          "y": 230,
+          "width": 620,
+          "height": 190,
+          "kind": "text",
+          "text": "FORMA",
+          "font_size": 130,
+          "font_family": "Syne",
+          "bold": true,
+          "color": "#151515",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 55,
+          "width": 700,
+          "height": 58,
+          "kind": "text",
+          "text": "OFICINA DE PROJETO",
+          "font_size": 27,
+          "font_family": "DM Sans",
+          "bold": true,
+          "color": "#151515",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 64,
+          "y": 665,
+          "width": 1000,
+          "height": 30,
+          "kind": "text",
+          "text": "OFICINA FORMA / CONCEITO FICTÍCIO",
+          "font_size": 21,
+          "font_family": "DM Sans",
+          "bold": false,
+          "color": "#151515",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "bauhaus-05",
+      "position": 2,
+      "title": "Duas horas de oficina",
+      "background": "#F1F0E6",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "Duas horas de oficina",
+          "font_size": 49,
+          "font_family": "Syne",
+          "bold": true,
+          "color": "#151515",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 870,
+          "y": 263,
+          "width": 350,
+          "height": 170,
+          "kind": "text",
+          "text": "120",
+          "font_size": 119,
+          "font_family": "Syne",
+          "bold": true,
+          "color": "#151515",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 877,
+          "y": 436,
+          "width": 330,
+          "height": 70,
+          "kind": "text",
+          "text": "MINUTOS",
+          "font_size": 28,
+          "font_family": "Syne",
+          "bold": true,
+          "color": "#151515",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 70,
+          "y": 240,
+          "width": 725,
+          "height": 355,
+          "kind": "chart",
+          "visual_id": "bauhaus-05",
+          "font_family": "DM Sans",
+          "font_size": 27,
+          "color": "#151515",
+          "palette": [
+            "#CC0000",
+            "#1E44AA",
+            "#F2C300"
+          ],
+          "chart_label_size": 20,
+          "show_values": true,
+          "orientation": "vertical",
+          "color_by_category": true
+        },
+        {
+          "id": "element-5",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Distribuição fictícia · 120 minutos no total; larguras e alturas não são decorativas.",
+          "font_size": 21,
+          "font_family": "DM Sans",
+          "bold": false,
+          "color": "#151515",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

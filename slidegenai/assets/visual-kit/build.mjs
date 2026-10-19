@@ -56,7 +56,16 @@ export async function build({
       artifact,
       artifact_sha256: createHash("sha256").update(content).digest("hex"),
       slides: scene.slides.map((s) => s.id),
-      style: { id: scene.style.id, family: scene.style.family },
+      style: {
+        id: scene.style.id,
+        family: scene.style.family,
+        visual_treatment: scene.catalog_treatment
+          ? "authored catalog treatment"
+          : "explicit scene",
+        provenance: scene.catalog_treatment
+          ? scene.style.visual.provenance
+          : "Explicit scene geometry and design; template_id alone supplies font suggestions",
+      },
       fonts: scene.fonts.map((f) => ({
         family: f.family,
         path: f.record.path,

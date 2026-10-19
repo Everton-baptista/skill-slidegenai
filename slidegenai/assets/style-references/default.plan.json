@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "default",
+  "title": "Neo-Tech — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "neotech-01",
+      "position": 1,
+      "title": "NEXO",
+      "background": "#0F0F0F",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "default.jpg",
+          "alt": "Imagem conceitual fictícia para Nexo Ops; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 64,
+          "y": 150,
+          "width": 800,
+          "height": 220,
+          "kind": "text",
+          "text": "NEXO",
+          "font_size": 154,
+          "font_family": "Space Grotesk",
+          "bold": true,
+          "color": "#DDDDDD",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-3",
+          "x": 70,
+          "y": 417,
+          "width": 650,
+          "height": 110,
+          "kind": "text",
+          "text": "OPERAÇÃO EM ESTADOS VISÍVEIS",
+          "font_size": 35,
+          "font_family": "IBM Plex Mono",
+          "bold": true,
+          "color": "#CBF400",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 70,
+          "y": 661,
+          "width": 600,
+          "height": 30,
+          "kind": "text",
+          "text": "Produto fictício",
+          "font_size": 20,
+          "font_family": "IBM Plex Mono",
+          "bold": false,
+          "color": "#DDDDDD",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "neotech-04",
+      "position": 2,
+      "title": "O tempo de cada etapa",
+      "background": "#0F0F0F",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "O tempo de cada etapa",
+          "font_size": 49,
+          "font_family": "Space Grotesk",
+          "bold": true,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 76,
+          "y": 220,
+          "width": 1128,
+          "height": 380,
+          "kind": "chart",
+          "visual_id": "neotech-04",
+          "font_family": "Manrope",
+          "font_size": 27,
+          "color": "#DDDDDD",
+          "palette": [
+            "#CBF400",
+            "#8BA4AA"
+          ],
+          "chart_label_size": 20,
+          "show_values": true,
+          "orientation": "horizontal"
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Simulação fictícia · totais de 50 e 36 minutos; nenhuma operação real foi medida.",
+          "font_size": 21,
+          "font_family": "IBM Plex Mono",
+          "bold": false,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

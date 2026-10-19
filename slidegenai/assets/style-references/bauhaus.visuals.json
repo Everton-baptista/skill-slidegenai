@@ -1,0 +1,28 @@
+{
+  "charts": [
+    {
+      "id": "bauhaus-05",
+      "type": "grouped-bar",
+      "unit": "Minutos",
+      "source": {
+        "status": "illustrative",
+        "label": "Distribuição fictícia · 120 minutos no total; larguras e alturas não são decorativas."
+      },
+      "categories": [
+        "Desenhar",
+        "Montar",
+        "Testar"
+      ],
+      "series": [
+        {
+          "name": "Minutos",
+          "values": [
+            30,
+            60,
+            30
+          ]
+        }
+      ]
+    }
+  ]
+}

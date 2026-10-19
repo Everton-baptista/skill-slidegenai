@@ -238,3 +238,32 @@ dialog caption {
     opacity: 1;
   }
 }
+
+/* The slide remains the focus; authoring diagnostics appear only on request. */
+#result:empty {
+  display: none;
+}
+body.presenting nav {
+  position: fixed;
+  inset: 12px auto auto 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  border: 1px solid #ffffff25;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px #0003;
+}
+body.presenting main {
+  height: 100dvh;
+}
+body.presenting #check {
+  display: none;
+}
+@media print {
+  body.presenting nav {
+    display: none;
+  }
+  body.presenting main {
+    height: auto;
+  }
+}

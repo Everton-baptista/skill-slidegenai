@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "unit": "px",
+  "template_id": "urban-vivid",
+  "title": "Neo Tokyo — existing reference fragments",
+  "language": "pt-BR",
+  "expected_slides": 2,
+  "slide_size": {
+    "width": 1280,
+    "height": 720
+  },
+  "slides": [
+    {
+      "id": "tokyo-01",
+      "position": 1,
+      "title": "NEO\nTOKYO",
+      "background": "#0A0A0A",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "image",
+          "asset": "urban-vivid.jpg",
+          "alt": "Imagem conceitual fictícia para Último Trem; gerada, não documental."
+        },
+        {
+          "id": "element-2",
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720,
+          "kind": "shape",
+          "fill": "#0A0A0A",
+          "effect": {
+            "gradient": {
+              "from": "#050505",
+              "to": "#050505",
+              "from_opacity": 0.02,
+              "to_opacity": 0.78,
+              "direction": "right"
+            }
+          }
+        },
+        {
+          "id": "element-3",
+          "x": 720,
+          "y": 150,
+          "width": 490,
+          "height": 420,
+          "kind": "text",
+          "text": "NEO\nTOKYO",
+          "font_size": 168,
+          "font_family": "Barlow Condensed",
+          "bold": true,
+          "color": "#00FFFF",
+          "align": "right",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-4",
+          "x": 656,
+          "y": 604,
+          "width": 550,
+          "height": 70,
+          "kind": "text",
+          "text": "ÚLTIMO TREM / ENSAIO URBANO FICTÍCIO",
+          "font_size": 25,
+          "font_family": "IBM Plex Mono",
+          "bold": true,
+          "color": "#FFFFFF",
+          "align": "right",
+          "line_height": 1.05
+        }
+      ]
+    },
+    {
+      "id": "tokyo-04",
+      "position": 2,
+      "title": "O ritmo ao longo da noite",
+      "background": "#0A0A0A",
+      "elements": [
+        {
+          "id": "element-1",
+          "x": 64,
+          "y": 68,
+          "width": 1152,
+          "height": 112,
+          "kind": "text",
+          "text": "O ritmo ao longo da noite",
+          "font_size": 49,
+          "font_family": "Barlow Condensed",
+          "bold": true,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        },
+        {
+          "id": "element-2",
+          "x": 76,
+          "y": 220,
+          "width": 1128,
+          "height": 380,
+          "kind": "chart",
+          "visual_id": "tokyo-04",
+          "font_family": "DM Sans",
+          "font_size": 27,
+          "color": "#FFFFFF",
+          "palette": [
+            "#00FFFF",
+            "#FF007F"
+          ],
+          "chart_label_size": 20,
+          "show_values": false,
+          "orientation": "vertical"
+        },
+        {
+          "id": "element-3",
+          "x": 64,
+          "y": 642,
+          "width": 1130,
+          "height": 52,
+          "kind": "text",
+          "text": "Série fictícia · passagens, não pessoas únicas; nenhum dado de Tóquio foi coletado.",
+          "font_size": 21,
+          "font_family": "IBM Plex Mono",
+          "bold": false,
+          "color": "#F2F2EA",
+          "align": "left",
+          "line_height": 1.05
+        }
+      ]
+    }
+  ]
+}

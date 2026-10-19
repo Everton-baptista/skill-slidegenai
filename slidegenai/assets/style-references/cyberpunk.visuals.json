@@ -1,0 +1,42 @@
+{
+  "charts": [
+    {
+      "id": "cyber-03",
+      "type": "scatter",
+      "unit": "Atraso (ms)",
+      "source": {
+        "status": "illustrative",
+        "label": "Pares simulados · não descrevem a capacidade de uma rede real."
+      },
+      "x_unit": "Pacotes por segundo",
+      "y_unit": "Atraso (ms)",
+      "series": [
+        {
+          "name": "Cenário",
+          "points": [
+            {
+              "x": 100,
+              "y": 22
+            },
+            {
+              "x": 240,
+              "y": 37
+            },
+            {
+              "x": 360,
+              "y": 55
+            },
+            {
+              "x": 480,
+              "y": 83
+            },
+            {
+              "x": 620,
+              "y": 125
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
