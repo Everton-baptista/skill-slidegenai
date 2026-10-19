@@ -12,12 +12,15 @@ DEFAULT_ROOT = Path(__file__).resolve().parent.parent
 
 def check(root):
     root = Path(root).resolve()
-    for name in ('SKILL.md', 'LICENSE', 'NOTICE.md'):
+    for name in ('SKILL.md', 'LICENSE', 'NOTICE.md', 'VERSION'):
         if not (root / name).is_file():
             raise ValueError('Missing installed resource: ' + name)
     manifest = (root / 'SKILL.md').read_text(encoding='utf-8')
     if not re.search(r'^name:\s*brand-presentations\s*$', manifest, re.M):
         raise ValueError('Unexpected installed skill name')
+    version = (root / 'VERSION').read_text(encoding='utf-8').strip()
+    if not re.fullmatch(r'\d+\.\d+\.\d+', version):
+        raise ValueError('Invalid skill VERSION')
     links = 0
     for source in root.rglob('*.md'):
         text = source.read_text(encoding='utf-8')
@@ -43,7 +46,7 @@ def check(root):
     choices = list(system['families'].values()) + pairings['pairings']
     if any(choice[role] not in available for choice in choices for role in ('display', 'body', 'label')):
         raise ValueError('A suggested font family is missing from the bundle')
-    return {'status': 'passed', 'local_markdown_links': links, 'python_helpers_compiled': len(helpers), 'catalog_entries_resolved': templates['resolved_entries'], 'fonts': fonts, 'limits': ['No OS font registration, external links, provider credentials, slide authoring, rendering or export were tested by this command.']}
+    return {'status': 'passed', 'skill_version': version, 'local_markdown_links': links, 'python_helpers_compiled': len(helpers), 'catalog_entries_resolved': templates['resolved_entries'], 'fonts': fonts, 'limits': ['No OS font registration, external links, provider credentials, slide authoring, rendering or export were tested by this command.']}
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)

@@ -41,6 +41,22 @@ cd skill-slidegenai
 
 Without Git, use **Code → Download ZIP** on GitHub and extract it. Open a terminal in the extracted repository folder before running the commands below.
 
+### Claude.ai — upload and enable the ZIP
+
+From the downloaded repository folder, with Python 3.9+:
+
+```sh
+python3 -B brand-presentations/scripts/package_skill.py --profile claude-ai --output dist/brand-presentations-claude-ai.zip
+```
+
+Upload **dist/brand-presentations-claude-ai.zip** in **Customize → Skills → + → Create skill → Upload a skill**, then enable **brand-presentations**. Skills require code execution/file creation and any applicable organization permissions. Start a new conversation, say **“Use brand-presentations”**, and describe the presentation. Ask Claude to identify the installed VERSION and the resources it actually loaded. [Official Claude.ai instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+
+The Claude.ai ZIP contains one installable folder with every reference/helper, all 46 font families and their original licenses. It selects a smaller set of original faces/weights, with exact inventory in DISTRIBUTION.json and the font manifest. The complete 140-font bundle was rejected by the tested Claude.ai interface because its uncompressed size exceeded 30 MB. The size-limited profile is kept below 29 MB uncompressed and uses portable filenames, with original paths recorded; no font binaries or internal font identities are modified. The packager validates resources before writing and refuses to overwrite an existing ZIP; use a new output filename for another build. The GitHub **Download ZIP** is the repository archive, not this installable package. Reading a repository link or uploading it as chat context does not prove native skill activation.
+
+**Update:** back up any custom changes, open the skill’s more-options menu → **Replace**, upload the new complete profile ZIP, confirm it remains enabled and start a fresh conversation. Confirm its VERSION; avoid mixed releases. The 30 MB uncompressed limit was observed in the tested Claude.ai interface; other hosts/accounts may differ.
+
+Native Slides and terminal/file authoring are different paths. If native Slides cannot be visually inspected, the skill directs Claude to produce and inspect an editable PPTX in that Claude session when supported; the native version retains its separate verification status. See [Claude.ai operations](brand-presentations/references/claude-ai.md).
+
 ### Codex — macOS / Linux
 
 Run from the downloaded repository folder:
@@ -67,6 +83,25 @@ test ! -e "$HOME/.claude/skills/brand-presentations" && \
 
 Start a Claude Code session and invoke **`/brand-presentations`**. For project scope, use `<your-project>/.claude/skills/brand-presentations`. These local paths apply to Claude Code; cloud and Cowork sessions use different discovery mechanisms. [Official Claude Code skill instructions](https://code.claude.com/docs/en/skills).
 
+### Antigravity — macOS / Linux
+
+From the downloaded repository folder, install for one workspace:
+
+```sh
+mkdir -p /path/to/your-project/.agents/skills
+# Replace /path/to/your-project; stop if the destination already exists.
+test ! -e /path/to/your-project/.agents/skills/brand-presentations && \
+  cp -R brand-presentations /path/to/your-project/.agents/skills/brand-presentations
+```
+
+For all workspaces, use `$HOME/.gemini/config/skills/brand-presentations` instead. Mention **brand-presentations** in a new conversation and confirm the loaded VERSION. The current workspace path is `.agents/skills`; `.agent/skills` is the legacy compatible path. [Official Antigravity documentation](https://antigravity.google/docs/skills?app=antigravity-ide). Installation instructions are documented; end-to-end Antigravity slide creation remains untested.
+
+### ChatGPT and GPT-based applications
+
+In eligible ChatGPT workspaces, open **Plugins → Skills → Create → Upload from your computer**, follow the accepted file format shown by the interface, and confirm the uploaded skill is available after scanning. Availability depends on account/workspace settings. Do not assume a local Codex installation appears automatically in ChatGPT. [Official ChatGPT skills guidance](https://help.openai.com/en/articles/20001066-skills-in-chatgpt/).
+
+If the interface has no native Skills import, use the context-only instructions below. A Custom GPT instruction field, a GPT model selected in another app and a native installed skill are different integrations. No ChatGPT or API end-to-end compatibility is claimed from format compliance alone. See [host integration](brand-presentations/references/host-integration.md).
+
 ### Windows — PowerShell
 
 Run from the downloaded repository folder. The example installs for Codex; replace `.agents/skills` with `.claude/skills` for Claude Code.
@@ -81,7 +116,7 @@ Copy-Item -Recurse -Path './brand-presentations' -Destination $destination
 
 Then start a new assistant session and use the invocation shown above for your host.
 
-### ChatGPT, Claude, Gemini or another chat interface
+### Other chat interfaces or context-only use
 
 If your interface supports importing skill folders, follow its import instructions. Otherwise, make `brand-presentations/SKILL.md` and the relevant `references/` files available as task context. If it cannot follow file links, attach or paste the referenced instructions needed for your task.
 
@@ -207,7 +242,7 @@ Browse the [177 style directions](brand-presentations/references/template-catalo
 
 ## Fonts and images
 
-**Fonts are included:** 46 openly licensed families / 140 original TTF files, about 54.1 MB. Copying the complete skill brings them with it. The authoring tool still needs to load or register the selected fonts; bundling does not automatically install them on your operating system or embed them in a PPTX. Ask the assistant to use the local pack and recheck text fit after substitutions. [Font setup and licenses](brand-presentations/references/font-pack.md) · [Local font specimen](brand-presentations/assets/fonts/specimen.html).
+**Fonts are included:** 46 openly licensed families / 140 original TTF files, about 54.1 MB. Copying the complete skill brings them with it. The size-limited Claude.ai ZIP retains all families with selected faces/weights; consult its included manifest. The authoring tool still needs to load or register the selected fonts; bundling does not automatically install them on your operating system or embed them in a PPTX. Ask the assistant to use the local pack and recheck text fit after substitutions. [Font setup and licenses](brand-presentations/references/font-pack.md) · [Local font specimen](brand-presentations/assets/fonts/specimen.html).
 
 **Want more expressive titles?** The pack now includes wide geometric, condensed, outline, shaded, glitch, sculptural, editorial and handwritten choices. Explore the [16-family type lab](brand-presentations/assets/fonts/expressive.html) and [when to use each family](brand-presentations/references/expressive-typography.md). Download the repository and open the lab through a local HTTP server to see the live fonts; GitHub shows HTML source.
 
@@ -245,7 +280,7 @@ The initial npm install needs network access or a populated cache. Use a new out
 
 **Can I use my own brand instead of a catalog style?** Yes. Supply its website, guide or deck. Ask for either a faithful reproduction or a creative adaptation. Missing references and inferred rules should be reported honestly.
 
-**Does it work with every AI assistant?** The instructions are portable, but discovery, file creation and export support vary. Claude Code and other providers have not been tested end to end. See the evidence below.
+**Does it work with every AI assistant?** The instructions are portable, but discovery, file creation and export support vary. Claude end-to-end validation remains incomplete; see the per-environment results below.
 
 **Why did I receive text instead of a PowerPoint?** The session may lack file-authoring tools. Ask the assistant what it can create, then use a capable host or request a storyboard. The skill cannot add missing tools to a chat interface.
 
@@ -259,11 +294,14 @@ The initial npm install needs network access or a populated cache. Use a new out
 | Eight-slide portable example | Native text, table, chart/workbook and process objects checked; PPTX rendered and all slides inspected |
 | Ten-slide analytical example | Four native charts, table, diagrams, roadmap and matrix checked; checked-in deck rendered and inspected. The reproduction adapter uses free line segments that need rerouting after nodes move |
 | Nine-style study | 54 final slides and nine overviews inspected, with chart, table, connector and typography checks |
-| Python helpers | 137 tests passed on Linux and Windows, Python 3.9 and 3.13, in the recorded validation run |
+| Python helpers | Previous 137-test cross-platform run recorded; expanded 157-test suite passed locally. New CI matrix results remain separate |
 | Bundled fonts | All 140 files parsed and integrity checked; browser specimen checks are recorded in the validation guide. OS registration and all native exporters remain host-specific |
 | Catalog | All 177 entries resolve structurally; full decks have not been rendered and inspected for every entry |
 | PowerPoint, Google Slides, Keynote | Native opening/editing not tested |
-| Claude Code, Gemini and other hosts | End-to-end use not tested |
+| Claude.ai | 1.1.3 installed and enabled. Real eight-slide and one-slide PPTX outputs from 1.1.2 inspected. Full evaluation incomplete: quota blocked other runs and follow-up corrections. See the per-case record. |
+| Claude Code 2.1.252 | CLI available; authentication blocked the six authoring cases. No deck certified. |
+| Antigravity | Official discovery paths documented; end-to-end authoring not tested |
+| ChatGPT / GPT API applications / Gemini chat / other hosts | Integration depends on host; end-to-end use not tested |
 
 Structural validation does not prove visual quality or factual accuracy. Final rendering and inspection remain part of the workflow. [Detailed validation](docs/VALIDATION.md) · [Visual review](docs/REPERTOIRE_REVIEW.md).
 
@@ -289,3 +327,17 @@ The installable package is `brand-presentations/`. The repository also contains 
 ## License
 
 Original skill code, instructions and documentation use the [MIT License](LICENSE). Bundled fonts retain their individual OFL licenses; see [third-party notices](brand-presentations/NOTICE.md). MIT does not relicense third-party brands, assets or the separate SlideGenAI application. Reference material is treated as data, and creating a brand skill does not authorize publishing its assets.
+
+## Validate in your Claude environment
+
+Follow the [six-case Claude test protocol and current results](docs/CLAUDE_VALIDATION.md). Keep an [execution record](brand-presentations/references/execution-evidence.md) with the actual artifacts, imported images, resolved fonts, editable objects and inspected previews. Repeat corrections and inspection in the same target environment. Unit tests and existing Codex studies do not certify Claude output.
+
+The current packaged skill version is in [VERSION](brand-presentations/VERSION). No instruction file can add missing host tools, grant network access or guarantee an assistant's compliance. Essential missing requirements must be reported as partial or blocked; a generated filename alone does not establish a finished presentation.
+
+To package every original font for hosts without the observed upload constraint:
+
+```sh
+python3 -B brand-presentations/scripts/package_skill.py --output dist/brand-presentations-full.zip
+```
+
+The default full profile is not the size-limited Claude.ai upload. Both archives retain original font licenses and are checked before creation.

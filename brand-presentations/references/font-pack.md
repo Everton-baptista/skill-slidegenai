@@ -78,3 +78,7 @@ Resolve real weights; do not request unsupported weights and mistake synthesized
 ## Brand-specific packaging
 
 The strict packager accepts the font manifest and per-family `OFL.txt` files only in the expected `assets/fonts/` structure, and invokes the offline font verifier before archiving. Include the verifier and its local dependencies if copying the packaging helper into another skill. Keep the original license files, manifest and local CSS together when retaining the full pack. A deliberately reduced pack needs a matching reduced manifest, CSS and coverage declarations; do not delete files while retaining stale references.
+
+## Size-limited Claude.ai distribution
+
+The complete repository retains 46 families and 140 original fonts. A Claude.ai profile can retain all families/licenses while selecting normal 400/700 faces where present and the expressive specimen faces. Read DISTRIBUTION.json and assets/fonts/manifest.json in the installed bundle for actual counts, weights and omitted files. Binaries and internal font names are unchanged; fonts are not subsetted. The Claude.ai profile normalizes filenames to portable family-face-NN.ttf paths (unique basenames across families, including when staged in one font directory) and records every original source path in its manifests. CSS and the manifest match the selected files. Additional styles require the complete repository or a confirmed available fallback. This profile addresses an observed 30 MB uncompressed Claude.ai upload limit; activation and rendering still need testing.

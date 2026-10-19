@@ -16,3 +16,4 @@ generated*/
 htmlcov/
 Thumbs.db
 *~
+dist/

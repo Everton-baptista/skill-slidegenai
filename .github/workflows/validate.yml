@@ -19,6 +19,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - run: python -B -m unittest discover -s tests -v
       - run: python -B brand-presentations/scripts/check_installation.py
+      - run: python -B brand-presentations/scripts/package_skill.py --output dist/brand-presentations.zip
+      - run: python -B brand-presentations/scripts/package_skill.py --profile claude-ai --output dist/brand-presentations-claude-ai.zip
       - run: python -B brand-presentations/scripts/validate_brand.py examples/demo-brand/brand-profile.json
       - run: python -B brand-presentations/scripts/validate_deck.py examples/demo-brand/deck-plan.json --brand examples/demo-brand/brand-profile.json
       - run: python -B brand-presentations/scripts/validate_design.py examples/portable-deck/design-system.json --brand examples/portable-deck/brand-profile.json
