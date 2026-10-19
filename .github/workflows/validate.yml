@@ -17,6 +17,9 @@ jobs:
       - uses: actions/setup-python@v7.0.0
         with:
           python-version: ${{ matrix.python-version }}
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '22'
       - run: python -B -m unittest discover -s tests -v
       - run: python -B brand-presentations/scripts/check_installation.py
       - run: python -B brand-presentations/scripts/package_skill.py --output dist/brand-presentations.zip
@@ -43,3 +46,21 @@ jobs:
         working-directory: examples/analytical-patterns
       - run: node examples/analytical-patterns/build.mjs --out examples/analytical-patterns/generated
       - run: python -B examples/analytical-patterns/check_pptx.py examples/analytical-patterns/generated/example.pptx
+
+  adaptive-kit:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.1.0
+        with:
+          node-version: '22'
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: brand-presentations/assets/visual-kit
+      - run: node --test tests/test_visual_kit.mjs
+        env:
+          SLIDEGENAI_NATIVE_KIT: ${{ github.workspace }}/brand-presentations/assets/visual-kit
+      - run: npm install --prefix "$RUNNER_TEMP/visual-kit-browser" --ignore-scripts --no-audit --no-fund playwright@1.62.1
+      - run: npx --prefix "$RUNNER_TEMP/visual-kit-browser" playwright install --with-deps chromium
+      - run: node tests/inspect_visual_kit.mjs "$RUNNER_TEMP/visual-kit-browser-evidence"
+        env:
+          SLIDEGENAI_PLAYWRIGHT: ${{ runner.temp }}/visual-kit-browser/node_modules/playwright/index.mjs

@@ -112,3 +112,7 @@ The full 140-font ZIP was actually submitted and rejected by Claude.ai at an obs
 Actual Claude.ai installation and two inspected initial artifacts are recorded separately in [Claude validation](CLAUDE_VALIDATION.md). The 1.1.2 run exposed flattened font-staging basename collisions; 1.1.3 prefixes filenames by family and regression-tests installing all retained faces together. The suite currently has 157 tests. Claude usage quota and unauthenticated Claude Code prevent full two-host acceptance; no success is inferred for their blocked cases.
 
 The implementation commit `863886442f8302399632924ff7fa3460c76d3bc3` passed the [recorded GitHub Actions run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101): all four Linux/Windows × Python 3.9/3.13 validation jobs and the existing-example reproduction job completed successfully. Both distribution profiles were built by each validation job. This validates helper/distribution behavior, not the blocked provider authoring cases.
+
+## Adaptive visual kit 1.2.0
+
+See [the kit validation record](VISUAL_KIT_VALIDATION.md) for executable components, independent ZIP execution, native-object tests, actual HTML/PPTX regression renderings, corrections and host-specific limits. Historical provider results above do not certify the new kit.

@@ -9,3 +9,7 @@ After fonts/images load, check stage scroll size, nested clipped text, and text 
 HTML is editable source, but an HTML table or SVG chart is not automatically an editable PowerPoint object. Use a native export adapter for requested editable evidence. Browser print/export may lose fonts, overlays, masks, or page size; inspect its actual output and report limitations.
 
 The repository's example preview HTML is generated from the same scene data as its optional PPTX adapter. It contains no remote assets, runtime framework, analytics, or API calls. View it locally; browser-native print is a PDF convenience, not a guarantee of native PPTX fidelity.
+
+## Optional executable components
+
+The [adaptive visual kit](visual-kit.md) implements shared scenes in offline HTML/CSS/SVG and editable PPTX. Use it when it fits the task; native host tooling remains valid. Read its support matrix and inspect the actual output separately for each format.

@@ -126,8 +126,21 @@ def validate(plan, root, brand=None, brand_hash=None, require_reviewed=False):
                 errors.append(f'{label}: factual data needs citation.')
             if slide.get('data_status') == 'illustrative':
                 warnings.append(f'{label}: check the illustrative-data label in the final file.')
+        composition = slide.get('composition')
+        if composition is not None:
+            allowed = ('cover', 'topic-cover', 'editorial', 'full-image', 'statement', 'comparison', 'closing')
+            if not isinstance(composition, dict) or composition.get('type') not in allowed:
+                errors.append(f'{label}: invalid visual composition.')
+            elif composition['type'] in ('editorial', 'full-image'):
+                image = composition.get('image')
+                if not isinstance(image, dict) or asset_path(image.get('asset'), root) is None:
+                    errors.append(f'{label}: composition image must exist inside the working folder.')
+            elif composition['type'] == 'comparison':
+                panels = composition.get('panels')
+                if not isinstance(panels, list) or len(panels) != 2 or any(not isinstance(p, dict) or not nonempty(p.get('title')) or not nonempty(p.get('body')) for p in panels):
+                    errors.append(f'{label}: comparison needs two titled content panels.')
         elements = slide.get('elements')
-        if not isinstance(elements, list) or not elements:
+        if not isinstance(elements, list) or (not elements and composition is None):
             errors.append(f'{label}: elements must be a nonempty array.')
             continue
         element_ids, texts = set(), []

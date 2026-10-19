@@ -10,3 +10,7 @@ Use the host's supported native slide API/editor. These operations are conceptua
 6. Check the resulting file's native text/table/chart objects. Structural presence does not guarantee fidelity or editability in every viewer.
 
 The repository includes a bounded optional PptxGenJS example adapter for reproducing its fictional deck. It is not the mandatory generation engine. Other hosts may use their own tools with the same data and component contracts. Only claim the formats and host combinations actually tested.
+
+## Optional executable components
+
+The [adaptive visual kit](visual-kit.md) implements shared scenes in offline HTML/CSS/SVG and editable PPTX. Use it when it fits the task; native host tooling remains valid. Read its support matrix and inspect the actual output separately for each format.

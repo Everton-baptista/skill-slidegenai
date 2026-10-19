@@ -46,3 +46,7 @@ python3 -B scripts/validate_deck.py /path/to/deck-plan.json --brand /path/to/bra
 ```
 
 Add `--require-reviewed` for an actually inspected final artifact, with or without `--brand`. Review flags are self-reported; the helper cannot prove that rendering occurred. Solid-color contrast and text-box overlaps produce warnings for manual review. Text can overflow a geometrically valid box, so inspect the export.
+
+## Optional visual kit extensions
+
+The [visual kit contract](visual-kit.md) adds optional template_id, typography/effects, measured composition recipes and visual_id bindings. Version 1 and omitted-unit pixel behavior remain unchanged. Composition may supply the content when elements is empty. Original review declarations never verify a newly rendered output.

@@ -34,6 +34,14 @@ def check(root):
             if not resolved.is_relative_to(root) or not resolved.is_file():
                 raise ValueError('Missing or external local resource: ' + source.relative_to(root).as_posix() + ' -> ' + target)
             links += 1
+    kit = root / 'assets/visual-kit'
+    for name in ('build.mjs', 'core.mjs', 'html.mjs', 'pptx.mjs', 'inspect.js', 'visual.css', 'package.json', 'package-lock.json'):
+        if not (kit / name).is_file():
+            raise ValueError('Missing visual kit resource: ' + name)
+    package = json.loads((kit / 'package.json').read_text(encoding='utf-8'))
+    lock = json.loads((kit / 'package-lock.json').read_text(encoding='utf-8'))
+    if package.get('dependencies') != lock.get('packages', {}).get('', {}).get('dependencies'):
+        raise ValueError('Visual kit lockfile differs from package dependencies')
     helpers = list((root / 'scripts').glob('*.py'))
     for helper in helpers:
         compile(helper.read_text(encoding='utf-8'), str(helper), 'exec')

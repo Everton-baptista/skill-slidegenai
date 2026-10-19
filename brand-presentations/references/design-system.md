@@ -20,3 +20,7 @@ The validator checks declared measures, references, assets, and evidence. It doe
 Optional `art_direction` working metadata is described in [adaptive art direction](art-direction.md). It records the concept and controlled latitude; it does not change version 1 or impose an additional required field. Layout coordinates remain the construction contract.
 
 Optional `typography_decisions` metadata records preferred versus resolved families, weights, availability and outline capability; see [typography](typography.md). The measured `typography` roles must still describe the actual rendered families and sizes. These notes do not turn the schema validator into a font resolver.
+
+## Optional visual kit extensions
+
+The [visual kit contract](visual-kit.md) adds optional template_id, typography/effects, measured composition recipes and visual_id bindings. Version 1 and omitted-unit pixel behavior remain unchanged. Composition may supply the content when elements is empty. Original review declarations never verify a newly rendered output.

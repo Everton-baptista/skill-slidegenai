@@ -17,7 +17,7 @@ Create the presentation the user needs. Adapt to the purpose, audience, actual c
 | Extract identity only | Intake, [profile](references/brand-profile.md) | Evidence-backed identity, asset inventory and gaps |
 | Create a reusable brand skill | [Packaging](references/brand-packaging.md) | Self-contained instructions and permitted resources |
 
-For creation, read the applicable creation/art-direction guidance before authoring. Load [native](references/native-authoring.md) or [HTML authoring](references/html-authoring.md) for the chosen tool; load component/analytical recipes for the objects needed. Read selected style/font resources when actually using them. Do not claim that reading this file or the README means the references, fonts or catalog were used. If a resource is inaccessible, disclose that gap and retain the essential workflow below.
+For creation, read the applicable creation/art-direction guidance before authoring. Load [native](references/native-authoring.md) or [HTML authoring](references/html-authoring.md) for the chosen tool; load component/analytical recipes for the objects needed. The optional [visual kit](references/visual-kit.md) provides executable HTML/CSS/SVG components and a native PPTX adapter; choose it when useful, or use the host's own authoring tools. Read selected style/font resources when actually using them. Do not claim that reading this file or the README means the references, fonts or catalog were used. If a resource is inaccessible, disclose that gap and retain the essential workflow below.
 
 ## Adapt the work, then execute
 

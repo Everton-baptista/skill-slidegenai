@@ -33,6 +33,15 @@ def inventory(root):
             allowed = rel.name in ROOT_FILES
         else:
             allowed = rel.parts[0] in EXTENSIONS and (path.is_dir() or path.suffix.lower() in EXTENSIONS[rel.parts[0]])
+        # Executable visual resources are allowed only in this maintained kit.
+        kit = ('assets', 'visual-kit')
+        if tuple(rel.parts[:2]) == kit:
+            if path.is_dir():
+                allowed = len(rel.parts) == 2
+            else:
+                allowed = len(rel.parts) == 3 and rel.name in {
+                    'build.mjs', 'core.mjs', 'html.mjs', 'pptx.mjs',
+                    'inspect.js', 'visual.css', 'package.json', 'package-lock.json'}
         if not allowed or not (path.is_dir() or path.is_file()):
             raise ValueError('Unexpected entry: ' + str(rel))
         if path.is_file():

@@ -6,7 +6,7 @@ The workflow adapts to your purpose, audience, content, visual constraints, outp
 
 SlideGenAI Skill gives your AI assistant a reusable workflow for creating and editing presentations: typography, images, topic covers, varied layouts, editable charts, tables and diagrams. You provide a topic or content, and optionally a visual reference; the assistant uses the tools available in your session to build and review the result.
 
-The skill you install and invoke is called **`brand-presentations`**. You do not need to install the SlideGenAI application. This repository supplies instructions, resources and examples; your assistant supplies browsing, slide creation, image generation and rendering when those tools are available.
+The skill you install and invoke is called **`brand-presentations`**. You do not need to install the SlideGenAI application. This repository supplies instructions, resources, examples and an optional executable visual kit; your assistant supplies browsing, slide creation, image generation and rendering when those tools are available.
 
 **Start here:** [Install](#1-install-the-skill) → [Create your first deck](#2-create-your-first-presentation) → [Improve the result](#3-refine-without-starting-over).
 
@@ -28,7 +28,7 @@ These previews demonstrate completed studies. The catalog contains **177 style d
 
 ## 1. Install the skill
 
-**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.1.3/brand-presentations-claude-ai-1.1.3.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.1.3/brand-presentations-full-1.1.3.zip). Extract the complete ZIP before copying its brand-presentations folder for local agents.
+**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.2.0/brand-presentations-claude-ai-1.2.0.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.2.0/brand-presentations-full-1.2.0.zip). Extract the complete ZIP before copying its brand-presentations folder for local agents.
 
 Choose **one** installation method for the assistant you use. Install the entire `brand-presentations/` folder, including its references, scripts, assets and licenses. Copying only `SKILL.md` leaves resources missing.
 
@@ -45,7 +45,7 @@ Without Git, use **Code → Download ZIP** on GitHub and extract it. Open a term
 
 ### Claude.ai — upload and enable the ZIP
 
-**[Download the ready-to-install Claude.ai ZIP (v1.1.3)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.1.3/brand-presentations-claude-ai-1.1.3.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v1.1.3). This is a preview release: installation is verified; the full two-host authoring evaluation is incomplete.
+**[Download the ready-to-install Claude.ai ZIP (v1.2.0)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.2.0/brand-presentations-claude-ai-1.2.0.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v1.2.0). This is a preview release: the previous 1.1.3 installation was verified; the new kit’s full two-host authoring evaluation is incomplete.
 
 To build it yourself from the downloaded repository folder, with Python 3.9+:
 
@@ -290,6 +290,29 @@ The initial npm install needs network access or a populated cache. Use a new out
 
 **Why is the result different after export?** Fonts, gradients, crops or native objects may change between tools. Review the actual exported file and request focused repairs. [Export and installation troubleshooting](docs/TROUBLESHOOTING.md).
 
+## Optional visual kit: HTML/CSS/SVG and editable PPTX
+
+![Existing source slides reproduced by the adaptive kit: editorial image, trend chart, decision flow and categorical matrix](docs/previews/visual-kit.jpg)
+
+Ask your assistant: **“Use the visual kit when appropriate. Build the presentation with images, expressive typography and layouts that fit the content; render and inspect the actual deliverable.”** The assistant can still use its native editor.
+
+The kit supplies working covers, topic covers, editorial layouts, full-page image/gradient compositions, typographic statements, comparisons and closing slides. It also builds four chart types, tables, processes, decision flows, swimlanes, system relationships, roadmaps and matrices from data. Effects and layout recipes are optional; the content controls their selection.
+
+To reproduce the existing eight-slide source as a self-contained HTML file, install Node.js 20+ and run from the repository folder:
+
+```sh
+node brand-presentations/assets/visual-kit/build.mjs \
+  --plan examples/portable-deck/deck-plan.json \
+  --design examples/portable-deck/design-system.json \
+  --format html --out output/portable-html
+```
+
+Open **output/portable-html/presentation.html**. Select **Overview / reading** to review the deck and **Check fonts and fit** for measurements. No npm installation, CDN, network or paid API is needed for HTML. A new output directory is required for every build.
+
+For PPTX, install the pinned optional dependencies in your local installed copy of the skill using `npm ci --ignore-scripts` inside assets/visual-kit, then use `--format pptx` and a new output directory. Keep the repository used for packaging free of node_modules. Text, tables, charts and diagram parts remain native objects. CSS and PowerPoint have different capabilities; font weights, crop and some effects require inspection and may differ. The kit does not acquire photos or certify its own visual quality.
+
+[Commands, data fields, supported effects and format differences](brand-presentations/references/visual-kit.md). Original example-specific builders remain available; their output may differ from the adaptive kit.
+
 ## What has actually been tested?
 
 | Area | Recorded evidence and boundary |
@@ -298,7 +321,8 @@ The initial npm install needs network access or a populated cache. Use a new out
 | Eight-slide portable example | Native text, table, chart/workbook and process objects checked; PPTX rendered and all slides inspected |
 | Ten-slide analytical example | Four native charts, table, diagrams, roadmap and matrix checked; checked-in deck rendered and inspected. The reproduction adapter uses free line segments that need rerouting after nodes move |
 | Nine-style study | 54 final slides and nine overviews inspected, with chart, table, connector and typography checks |
-| Python helpers and ZIPs | 157 tests and packaging checks passed on Linux/Windows with Python 3.9/3.13; [recorded CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101) |
+| Python helpers and ZIPs | 158 local tests, including independently extracted ZIP execution. The previous 157-test release passed Linux/Windows with Python 3.9/3.13; [historical CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101) |
+| Adaptive visual kit 1.2.0 | 14 JavaScript behavior tests including native object checks; both existing studies reproduced in HTML/PPTX, browser fonts and offline loading checked, all pages/overviews inspected. See [kit validation](docs/VISUAL_KIT_VALIDATION.md) for differences and host limits |
 | Bundled fonts | All 140 files parsed and integrity checked; browser specimen checks are recorded in the validation guide. OS registration and all native exporters remain host-specific |
 | Catalog | All 177 entries resolve structurally; full decks have not been rendered and inspected for every entry |
 | PowerPoint, Google Slides, Keynote | Native opening/editing not tested |

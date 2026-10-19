@@ -21,7 +21,7 @@ class GenericPackage(unittest.TestCase):
             temp = Path(temp)
             target = temp / 'dist/brand-presentations.zip'
             report = package(source, target)
-            self.assertEqual(report['installation']['skill_version'], '1.1.3')
+            self.assertEqual(report['installation']['skill_version'], '1.2.0')
             self.assertEqual(report['sha256'], hashlib.sha256(target.read_bytes()).hexdigest())
             with zipfile.ZipFile(target) as z:
                 expected = {'brand-presentations/' + p.relative_to(source).as_posix() for p in inventory(source)}
@@ -64,6 +64,14 @@ class GenericPackage(unittest.TestCase):
                                     cwd=temp, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(json.loads(result.stdout)['fonts']['families'], 46)
+            if shutil.which('node'):
+                built = subprocess.run(['node', str(installed / 'assets/visual-kit/build.mjs'),
+                    '--plan', str(ROOT / 'examples/portable-deck/deck-plan.json'),
+                    '--design', str(ROOT / 'examples/portable-deck/design-system.json'),
+                    '--format', 'html', '--out', str(Path(temp) / 'offline-output')],
+                    cwd=temp, capture_output=True, text=True, encoding='utf-8')
+                self.assertEqual(built.returncode, 0, built.stderr)
+                self.assertTrue((Path(temp) / 'offline-output/presentation.html').is_file())
             self.assertEqual(len(list((source / 'assets/fonts').rglob('*.ttf'))), 140)
             staged = Path(temp) / 'registered-font-files'
             stage(installed / 'assets/fonts', staged, install=True)
@@ -88,7 +96,7 @@ class GenericPackage(unittest.TestCase):
             self.assertEqual(inventory(root), [])
 
     def test_rejects_unsafe_and_unexpected_entries_without_writing_output(self):
-        for entry in ('references/.env', 'scripts/private.pyc', 'references/api-key.json', 'app/source.py', 'references/run.exe'):
+        for entry in ('references/.env', 'scripts/private.pyc', 'references/api-key.json', 'app/source.py', 'references/run.exe', 'assets/visual-kit/surprise.mjs', 'assets/visual-kit/node_modules/library/index.js'):
             with self.subTest(entry=entry), tempfile.TemporaryDirectory() as temp:
                 root = Path(temp) / 'skill'
                 path = root / entry
