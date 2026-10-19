@@ -4,7 +4,7 @@ These are portable observations from the SlideGenAI source reviewed for this ski
 
 | Observed pattern | Keep | Adapt carefully |
 | --- | --- | --- |
-| Insper institutional content/masters separation | Stable geometry, real identity, topic-cover continuity, protected photo text | Do not transfer its red/charcoal palette, photo requirements, or text budgets to other brands |
+| Educational content/masters separation | Stable geometry, real identity, topic-cover continuity, protected photo text | Do not transfer its red/charcoal palette, photo requirements, or text budgets to other brands |
 | Organic Pro's two prescribed structures | Measurable regions and predictable content fit | Do not force every idea into the same bento/split-mask layout |
 | Organic Modern and Wellness Organic | Attention to softer cadence, cropping, tone | Organic meaning must not collapse into blobs, pastel circles, botanical photos, or round cards on every slide |
 | Editorial, magazine, modern zine | Deliberate scale, photography, typography, asymmetry | A cultural essay and a financial report need different editorial decisions; no automatic enormous serif headings |

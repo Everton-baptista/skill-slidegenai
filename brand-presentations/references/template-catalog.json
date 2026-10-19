@@ -155,10 +155,10 @@
       "status": "source-reviewed; not individually rendered or certified"
     },
     {
-      "id": "insper-aula",
-      "title": "Insper Aula",
+      "id": "aula",
+      "title": "Aula",
       "source_category": "Corporate & Education",
-      "source_description": "Identidade visual Insper: branco, vermelho e preto. Tipografia bold moderna, letras vazadas, layouts criativos com imagens de fundo estilosas.",
+      "source_description": "Visual educacional: branco, vermelho e preto. Tipografia bold moderna, letras vazadas e composições criativas com imagens de fundo.",
       "family": "institutional",
       "source_line": 33,
       "source_rule_present": true,
@@ -183,13 +183,14 @@
       ],
       "keep": "Evidenced identity, original logos and measured master relationships.",
       "adapt": "A named institution is not a reusable identity for other brands.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "public_label_note": "Neutral public name and edited description; source line/hash references retain snapshot provenance, not institutional affiliation."
     },
     {
-      "id": "insper-v2",
-      "title": "Insper V2 Modern",
+      "id": "aula-moderno",
+      "title": "Aula Moderno",
       "source_category": "Corporate & Education",
-      "source_description": "Insper reimaginado: imagens de fundo em todos os slides, tipografia garrafais ultra-bold, gráficos integrados, layouts assimétricos e editoriais.",
+      "source_description": "Direção educacional moderna: imagens de fundo, tipografia de grande escala, gráficos integrados e layouts assimétricos e editoriais.",
       "family": "institutional",
       "source_line": 61,
       "source_rule_present": true,
@@ -212,13 +213,14 @@
       ],
       "keep": "Evidenced identity, original logos and measured master relationships.",
       "adapt": "A named institution is not a reusable identity for other brands.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "public_label_note": "Neutral public name and edited description; source line/hash references retain snapshot provenance, not institutional affiliation."
     },
     {
-      "id": "insper-institucional",
-      "title": "Insper Institucional",
+      "id": "aula-institucional",
+      "title": "Aula Institucional",
       "source_category": "Corporate & Education",
-      "source_description": "12 composições Insper: capas de tópicos, fotos em tela cheia, títulos grandes e contraste entre branco, vermelho e grafite.",
+      "source_description": "12 composições educacionais: capas de tópicos, fotos em tela cheia, títulos grandes e contraste entre branco, vermelho e grafite.",
       "family": "institutional",
       "source_line": 92,
       "source_rule_present": true,
@@ -244,7 +246,8 @@
       ],
       "keep": "Evidenced identity, original logos and measured master relationships.",
       "adapt": "A named institution is not a reusable identity for other brands.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "public_label_note": "Neutral public name and edited description; source line/hash references retain snapshot provenance, not institutional affiliation."
     },
     {
       "id": "organic-pro",

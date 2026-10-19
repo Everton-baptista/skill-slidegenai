@@ -72,3 +72,11 @@ The [repertoire review](REPERTOIRE_REVIEW.md) records the first eight-deck criti
 ## Whole-catalog construction coverage
 
 `plan_template.py --coverage` resolves all 177 catalog entries through the same construction contract, across nine families including custom. Automated tests cover each entry in adaptation and faithful modes, source-gap preservation, non-demo lookup, unknown IDs/families and isolation of mutable resources. The eight new planner tests bring the helper suite to 125 tests. This establishes deterministic planning coverage, not visual evaluation of all 177 styles. The nine rendered studies remain the recorded visual subset.
+
+## Offline font pack and neutral educational names
+
+The repository now includes 30 openly licensed families / 120 original TTF files, covering all 24 families explicitly loaded by the application and six complements. `validate_fonts.py` checks local paths, hashes, sizes, binary signatures, original OFL files, coverage and offline CSS. Preparation with fontTools 4.67.0 parsed every TTF and checked a Portuguese accented-text/numeral cmap sample. This does not certify all-language coverage or native slide-tool registration/embedding. Nine regression tests cover font integrity, missing/altered licenses, unsafe paths, CSS, dry-run/idempotent staging, collision preflight, licensed ZIP retention and neutral educational entry lookup. The suite now has 134 tests.
+
+Educational entries use the public IDs `aula`, `aula-moderno` and `aula-institucional`. The catalog descriptions and public documentation use neutral names; source-snapshot hashes remain provenance records. Current-tree renaming does not rewrite previously published Git history.
+
+The included local HTML specimen loaded all 30 family samples successfully in the Codex in-app browser using the bundled CSS/TTFs on 2026-10-18. This confirms that browser path for the specimen, not native desktop registration or every weight in every exporter.

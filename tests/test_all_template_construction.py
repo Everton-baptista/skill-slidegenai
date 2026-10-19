@@ -24,7 +24,7 @@ class AllTemplateConstruction(unittest.TestCase):
                 self.assertEqual(brief['construction']['content_roles'], self.system['content_roles'])
                 self.assertEqual(brief['construction']['shared_rules'], self.system['shared_rules'])
                 self.assertFalse(brief['validation']['rendered'])
-                self.assertFalse(brief['typography']['fonts_bundled'])
+                self.assertTrue(brief['typography']['fonts_bundled'])
                 self.assertEqual(set(brief['typography']['suggested_families']), {'display','body','label'})
 
     def test_non_demo_uses_family_starting_point_without_renaming_the_style(self):

@@ -16,7 +16,7 @@ The installed skill is named **`brand-presentations`**. This repository contains
 - Can guide creation of a self-contained brand-specific skill with permitted assets and authorized retained references.
 - Provides deterministic **structural** checks for profiles and deck plans, plus a strict packager for brand-specific skills.
 
-It is an instruction package, **not an autonomous slide-generation application**. It does not include a crawler, browser, image-generation service, PowerPoint renderer, API client, or bundled fonts. The complete fictional example has an optional Node.js/PptxGenJS adapter; the skill does not require that engine. Those capabilities come from the host assistant. It does not guarantee exact brand reproduction, identical output across models, watermark-free images, factual accuracy, licensing clearance, or accessible final slides.
+It is an instruction package, **not an autonomous slide-generation application**. It does not include a crawler, browser, image-generation service, PowerPoint renderer or API client. It bundles 30 openly licensed font families for offline use. The complete fictional example has an optional Node.js/PptxGenJS adapter; the skill does not require that engine. Those capabilities come from the host assistant. It does not guarantee exact brand reproduction, identical output across models, watermark-free images, factual accuracy, licensing clearance, or accessible final slides.
 
 ## Template and analytical repertoire
 
@@ -26,7 +26,7 @@ All **177 entries use one [adaptive construction system](brand-presentations/ref
 
 Visible preview names such as **Acid Rave**, **NOVA**, **Ultimate Luxury** and **Neo Tokyo** now resolve through `find_templates.py --name "NOVA"`. The [nine style grammars](brand-presentations/references/style-grammars.md) describe distinct cover, content, chapter, evidence and closing treatments. The [repertoire review](docs/REPERTOIRE_REVIEW.md) explains what the demonstration batches revealed and what changed; source labels and recipes do not certify every exporter.
 
-Typography is part of art direction: the [font guide](brand-presentations/references/typography.md) covers display/body/label roles, optional [nine style-specific pairings](brand-presentations/references/typography-pairings.json), native outlined headlines, meaningful slide tags, fallback reflow and license/availability checks. Font binaries and an automatic font installer are not included.
+Typography is part of art direction: the [font guide](brand-presentations/references/typography.md) covers display/body/label roles, optional [nine style-specific pairings](brand-presentations/references/typography-pairings.json), native outlined headlines, meaningful slide tags, fallback reflow and license/availability checks. The [offline font pack](brand-presentations/references/font-pack.md) includes all 24 application-loaded families plus six complements, original licenses, local CSS, an integrity verifier and an optional copy helper.
 
 [Analytical construction](brand-presentations/references/analytical-construction.md) adds chart choice, data contracts, decision flows with rework paths, swimlanes, system relationships, dated roadmaps, risk matrices and aligned comparisons. Charts are used when evidence supports them; company performance is never invented to make a deck look analytical. The optional [visual-model validator](brand-presentations/scripts/validate_visuals.py) checks data and graph structure, not visual quality or truth.
 
@@ -42,7 +42,20 @@ Explore the [ten-slide analytical study](examples/analytical-patterns/README.md)
 | ChatGPT, Claude, Gemini, or another chat interface | Supply `SKILL.md` and required references as instructions/context | Manual context fallback; not a claim of native installation |
 | Custom agent/API integration | Load the manifest and relevant references into your own agent | You implement tools, permissions, storage, and execution |
 
-Python **3.9+** is optional and only needed for the bundled helpers/tests. They use the standard library, work offline, and require no API key or package installation. The host's own generation tools may require subscriptions, credentials, or payment. The repository has no network calls in its Python helpers. The optional example adapter needs Node.js 20+ and an initial dependency install; HTML-only reproduction needs only Node.js.
+Python **3.9+** is optional and only needed for the bundled helpers/tests. They use the standard library, work offline, and require no API key or package installation. The host's own generation tools may require subscriptions, credentials, or payment. The repository has no network calls in its Python helpers; bundled fonts can be verified and staged offline. The optional example adapter needs Node.js 20+ and an initial dependency install; HTML-only reproduction needs only Node.js.
+
+## Offline fonts
+
+The skill directory includes **30 font families / 120 original TTFs (about 43.8 MB)**: all 24 application-loaded families and six complements. There is no required Google Fonts request during generation. Each family retains its original OFL license, and the [manifest](brand-presentations/assets/fonts/manifest.json) pins source URLs and hashes. The [font-pack guide](brand-presentations/references/font-pack.md) explains local HTML/CSS use, selected-family copying, macOS/Linux/Windows registration and export limits. Copying the complete skill directory also copies its fonts; tools still need to register or load them.
+
+```sh
+# From this repository root; no download or additional Python packages needed:
+python3 brand-presentations/scripts/validate_fonts.py
+# Dry run to an explicit destination:
+python3 brand-presentations/scripts/install_fonts.py --dest /path/to/fonts --family Inter --family Manrope
+```
+
+Use the included [local specimen](brand-presentations/assets/fonts/specimen.html) to inspect the fonts in a browser. Its font resources are local. System fonts such as Impact or Didot are represented by explicit open alternatives, not redistributed proprietary binaries.
 
 ## Install
 
@@ -214,6 +227,7 @@ No software license is currently declared in this repository. Do not assume a pe
 | Analytical fixture: Codex desktop on macOS | Four native charts/workbooks, attached diagrams, roadmap/matrix/table; all ten PPTX slides and overview rendered/inspected | Tested for this artifact |
 | Analytical public reproduction adapter | Isolated npm install/build and native chart/workbook/table/source check; free line segments need rerouting after node moves | Tested for generation/data preservation |
 | Nine-style study: Codex desktop on macOS / live Spaces | 54 final slides and nine overviews inspected; seven native charts/source checks, four native tables and attached connectors; native outlined text and local font-role pass | Tested for these artifacts; see [review](docs/REPERTOIRE_REVIEW.md) |
+| Bundled font pack | 120 TTFs parsed with fontTools; accents/numerals checked; offline integrity and temporary-copy tests | Tested for files and staging; OS/native-app registration remains host-specific |
 | Microsoft PowerPoint / Google Slides / Keynote | No native opening/editing performed | Not tested |
 | Claude Code / Gemini / other agent hosts | Portable installation/context instructions only | Not tested end to end |
 

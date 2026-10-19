@@ -4,6 +4,8 @@ Snapshot: 2026-10-18. All **177 interface templates** are indexed in [the portab
 
 The catalog transfers visual relationships rather than copying application prompts, JSX, remote assets or provider dependencies. Each row is **source-reviewed**, not a tested PPTX implementation. Palette samples are source observations, never authority to override a supplied brand. Third-party or institutional names indicate inspiration in the source, not affiliation or a bundled licensed master.
 
+The public educational entries use the neutral names **Aula**, **Aula Moderno** and **Aula Institucional**. Their public IDs/descriptions are normalized; source line/hash references document the inspected snapshot, not affiliation or an official institutional master.
+
 ## Shared construction for all entries
 
 All 177 entries use [the same adaptive construction system](all-template-construction.md): font roles, topic covers, image/text layouts, contextual tags, appropriate effects and editable evidence objects. The nine named examples are demonstrations, not an exclusive support list. `python3 scripts/plan_template.py --id watercolor` produces a working brief for any canonical ID; `--coverage` verifies structural resolution across the catalog. This does not render or certify 177 presentations.
@@ -51,9 +53,9 @@ For composition-level adaptation of the nine demonstrated directions, read [styl
 | ID | Source name | Source category | Portable family |
 | --- | --- | --- | --- |
 | `custom` | Create Your Own | Custom | custom |
-| `insper-aula` | Insper Aula | Corporate & Education | institutional |
-| `insper-v2` | Insper V2 Modern | Corporate & Education | institutional |
-| `insper-institucional` | Insper Institucional | Corporate & Education | institutional |
+| `aula` | Aula | Corporate & Education | institutional |
+| `aula-moderno` | Aula Moderno | Corporate & Education | institutional |
+| `aula-institucional` | Aula Institucional | Corporate & Education | institutional |
 | `organic-pro` | Organic Designer (Pro) | High-End | organic |
 | `organic-modern` | Organic Modern | High-End | organic |
 | `modern-saas` | Modern SaaS | High-End | technical |

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "purpose": "Optional starting points for creative adaptation; preserve evidenced brand typography in faithful-template mode.",
-  "fonts_bundled": false,
+  "fonts_bundled": true,
   "installation_performed": false,
   "sources": {
     "Barlow Condensed": "https://fonts.google.com/specimen/Barlow+Condensed",
@@ -105,5 +105,6 @@
       "availability": "verify-in-target-host",
       "outline": "not-required"
     }
-  ]
+  ],
+  "font_manifest": "../assets/fonts/manifest.json"
 }

@@ -69,3 +69,5 @@ python3 scripts/validate_deck.py /path/to/deck-plan.json --brand /path/to/brand-
 Omit `--design` for older packages. Use `--require-reviewed` only after actual inspection. Without rendering, label the output an **unverified visual draft**. Deliver the requested artifact and material limitations; keep build/review records out of slide content unless requested. Publication, installation, or messaging requires the user's applicable authorization.
 
 When choosing or changing fonts, read [typography](references/typography.md). Choose display, body and label roles for the message; verify font availability and reflow after substitutions. Outlined headlines require real transparent glyph fill and native text stroke where supported.
+
+For offline font files, HTML registration or native-tool installation, use [the bundled font pack](references/font-pack.md). Prefer its licensed local files when appropriate; register them in the host before measuring text.

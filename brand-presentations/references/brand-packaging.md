@@ -15,3 +15,5 @@ python3 scripts/package_brand.py /path/to/brand-presentations --output /path/to/
 The helper validates the profile and optional design system, local Markdown links, declared retained sources, and local Python helper dependencies. It rejects missing assets, unsafe paths, symlinks, unexpected files, and credential-like filenames. `design-tokens.json` is a legitimate reference filename; token names alone are not credentials. The checks are not a complete secret scanner or license audit.
 
 Inspect the archive and install it in a clean host or unpacked workspace to confirm all referenced resources resolve. Package creation does not imply publication approval or visual verification.
+
+For fonts, retain the original files/licenses and a consistent manifest/CSS under `assets/fonts/`; see the [font-pack guide](font-pack.md). The packager verifies that bundle offline before archiving.

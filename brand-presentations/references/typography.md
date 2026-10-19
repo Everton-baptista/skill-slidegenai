@@ -12,7 +12,7 @@ These decisions apply to every catalog template. The nine pairing examples are n
 4. Compose a real title, body paragraph, accented Portuguese words (`Ação, frequência, órgão, decisão`), numerals, table and chart labels. Render them in the destination tool before applying the choice throughout the deck.
 5. Rebuild line breaks and frames after a family change. Width, cap height, x-height, ascenders and weight affect layout. A nominally identical font size is not a visually identical size. Compare the cover, chapter and closing together, then inspect all affected slides.
 
-The optional [pairing catalog](typography-pairings.json) gives nine starting directions using fonts available from official Google Fonts specimen pages. These are design suggestions, not bundled fonts, a font installer, confirmed glyph coverage or cross-provider certification. Available host fonts may be used instead after visual verification. Mac system fonts used in a local study are not portable dependencies and must not be copied into the public skill.
+The optional [pairing catalog](typography-pairings.json) gives nine starting directions using fonts available from official Google Fonts specimen pages. These are design suggestions. All suggested families are included in the [offline font pack](font-pack.md), alongside the application font inventory. Bundled files do not imply registration in the destination tool or cross-provider certification. Available host fonts may be used instead after visual verification. Mac system fonts used in a local study are not portable dependencies and must not be copied into the public skill.
 
 ## Give each role a job
 

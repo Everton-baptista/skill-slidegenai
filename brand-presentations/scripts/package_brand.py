@@ -36,7 +36,8 @@ def collect(root):
             if rel.parts[0] not in EXTENSIONS:
                 raise ValueError(f'Unexpected directory: {rel}')
             continue
-        allowed = str(rel) in TOP_FILES | OPTIONAL_FILES or (len(rel.parts) > 1 and path.suffix.lower() in EXTENSIONS.get(rel.parts[0], set()))
+        font_metadata = len(rel.parts) >= 3 and rel.parts[:2] == ('assets', 'fonts') and (str(rel) == 'assets/fonts/manifest.json' or (len(rel.parts) == 4 and path.name == 'OFL.txt'))
+        allowed = font_metadata or str(rel) in TOP_FILES | OPTIONAL_FILES or (len(rel.parts) > 1 and path.suffix.lower() in EXTENSIONS.get(rel.parts[0], set()))
         if not allowed or re.search(r'(?:secret|credential|private[_-]?key|(?:access|auth|api|refresh)[_-]?token)', path.stem, re.I):
             raise ValueError(f'Unexpected or credential-named file: {rel}')
         files.append(path)
@@ -74,9 +75,13 @@ def collect(root):
             for node in ast.walk(tree):
                 modules = [node.module] if isinstance(node, ast.ImportFrom) else [x.name for x in node.names] if isinstance(node, ast.Import) else []
                 for module in modules:
-                    if module and module.split('.')[0] in ('validate_brand', 'validate_design', 'validate_deck'):
+                    if module and module.split('.')[0] in ('validate_brand', 'validate_design', 'validate_deck', 'validate_fonts', 'find_templates'):
                         if not (path.parent / (module.split('.')[0] + '.py')).is_file():
                             raise ValueError(f'Missing bundled helper dependency: {module}')
+    font_root = root / 'assets/fonts'
+    if font_root.exists():
+        from validate_fonts import validate as validate_fonts
+        validate_fonts(font_root)
     retained = root / 'references/retained-sources.json'
     declared = set()
     if retained.exists():

@@ -38,7 +38,9 @@ def build_brief(row, system, pairings, mode='adaptation'):
             'suggestion_basis': 'named-style-example' if override else 'family-starting-point',
             'apply_suggestions': mode == 'adaptation',
             'availability': 'unverified-in-target-host',
-            'fonts_bundled': False,
+            'fonts_bundled': True,
+            'font_manifest': 'assets/fonts/manifest.json',
+            'installation': 'Bundled files require host registration or local CSS; availability is not implied.',
             'precedence': 'Explicit user choices and evidenced brand fonts override these inferred suggestions.'
         },
         'required_decisions': [
