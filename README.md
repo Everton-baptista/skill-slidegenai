@@ -22,6 +22,10 @@ It is an instruction package, **not an autonomous slide-generation application**
 
 The [complete catalog](brand-presentations/references/template-catalog.md) indexes **177 SlideGenAI interface templates**, organized into portable families with source coverage and adaptation notes. It is a source inventory, **not 177 bundled PowerPoint masters or individually tested exporters**. User-supplied identity overrides its palette samples. No application installation is required.
 
+Visible preview names such as **Acid Rave**, **NOVA**, **Ultimate Luxury** and **Neo Tokyo** now resolve through `find_templates.py --name "NOVA"`. The [nine style grammars](brand-presentations/references/style-grammars.md) describe distinct cover, content, chapter, evidence and closing treatments. The [repertoire review](docs/REPERTOIRE_REVIEW.md) explains what the demonstration batches revealed and what changed; source labels and recipes do not certify every exporter.
+
+Typography is part of art direction: the [font guide](brand-presentations/references/typography.md) covers display/body/label roles, optional [nine style-specific pairings](brand-presentations/references/typography-pairings.json), native outlined headlines, meaningful slide tags, fallback reflow and license/availability checks. Font binaries and an automatic font installer are not included.
+
 [Analytical construction](brand-presentations/references/analytical-construction.md) adds chart choice, data contracts, decision flows with rework paths, swimlanes, system relationships, dated roadmaps, risk matrices and aligned comparisons. Charts are used when evidence supports them; company performance is never invented to make a deck look analytical. The optional [visual-model validator](brand-presentations/scripts/validate_visuals.py) checks data and graph structure, not visual quality or truth.
 
 Explore the [ten-slide analytical study](examples/analytical-patterns/README.md): four native charts, three editable node/connector diagrams, a duration-scaled roadmap, a categorical matrix and a native comparison table. Its source data is fictional and labeled. The review record distinguishes the checked-in artifact from the optional reproduction adapter and lists host limitations.
@@ -207,6 +211,7 @@ No software license is currently declared in this repository. Do not assume a pe
 | Local Chrome | HTML text-fit check and deliberate overflow fixture | Evaluated locally |
 | Analytical fixture: Codex desktop on macOS | Four native charts/workbooks, attached diagrams, roadmap/matrix/table; all ten PPTX slides and overview rendered/inspected | Tested for this artifact |
 | Analytical public reproduction adapter | Isolated npm install/build and native chart/workbook/table/source check; free line segments need rerouting after node moves | Tested for generation/data preservation |
+| Nine-style study: Codex desktop on macOS / live Spaces | 54 final slides and nine overviews inspected; seven native charts/source checks, four native tables and attached connectors; native outlined text and local font-role pass | Tested for these artifacts; see [review](docs/REPERTOIRE_REVIEW.md) |
 | Microsoft PowerPoint / Google Slides / Keynote | No native opening/editing performed | Not tested |
 | Claude Code / Gemini / other agent hosts | Portable installation/context instructions only | Not tested end to end |
 

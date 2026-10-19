@@ -25,6 +25,23 @@ All themes can use native charts or flows when the content and host support them
 | institutional | Evidenced identity, original logos and measured master relationships. | A named institution is not a reusable identity for other brands. |
 | custom | The user-selected identity and capability constraints. | Resolve identity and evidence before choosing effects. |
 
+## Visible names are not always template IDs
+
+The application sometimes displays a poster word rather than its catalog title. These observed labels now participate in offline lookup:
+
+| Visible label | Source title | Canonical ID |
+| --- | --- | --- |
+| Acid Rave | Acid Graphix | `acid-graphix` |
+| Neo-Tech | Neo-Tech | `default` |
+| NOVA | Fashion Editorial | `fashion-editorial` |
+| Ultimate Luxury | Premium Escapes | `premium-travel` |
+| Neo Tokyo | Urban Vivid | `urban-vivid` |
+| MOVE | Kinetic | `kinetic` |
+
+Use `python3 scripts/find_templates.py --name "Acid Rave"` for an exact normalized visible name, or `--query "neo tokyo"` for substring search. Case, punctuation and accents normalize; canonical IDs remain unchanged. `--id` stays exact. No fuzzy guessing is performed. A category such as **Corporate & Education** is a group of templates, not a newly invented template ID; query it to see all source entries. If a user's spelling has no match, inspect the source or ask rather than silently selecting a different style.
+
+For composition-level adaptation of the nine demonstrated directions, read [style grammars](style-grammars.md). A palette and family name alone are insufficient to reproduce their character.
+
 ## Complete index
 
 | ID | Source name | Source category | Portable family |

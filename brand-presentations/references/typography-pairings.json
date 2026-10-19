@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "purpose": "Optional starting points for creative adaptation; preserve evidenced brand typography in faithful-template mode.",
+  "fonts_bundled": false,
+  "installation_performed": false,
+  "sources": {
+    "Barlow Condensed": "https://fonts.google.com/specimen/Barlow+Condensed",
+    "Bebas Neue": "https://fonts.google.com/specimen/Bebas+Neue",
+    "Bodoni Moda": "https://fonts.google.com/specimen/Bodoni+Moda",
+    "Cormorant Garamond": "https://fonts.google.com/specimen/Cormorant+Garamond",
+    "DM Sans": "https://fonts.google.com/specimen/DM+Sans",
+    "IBM Plex Mono": "https://fonts.google.com/specimen/IBM+Plex+Mono",
+    "Manrope": "https://fonts.google.com/specimen/Manrope",
+    "Space Grotesk": "https://fonts.google.com/specimen/Space+Grotesk",
+    "Syne": "https://fonts.google.com/specimen/Syne"
+  },
+  "pairings": [
+    {
+      "source_id": "acid-graphix",
+      "direction": "Acid Rave",
+      "display": "Bebas Neue",
+      "body": "Space Grotesk",
+      "label": "IBM Plex Mono",
+      "intent": "Poster scale, sparse labels, filled/outlined contrast",
+      "availability": "verify-in-target-host",
+      "outline": "optional-native-display-only"
+    },
+    {
+      "source_id": "default",
+      "direction": "Neo-Tech",
+      "display": "Space Grotesk",
+      "body": "Manrope",
+      "label": "IBM Plex Mono",
+      "intent": "Precise grotesk hierarchy and short technical labels",
+      "availability": "verify-in-target-host",
+      "outline": "not-required"
+    },
+    {
+      "source_id": "cyberpunk",
+      "direction": "Cyberpunk",
+      "display": "Barlow Condensed",
+      "body": "Space Grotesk",
+      "label": "IBM Plex Mono",
+      "intent": "Compressed display and controlled color echoes; calm evidence",
+      "availability": "verify-in-target-host",
+      "outline": "not-required"
+    },
+    {
+      "source_id": "fashion-editorial",
+      "direction": "NOVA",
+      "display": "Bodoni Moda",
+      "body": "DM Sans",
+      "label": "DM Sans",
+      "intent": "High-contrast editorial serif and quiet reading sans",
+      "availability": "verify-in-target-host",
+      "outline": "not-required"
+    },
+    {
+      "source_id": "premium-travel",
+      "direction": "Ultimate Luxury",
+      "display": "Cormorant Garamond",
+      "body": "Manrope",
+      "label": "Manrope",
+      "intent": "Restrained serif hierarchy with generous space",
+      "availability": "verify-in-target-host",
+      "outline": "not-required"
+    },
+    {
+      "source_id": "urban-vivid",
+      "direction": "Neo Tokyo",
+      "display": "Barlow Condensed",
+      "body": "DM Sans",
+      "label": "IBM Plex Mono",
+      "intent": "Urban display scale with photographic observation",
+      "availability": "verify-in-target-host",
+      "outline": "not-required"
+    },
+    {
+      "source_id": "bauhaus",
+      "direction": "Bauhaus",
+      "display": "Syne",
+      "body": "DM Sans",
+      "label": "DM Sans",
+      "intent": "Expressive geometric display and structured grid",
+      "availability": "verify-in-target-host",
+      "outline": "not-required"
+    },
+    {
+      "source_id": "kinetic",
+      "direction": "Kinetic",
+      "display": "Bebas Neue",
+      "body": "Manrope",
+      "label": "Space Grotesk",
+      "intent": "Repeated live type, one outlined word, legible schedule",
+      "availability": "verify-in-target-host",
+      "outline": "optional-native-display-only"
+    },
+    {
+      "source_id": "education-modern",
+      "direction": "Corporate & Education example",
+      "display": "Manrope",
+      "body": "DM Sans",
+      "label": "DM Sans",
+      "intent": "Approachable hierarchy and meaningful learning-section labels",
+      "availability": "verify-in-target-host",
+      "outline": "not-required"
+    }
+  ]
+}

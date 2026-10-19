@@ -42,7 +42,7 @@ Make organic decisions when the subject, reference, or user intent supports them
 
 ## Compose and repair
 
-When content calls for data, decisions or relationships, use [analytical construction](references/analytical-construction.md) to select and build charts, decision flows, swimlanes, architecture, roadmaps, matrices or comparisons. The [complete SlideGenAI catalog](references/template-catalog.md) indexes 177 source styles as optional directions, not 177 certified export implementations. Load specific entries only when useful; preserve brand identity and factual geometry.
+When content calls for data, decisions or relationships, use [analytical construction](references/analytical-construction.md) to select and build charts, decision flows, swimlanes, architecture, roadmaps, matrices or comparisons. The [complete SlideGenAI catalog](references/template-catalog.md) indexes 177 source styles as optional directions, not 177 certified export implementations. Load specific entries only when useful; preserve brand identity and factual geometry. For a named visual direction, use [style grammars](references/style-grammars.md) and the catalog's visible-name lookup before composing. When producing a repertoire of different styles, compare their cover, chapter and closing structures across decks; a palette change alone does not establish a different direction.
 
 Choose a useful master by meaning and fit: opening, topic cover, editorial image, explanation, comparison, data, process, or closing. These are options, not a forced sequence. Topic covers count toward the requested total and must not displace required outline items. A single-slide request does not need a separate cover.
 
@@ -67,3 +67,5 @@ python3 scripts/validate_deck.py /path/to/deck-plan.json --brand /path/to/brand-
 ```
 
 Omit `--design` for older packages. Use `--require-reviewed` only after actual inspection. Without rendering, label the output an **unverified visual draft**. Deliver the requested artifact and material limitations; keep build/review records out of slide content unless requested. Publication, installation, or messaging requires the user's applicable authorization.
+
+When choosing or changing fonts, read [typography](references/typography.md). Choose display, body and label roles for the message; verify font availability and reflow after substitutions. Outlined headlines require real transparent glyph fill and native text stroke where supported.

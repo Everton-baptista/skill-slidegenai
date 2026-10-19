@@ -60,3 +60,11 @@ Only malformed supplied metadata causes failure; repetition notices return succe
 `find_templates.py` filters a bundled snapshot of 177 application styles by ID, family, pattern or query. Catalog tests check unique coverage, the complete Markdown index and recorded source counts (174 backend rules, 176 type declarations). The three missing backend rules and one missing type declaration are documented source gaps, not silently synthesized implementations. These checks do not certify 177 native exports.
 
 The [analytical example](../examples/analytical-patterns/README.md) separately demonstrates four native charts with embedded workbooks, five editable diagram structures and one native comparison table. Its fixture checker follows chart relationships, compares caches and referenced workbook cells to the canonical model, verifies table contents and labels, and distinguishes attached connectors from free editable line segments. Regression tests deliberately corrupt cached values, workbook cells and attachments. Final visual inspection remains separate from automated validity.
+
+## Visible-name lookup
+
+`find_templates.py --name` matches normalized canonical IDs, source titles or source-observed preview labels. Punctuation, case and combining accents normalize. `--id` remains exact. Ambiguous names retain all matches; no fuzzy match silently selects a different template. Categories stay categories and may return several entries through `--query`. Tests cover these distinctions and preserve the 177-entry inventory.
+
+## Composition and typography study
+
+The [repertoire review](REPERTOIRE_REVIEW.md) records the first eight-deck critique and the completed nine-direction, 54-slide local follow-up. The follow-up included final slide/overview inspection, native chart/source checks, table values, attached connector endpoints, font-role refinement and a native outlined text example. This is host-specific qualitative evidence, separate from the 117 helper tests. Optional Google Fonts pairing suggestions were not installed or tested across providers; Mac font binaries are not distributed.

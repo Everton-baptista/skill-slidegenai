@@ -1030,7 +1030,10 @@
       ],
       "keep": "A deliberate expressive gesture suited to the audience.",
       "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "preview_labels": [
+        "MOVE"
+      ]
     },
     {
       "id": "aura",
@@ -1157,7 +1160,10 @@
       ],
       "keep": "A deliberate expressive gesture suited to the audience.",
       "adapt": "Reserve stable reading surfaces for data; motion and effects may not export.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "preview_labels": [
+        "Acid Rave"
+      ]
     },
     {
       "id": "ascii",
@@ -3519,7 +3525,10 @@
       ],
       "keep": "Type scale, purposeful crop and deliberate whitespace.",
       "adapt": "Protect chart regions from image overlap; no invented pull quotes.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "preview_labels": [
+        "NOVA"
+      ]
     },
     {
       "id": "creative-vibrant",
@@ -4784,7 +4793,10 @@
       ],
       "keep": "Specific subject, meaningful crop and image/text relationship.",
       "adapt": "Do not place data or faces beneath competing labels.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "preview_labels": [
+        "Ultimate Luxury"
+      ]
     },
     {
       "id": "modern-editorial",
@@ -4840,7 +4852,10 @@
       ],
       "keep": "Precise line work, labeled relationships and strong grouping.",
       "adapt": "Avoid decorative wires that imply nonexistent dependencies.",
-      "status": "source-reviewed; not individually rendered or certified"
+      "status": "source-reviewed; not individually rendered or certified",
+      "preview_labels": [
+        "Neo Tokyo"
+      ]
     }
   ]
 }

@@ -76,3 +76,9 @@ After rendering, ask:
 - Does the overview have meaningful changes of pace while keeping identity coherent?
 
 Remove what does not support the message. Cards, symmetry, grids, and large type remain valid when they serve the request. Do not enforce a universal ban or equate minimalism with originality. There is no automatic “looks human” test, beauty score, or guarantee of total novelty. Report actual decisions and inspected results, not those claims.
+
+## Review a repertoire across presentations
+
+When the task asks for several distinct directions, inspect their overviews together as well as each slide. Compare title placement, image geometry, type behavior, reading surfaces, density and section/closing behavior without considering color first. A full-image left title cover can be right for one deck; applying it to nearly every deck narrows the demonstrated range. The same applies to the same dark closing with a large white title and a bottom next-step line. Preserve deliberate recurring formats for a controlled comparison, established brand master or user requirement.
+
+Name the actual limitations of the completed work: which structure repeated, which visual signature was lost, and which data/diagram geometry needed repair. Use [style grammars](style-grammars.md) to make the next attempt concrete. Do not fabricate a beauty score, promise complete originality, or imply that observed source labels are separate certified exporters.

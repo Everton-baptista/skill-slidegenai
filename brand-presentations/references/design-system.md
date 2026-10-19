@@ -18,3 +18,5 @@ A deck linked with `--design` must use the same canvas/unit, existing layout IDs
 The validator checks declared measures, references, assets, and evidence. It does not measure fonts, certify logo clear space visually, or enforce a universal aesthetic. See the repository example for complete data.
 
 Optional `art_direction` working metadata is described in [adaptive art direction](art-direction.md). It records the concept and controlled latitude; it does not change version 1 or impose an additional required field. Layout coordinates remain the construction contract.
+
+Optional `typography_decisions` metadata records preferred versus resolved families, weights, availability and outline capability; see [typography](typography.md). The measured `typography` roles must still describe the actual rendered families and sizes. These notes do not turn the schema validator into a font resolver.
