@@ -12,6 +12,18 @@ On Windows, use `py -3 -B`. The check uses local files and the standard library;
 
 For an update, back up or rename the old installed directory, then copy the complete current skill. Do not merge different snapshots indiscriminately: the font manifest and helpers need their matching resources. Re-run the check against the new installed directory, and refresh/restart host discovery if needed. These are manual update steps, not an automatic installation performed by the skill.
 
+## The assistant says the skill requires a visual reference
+
+Update the complete installed folder and start a fresh session to avoid stale instructions. The current skill creates complete presentations from a topic, outline or data without a visual reference. Invoke it explicitly and ask for original art direction. Its name remains `brand-presentations` for compatibility. Using a host's slide editor is part of the workflow; Python helpers are optional and do not render arbitrary decks.
+
+If the assistant can create slide files, it should apply the creation, composition and review workflow to that artifact. If the host only returns text, the actual limit is file authoring, not absence of brand material. See the [creation guide](../brand-presentations/references/create-presentation.md).
+
+## Website reading returns text or the editor requires image files
+
+A page reader may discard styling and images even when another tool can access the original page/assets. Follow [website assets](../brand-presentations/references/website-assets.md): inspect available browser/raw-HTTP/download capabilities, acquire selected public image bytes and use the editor's documented import/upload path. A local file in a shell environment may need a separate transfer to the slide editor.
+
+Do not claim exact fonts or official identity from plain text alone. With permission for adaptation, continue an explicitly authored visual direction while using observable content. Ask for uploads only when the necessary evidence or transfer capability is actually missing; do not repeatedly offer a menu instead of completing the independent deck work. Strict reproduction may require a specific missing reference.
+
 ## A font is included but not appearing
 
 Bundled files do not imply registration in the OS, authoring library or slide application. For HTML, link the included local CSS and wait for fonts to load before measuring. For native tools, register/install the selected faces as described in the [font-pack guide](../brand-presentations/references/font-pack.md). Test a real title, accents and numerals in the actual tool.

@@ -4,6 +4,10 @@ Automated tests verify helpers and package structure. Run these scenarios in the
 
 | Scenario | Expected behavior |
 | --- | --- |
+| Topic/outline only, no visual reference | Choose original art direction and create the supported complete deck; do not require brand uploads |
+| Text-only web reader + separate raw-HTTP download tool + file-only editor | Try the available acquisition and import/transfer path; do not mistake local-file import for a requirement for human upload |
+| Text-only web reader with no alternative retrieval/transfer tool | Continue an honestly identified adaptation when acceptable; ask only for essential unavailable material |
+| Strict faithful reproduction with no visual evidence | Explain the precise fidelity blocker and request the missing template/evidence; do not fabricate an official design |
 | Accessible website + deck request | Inspect real pages/assets; record evidence; create the supported output |
 | Screenshot-only reference | Mark exact fonts/hidden logo variants unknown; avoid fabricated official rules |
 | Conflicting sub-brands | Resolve against user intent; record the choice; do not merge identities blindly |
@@ -36,3 +40,7 @@ Use a clearly permitted real-world reference for end-to-end testing. The fiction
 | [Expressive type lab](../brand-presentations/assets/fonts/expressive.html) | Display/reading contrast, accented text, real supplied faces and optional variable settings | All 16 cover samples inspected in the local browser; native export and embedding remain untested |
 
 These local evaluations used Codex desktop on macOS. Exact artifact hashes and limitations belong in each example's review record. Newly generated outputs need their own inspection; do not inherit a checked-in artifact's review flags. The [repertoire review](REPERTOIRE_REVIEW.md) records broader composition findings and the tested visual subset. Native PowerPoint, Google Slides, Keynote and cross-provider end-to-end behavior remain untested.
+
+## Creation and website-recovery routing review
+
+A read-only independent instruction review evaluated three requests: a topic-only eight-slide Portuguese deck with an editor/renderer; a public-site company deck with a text reader, raw-HTTP shell and file-based editor import; and faithful reproduction with no visual evidence or retrieval tools. The reviewed instructions now route these to original creation, available acquisition/import attempts, and a precise fidelity-evidence request respectively. Follow-up review found no material contradiction across the entrypoint and relevant composition guides. This evaluates instruction consistency, not actual Claude execution, downloads, imports, slide creation or rendering. Those routes still require a real run in the target host.

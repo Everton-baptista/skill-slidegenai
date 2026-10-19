@@ -4,7 +4,7 @@ Use a small component vocabulary to keep production predictable. These patterns 
 
 ## Three layers
 
-1. **Brand tokens:** semantic colors, actual font families/fallbacks, logo variants, spacing scale, safe areas, and image direction derived from evidence.
+1. **Brand tokens:** semantic colors, actual font families/fallbacks, logo variants, spacing scale, safe areas, and image direction derived from evidence when a brand reference exists, or authored explicitly for an original deck. A logo is optional for unbranded work.
 2. **Layout masters:** brand-appropriate compositions with measured regions and content slots. The rendering tool owns geometry; the content model fills the slots.
 3. **Slide content:** heading, optional eyebrow, body or points, image description/alt text, factual metric/context/source when applicable. Omit unused fields instead of inventing content.
 
@@ -23,7 +23,7 @@ When a fixed master has a tested capacity, use its local content budgets as earl
 | Citation/footer | Actual citation and optional page position | Fits safely; never invent affiliation, contact, or a source |
 | Section marker | Topic ID/label and global position | Introduces a real transition and counts toward total |
 
-A large heading and photograph can carry an idea without extra cards. Use cards, borders, shadows, and decorative shapes only when supported by the reference and useful for grouping.
+A large heading and photograph can carry an idea without extra cards. Use cards, borders, shadows, and decorative shapes when useful for hierarchy or grouping and consistent with the chosen direction. For faithful reproduction, retain the reference's treatment; for original work, author a suitable treatment.
 
 ## Geometry and overflow
 
@@ -53,7 +53,7 @@ Use the example's `deck-plan.json` for complete numeric instances. The numbers b
 | Body | Paragraph or points; editorial body at (640,400), 535×164 | Fit real font metrics; never hide clipped lines. Native text; retain qualifications when shortening. |
 | Editorial image | Local asset + alt text + focal point; (0,0), 570×640 | Crop proportionally; protect important subject matter. Raster image is allowed; verify resolution and permitted use. |
 | Reading surface | Surface role + reading region; editorial text stays on the paper region to the right | Extend contrast across all wrapped lines. Native solid shape/background where supported; inspect gradients in exports. |
-| Logo | Original asset, suitable background, target box + clear_space | For the demo asset, a 64×64 box needs 16px surrounding space. Preserve aspect ratio; no recoloring without support. Missing logo remains a gap. |
+| Logo | Original asset, suitable background, target box + clear_space | For the demo asset, a 64×64 box needs 16px surrounding space. Preserve aspect ratio; no recoloring without support. For brand work, record a missing required logo; an unbranded deck needs no logo. |
 | Chart | Categories, values, units, source/illustrative label; (64,255), 760×330 | Keep a native chart with editable series/workbook. Check categories, scale and values against the source after export. |
 | Table | Full matrix with headers; (64,260), 1152×290 | Preserve all cells. Adjust row heights/column widths before splitting when allowed. Native table; inspect every cell. |
 | Citation/footer | Real source or supplied attribution, global page number; (64,666), 1152×22 | Never invent a citation or shrink below readable size to fit. Longer citations need a larger region or notes when appropriate. |

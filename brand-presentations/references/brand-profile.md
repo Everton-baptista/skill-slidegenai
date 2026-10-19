@@ -1,5 +1,7 @@
 # Brand profile contract
 
+For original decks without a brand reference, author directly through [creation](create-presentation.md); a profile is not a prerequisite. If packaging requires one, use an actual saved local creative brief as the source and mark authored design rules `inferred`, not observed or implicitly user-approved.
+
 Store `brand-profile.json` at the brand package root. Use UTF-8 JSON and relative asset paths. This profile records identity evidence, not slide content. Version 1 requires these fields:
 
 | Field | Meaning |

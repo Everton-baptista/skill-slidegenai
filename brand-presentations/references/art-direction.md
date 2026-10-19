@@ -8,11 +8,13 @@ Read the actual content and identify the audience's task: understand evidence, f
 
 Write a short private concept in concrete language. Example: “An open field notebook about places for learning, with images observed closely and generous pauses.” Translate that concept into specific choices: a photo crop that preserves the reading table, a serif headline with conversational line breaks, and an offset caption linked to the visible subject. “Premium,” “beautiful,” “organic,” and “Awwwards” alone are not executable directions.
 
+When no visual reference exists, author the concept, palette, font roles and composition from the subject; classify them as design choices rather than extracted identity. A missing brand guide does not stop presentation creation.
+
 Keep brand invariants and creative latitude separate. The user and reference control colors, logo usage, required fonts, factual content, and requested structure. Composition can adapt within those constraints. Do not import a fashionable palette or serif font just because a direction calls for warmth.
 
 ## Explore where a real choice exists
 
-For a new deck direction, consider two or three meaningfully different compositions for one representative slide before building the entire deck. Keep the same factual proposition, source data, and qualifications. Change the visual argument: image-led observation, typographic proposition, or structured evidence. Different colors on the same card grid are not different concepts.
+When a new direction presents a meaningful choice, consider a few different compositions for a representative slide before building the entire deck. A straightforward brief can proceed directly; this is not a mandatory extra deliverable. Keep the same factual proposition, source data, and qualifications. Change the visual argument: image-led observation, typographic proposition, or structured evidence. Different colors on the same card grid are not different concepts.
 
 Choose and continue autonomously when the user has delegated design. Do not add an approval gate or require a paid image-generation batch. For strict templates or trivial edits, skip this exploration. Reuse supplied imagery when comparing compositions; this is a controlled comparison, not a rule to repeat one photo throughout a deck.
 
@@ -47,7 +49,7 @@ Organic can mean a gentle change in density, asymmetry balanced by whitespace, a
 
 Use one justified gesture rather than accumulating effects. Keep a stable invisible alignment structure so irregular composition remains legible. Place irregularity in a photograph, contour, spacing, or image/text relationship while keeping charts, tables, units, and logos precise. Do not distort factual geometry or brand assets.
 
-Use actual source material for illustrative/decorative imagery. Do not draw fake botanical illustrations, simulated paper, or “handwritten” human evidence to suggest authenticity. When a tool cannot export a mask or texture faithfully, use a permitted pre-rendered image layer and preserve native text/evidence; record the limitation. Do not install a dependency merely to add decoration.
+Use permitted source material or clearly authored/generated illustration for decorative imagery when appropriate. Botanical drawing, simulated paper and handwritten typography are legitimate visual techniques; do not present them as documentary material, a real person's handwriting or other evidence of authenticity. When a tool cannot export a mask or texture faithfully, use a permitted pre-rendered image layer and preserve native text/evidence; record the limitation. Do not install a dependency merely to add decoration.
 
 ## Make the whole deck intentional
 

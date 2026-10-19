@@ -18,6 +18,8 @@ Inspect the actual error and existing output. For interrupted remote responses, 
 
 A watermark or provider logo can come from current service behavior. Inspect actual files and provider requirements; do not assume a parameter guarantees clean output. Choose permitted alternative assets/providers when available. Do not remove required attribution or promise free/unlimited generation.
 
+For partial website/image tools, follow [website assets](website-assets.md). A text-only fetch is not proof that a separate raw-HTTP, browser or upload capability is absent. Try relevant supported alternatives before requiring the user to transfer files. Preserve the difference between acquiring bytes and successfully importing them into the editor.
+
 ## Format fallbacks
 
 Prefer native editable text/charts. When an exporter cannot reproduce a critical gradient or visual effect, use a supported equivalent or rasterized background with editable foreground text where possible. Disclose rasterization, font substitutions, external dependencies, and remaining export differences.

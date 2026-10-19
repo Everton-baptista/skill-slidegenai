@@ -1,6 +1,6 @@
 # Slide layout system
 
-Translate the reference into presentation grammar. Keep identity invariants stable: palette roles, typography, logo treatment, and recurring graphic language. Vary composition to support meaning: image scale, text scale, density, alignment, and whitespace.
+Translate the content and chosen art direction into presentation grammar. Use the reference when one exists; an original deck can define its own visual system. Keep identity invariants stable: palette roles, typography, logo treatment, and recurring graphic language. Vary composition to support meaning: image scale, text scale, density, alignment, and whitespace.
 
 Set canvas dimensions and a safe content area. Define measurable regions for headings, body, imagery, citations, and page numbers. Use a consistent type scale, but adjust text regions to their purpose. Word widths, font metrics, line spacing, and wrapping determine fit; character count alone does not.
 
@@ -11,7 +11,7 @@ Set canvas dimensions and a safe content area. Define measurable regions for hea
 | Explanation | Text beside an image or diagram | One idea needs elaboration |
 | Editorial | Large image and large title in separate regions | A visual context or thesis deserves emphasis |
 | Impact | Full image with a short statement in a protected reading area | Introducing an insight or transition |
-| Typographic | Large statement on a brand-colored surface | The reference permits a text-led emphasis |
+| Typographic | Large statement on a brand-colored surface | A text-led emphasis supports the message and chosen direction |
 | Comparison | Aligned columns/rows with shared criteria | Comparing options fairly |
 | Data | Dominant metric/chart, context, and source | Supplied or verified evidence supports it |
 | Process | Ordered stages or connected steps | Sequence or causality is the message |
@@ -21,7 +21,7 @@ This is a repertoire, not a required sequence. Do not force photographic slides,
 
 ## Compose beyond a catalog
 
-For a new direction, read [adaptive art direction](art-direction.md). A master is a construction aid, not a style ceiling. Start with the content's visual argument, then retain or derive measured regions. A formal table can remain precise within a warm deck; a quiet typographic pause can belong in an image-led narrative. New composition must preserve readability and the user's reference.
+For a new direction, read [adaptive art direction](art-direction.md). A master is a construction aid, not a style ceiling. Start with the content's visual argument, then retain or derive measured regions. A formal table can remain precise within a warm deck; a quiet typographic pause can belong in an image-led narrative. New composition must preserve readability and any applicable user-supplied reference constraints.
 
 ## Topic covers and rhythm
 

@@ -4,7 +4,7 @@ Review the plan and the rendered artifact separately. This workflow does not int
 
 ## Identity
 
-Compare against the actual reference: correct brand/sub-brand, source version, logo variant, proportions, clear space when evidenced, background, palette roles, and typography. Record unavailable fonts and substitutions. Do not claim official compliance based only on a plausible visual resemblance.
+For original work, check consistency with the authored concept, palette, typography and layout relationships; do not report a missing brand guide or logo as an error. When a reference exists, compare against it: correct brand/sub-brand, source version, logo variant, proportions, clear space when evidenced, background, palette roles, and typography. Record unavailable fonts and substitutions. Do not claim official compliance based only on a plausible visual resemblance.
 
 ## Narrative and facts
 
@@ -26,6 +26,6 @@ Check actual image resolution, provider branding/watermarks, provenance, and all
 
 ## Delivery record
 
-Report the output path/format, slide count, reference used, checks actually completed, editing limitations, substitutions, and unresolved issues. Call outputs without final visual inspection unverified drafts. Do not mark self-reported review fields true unless the inspection happened.
+Report the output path/format, slide count, reference used or original direction, checks actually completed, editing limitations, substitutions, and unresolved issues. Call outputs without final visual inspection unverified drafts. Do not mark self-reported review fields true unless the inspection happened.
 
 Optional structural checks are useful early and after repairs. Their success is not evidence of design quality, accessibility certification, factual accuracy, or asset licensing.

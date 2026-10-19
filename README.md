@@ -1,8 +1,8 @@
 # SlideGenAI Skill
 
-**Turn a website, brand guide or slide reference into a presentation with its own visual identity.**
+**Create a complete presentation from a topic, outline or reference—with an original visual direction or your brand identity.**
 
-SlideGenAI Skill gives your AI assistant a reusable workflow for creating and editing presentations: typography, images, topic covers, varied layouts, editable charts, tables and diagrams. You provide the reference and the content; the assistant uses the tools available in your session to build and review the result.
+SlideGenAI Skill gives your AI assistant a reusable workflow for creating and editing presentations: typography, images, topic covers, varied layouts, editable charts, tables and diagrams. You provide a topic or content, and optionally a visual reference; the assistant uses the tools available in your session to build and review the result.
 
 The skill you install and invoke is called **`brand-presentations`**. You do not need to install the SlideGenAI application. This repository supplies instructions, resources and examples; your assistant supplies browsing, slide creation, image generation and rendering when those tools are available.
 
@@ -105,20 +105,36 @@ On Windows, replace `python3 -B` with `py -3 -B`. A successful check confirms th
 
 ## 2. Create your first presentation
 
-Provide these six things in your message. You can write in any language; the slides follow the language you request.
+Describe the following when available. A visual reference is optional; a topic is enough to start an original presentation. You can write in any language; the slides follow the language you request.
 
 | Input | Example |
 | --- | --- |
-| Visual reference | Website URL, brand guide, PPTX, PDF or screenshots |
+| Visual reference (optional) | Website URL, brand guide, PPTX, PDF or screenshots; omit for original art direction |
 | Topic and content | Product launch, supplied outline, report or notes |
 | Audience and purpose | Leadership team; explain a proposal and secure a decision |
 | Slide count | 12 slides, including cover, topic covers and closing |
 | Output language | Brazilian Portuguese |
 | Output format | Editable PPTX and preview, if supported by the host |
 
-If you only have a topic, ask the assistant to develop the outline. Provide real data for factual charts; request clearly labeled illustrative data for fictional demonstrations.
+If you only have a topic, the assistant can develop an outline and original art direction. Provide real data for factual charts; request clearly labeled illustrative data for fictional demonstrations.
 
-### Copy this prompt
+### Start with a topic only
+
+```text
+$brand-presentations
+
+Create an 8-slide presentation about circular economy for small businesses.
+Audience: business owners. Language: Brazilian Portuguese.
+There is no brand or visual reference: choose an original visual direction.
+Include topic covers where useful, varied layouts, strong typography and
+an editable process diagram. Do not invent company metrics.
+Use your available slide editor to create the complete editable deck and
+preview. Render and inspect it if supported; disclose any tool limitations.
+```
+
+No screenshot, website, brand guide or Python script is required for this route. The skill guides creation; the host still needs authoring tools to produce a slide file.
+
+### Create from a visual reference
 
 This version uses Codex syntax. In Claude Code, replace the first line with `/brand-presentations`; in a general chat interface, use `Use brand-presentations`.
 
@@ -141,7 +157,7 @@ Render and inspect the final slides and the exported file if possible.
 Tell me what you actually created, checked and could not verify.
 ```
 
-Replace the bracketed fields before sending. Attach any files mentioned in the prompt. A URL needs browsing access; if the assistant cannot open it, supply screenshots, the logo and relevant source content.
+Replace the bracketed fields before sending. Attach any files mentioned in the prompt. For website work, the assistant should inspect its available browser, raw-HTTP, download and editor-import capabilities before asking you to supply files. A text-only reader cannot establish exact CSS or typography, but a separate supported fetch/download path may still retrieve original assets. If essential evidence remains inaccessible, it should request that specific material and continue independent work.
 
 **Want to reproduce a template closely?** Replace “Adapt the brand creatively” with “Reproduce the attached template faithfully; import or clone it when supported and preserve its masters, dimensions, fonts and layout rules.”
 
@@ -221,6 +237,8 @@ The initial npm install needs network access or a populated cache. Use a new out
 
 **Do I need an API key or a paid subscription?** The instructions, local fonts and Python helpers require no provider key. Your assistant's authoring, browsing or image tools may require an account, subscription or payment. The optional example adapter uses local Node.js dependencies.
 
+**Is this only an identity-extraction skill?** No. It creates complete presentations from topics, outlines and data, edits decks, extracts identity when requested, and can package reusable brand skills. References are optional for original work. Using the host's slide editor is expected; running the Python helpers is optional.
+
 **Can I use my own brand instead of a catalog style?** Yes. Supply its website, guide or deck. Ask for either a faithful reproduction or a creative adaptation. Missing references and inferred rules should be reported honestly.
 
 **Does it work with every AI assistant?** The instructions are portable, but discovery, file creation and export support vary. Claude Code and other providers have not been tested end to end. See the evidence below.
@@ -251,6 +269,8 @@ You can use the skill without reading these. They document how it works and how 
 
 | Need | Guide |
 | --- | --- |
+| Create from a topic or reference | [Creation workflow](brand-presentations/references/create-presentation.md) |
+| Obtain website imagery and visual evidence | [Website assets and editor transfer](brand-presentations/references/website-assets.md) |
 | Understand the assistant workflow | [Skill entry point](brand-presentations/SKILL.md) |
 | Build stronger compositions | [Art direction](brand-presentations/references/art-direction.md), [typography](brand-presentations/references/typography.md), [components](brand-presentations/references/component-system.md) |
 | Build charts, flows and technical slides | [Analytical construction](brand-presentations/references/analytical-construction.md) |
