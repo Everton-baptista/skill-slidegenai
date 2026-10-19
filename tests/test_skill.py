@@ -279,6 +279,10 @@ class Distribution(unittest.TestCase):
 
     def test_distribution_has_no_symlinks_or_credentials(self):
         for path in ROOT.rglob('*'):
+            # Local previews/build archives are not distributable source. The
+            # package tests independently reject symlinks inside the skill.
+            if path.relative_to(ROOT).parts[0] in {'.git', 'output', 'dist'}:
+                continue
             self.assertFalse(path.is_symlink(), str(path))
             self.assertNotEqual(path.name, '.env')
             if path.is_file() and path.suffix in ('.md', '.py', '.json', '.yaml', '.yml'):

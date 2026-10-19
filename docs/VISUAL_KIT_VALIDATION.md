@@ -101,3 +101,19 @@ Validation: 158 Python cases pass. Nineteen JavaScript cases pass with optional 
 The nine reference PPTX outputs were checked for independent native text/pictures, chart workbooks and tables through OOXML. These new reference exports were not visually rendered in PowerPoint, LibreOffice or Claude in this revision. Earlier native render observations apply to their original studies. HTML and native font/effect translation are not pixel-identical; Kinetic outline uses filled editable text in the current PPTX adapter. Complete Claude authoring evaluation remains pending.
 
 Early local test attempts failed with ENOSPC while copying temporary fonts or screenshots; those were resource failures. Superseded generated archives and temporary renders were cleaned, and the affected checks were rerun. No source fonts or application code were removed.
+
+## Builder correctness review — 2.3.1
+
+A scoped review reproduced and repaired concrete failures rather than treating a successful build as proof of correctness:
+
+- Horizontal grouped bars now honor category palettes; horizontal stacked shares now use cumulative horizontal segments in HTML, matching the supported native orientation. Previously the HTML adapter silently rendered the latter vertically.
+- Requested negative bar value labels are retained. Series data and zero baselines remain unchanged.
+- Duplicate/missing visual-model IDs and malformed collections fail before ambiguous lookup/export. Explicit versions other than 1 fail; existing reference fixtures without a version remain compatible.
+- Table numbers must be finite; category labels must be nonempty strings and source labels must be strings. Extreme numeric ranges that overflow/underflow plotted axes require explicit rescaling, avoiding invalid SVG coordinates.
+- Output containment resolves existing ancestor directories, rejecting a symlinked parent into the installed skill before writing. This is not a filesystem-race sandbox.
+
+Validation: the complete 158-case Python suite passed. The JavaScript suite now contains 23 cases, including reproductions of the reported failures and optional native-object checks. Three focused browser regressions render the existing grouped-bar and stacked-share data without network requests; mark geometry, palette application and cumulative segment positions are checked. All three actual screenshots were visually inspected: category colors differ as requested, stacked segments share each row and fill a 0–100% axis, with readable labels/legend at the inspected size. Negative value labels have a reserved row and were checked for separation from category labels. The existing 26-slide browser regression is rerun separately for resource loading, geometry, navigation, data updates and printing; it is functional regression evidence, not a fresh aesthetic certification of every style.
+
+The local full-suite run initially flagged a preview symlink under ignored output/. The distribution source check now excludes .git/, output/ and dist/; installable-skill packaging still rejects symlinks and has its independent extracted-package checks. No installed assets were exempted from packaging validation.
+
+Claude.ai and Claude Code authoring for the current version remain pending. Native-object checks do not establish final PowerPoint/Keynote rendering. The kit does not establish correctness of user-supplied facts or certify suitability for safety-critical decisions.

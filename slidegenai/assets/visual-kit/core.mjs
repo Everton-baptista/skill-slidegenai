@@ -327,6 +327,24 @@ export async function compile(plan, design, model, root) {
     throw Error("Slide count differs from expected_slides");
   if (typeof plan.title !== "string" || !plan.title.trim())
     throw Error("Plan title is required");
+  if (model !== null && model !== undefined) {
+    if (model.version !== undefined && model.version !== 1)
+      throw Error("Visual model version must be 1 when supplied");
+    for (const kind of ["charts", "diagrams"]) {
+      if (model[kind] !== undefined && !Array.isArray(model[kind]))
+        throw Error(`Visual model ${kind} must be an array`);
+      const ids = new Set();
+      for (const visual of model[kind] || []) {
+        if (
+          typeof visual?.id !== "string" ||
+          !visual.id.trim() ||
+          ids.has(visual.id)
+        )
+          throw Error(`Visual model ${kind} IDs must be nonempty and unique`);
+        ids.add(visual.id);
+      }
+    }
+  }
   const style = await resolveStyle(plan.template_id ?? design.template_id),
     warnings = [],
     fonts = [],
@@ -513,7 +531,11 @@ export async function compile(plan, design, model, root) {
             (r) =>
               !Array.isArray(r) ||
               r.length !== e.values[0].length ||
-              r.some((v) => !["string", "number"].includes(typeof v)),
+              r.some(
+                (v) =>
+                  !["string", "number"].includes(typeof v) ||
+                  (typeof v === "number" && !Number.isFinite(v)),
+              ),
           )
         )
           throw Error("Table must have a nonempty rectangular values array");
@@ -530,7 +552,7 @@ export async function compile(plan, design, model, root) {
       }
       if (e.kind === "chart") {
         if (
-          e.orientation &&
+          e.orientation !== undefined &&
           !["horizontal", "vertical"].includes(e.orientation)
         )
           throw Error("Unsupported chart orientation");
@@ -649,14 +671,17 @@ export function validateChart(v) {
   if (
     !v.source ||
     !["sourced", "illustrative"].includes(v.source.status) ||
-    !v.source.label?.trim()
+    typeof v.source.label !== "string" ||
+    !v.source.label.trim()
   )
     throw Error("Chart source status and label are required");
   if (!Array.isArray(v.series) || !v.series.length)
     throw Error("Chart series required");
   if (
     v.type !== "scatter" &&
-    (!Array.isArray(v.categories) || !v.categories.length)
+    (!Array.isArray(v.categories) ||
+      !v.categories.length ||
+      v.categories.some((c) => typeof c !== "string" || !c.trim()))
   )
     throw Error("Chart categories required");
   for (const s of v.series) {
@@ -678,6 +703,29 @@ export function validateChart(v) {
           n,
           "chart value",
           v.type === "stacked-share" ? 0 : -Number.MAX_VALUE,
+        );
+    }
+  }
+  const ranges = [
+    v.series.flatMap((s) =>
+      v.type === "scatter" ? s.points.map((p) => p.y) : s.values,
+    ),
+  ];
+  if (v.type === "scatter")
+    ranges.push(v.series.flatMap((s) => s.points.map((p) => p.x)));
+  for (const values of ranges) {
+    const span = Math.max(0, ...values) - Math.min(0, ...values);
+    if (span > 0) {
+      const raw = span / 4,
+        magnitude = 10 ** Math.floor(Math.log10(raw)),
+        step =
+          ([1, 2, 2.5, 5, 10].find((n) => n >= raw / magnitude) || 10) *
+          magnitude,
+        low = Math.floor(Math.min(0, ...values) / step) * step,
+        high = Math.ceil(Math.max(0, ...values) / step) * step;
+      if (!Number.isFinite(span) || !Number.isFinite(high - low) || !(step > 0))
+        throw Error(
+          "Chart range cannot be represented; rescale values and units",
         );
     }
   }

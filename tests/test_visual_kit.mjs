@@ -573,7 +573,11 @@ test("bundled visual references reproduce existing content with separate text, i
           150,
       );
     const table = scene.slides[1].elements.find((e) => e.kind === "table");
-    if (table) assert.equal(readable(table.header_fill,table.header_color),table.header_color);
+    if (table)
+      assert.equal(
+        readable(table.header_fill, table.header_color),
+        table.header_color,
+      );
     const chart = scene.slides[1].elements.find((e) => e.kind === "chart");
     if (chart) {
       assert.equal(
@@ -629,5 +633,139 @@ test(
             assert.ok(chart.includes(rgb));
       } else assert.match(data, /<a:tbl>/);
     }
+  },
+);
+
+test("ambiguous visual IDs, malformed labels and non-finite table cells fail before export", async () => {
+  for (const mutate of [
+    (m) => m.charts.push(structuredClone(m.charts[0])),
+    (m) => (m.charts[0].id = ""),
+    (m) => (m.diagrams = {}),
+    (m) => (m.version = 2),
+  ]) {
+    const { plan, design, model } = await analyticalFixture(root);
+    mutate(model);
+    await assert.rejects(
+      () => compile(plan, design, model, root),
+      /Visual model/,
+    );
+  }
+  for (const value of [NaN, Infinity, -Infinity]) {
+    const { plan, design } = await source();
+    const table = plan.slides
+      .flatMap((s) => s.elements)
+      .find((e) => e.kind === "table");
+    table.values[1][1] = value;
+    await assert.rejects(() => compile(plan, design, null, example), /Table/);
+  }
+  const model = (await analyticalFixture(root)).model;
+  for (const change of [
+    (v) =>
+      v.series.forEach((s) => (s.values = v.categories.map(() => 1.7e308))),
+    (v) => v.series.forEach((s) => (s.values = v.categories.map(() => 5e-323))),
+    (v) => (v.categories[0] = {}),
+    (v) => (v.source.label = 7),
+    (v) =>
+      (v.series[0].values = v.categories.map((_, i) => (i ? 1e308 : -1e308))),
+    (v) =>
+      v.series.forEach(
+        (s) => (s.values = v.categories.map(() => Number.MIN_VALUE)),
+      ),
+  ]) {
+    const chart = structuredClone(model.charts[0]);
+    change(chart);
+    assert.throws(() => validateChart(chart));
+  }
+});
+
+test("horizontal category colors and stacked-share geometry preserve the requested encoding", () => {
+  const base = {
+    id: "horizontal",
+    x: 0,
+    y: 0,
+    width: 800,
+    height: 400,
+    color: "#111111",
+    font_family: "Manrope",
+    orientation: "horizontal",
+    palette: ["#AA0000", "#0000BB"],
+    color_by_category: true,
+    visual: {
+      id: "test",
+      type: "grouped-bar",
+      categories: ["A", "B"],
+      series: [{ name: "Measure", values: [30, 70] }],
+      source: { status: "illustrative", label: "Test data" },
+    },
+  };
+  const html = chartSVG(base);
+  assert.match(html, /data-detail="Measure \/ A: 30[^>]*fill="#AA0000"/);
+  assert.match(html, /data-detail="Measure \/ B: 70[^>]*fill="#0000BB"/);
+  const stacked = structuredClone(base);
+  stacked.color_by_category = false;
+  stacked.visual.type = "stacked-share";
+  stacked.visual.categories = ["One"];
+  stacked.visual.series = [
+    { name: "First", values: [30] },
+    { name: "Second", values: [70] },
+  ];
+  const svg = chartSVG(stacked);
+  const bars = [
+    ...svg.matchAll(
+      /<rect data-series="\d+"[^>]* x="([^"]+)" y="([^"]+)" width="([^"]+)" height="([^"]+)"/g,
+    ),
+  ];
+  assert.equal(bars.length, 2);
+  const [a, b] = bars.map((m) => m.slice(1).map(Number));
+  assert.equal(a[1], b[1]);
+  assert.equal(a[3], b[3]);
+  assert.ok(Math.abs(a[0] + a[2] - b[0]) < 1e-8);
+  assert.ok(Math.abs(a[2] / b[2] - 3 / 7) < 1e-8);
+  assert.doesNotMatch(svg, /NaN|Infinity/);
+});
+
+test("negative bars retain requested value labels", () => {
+  const html = chartSVG({
+    id: "negative",
+    x: 0,
+    y: 0,
+    width: 700,
+    height: 400,
+    color: "#111111",
+    font_family: "Manrope",
+    show_values: true,
+    palette: ["#AA0000"],
+    visual: {
+      id: "loss",
+      type: "grouped-bar",
+      categories: ["Loss"],
+      series: [{ name: "Change", values: [-5] }],
+      source: { status: "illustrative", label: "Test" },
+    },
+  });
+  assert.match(html, /<text[^>]*>-5<\/text>/);
+});
+
+test(
+  "symlinked output parents cannot write into the installed skill",
+  { skip: process.platform === "win32" },
+  async () => {
+    await temp(async (dir) => {
+      const link = path.join(dir, "alias");
+      await fs.symlink(path.join(root, "slidegenai"), link, "dir");
+      await assert.rejects(
+        () =>
+          build({
+            plan: path.join(example, "deck-plan.json"),
+            design: path.join(example, "design-system.json"),
+            format: "html",
+            out: path.join(link, "must-not-be-created", "output"),
+          }),
+        /including symlinked parents/,
+      );
+      await assert.rejects(() =>
+        fs.access(path.join(root, "slidegenai/must-not-be-created")),
+      );
+    });
   },
 );

@@ -18,6 +18,31 @@ export async function build({
     source = path.dirname(path.resolve(planFile));
   if (destination === skill || destination.startsWith(skill + path.sep))
     throw Error("Output must be outside the installed skill");
+  // Resolve existing ancestors as well as lexical paths: an output parent can
+  // be a symlink into the installed skill even when its spelling is outside it.
+  let ancestor = path.dirname(destination);
+  const suffix = [path.basename(destination)];
+  while (true) {
+    try {
+      ancestor = await fs.realpath(ancestor);
+      break;
+    } catch (error) {
+      if (error.code !== "ENOENT") throw error;
+      const parent = path.dirname(ancestor);
+      if (parent === ancestor) throw error;
+      suffix.unshift(path.basename(ancestor));
+      ancestor = parent;
+    }
+  }
+  const canonicalDestination = path.join(ancestor, ...suffix),
+    canonicalSkill = await fs.realpath(skill);
+  if (
+    canonicalDestination === canonicalSkill ||
+    canonicalDestination.startsWith(canonicalSkill + path.sep)
+  )
+    throw Error(
+      "Output must be outside the installed skill, including symlinked parents",
+    );
   if (path.dirname(path.resolve(designFile)) !== source)
     throw Error("Keep plan and design in the same working folder");
   const plan = await json(planFile),

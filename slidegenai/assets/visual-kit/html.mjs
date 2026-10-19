@@ -30,17 +30,25 @@ export function chartSVG(e) {
     `data-series="${series}" data-detail="${esc(label)}" tabindex="0" role="img" aria-label="${esc(label)}"`;
 
   const v = e.visual,
+    negativeGap =
+      e.show_values &&
+      v.type === "grouped-bar" &&
+      v.series.some((s) => s.values.some((n) => n < 0))
+        ? 24
+        : 0,
     W = e.width,
     H = e.height,
     L = 60,
     T = 24,
     R = W - 30,
-    B = H - 78,
+    B = H - 78 - negativeGap,
     PW = R - L,
     PH = B - T,
     font = Math.min(e.chart_label_size || 17, H / 18),
     palette = e.palette;
-  const horizontal = v.type === "grouped-bar" && e.orientation === "horizontal";
+  const horizontal =
+    ["grouped-bar", "stacked-share"].includes(v.type) &&
+    e.orientation === "horizontal";
   let low = 0,
     high = 0,
     xlow = 0,
@@ -83,13 +91,18 @@ export function chartSVG(e) {
     }
     v.categories.forEach((category, i) => {
       const slot = (bottom - 24) / v.categories.length,
-        h = (slot * 0.62) / v.series.length;
+        h = (slot * 0.62) / (v.type === "stacked-share" ? 1 : v.series.length);
       result += `<text x="${left - 18}" y="${24 + (i + 0.5) * slot + font / 3}" fill="${e.color}" font-size="${font}" text-anchor="end">${esc(category)}</text>`;
+      let cumulative = 0;
       v.series.forEach((series, j) => {
         const value = series.values[i],
-          y = 24 + i * slot + slot * 0.19 + j * h;
-        result += `<rect ${mark(j, `${series.name} / ${category}: ${value} ${v.unit || ""}`)} x="${Math.min(xx(value), xx(0))}" y="${y}" width="${Math.abs(xx(value) - xx(0))}" height="${h * 0.86}" fill="${palette[j % palette.length]}"/>`;
-        if (e.show_values)
+          stacked = v.type === "stacked-share",
+          from = stacked ? cumulative : 0,
+          to = stacked ? cumulative + value : value,
+          y = 24 + i * slot + slot * 0.19 + (stacked ? 0 : j * h);
+        cumulative += value;
+        result += `<rect ${mark(j, `${series.name} / ${category}: ${value} ${v.unit || ""}`)} x="${Math.min(xx(to), xx(from))}" y="${y}" width="${Math.abs(xx(to) - xx(from))}" height="${h * 0.86}" fill="${palette[(e.color_by_category ? i : j) % palette.length]}"/>`;
+        if (e.show_values && !stacked)
           result += `<text x="${xx(value) + (value < 0 ? -9 : 9)}" y="${y + h * 0.65}" fill="${e.color}" font-size="${font}" text-anchor="${value < 0 ? "end" : "start"}">${value}</text>`;
       });
     });
@@ -119,7 +132,7 @@ export function chartSVG(e) {
   const N = v.categories?.length || 1;
   if (v.type !== "scatter")
     v.categories.forEach((c, i) => {
-      svg += text(L + ((i + 0.5) * PW) / N, B + font * 1.5, c);
+      svg += text(L + ((i + 0.5) * PW) / N, B + font * 1.5 + negativeGap, c);
     });
   if (v.type === "grouped-bar")
     v.series.forEach((s, j) =>
@@ -128,8 +141,12 @@ export function chartSVG(e) {
           bw = (slot * 0.72) / v.series.length,
           x = L + i * slot + slot * 0.14 + j * bw;
         svg += `<rect ${mark(j, `${s.name} / ${v.categories[i]}: ${value} ${v.unit || ""}`)} x="${x}" y="${Math.min(Y(value), Y(0))}" width="${bw * 0.9}" height="${Math.abs(Y(value) - Y(0))}" fill="${palette[(e.color_by_category ? i : j) % palette.length]}"><title>${esc(s.name)} / ${esc(v.categories[i])}: ${value}</title></rect>`;
-        if (e.show_values && value >= 0)
-          svg += text(x + bw * 0.45, Y(value) - 9, value);
+        if (e.show_values)
+          svg += text(
+            x + bw * 0.45,
+            Y(value) + (value < 0 ? font + 3 : -9),
+            value,
+          );
       }),
     );
   if (v.type === "stacked-share")
@@ -168,8 +185,8 @@ export function chartSVG(e) {
     v.series.forEach((s, j) => {
       const x = L + (j * PW) / v.series.length;
       svg +=
-        `<g class="chart-legend" data-legend="${j}" role="button" tabindex="0" aria-pressed="false" aria-label="${esc(`Highlight ${s.name}`)}"><rect x="${x}" y="${B + font * 2.4}" width="${font * 0.65}" height="${font * 0.65}" fill="${palette[j % palette.length]}"/>` +
-        text(x + font, B + font * 3, s.name, "start") +
+        `<g class="chart-legend" data-legend="${j}" role="button" tabindex="0" aria-pressed="false" aria-label="${esc(`Highlight ${s.name}`)}"><rect x="${x}" y="${B + font * 2.4 + negativeGap}" width="${font * 0.65}" height="${font * 0.65}" fill="${palette[j % palette.length]}"/>` +
+        text(x + font, B + font * 3 + negativeGap, s.name, "start") +
         "</g>";
     });
   svg += text(
