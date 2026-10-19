@@ -35,7 +35,7 @@ def check(root):
                 raise ValueError('Missing or external local resource: ' + source.relative_to(root).as_posix() + ' -> ' + target)
             links += 1
     kit = root / 'assets/visual-kit'
-    for name in ('build.mjs', 'core.mjs', 'html.mjs', 'pptx.mjs', 'inspect.js', 'visual.css', 'package.json', 'package-lock.json'):
+    for name in ('build.mjs', 'core.mjs', 'html.mjs', 'pptx.mjs', 'inspect.js', 'player.js', 'visual.css', 'package.json', 'package-lock.json'):
         if not (kit / name).is_file():
             raise ValueError('Missing visual kit resource: ' + name)
     package = json.loads((kit / 'package.json').read_text(encoding='utf-8'))

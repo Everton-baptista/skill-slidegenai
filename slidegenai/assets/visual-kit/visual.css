@@ -125,3 +125,116 @@ body.overview main {
     -webkit-print-color-adjust: exact;
   }
 }
+
+[hidden] {
+  display: none !important;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+button[aria-pressed="true"] {
+  background: #f1f4fa;
+  color: #111722;
+}
+button:focus-visible,
+select:focus-visible,
+.chart [tabindex]:focus-visible {
+  outline: 3px solid #47bfff;
+  outline-offset: 3px;
+}
+.frame {
+  scroll-margin-top: var(--toolbar-height, 80px);
+}
+body.presenting main {
+  height: calc(100dvh - var(--toolbar-height, 80px));
+  align-content: center;
+  overflow: hidden;
+}
+.chart [data-detail],
+.chart-legend {
+  cursor: pointer;
+}
+.chart .series-muted {
+  opacity: 0.2;
+}
+#chart-tooltip {
+  position: fixed;
+  z-index: 30;
+  max-width: min(400px, calc(100vw - 16px));
+  padding: 10px 14px;
+  background: #10151ef5;
+  color: #fff;
+  border: 1px solid #abb8ca;
+  border-radius: 6px;
+  font:
+    15px/1.4 system-ui,
+    sans-serif;
+  pointer-events: none;
+}
+dialog {
+  max-width: min(1000px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  overflow: auto;
+  border: 1px solid #8390a3;
+  border-radius: 12px;
+  padding: 24px;
+  background: #171c25;
+  color: #fff;
+  font:
+    16px/1.5 system-ui,
+    sans-serif;
+}
+dialog::backdrop {
+  background: #0009;
+}
+dialog h2 {
+  margin-top: 0;
+}
+dialog select {
+  max-width: 100%;
+  font: inherit;
+}
+dialog table {
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+dialog caption {
+  text-align: left;
+  margin-bottom: 12px;
+}
+@media (max-width: 600px) {
+  nav {
+    gap: 8px;
+    padding: 8px;
+  }
+  nav button {
+    padding: 7px 10px;
+  }
+  nav #result {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
+@media print {
+  body.presenting main {
+    height: auto;
+    overflow: visible;
+  }
+  .frame[hidden] {
+    display: block !important;
+  }
+  #chart-tooltip,
+  #data-dialog {
+    display: none !important;
+  }
+  .chart .series-muted {
+    opacity: 1;
+  }
+}

@@ -562,6 +562,11 @@ function validateEffect(e) {
   return e;
 }
 export function validateChart(v) {
+  // Self-contained so the same validation can run in the offline HTML player.
+  const finite = (n, name, low) => {
+    if (typeof n !== "number" || !Number.isFinite(n) || n < low)
+      throw Error(`Invalid ${name}`);
+  };
   if (
     !v ||
     !["grouped-bar", "line", "stacked-share", "scatter"].includes(v.type)

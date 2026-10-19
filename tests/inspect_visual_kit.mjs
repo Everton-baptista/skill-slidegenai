@@ -29,7 +29,9 @@ try {
       viewport: { width: 1400, height: 1000 },
       deviceScaleFactor: 1,
     }),
-    network = [];
+    network = [],
+    errors = [];
+  page.on("pageerror", (error) => errors.push(error.message));
   await page.route("**/*", (route) => {
     if (/^https?:/.test(route.request().url())) {
       network.push(route.request().url());
@@ -87,6 +89,164 @@ try {
       fullPage: true,
     });
     await page.locator("#overview").click();
+    // Exercise the actual offline player, not just emitted markup.
+    await page.evaluate(() => {
+      window.slidegenai.navigate(0);
+      window.slidegenai.setMode("presenting");
+    });
+    assert.equal(await frames.filter({ visible: true }).count(), 1);
+    await page.locator("#next").click();
+    assert.equal(
+      await page.evaluate(() => window.slidegenai.getState().index),
+      1,
+    );
+    await page.keyboard.press("End");
+    assert.equal(
+      await page.evaluate(() => window.slidegenai.getState().index),
+      plan.expected_slides - 1,
+    );
+    await page.keyboard.press("Home");
+    assert.equal(
+      await page.evaluate(() => window.slidegenai.getState().index),
+      0,
+    );
+    assert.deepEqual(
+      (await page.evaluate(() => window.slidegenai.inspect())).issues,
+      [],
+    );
+    assert.equal(
+      await page.evaluate(() => window.slidegenai.getState().mode),
+      "presenting",
+    );
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.evaluate(
+      () =>
+        new Promise((resolve) =>
+          requestAnimationFrame(() => requestAnimationFrame(resolve)),
+        ),
+    );
+    assert.ok(
+      await frames.first().evaluate((e) => {
+        const r = e.getBoundingClientRect(),
+          nav = document.querySelector("nav").getBoundingClientRect();
+        return (
+          r.left >= 0 &&
+          r.right <= innerWidth + 1 &&
+          r.top >= nav.bottom - 1 &&
+          r.bottom <= innerHeight + 1
+        );
+      }),
+    );
+    if (name === "analytical")
+      await page.screenshot({ path: path.join(out, "mobile-present.png") });
+    await page.emulateMedia({ media: "print" });
+    assert.equal(
+      await frames.filter({ visible: true }).count(),
+      plan.expected_slides,
+    );
+    await page.emulateMedia({ media: "screen" });
+    await page.setViewportSize({ width: 1400, height: 1000 });
+    await page.keyboard.press("Escape");
+    assert.equal(
+      await page.evaluate(() => window.slidegenai.getState().mode),
+      "reading",
+    );
+    if (name === "analytical") {
+      const charts = scene.slides.flatMap((s) =>
+        s.elements
+          .filter((e) => e.kind === "chart")
+          .map((e) => ({ slide: s.id, id: e.id })),
+      );
+      const chart = page.locator("svg.chart").first();
+      const legend = chart.locator("[data-legend]").first();
+      await legend.click();
+      assert.equal(await legend.getAttribute("aria-pressed"), "true");
+      assert.ok((await chart.locator(".series-muted").count()) > 0);
+      await legend.press("Enter");
+      assert.equal(await legend.getAttribute("aria-pressed"), "false");
+      const mark = chart.locator("[data-detail]").first();
+      await mark.focus();
+      assert.equal(
+        await page.locator("#chart-tooltip").innerText(),
+        await mark.getAttribute("data-detail"),
+      );
+      await page.locator("#chart-data").click();
+      assert.ok(await page.locator("#data-dialog").isVisible());
+      assert.ok((await page.locator("#data-values td").count()) > 0);
+      await page.screenshot({ path: path.join(out, "chart-data-dialog.png") });
+      await page.locator("#close-data").click();
+      for (const item of charts) {
+        const update = await page.evaluate(({ slide, id }) => {
+          const before = window.slidegenai.getChart(slide, id);
+          const invalid = structuredClone(before);
+          if (invalid.type === "scatter") invalid.series[0].points[0].y = null;
+          else invalid.series[0].values[0] = "bad value";
+          let rejected = false;
+          try {
+            window.slidegenai.updateChart(slide, id, invalid);
+          } catch {
+            rejected = true;
+          }
+          if (
+            !rejected ||
+            JSON.stringify(before) !==
+              JSON.stringify(window.slidegenai.getChart(slide, id))
+          )
+            throw Error("Invalid chart changed model");
+          const next = structuredClone(before);
+          if (next.type === "scatter") next.series[0].points[0].y += 10;
+          else if (next.type === "stacked-share") {
+            next.series[0].values[0] += 1;
+            next.series[1].values[0] -= 1;
+          } else next.series[0].values[0] = -35;
+          next.source.label = "</script><img src=x onerror=alert(1)>";
+          const result = window.slidegenai.updateChart(slide, id, next);
+          return {
+            result,
+            expected: next,
+            actual: window.slidegenai.getChart(slide, id),
+          };
+        }, item);
+        assert.deepEqual(update.actual, update.expected);
+        assert.equal(update.result.persisted, false);
+      }
+      assert.equal(await page.locator("img[src=x]").count(), 0);
+      assert.deepEqual(
+        (await page.evaluate(() => window.slidegenai.inspect())).issues,
+        [],
+      );
+      const chartSlide = scene.slides.findIndex((s) =>
+        s.elements.some((e) => e.kind === "chart"),
+      );
+      await page.evaluate((i) => {
+        window.slidegenai.navigate(i);
+        window.slidegenai.setMode("presenting");
+      }, chartSlide);
+      await page.screenshot({ path: path.join(out, "interactive-chart.png") });
+      await page.emulateMedia({ media: "print" });
+      await page.pdf({
+        path: path.join(out, "analytical-from-present-mode.pdf"),
+        preferCSSPageSize: true,
+        printBackground: true,
+      });
+      await page.emulateMedia({ media: "screen" });
+      await page.evaluate(() => window.slidegenai.setMode("reading"));
+      const adversarial = structuredClone(scene);
+      const unsafeChart = adversarial.slides
+        .flatMap((s) => s.elements)
+        .find((e) => e.kind === "chart");
+      unsafeChart.visual.source.label =
+        '</script><img id="chart-injection" src=x onerror="window.chartInjected=true">';
+      await page.setContent(await renderHTML(adversarial));
+      await page.evaluate(() => window.slidegenai.ready);
+      assert.equal(await page.locator("#chart-injection").count(), 0);
+      assert.equal(
+        await page.evaluate(() => Boolean(window.chartInjected)),
+        false,
+      );
+      assert.deepEqual(network, []);
+    }
+    assert.deepEqual(errors, []);
     // Assert the inspector detects real long text instead of clipping it silently.
     await page
       .locator(".text")

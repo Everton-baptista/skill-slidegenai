@@ -41,7 +41,9 @@ Claude Code and Antigravity can expose this as a native slash command after inst
 
 ## 1. Install the skill
 
-**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.1.0/slidegenai-claude-ai-2.1.0.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.1.0/slidegenai-full-2.1.0.zip). Extract the complete ZIP before copying its slidegenai folder for local agents.
+**Claude.ai upload limit:** choose the **Claude.ai profile** ZIP. The complete/full ZIP contains more font faces and exceeds the 30 MB uncompressed limit observed in Claude.ai. A ZIP's download size is not its extracted size. Package reports now include `uncompressed_bytes`.
+
+**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.2.0/slidegenai-claude-ai-2.2.0.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.2.0/slidegenai-full-2.2.0.zip). Extract the complete ZIP before copying its slidegenai folder for local agents.
 
 Choose **one** installation method for the assistant you use. Install the entire `slidegenai/` folder, including its references, scripts, assets and licenses. Copying only `SKILL.md` leaves resources missing.
 
@@ -58,7 +60,7 @@ Without Git, use **Code → Download ZIP** on GitHub and extract it. Open a term
 
 ### Claude.ai — upload and enable the ZIP
 
-**[Download the ready-to-install Claude.ai ZIP (v2.1.0)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.1.0/slidegenai-claude-ai-2.1.0.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v2.1.0). This is a preview release: the previous 1.1.3 installation was verified; the new kit’s full two-host authoring evaluation is incomplete.
+**[Download the ready-to-install Claude.ai ZIP (v2.2.0)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.2.0/slidegenai-claude-ai-2.2.0.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v2.2.0). This is a preview release: the previous 1.1.3 installation was verified; the new kit’s full two-host authoring evaluation is incomplete.
 
 To build it yourself from the downloaded repository folder, with Python 3.9+:
 
@@ -312,6 +314,10 @@ Ask your assistant: **“/slidegenai Use the visual kit when appropriate. Build 
 The kit supplies working covers, topic covers, editorial layouts, full-page image/gradient compositions, typographic statements, comparisons and closing slides. It also builds four chart types, tables, processes, decision flows, swimlanes, system relationships, roadmaps and matrices from data. Effects and layout recipes are optional; the content controls their selection.
 
 The 2.1 update adds alternate geometry: image-right covers/topic covers/closings, inset editorial images, bottom-gradient photo captions, offset statements and open-column comparisons. The assistant chooses these by content or authors custom layouts. The entry instructions are shorter, with concrete art-direction and repair guidance in task-specific references. These changes broaden construction options; they do not certify beauty or completion in an untested host. [Composition choices and usage](slidegenai/references/visual-kit.md).
+
+The 2.2 HTML player adds **Present**, keyboard navigation, explicit fullscreen, chart value tooltips, keyboard/click series emphasis and a chart-data table. A local JavaScript API validates new chart models and redraws their axes and marks without a rebuild. Such updates are temporary browser-session changes; they do not create a live-data feed or update saved files. Printing includes all slides and all series. PPTX retains native editable objects and does not inherit browser controls. [Interaction API and format limits](slidegenai/references/visual-kit.md#functional-html-presentations-22).
+
+![Actual Chrome regression views: presentation mode and chart-data inspection using existing analytical-study content](docs/previews/interactive-player.jpg)
 
 To reproduce the existing eight-slide source as a self-contained HTML file, install Node.js 20+ and run from the repository folder:
 

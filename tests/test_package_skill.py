@@ -27,6 +27,7 @@ class GenericPackage(unittest.TestCase):
                 expected = {'slidegenai/' + p.relative_to(source).as_posix() for p in inventory(source)}
                 self.assertEqual(set(z.namelist()), expected)
                 self.assertIsNone(z.testzip())
+                self.assertEqual(report['uncompressed_bytes'], sum(i.file_size for i in z.infolist()))
                 z.extractall(temp / 'installed')
             installed = temp / 'installed/slidegenai'
             for p in inventory(source):

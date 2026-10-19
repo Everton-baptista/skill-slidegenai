@@ -13,3 +13,5 @@ The repository's example preview HTML is generated from the same scene data as i
 ## Optional executable components
 
 The [adaptive visual kit](visual-kit.md) implements shared scenes in offline HTML/CSS/SVG and editable PPTX. Use it when it fits the task; native host tooling remains valid. Read its support matrix and inspect the actual output separately for each format.
+
+For interactive delivery, distinguish visual CSS from JavaScript behavior and the data model. The optional kit includes a keyboard-operable player, chart value inspection/series emphasis, data tables and validated in-session chart updates; see [functional HTML](visual-kit.md#functional-html-presentations-22). Choose interaction only when it helps the audience. Keep evidence available without animation and retain a static export path. Do not describe a local interaction as a live-data connection or carry HTML-only functionality into PPTX claims.

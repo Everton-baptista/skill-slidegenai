@@ -41,7 +41,7 @@ def inventory(root):
             else:
                 allowed = len(rel.parts) == 3 and rel.name in {
                     'build.mjs', 'core.mjs', 'html.mjs', 'pptx.mjs',
-                    'inspect.js', 'visual.css', 'package.json', 'package-lock.json'}
+                    'inspect.js', 'player.js', 'visual.css', 'package.json', 'package-lock.json'}
         if not allowed or not (path.is_dir() or path.is_file()):
             raise ValueError('Unexpected entry: ' + str(rel))
         if path.is_file():
@@ -144,6 +144,7 @@ def package(root, output, profile='full'):
             output.unlink()
             raise
     return {'output': str(output), 'files': len(files), 'bytes': output.stat().st_size,
+            'uncompressed_bytes': sum(p.stat().st_size for p in files),
             'sha256': hashlib.sha256(output.read_bytes()).hexdigest(), 'installation': report}
 
 def main():

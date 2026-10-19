@@ -17,3 +17,6 @@ htmlcov/
 Thumbs.db
 *~
 dist/
+
+# Local regression previews and execution evidence
+output/

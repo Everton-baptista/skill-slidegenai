@@ -197,7 +197,11 @@ test("analytical fixtures retain four chart models and every diagram relationshi
   }
   const html = await renderHTML(scene);
   assert.match(html, /<table /);
-  assert.equal((html.match(/<svg role="img"/g) || []).length, 4);
+  for (const slide of scene.slides)
+    for (const element of slide.elements.filter((e) => e.kind === "chart")) {
+      assert.ok(html.includes(`data-chart="${element.id}"`));
+      assert.match(chartSVG(element), /role="group"/);
+    }
 });
 test("negative data, unequal lengths, shares and independent scatter are handled explicitly", () => {
   const chart = {

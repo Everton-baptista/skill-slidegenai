@@ -78,3 +78,25 @@ HTML supports local fonts, outline/tag styling, image crop, gradients, ellipse/o
 Open HTML and await `window.slidegenai.ready`, then call `await window.slidegenai.inspect()`. It reports font loading, broken images, content overflow and outside-stage bounds. Use Overview / reading to inspect all slides and the overview. Text collisions, contrast, image meaning, reading rhythm and whether the composition is beautiful still require visual inspection. Do not label a file verified from the JSON report alone. `render-report.json` starts with rendering and inspection false on every build, regardless of old input review fields.
 
 For PPTX, register selected bundled fonts, render the actual file, inspect every page and overview, and check native text/table/chart/diagram objects. PDF or screenshot inspection does not prove another viewer's font behavior. Record those outcomes with [execution evidence](execution-evidence.md). No Claude, Codex, Antigravity or ChatGPT certification follows from a successful local build.
+
+## Functional HTML presentations (2.2)
+
+CSS controls visual treatment and measured geometry; the small bundled JavaScript player provides behavior. Both remain optional when using a native host editor. No framework, external chart library, network request or paid API is required.
+
+- **Present** fits one slide inside the available width and height. Previous/Next and Arrow keys, Page Up/Down, Home/End navigate; Escape returns to reading. **Overview / reading** retains the review grid. **Fullscreen** is an explicit browser action and may be restricted by the host. Small-screen preview scales the stage without rearranging factual geometry; dense slides may still require a larger screen.
+- Focus or hover on an SVG data mark to read its series/category/value. Focus a legend and press Enter/Space, or click it, to emphasize a series. Other series are dimmed, not removed; axes, values and percentage totals retain their meaning. These interactions do not change source data.
+- **Chart data** opens an HTML table of the chart values and source status. Use the selector to inspect each chart. This is a reading tool, not an editable PowerPoint table or a full screen-reader certification.
+- Print restores all slides and series even when presentation mode shows a single slide or a series is highlighted. Browser PDF export is a static snapshot of the current HTML state. Tooling must use print media rather than forcing screen media when exporting.
+
+For an authored local interaction, use the API after `await window.slidegenai.ready`. `navigate(index)` uses a zero-based index; `setMode()` accepts `reading`, `overview`, or `presenting`. `getState()` returns current mode/index/count. Example of an explicit chart-data update using existing IDs:
+
+```js
+const api = window.slidegenai;
+const visual = api.getChart(slideId, chartElementId); // independent copy
+// Change the supplied model here, retaining source status and truthful units.
+api.updateChart(slideId, chartElementId, visual);
+```
+
+`updateChart` validates the complete visual model with the same rules as compilation, then rebuilds that chart's SVG, axis domain, labels, interactions and data-table model. Invalid input throws before replacing the chart. Supported types remain grouped-bar, line, stacked-share and paired scatter. A changed dataset requires another visual fit/meaning check; this API does not certify it. Negative values retain a zero reference; percentage columns must total 100.
+
+Updates live only in the open browser session. The API does not rewrite the HTML, synchronize PPTX/PDF, connect to databases, poll a live feed or persist changes. Update the source visual model and rebuild the deliverables to save a revision. A genuine live-data integration needs an explicitly chosen and authorized data source plus refresh/error handling; do not claim one exists from an interactive chart alone. PPTX keeps native editable chart objects and workbooks, without the HTML player's tooltips or controls.
