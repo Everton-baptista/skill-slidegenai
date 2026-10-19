@@ -1,6 +1,6 @@
 # Bundled offline fonts
 
-The skill includes **30 families / 120 original TTF files** under `assets/fonts/`, approximately 43.8 MB. This covers the **24 families explicitly loaded by the inspected SlideGenAI application** and six complementary families for the skill's pairings or an open alternative. Generic CSS families and proprietary system fonts are not font binaries in the application and are not redistributed.
+The skill includes **46 families / 140 original TTF files** under `assets/fonts/`, approximately 54.1 MB. This covers the **24 families explicitly loaded by the inspected SlideGenAI application** plus six pairing/open-alternative complements and 16 expressive display families. Generic CSS families and proprietary system fonts are not font binaries in the application and are not redistributed.
 
 Every included family has its original SIL Open Font License 1.1 in its directory. [The font manifest](../assets/fonts/manifest.json) records the pinned upstream commit, exact source URL, SHA-256, size, style, weight range and variable axes of every file. The files are unmodified upstream binaries from [Google Fonts](https://github.com/google/fonts). Preserve each family's license and copyright notices when redistributing the pack; the font licenses are separate from the repository's own licensing status.
 
@@ -9,6 +9,8 @@ Every included family has its original SIL Open Font License 1.1 in its director
 **Application families:** Montserrat, Playfair Display, Roboto Mono, Inter, Oswald, Lato, Poppins, Raleway, Open Sans, Nunito, Space Grotesk, DM Sans, Merriweather, Crimson Text, Source Serif 4, Bebas Neue, Archivo Black, Righteous, Fira Code, Source Code Pro, IBM Plex Mono, Roboto, Lora and JetBrains Mono.
 
 **Complements:** Manrope, Barlow Condensed, Bodoni Moda, Cormorant Garamond, Syne and Comic Neue. The pairing catalog's families are all included.
+
+**Expressive extension:** Unbounded, Anybody, Bungee, Bungee Shade, Bungee Outline, Rubik Glitch, Dela Gothic One, Climate Crisis, Fraunces, DM Serif Display, Orbitron, Audiowide, Instrument Serif, Tilt Warp, Rubik Mono One and Caveat. See [selection and usage](expressive-typography.md) and the [live type lab](../assets/fonts/expressive.html).
 
 The manifest maps earlier local system-font choices to explicit open alternatives, for example Impact → Bebas Neue, Didot → Bodoni Moda, Avenir Next → Manrope and Comic Sans MS → Comic Neue. These are design alternatives, not identical metrics or original font files. Preserve an explicitly required brand font when it is legitimately available; otherwise record the substitution and reflow.
 
@@ -20,7 +22,7 @@ From the installed skill folder:
 python3 -B scripts/validate_fonts.py
 ```
 
-This uses the Python 3.9+ standard library and no network. It checks declared font files, hashes, sizes, signatures, per-family licenses, application-family coverage and local CSS references. During preparation, fontTools parsed all 120 font files and confirmed a Portuguese accented-text/numeral sample in every cmap. The standard-library verifier does not reproduce fontTools parsing or certify rendering, embedding, every language or OS installation.
+This uses the Python 3.9+ standard library and no network. It checks declared font files, hashes, sizes, signatures, per-family licenses, application-family coverage and local CSS references. During preparation, fontTools parsed all 140 font files and confirmed a Portuguese accented-text/numeral sample in every cmap. The standard-library verifier does not reproduce fontTools parsing or certify rendering, embedding, every language or OS installation.
 
 ## HTML: use the local files directly
 
@@ -65,13 +67,13 @@ fc-cache -f
 py -3 scripts/install_fonts.py --dest "$env:TEMP/slidegenai-fonts" --family Inter --family Manrope --install
 ```
 
-Omit the repeated `--family` arguments to stage all 30 families. The helper copies files; it does not edit a system registry, invoke administrator elevation, refresh applications or certify OS registration. macOS/Linux copy destinations follow common user-font conventions; only temporary-directory copying and local browser loading were tested in this implementation. Windows installation and native slide-app font registration remain untested here.
+Omit the repeated `--family` arguments to stage all 46 families. The helper copies files; it does not edit a system registry, invoke administrator elevation, refresh applications or certify OS registration. macOS/Linux copy destinations follow common user-font conventions; only temporary-directory copying and local browser loading were tested in this implementation. Windows installation and native slide-app font registration remain untested here.
 
 ## Variable fonts and export
 
 Several upstream files are variable fonts. Modern browsers can use them through the included CSS; native presentation tools/exporters differ. Check the selected tool's font registration, weight support and export behavior. When it cannot use a variable font, choose a suitable bundled static family/face or obtain licensed static instances through a documented workflow. Do not claim that a TTF file was embedded just because text renders on the author's machine.
 
-Resolve real weights; do not request unsupported weights and mistake synthesized bold for a supplied face. Re-measure text after any fallback and inspect all affected slides. Outlined typography is an authoring effect, not a separate font family; use native transparent glyph fill/stroke where supported.
+Resolve real weights; do not request unsupported weights and mistake synthesized bold for a supplied face. Re-measure text after any fallback and inspect all affected slides. For authoring-based outlines, use native transparent glyph fill/stroke where supported. Drawn outline fonts such as Bungee Outline offer a separate method; verify their glyph shapes and native-font support independently.
 
 ## Brand-specific packaging
 

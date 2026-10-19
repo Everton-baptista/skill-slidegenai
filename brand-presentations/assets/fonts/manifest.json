@@ -31,6 +31,61 @@
   ],
   "families": [
     {
+      "family": "Anybody",
+      "directory": "anybody",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/anybody",
+      "files": [
+        {
+          "path": "anybody/Anybody-Italic[wdth,wght].ttf",
+          "sha256": "f9a465a1e5af36e30c37ba11812e4763e3c37febda2c2244acbcec8092063fd7",
+          "bytes": 209060,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/anybody/Anybody-Italic%5Bwdth%2Cwght%5D.ttf",
+          "style": "italic",
+          "weight_range": [
+            100.0,
+            900.0
+          ],
+          "axes": {
+            "wdth": [
+              50.0,
+              150.0
+            ],
+            "wght": [
+              100.0,
+              900.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        },
+        {
+          "path": "anybody/Anybody[wdth,wght].ttf",
+          "sha256": "b184bd7e6ca8348bbaecec98951565729d7e89b7872d4898a1f9981342b5b64c",
+          "bytes": 201352,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/anybody/Anybody%5Bwdth%2Cwght%5D.ttf",
+          "style": "normal",
+          "weight_range": [
+            100.0,
+            900.0
+          ],
+          "axes": {
+            "wdth": [
+              50.0,
+              150.0
+            ],
+            "wght": [
+              100.0,
+              900.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "anybody/OFL.txt",
+      "license_sha256": "7f0313b042b462fcae1934436cc747f9fd4433e3b08fd6459a4a5104b0bbd5db"
+    },
+    {
       "family": "Archivo Black",
       "directory": "archivoblack",
       "origin": "slidegenai-app",
@@ -53,6 +108,30 @@
       ],
       "license_file": "archivoblack/OFL.txt",
       "license_sha256": "3173acd82f8c6159b5b1037b539fcbd4edff68e65c2ea8b9412b5a5ca97b08ff"
+    },
+    {
+      "family": "Audiowide",
+      "directory": "audiowide",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/audiowide",
+      "files": [
+        {
+          "path": "audiowide/Audiowide-Regular.ttf",
+          "sha256": "c7c0f2b0f6fad8c623e31772ce79f94a4edb9321ffce9fce978ea892d20ae730",
+          "bytes": 69916,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/audiowide/Audiowide-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "audiowide/OFL.txt",
+      "license_sha256": "4fe01b13ffb41faa8f030d84843a95dab32792dfeeca7c072abbfd3f4d6896ad"
     },
     {
       "family": "Barlow Condensed",
@@ -379,6 +458,136 @@
       "license_sha256": "931dfe2e0cd3c9443295f5c1d754b8a8403bf060df50c1d5900267ade83d0046"
     },
     {
+      "family": "Bungee",
+      "directory": "bungee",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/bungee",
+      "files": [
+        {
+          "path": "bungee/Bungee-Regular.ttf",
+          "sha256": "c4f5361ce120af3e6b9156d0bf379fa19cda2ea0cd18ac01fd99596c6bf66e3f",
+          "bytes": 118996,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/bungee/Bungee-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "bungee/OFL.txt",
+      "license_sha256": "d5787a50dde5be6c6daecab9ed459939b1bc37cff0d0e00257eaf1ec2cf4c16c"
+    },
+    {
+      "family": "Bungee Outline",
+      "directory": "bungeeoutline",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/bungeeoutline",
+      "files": [
+        {
+          "path": "bungeeoutline/BungeeOutline-Regular.ttf",
+          "sha256": "9232000ff85fdbb68987007305f2de877486d63d31450f81b403461bbe721f1f",
+          "bytes": 202152,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/bungeeoutline/BungeeOutline-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "bungeeoutline/OFL.txt",
+      "license_sha256": "d5787a50dde5be6c6daecab9ed459939b1bc37cff0d0e00257eaf1ec2cf4c16c"
+    },
+    {
+      "family": "Bungee Shade",
+      "directory": "bungeeshade",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/bungeeshade",
+      "files": [
+        {
+          "path": "bungeeshade/BungeeShade-Regular.ttf",
+          "sha256": "665c626082682b462f4e696308eafa7071c114da8f8ff3fb73a289c7ff7df482",
+          "bytes": 304936,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/bungeeshade/BungeeShade-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "bungeeshade/OFL.txt",
+      "license_sha256": "d5787a50dde5be6c6daecab9ed459939b1bc37cff0d0e00257eaf1ec2cf4c16c"
+    },
+    {
+      "family": "Caveat",
+      "directory": "caveat",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/caveat",
+      "files": [
+        {
+          "path": "caveat/Caveat[wght].ttf",
+          "sha256": "0bdb6b660482d31531b3945849fba5916b3ef8695da7024a9e6b9ee3c4157988",
+          "bytes": 403648,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/caveat/Caveat%5Bwght%5D.ttf",
+          "style": "normal",
+          "weight_range": [
+            400.0,
+            700.0
+          ],
+          "axes": {
+            "wght": [
+              400.0,
+              700.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "caveat/OFL.txt",
+      "license_sha256": "1f9d81d094273d82f3898a1ee8b598a717d050ecbf5ff7bede105b704880157b"
+    },
+    {
+      "family": "Climate Crisis",
+      "directory": "climatecrisis",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/climatecrisis",
+      "files": [
+        {
+          "path": "climatecrisis/ClimateCrisis[YEAR].ttf",
+          "sha256": "4b25279f80e420f9f09dbba13eb14d0beabfa013d17f74bad19cc9fdf4d55523",
+          "bytes": 3601356,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/climatecrisis/ClimateCrisis%5BYEAR%5D.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {
+            "YEAR": [
+              1979.0,
+              2050.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "climatecrisis/OFL.txt",
+      "license_sha256": "ff2b5b1644c4fcdf1d5bea41205b694e0d865f3170301e4143a8b6f43ac72ebe"
+    },
+    {
       "family": "Comic Neue",
       "directory": "comicneue",
       "origin": "skill-pairing-or-open-alternative",
@@ -659,6 +868,67 @@
       "license_sha256": "9af36190332437f5ecd09974de43c1f7c77a310a996cdd8ceb25628b458840e1"
     },
     {
+      "family": "DM Serif Display",
+      "directory": "dmserifdisplay",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/dmserifdisplay",
+      "files": [
+        {
+          "path": "dmserifdisplay/DMSerifDisplay-Italic.ttf",
+          "sha256": "df74c0ac387baeaeb0fe4f2324e1668e6a3ed8c09cd9796fe162c71753e19e45",
+          "bytes": 71208,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/dmserifdisplay/DMSerifDisplay-Italic.ttf",
+          "style": "italic",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        },
+        {
+          "path": "dmserifdisplay/DMSerifDisplay-Regular.ttf",
+          "sha256": "8cc3643535edf039aa5d95440a8542735e9197e4f4b8d9303e980fefbf5ab616",
+          "bytes": 76580,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/dmserifdisplay/DMSerifDisplay-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "dmserifdisplay/OFL.txt",
+      "license_sha256": "a3e5cdd67d4571dd0a24fcc968de0efde7ae97ef752daf0906e4767619dd7231"
+    },
+    {
+      "family": "Dela Gothic One",
+      "directory": "delagothicone",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/delagothicone",
+      "files": [
+        {
+          "path": "delagothicone/DelaGothicOne-Regular.ttf",
+          "sha256": "4ff87a0965f1b0505e5a2c58424bc6ad3cff27e56a82f21c2fc9d6b0e3857ee2",
+          "bytes": 2508848,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/delagothicone/DelaGothicOne-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "delagothicone/OFL.txt",
+      "license_sha256": "c0014792d4f4abc0508c295b277f2b17ae44465c8dc88d12af9cea48279b5fda"
+    },
+    {
       "family": "Fira Code",
       "directory": "firacode",
       "origin": "slidegenai-app",
@@ -686,6 +956,77 @@
       ],
       "license_file": "firacode/OFL.txt",
       "license_sha256": "926041dac670e6922505e35ac1661a4e8d20f1ffeabbbcb5edb5544370702369"
+    },
+    {
+      "family": "Fraunces",
+      "directory": "fraunces",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/fraunces",
+      "files": [
+        {
+          "path": "fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+          "sha256": "b24448c43702fac4ee856781d461a0dfba8d8e594b6e8e190234b75fed2c0e01",
+          "bytes": 414904,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/fraunces/Fraunces-Italic%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+          "style": "italic",
+          "weight_range": [
+            100.0,
+            900.0
+          ],
+          "axes": {
+            "opsz": [
+              9.0,
+              144.0
+            ],
+            "wght": [
+              100.0,
+              900.0
+            ],
+            "SOFT": [
+              0.0,
+              100.0
+            ],
+            "WONK": [
+              0.0,
+              1.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        },
+        {
+          "path": "fraunces/Fraunces[SOFT,WONK,opsz,wght].ttf",
+          "sha256": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+          "bytes": 360440,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/fraunces/Fraunces%5BSOFT%2CWONK%2Copsz%2Cwght%5D.ttf",
+          "style": "normal",
+          "weight_range": [
+            100.0,
+            900.0
+          ],
+          "axes": {
+            "opsz": [
+              9.0,
+              144.0
+            ],
+            "wght": [
+              100.0,
+              900.0
+            ],
+            "SOFT": [
+              0.0,
+              100.0
+            ],
+            "WONK": [
+              0.0,
+              1.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "fraunces/OFL.txt",
+      "license_sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b"
     },
     {
       "family": "IBM Plex Mono",
@@ -879,6 +1220,43 @@
       ],
       "license_file": "ibmplexmono/OFL.txt",
       "license_sha256": "7e6b2818edbd8f6a01ae80641cc8f16a51080d08fb4e532be3a0b6f74adb07da"
+    },
+    {
+      "family": "Instrument Serif",
+      "directory": "instrumentserif",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/instrumentserif",
+      "files": [
+        {
+          "path": "instrumentserif/InstrumentSerif-Italic.ttf",
+          "sha256": "08939b8bdf534afec24ae0ef5e03f948940cd9a8fe08e7fecbad040e62327385",
+          "bytes": 71592,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/instrumentserif/InstrumentSerif-Italic.ttf",
+          "style": "italic",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        },
+        {
+          "path": "instrumentserif/InstrumentSerif-Regular.ttf",
+          "sha256": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88",
+          "bytes": 70012,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/instrumentserif/InstrumentSerif-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "instrumentserif/OFL.txt",
+      "license_sha256": "129ed7618959716959f2941fdd5b49e0ad6e6c1d78726761786a00253d865521"
     },
     {
       "family": "Inter",
@@ -1516,6 +1894,35 @@
       "license_sha256": "fbbbcfef55318de350562559b671360de6d597112ecc5c73881b05092db89602"
     },
     {
+      "family": "Orbitron",
+      "directory": "orbitron",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/orbitron",
+      "files": [
+        {
+          "path": "orbitron/Orbitron[wght].ttf",
+          "sha256": "f42db2dd16e642258e35782916eceb1dcdbea06fb958d77ad71dc5963587e8fd",
+          "bytes": 38576,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/orbitron/Orbitron%5Bwght%5D.ttf",
+          "style": "normal",
+          "weight_range": [
+            400.0,
+            900.0
+          ],
+          "axes": {
+            "wght": [
+              400.0,
+              900.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "orbitron/OFL.txt",
+      "license_sha256": "ab609b0e110d622435ff337cdf233288556e011bbf9bd0550be98846c0630819"
+    },
+    {
       "family": "Oswald",
       "directory": "oswald",
       "origin": "slidegenai-app",
@@ -2010,6 +2417,54 @@
       "license_sha256": "50ab8dd54680d3473f649c9db86fece88434d097c7834475c1c72d2f8c429215"
     },
     {
+      "family": "Rubik Glitch",
+      "directory": "rubikglitch",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/rubikglitch",
+      "files": [
+        {
+          "path": "rubikglitch/RubikGlitch-Regular.ttf",
+          "sha256": "260245012483d56956269100ebece747aa95b4b67e5a9411a81a36e91f55e653",
+          "bytes": 407304,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/rubikglitch/RubikGlitch-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "rubikglitch/OFL.txt",
+      "license_sha256": "f9e2d4498ea80d38bac7b8841d68af68c132fa67e1552e7c05717e6987de1d74"
+    },
+    {
+      "family": "Rubik Mono One",
+      "directory": "rubikmonoone",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/rubikmonoone",
+      "files": [
+        {
+          "path": "rubikmonoone/RubikMonoOne-Regular.ttf",
+          "sha256": "b22624b6a36e543e942106edfccd198c50b57b65b924bfe02a6f0a5699429e6b",
+          "bytes": 141088,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/rubikmonoone/RubikMonoOne-Regular.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {},
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "rubikmonoone/OFL.txt",
+      "license_sha256": "43d530580461a574f6dfed9e15af6a74e95f7c04d9bfa1174a63ff036e8eee07"
+    },
+    {
       "family": "Source Code Pro",
       "directory": "sourcecodepro",
       "origin": "slidegenai-app",
@@ -2168,6 +2623,68 @@
       ],
       "license_file": "syne/OFL.txt",
       "license_sha256": "cc43cdce6f91c57989af8459341c276655e34224e954fa69c2ad700831a742d8"
+    },
+    {
+      "family": "Tilt Warp",
+      "directory": "tiltwarp",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/tiltwarp",
+      "files": [
+        {
+          "path": "tiltwarp/TiltWarp[XROT,YROT].ttf",
+          "sha256": "e650320e405c220853184fa20a60a812f3f0275c3a1b2d1769409ad1cb4bfca5",
+          "bytes": 256812,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/tiltwarp/TiltWarp%5BXROT%2CYROT%5D.ttf",
+          "style": "normal",
+          "weight_range": [
+            400,
+            400
+          ],
+          "axes": {
+            "XROT": [
+              -45.0,
+              45.0
+            ],
+            "YROT": [
+              -45.0,
+              45.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "tiltwarp/OFL.txt",
+      "license_sha256": "97941703cd5fb1d5e86a062c9463ed12a613dbfbab9961c333699bdb2d277321"
+    },
+    {
+      "family": "Unbounded",
+      "directory": "unbounded",
+      "origin": "expressive-display-extension",
+      "license": "OFL-1.1",
+      "upstream_directory": "ofl/unbounded",
+      "files": [
+        {
+          "path": "unbounded/Unbounded[wght].ttf",
+          "sha256": "323b511be380c8d474ef030686b71aedde501f8d9cd46da558b7c40454372c3f",
+          "bytes": 778272,
+          "source_url": "https://raw.githubusercontent.com/google/fonts/47d54ca1ebb14fd864695f1d39dc734f39017c33/ofl/unbounded/Unbounded%5Bwght%5D.ttf",
+          "style": "normal",
+          "weight_range": [
+            200.0,
+            900.0
+          ],
+          "axes": {
+            "wght": [
+              200.0,
+              900.0
+            ]
+          },
+          "portuguese_sample_covered": true
+        }
+      ],
+      "license_file": "unbounded/OFL.txt",
+      "license_sha256": "31e5d4e83955e7103c34570dd49b0570ef490800bd65b42923c0dd02445263b3"
     }
   ],
   "system_font_alternatives": {

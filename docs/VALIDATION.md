@@ -86,3 +86,11 @@ A clean Git archive of the final font bundle passed the offline font verifier an
 ## Installation audit
 
 See the [gap review](GAP_REVIEW.md) for the confirmed Windows CI failures, targeted repairs, first-use resource checker, independent installed-copy tests, MIT adoption and broader example reproduction. The current suite has 137 tests; earlier counts in study records describe their historical snapshots.
+
+## Expressive type extension — 2026-10-18
+
+The current pack adds 16 display families / 20 original TTF files: 46 families, 140 TTFs, 54,064,816 bytes in total. The original 24 application families and six complements remain unchanged. New families use the same pinned Google Fonts snapshot and preserve their original OFL files and upstream binaries. fontTools 4.67.0 parsed all 140 files and confirmed the recorded Portuguese accented-text/numeral sample; hashes, sizes, signatures, local CSS and licenses passed the offline verifier.
+
+The local Codex in-app browser loaded all 46 regular family specimens and all 16 expressive title samples, including the supplied Instrument Serif italic. Every cover-scale title and the overview were visually inspected. DOM bounds at the tested desktop width placed all 16 titles inside their artboard and above the caption. A CSS containment repair keeps decorative geometry inside its artboard. The family search was checked against a visible result. These are HTML/CSS compositions with live text, not PPTX masters or evidence of native variable-font export/embedding.
+
+The additional regression check verifies that each expressive choice has a bundled body companion and a supplied style/weight, and that declared sample-axis settings lie within the actual file's axes. Historical font counts and browser checks above describe their earlier snapshots. The current suite has 138 tests.

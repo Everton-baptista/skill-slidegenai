@@ -50,3 +50,5 @@ For a missing native capability, select a supported editable alternative and exp
 Apply the same quality review to every selected style: representative title and evidence construction, then all final slide renders and the overview; verify font resolution, accents, hierarchy, crop, contrast, text fit, data, native objects and batch continuity. Test the requested export separately when applicable. Preserve accepted slides during repairs.
 
 The shared planning contract covers the catalog. Actual presentation quality and host support are established by constructing and inspecting the requested artifact. Keep these two kinds of evidence separate in documentation and delivery.
+
+For optional display voices beyond the starting pairings, consult [expressive typography](expressive-typography.md). The 16 additional local choices can serve any compatible catalog or user-supplied direction; no particular family or effect is mandatory. Preserve evidenced fonts in faithful mode.

@@ -75,3 +75,7 @@ The measured `typography` roles still hold the actual family and sizes used in t
 Do not use the same display/body pairing across every showcase by habit. Compare the typography with color hidden: is luxury still quiet, technology still precise, fashion still editorial, and education still approachable? Shared body fonts can improve reading; display geometry and editorial roles can provide the distinction. Do not force novelty into a faithful brand template.
 
 For each final presentation verify font resolution, accents, weights, line breaks, overflow, outline transparency, tag padding, contrast over images, and evidence legibility. Keep text editable and inspect the exported format separately if an export was requested. Listing many families or passing schema tests is not evidence of visual quality.
+
+## Expressive display choices
+
+For distinctive covers, chapter numerals, editorial quotations, short image overlays or meaningful tags, use [expressive typography](expressive-typography.md). It offers 16 additional local families with calm companions and a [visual type lab](../assets/fonts/expressive.html). Choose by the message and actual title geometry; preserve required brand typography and keep evidence readable.

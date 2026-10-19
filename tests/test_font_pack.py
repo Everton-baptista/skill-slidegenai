@@ -31,11 +31,26 @@ class FontPack(unittest.TestCase):
         (self.root/'manifest.json').write_text(json.dumps(self.manifest))
     def test_complete_bundle_covers_app_and_pairings(self):
         report=validate(DEFAULT_ROOT)
-        self.assertEqual((report['families'],report['font_files'],report['application_families']),(30,120,24))
+        self.assertEqual((report['families'],report['font_files'],report['application_families']),(46,140,24))
         pairs=json.loads((ROOT/'brand-presentations/references/typography-pairings.json').read_text())
         names={f['family']for f in json.loads((DEFAULT_ROOT/'manifest.json').read_text())['families']}
         for p in pairs['pairings']:
             self.assertTrue({p['display'],p['body'],p['label']}<=names)
+    def test_expressive_choices_have_real_faces_axes_and_companions(self):
+        manifest=json.loads((DEFAULT_ROOT/'manifest.json').read_text())
+        families={f['family']:f for f in manifest['families']}
+        choices=json.loads((ROOT/'brand-presentations/references/expressive-fonts.json').read_text())['choices']
+        self.assertEqual(len({c['family']for c in choices}),16)
+        for choice in choices:
+            self.assertIn(choice['body_companion'],families)
+            candidates=[f for f in families[choice['family']]['files']
+                        if f['style']==choice['sample_style']
+                        and f['weight_range'][0]<=choice['sample_weight']<=f['weight_range'][1]]
+            self.assertTrue(candidates,choice['family'])
+            self.assertTrue(any(all(axis in f['axes'] and f['axes'][axis][0]<=value<=f['axes'][axis][1]
+                                   for axis,value in choice['sample_variations'].items())for f in candidates),choice['family'])
+            self.assertTrue(all(f['portuguese_sample_covered']for f in candidates))
+
     def test_tampered_binary_is_rejected(self):
         p=self.root/self.manifest['families'][0]['files'][0]['path'];p.write_bytes(p.read_bytes()+b'changed')
         with self.assertRaises(ValueError):validate(self.root)

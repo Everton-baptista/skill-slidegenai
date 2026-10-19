@@ -72,4 +72,6 @@ Omit `--design` for older packages. Use `--require-reviewed` only after actual i
 
 When choosing or changing fonts, read [typography](references/typography.md). Choose display, body and label roles for the message; verify font availability and reflow after substitutions. Outlined headlines require real transparent glyph fill and native text stroke where supported.
 
+For creative display titles, short emphasis or handwritten accents, consult [expressive typography](references/expressive-typography.md) and its local visual lab. Choose a voice suited to the content across any template, preserving required brand fonts; keep sustained reading and evidence in clear companion faces.
+
 For offline font files, HTML registration or native-tool installation, use [the bundled font pack](references/font-pack.md). Prefer its licensed local files when appropriate; register them in the host before measuring text.

@@ -189,7 +189,11 @@ Browse the [177 style directions](brand-presentations/references/template-catalo
 
 ## Fonts and images
 
-**Fonts are included:** 30 openly licensed families / 120 original TTF files, about 43.8 MB. Copying the complete skill brings them with it. The authoring tool still needs to load or register the selected fonts; bundling does not automatically install them on your operating system or embed them in a PPTX. Ask the assistant to use the local pack and recheck text fit after substitutions. [Font setup and licenses](brand-presentations/references/font-pack.md) · [Local font specimen](brand-presentations/assets/fonts/specimen.html).
+**Fonts are included:** 46 openly licensed families / 140 original TTF files, about 54.1 MB. Copying the complete skill brings them with it. The authoring tool still needs to load or register the selected fonts; bundling does not automatically install them on your operating system or embed them in a PPTX. Ask the assistant to use the local pack and recheck text fit after substitutions. [Font setup and licenses](brand-presentations/references/font-pack.md) · [Local font specimen](brand-presentations/assets/fonts/specimen.html).
+
+**Want more expressive titles?** The pack now includes wide geometric, condensed, outline, shaded, glitch, sculptural, editorial and handwritten choices. Explore the [16-family type lab](brand-presentations/assets/fonts/expressive.html) and [when to use each family](brand-presentations/references/expressive-typography.md). Download the repository and open the lab through a local HTTP server to see the live fonts; GitHub shows HTML source.
+
+![Sixteen expressive typography directions with family names](docs/previews/expressive-type.png)
 
 **Images come from your assets or the host's available tools.** The skill includes no image-generation service. Availability, cost, licenses and watermarks depend on the provider or source. Preserve original logos and use assets you have permission to use.
 
@@ -234,7 +238,7 @@ The initial npm install needs network access or a populated cache. Use a new out
 | Ten-slide analytical example | Four native charts, table, diagrams, roadmap and matrix checked; checked-in deck rendered and inspected. The reproduction adapter uses free line segments that need rerouting after nodes move |
 | Nine-style study | 54 final slides and nine overviews inspected, with chart, table, connector and typography checks |
 | Python helpers | 137 tests passed on Linux and Windows, Python 3.9 and 3.13, in the recorded validation run |
-| Bundled fonts | All 120 files parsed and integrity checked; 30 family specimens loaded locally. OS registration and all native exporters remain host-specific |
+| Bundled fonts | All 140 files parsed and integrity checked; browser specimen checks are recorded in the validation guide. OS registration and all native exporters remain host-specific |
 | Catalog | All 177 entries resolve structurally; full decks have not been rendered and inspected for every entry |
 | PowerPoint, Google Slides, Keynote | Native opening/editing not tested |
 | Claude Code, Gemini and other hosts | End-to-end use not tested |

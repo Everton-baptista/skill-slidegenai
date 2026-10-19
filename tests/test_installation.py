@@ -20,7 +20,7 @@ class Installation(unittest.TestCase):
             self.assertEqual(result.returncode,0,result.stderr)
             report=json.loads(result.stdout)
             self.assertEqual(report['catalog_entries_resolved'],177)
-            self.assertEqual(report['fonts']['font_files'],120)
+            self.assertEqual(report['fonts']['font_files'],140)
             self.assertTrue((dest/'LICENSE').is_file())
             self.assertTrue((dest/'NOTICE.md').is_file())
             self.assertFalse((dest/'scripts/__pycache__').exists())
