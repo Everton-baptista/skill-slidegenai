@@ -117,3 +117,11 @@ Validation: the complete 158-case Python suite passed. The JavaScript suite now 
 The local full-suite run initially flagged a preview symlink under ignored output/. The distribution source check now excludes .git/, output/ and dist/; installable-skill packaging still rejects symlinks and has its independent extracted-package checks. No installed assets were exempted from packaging validation.
 
 Claude.ai and Claude Code authoring for the current version remain pending. Native-object checks do not establish final PowerPoint/Keynote rendering. The kit does not establish correctness of user-supplied facts or certify suitability for safety-critical decisions.
+
+## HTML player controls — 2.3.2
+
+The shipped player uses a compact translucent toolbar with original inline SVG icons, quieter separators and a neutral system UI typeface. Portuguese decks use Portuguese control/menu/dialog labels. Options hold chart data and the optional fit/font check; these diagnostics are not a primary presentation action. Slide geometry and the PPTX adapter are unchanged.
+
+The maintained `inspect_player_controls.mjs FILE NEW_OUTPUT_DIRECTORY` browser check covers actual enter/exit fullscreen gestures and asynchronous browser state, accessible label changes, Enter/Home navigation, Escape dismissing the options menu without leaving presentation mode, overview/reading transitions, 390px/320px layout, and toolbar exclusion from print while all slides remain visible. It uses the same optional Playwright setup as the existing browser regressions. Desktop and mobile Portuguese screenshots were visually inspected. The existing 26-slide regression covers chart data through the options menu and passed. JavaScript native/behavior checks passed all 23 cases.
+
+The first full Python run encountered local ENOSPC during temporary file creation. Superseded generated local archives/previews were removed; the complete 158-case rerun passed. No application source or installed font bytes were changed. This control-bar review is not authoring certification in Claude or native browser fullscreen certification for every host.

@@ -74,3 +74,6 @@ jobs:
       - run: node tests/inspect_chart_regressions.mjs "$RUNNER_TEMP/chart-regression-evidence"
         env:
           SLIDEGENAI_PLAYWRIGHT: ${{ runner.temp }}/visual-kit-browser/node_modules/playwright/index.mjs
+      - run: node tests/inspect_player_controls.mjs "$RUNNER_TEMP/visual-kit-browser-evidence/portable.html" "$RUNNER_TEMP/player-controls-evidence"
+        env:
+          SLIDEGENAI_PLAYWRIGHT: ${{ runner.temp }}/visual-kit-browser/node_modules/playwright/index.mjs

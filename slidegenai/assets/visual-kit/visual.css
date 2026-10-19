@@ -10,23 +10,151 @@ body {
 }
 nav {
   position: sticky;
-  top: 0;
+  top: 14px;
   z-index: 10;
-  background: #17191eea;
-  padding: 12px;
   display: flex;
-  gap: 12px;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 5px;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  margin: 14px auto 0;
+  padding: 6px;
+  color: #f5f5f7;
+  background: #242426f2;
+  border: 1px solid #ffffff12;
+  border-radius: 20px;
+  box-shadow:
+    0 10px 32px #0003,
+    inset 0 1px 0 #ffffff08;
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  backdrop-filter: blur(24px) saturate(140%);
+  font:
+    500 13px/1 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 }
 button {
   font: inherit;
-  padding: 8px 14px;
-  border: 1px solid #737986;
-  border-radius: 6px;
-  background: #2c3039;
-  color: white;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: #ffffff0d;
+  color: inherit;
   cursor: pointer;
+}
+nav button,
+.player-menu summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  flex-shrink: 0;
+  padding: 0;
+  border-radius: 14px;
+  background: transparent;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background-color 140ms ease,
+    color 140ms ease;
+}
+nav button:hover:not(:disabled),
+.player-menu summary:hover {
+  background: #ffffff12;
+}
+nav #present,
+nav #present[aria-pressed="true"] {
+  padding: 0 14px;
+  background: #f5f5f7;
+  color: #1d1d1f;
+  font-weight: 600;
+}
+nav #present:hover {
+  background: #ffffff;
+}
+.control-icon {
+  display: block;
+  flex-shrink: 0;
+}
+.icon-stop,
+.icon-contract {
+  display: none;
+}
+#present[aria-pressed="true"] .icon-play,
+#fullscreen[aria-pressed="true"] .icon-expand {
+  display: none;
+}
+#present[aria-pressed="true"] .icon-stop,
+#fullscreen[aria-pressed="true"] .icon-contract {
+  display: block;
+}
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.control-divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 3px;
+  background: #ffffff1a;
+}
+#position {
+  min-width: 48px;
+  text-align: center;
+  color: #d2d2d7;
+  font-variant-numeric: tabular-nums;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.player-menu {
+  position: relative;
+}
+.player-menu summary {
+  cursor: pointer;
+  list-style: none;
+}
+.player-menu summary::-webkit-details-marker {
+  display: none;
+}
+.player-menu[open] summary {
+  background: #ffffff12;
+}
+.player-menu-panel {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -6px;
+  width: min(260px, calc(100vw - 32px));
+  padding: 6px;
+  background: #242426fa;
+  border: 1px solid #ffffff1a;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px #0005;
+}
+.player-menu-panel button {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 12px;
+  text-align: left;
+  line-height: 1.4;
+}
+nav #result:not(:empty) {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 0;
+  max-width: min(600px, calc(100vw - 24px));
+  padding: 12px 16px;
+  background: #242426fa;
+  border: 1px solid #ffffff1a;
+  border-radius: 14px;
+  font:
+    13px/1.5 system-ui,
+    sans-serif;
 }
 output {
   font-size: 13px;
@@ -134,10 +262,11 @@ button:disabled {
   cursor: default;
 }
 button[aria-pressed="true"] {
-  background: #f1f4fa;
-  color: #111722;
+  background: #ffffff18;
+  color: #fff;
 }
 button:focus-visible,
+summary:focus-visible,
 select:focus-visible,
 .chart [tabindex]:focus-visible {
   outline: 3px solid #47bfff;
@@ -205,14 +334,17 @@ dialog caption {
 }
 @media (max-width: 600px) {
   nav {
-    gap: 8px;
-    padding: 8px;
+    gap: 2px;
+    padding: 5px;
   }
-  nav button {
-    padding: 7px 10px;
+  nav #present {
+    padding: 0;
   }
-  nav #result {
-    width: 100%;
+  nav .button-label {
+    display: none;
+  }
+  .control-divider {
+    margin: 0 1px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -220,6 +352,7 @@ dialog caption {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+    transition: none !important;
   }
 }
 @media print {
@@ -249,15 +382,11 @@ body.presenting nav {
   transform: translateX(-50%);
   width: max-content;
   max-width: calc(100vw - 24px);
-  border: 1px solid #ffffff25;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px #0003;
+  margin: 0;
+  border-radius: 20px;
 }
 body.presenting main {
   height: 100dvh;
-}
-body.presenting #check {
-  display: none;
 }
 @media print {
   body.presenting nav {

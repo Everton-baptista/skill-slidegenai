@@ -170,6 +170,7 @@ try {
         await page.locator("#chart-tooltip").innerText(),
         await mark.getAttribute("data-detail"),
       );
+      await page.locator(".player-menu summary").click();
       await page.locator("#chart-data").click();
       assert.ok(await page.locator("#data-dialog").isVisible());
       assert.ok((await page.locator("#data-values td").count()) > 0);

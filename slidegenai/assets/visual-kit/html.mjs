@@ -233,6 +233,59 @@ function element(e) {
     return `<table ${attrs}border-collapse:collapse;"><tbody>${e.values.map((r, i) => `<tr>${r.map((c) => `<${i ? "td" : "th"} style="background:${i ? e.body_fill : e.header_fill};color:${i ? e.color : e.header_color}">${esc(c)}</${i ? "td" : "th"}>`).join("")}</tr>`).join("")}</tbody></table>`;
   return `<div ${attrs}${e.effect.gradient ? "" : `background:${e.fill};`}"></div>`;
 }
+function controls(language) {
+  const pt = /^pt(?:-|$)/i.test(language || "");
+  const labels = pt
+    ? {
+        controls: "Controles da apresentação",
+        present: "Apresentar",
+        stop: "Sair",
+        previous: "Slide anterior",
+        next: "Próximo slide",
+        overview: "Visão geral",
+        reading: "Voltar à leitura",
+        fullscreen: "Tela cheia",
+        exitFullscreen: "Sair da tela cheia",
+        more: "Mais opções",
+        data: "Dados dos gráficos",
+        check: "Verificar fontes e enquadramento",
+        close: "Fechar",
+        chart: "Gráfico",
+      }
+    : {
+        controls: "Presentation controls",
+        present: "Present",
+        stop: "Exit",
+        previous: "Previous slide",
+        next: "Next slide",
+        overview: "Overview",
+        reading: "Back to reading",
+        fullscreen: "Fullscreen",
+        exitFullscreen: "Exit fullscreen",
+        more: "More options",
+        data: "Chart data",
+        check: "Check fonts and fit",
+        close: "Close",
+        chart: "Chart",
+      };
+  const icon = (content, cls = "") =>
+    `<svg class="control-icon ${cls}" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${content}</svg>`;
+  const button = (id, content, options = "") =>
+    `<button type="button" id="${id}" title="${labels[id] || labels.data}" aria-label="${labels[id] || labels.data}" ${options}>${content}</button>`;
+  return {
+    labels,
+    toolbar: `<nav aria-label="${labels.controls}">
+    ${button("present", icon('<path d="m9 5 11 7-11 7Z" fill="currentColor" stroke="none"/>', "icon-play") + icon('<rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor" stroke="none"/>', "icon-stop") + `<span class="button-label">${labels.present}</span>`, `aria-pressed="false" data-start="${labels.present}" data-stop="${labels.stop}"`)}
+    <span class="control-divider" aria-hidden="true"></span>
+    <div class="control-group">${button("previous", icon('<path d="m14 6-6 6 6 6"/>'))}<output id="position" aria-live="polite" aria-atomic="true"></output>${button("next", icon('<path d="m10 6 6 6-6 6"/>'))}</div>
+    <span class="control-divider" aria-hidden="true"></span>
+    ${button("overview", icon('<rect x="4" y="4" width="6" height="6" rx="1.3"/><rect x="14" y="4" width="6" height="6" rx="1.3"/><rect x="4" y="14" width="6" height="6" rx="1.3"/><rect x="14" y="14" width="6" height="6" rx="1.3"/>'), `aria-pressed="false" data-start="${labels.overview}" data-stop="${labels.reading}"`)}
+    ${button("fullscreen", icon('<path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/>', "icon-expand") + icon('<path d="M3 8h5V3m8 0v5h5M8 21v-5H3m13 5v-5h5"/>', "icon-contract"), `aria-pressed="false" data-start="${labels.fullscreen}" data-stop="${labels.exitFullscreen}"`)}
+    <details class="player-menu"><summary title="${labels.more}" aria-label="${labels.more}">${icon('<circle cx="5" cy="12" r="1" fill="currentColor"/><circle cx="12" cy="12" r="1" fill="currentColor"/><circle cx="19" cy="12" r="1" fill="currentColor"/>')}</summary><div class="player-menu-panel"><button type="button" id="chart-data">${labels.data}</button><button type="button" id="check">${labels.check}</button></div></details>
+    <output id="result" role="status"></output>
+  </nav>`,
+  };
+}
 export async function renderHTML(scene) {
   const cssFile = await fs.readFile(path.join(home, "visual.css"), "utf8"),
     runtime = await fs.readFile(path.join(home, "inspect.js"), "utf8"),
@@ -256,9 +309,15 @@ export async function renderHTML(scene) {
       .filter((e) => e.kind === "chart")
       .map((e) => ({ slide: s.id, element: e })),
   );
+  const ui = controls(scene.language);
+  if (!chartData.length)
+    ui.toolbar = ui.toolbar.replace(
+      'id="chart-data"',
+      'id="chart-data" hidden',
+    );
   const data = JSON.stringify(chartData)
     .replace(/</g, "\\u003c")
     .replace(/\u2028/g, "\\u2028")
     .replace(/\u2029/g, "\\u2029");
-  return `<!doctype html><html lang="${esc(scene.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(scene.title)}</title><style>${faces.join("\n")}\n${cssFile}\n@media print{@page{size:${(scene.canvas.width * scene.unitScale) / 96}in ${(scene.canvas.height * scene.unitScale) / 96}in;margin:0}.frame{width:${scene.canvas.width * scene.unitScale}px!important;height:${scene.canvas.height * scene.unitScale}px!important}.slide{transform:scale(${scene.unitScale})!important}}</style></head><body><nav aria-label="Presentation controls"><button id="present" aria-pressed="false">Present</button><button id="previous" aria-label="Previous slide">←</button><output id="position" aria-live="polite"></output><button id="next" aria-label="Next slide">→</button><button id="overview" aria-pressed="false">Overview / reading</button><button id="chart-data" ${chartData.length ? "" : "hidden"}>Chart data</button><button id="fullscreen">Fullscreen</button><button id="check">Check fonts and fit</button><output id="result" role="status"></output></nav><main>${sections}</main><div id="chart-tooltip" role="status" hidden></div><dialog id="data-dialog" aria-labelledby="data-title"><h2 id="data-title">Chart data</h2><label>Chart <select id="chart-select"></select></label><div id="data-values"></div><button id="close-data">Close</button></dialog><script type="application/json" id="chart-model">${data}</script><script>${chartSVG.toString()}\n${validateChart.toString()}\n${player}\n${runtime}</script></body></html>`;
+  return `<!doctype html><html lang="${esc(scene.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${esc(scene.title)}</title><style>${faces.join("\n")}\n${cssFile}\n@media print{@page{size:${(scene.canvas.width * scene.unitScale) / 96}in ${(scene.canvas.height * scene.unitScale) / 96}in;margin:0}.frame{width:${scene.canvas.width * scene.unitScale}px!important;height:${scene.canvas.height * scene.unitScale}px!important}.slide{transform:scale(${scene.unitScale})!important}}</style></head><body>${ui.toolbar}<main>${sections}</main><div id="chart-tooltip" role="status" hidden></div><dialog id="data-dialog" aria-labelledby="data-title"><h2 id="data-title">${ui.labels.data}</h2><label>${ui.labels.chart} <select id="chart-select"></select></label><div id="data-values"></div><button id="close-data">${ui.labels.close}</button></dialog><script type="application/json" id="chart-model">${data}</script><script>${chartSVG.toString()}\n${validateChart.toString()}\n${player}\n${runtime}</script></body></html>`;
 }

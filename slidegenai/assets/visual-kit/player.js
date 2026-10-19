@@ -35,6 +35,17 @@
     document
       .getElementById("overview")
       .setAttribute("aria-pressed", String(mode === "overview"));
+    for (const id of ["present", "overview"]) {
+      const button = document.getElementById(id),
+        label =
+          button.dataset[
+            button.getAttribute("aria-pressed") === "true" ? "stop" : "start"
+          ];
+      button.setAttribute("aria-label", label);
+      button.title = label;
+      const visibleLabel = button.querySelector(".button-label");
+      if (visibleLabel) visibleLabel.textContent = label;
+    }
     showPosition();
     tooltip.hidden = true;
     window.dispatchEvent(new Event("resize"));
@@ -95,9 +106,33 @@
   };
   document.getElementById("overview").onclick = () =>
     setMode(mode === "overview" ? "reading" : "overview");
+  const menu = document.querySelector(".player-menu");
+  menu.addEventListener("click", (event) => {
+    if (event.target.closest("button")) menu.open = false;
+  });
+  document.addEventListener("pointerdown", (event) => {
+    if (!menu.contains(event.target)) menu.open = false;
+  });
+  menu.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      menu.open = false;
+      menu.querySelector("summary").focus();
+      event.stopPropagation();
+    }
+  });
   document.getElementById("previous").onclick = () => step(-1);
   document.getElementById("next").onclick = () => step(1);
-  document.getElementById("fullscreen").onclick = async () => {
+  const fullscreenButton = document.getElementById("fullscreen");
+  function syncFullscreen() {
+    const active = !!document.fullscreenElement;
+    fullscreenButton.setAttribute("aria-pressed", String(active));
+    fullscreenButton.title =
+      fullscreenButton.dataset[active ? "stop" : "start"];
+    fullscreenButton.setAttribute("aria-label", fullscreenButton.title);
+  }
+  document.addEventListener("fullscreenchange", syncFullscreen);
+  syncFullscreen();
+  fullscreenButton.onclick = async () => {
     try {
       if (document.fullscreenElement) await document.exitFullscreen();
       else {
