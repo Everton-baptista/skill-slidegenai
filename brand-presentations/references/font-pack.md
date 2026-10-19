@@ -17,7 +17,7 @@ The manifest maps earlier local system-font choices to explicit open alternative
 From the installed skill folder:
 
 ```sh
-python3 scripts/validate_fonts.py
+python3 -B scripts/validate_fonts.py
 ```
 
 This uses the Python 3.9+ standard library and no network. It checks declared font files, hashes, sizes, signatures, per-family licenses, application-family coverage and local CSS references. During preparation, fontTools parsed all 120 font files and confirmed a Portuguese accented-text/numeral sample in every cmap. The standard-library verifier does not reproduce fontTools parsing or certify rendering, embedding, every language or OS installation.
@@ -42,20 +42,20 @@ The stylesheet has no remote imports or font requests. Its weight ranges describ
 A TTF beside a PPTX does not register a font in PowerPoint, Keynote or an authoring library. Install the fonts or register their local paths with the renderer's documented API before measuring text. Restart or refresh applications when needed. The optional copy helper is dry-run by default, validates the pack, accepts selected families and refuses to replace different existing files:
 
 ```sh
-python3 scripts/install_fonts.py --dest /path/to/font-folder --family Inter --family Manrope
+python3 -B scripts/install_fonts.py --dest /path/to/font-folder --family Inter --family Manrope
 # Add --install to copy after checking the listed destination.
 ```
 
 **macOS, current user:**
 
 ```sh
-python3 scripts/install_fonts.py --dest "$HOME/Library/Fonts" --family Inter --family Manrope --install
+python3 -B scripts/install_fonts.py --dest "$HOME/Library/Fonts" --family Inter --family Manrope --install
 ```
 
 **Linux, current user:**
 
 ```sh
-python3 scripts/install_fonts.py --dest "$HOME/.local/share/fonts/slidegenai" --family Inter --family Manrope --install
+python3 -B scripts/install_fonts.py --dest "$HOME/.local/share/fonts/slidegenai" --family Inter --family Manrope --install
 fc-cache -f
 ```
 

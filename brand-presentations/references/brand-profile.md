@@ -31,7 +31,7 @@ Logo paths must remain inside the package, including after resolving symlinks. P
 The repository's `examples/demo-brand/` contains a clearly fictional profile. Never use its colors or rules as a fallback identity for a real brand.
 
 ```sh
-python3 scripts/validate_brand.py /path/to/brand-profile.json
+python3 -B scripts/validate_brand.py /path/to/brand-profile.json
 ```
 
 Validation checks types, evidence references, colors, and local logo files. It cannot identify brands, confirm licenses, load fonts, or judge visual fidelity.

@@ -49,7 +49,7 @@ Use shapes for decisions, steps, groups or quantified cells only when they expre
 
 ## Optional visual-model validator
 
-`python3 scripts/validate_visuals.py /path/to/visuals.json` validates the separate optional version-1 model used by the [complete source example](visual-model-example.json). It checks finite values, category lengths, share totals, nonnegative parts, scatter/bubble pairs, gauge/radar scales, waterfall reconciliation, source status, graph endpoints, decision branches, hierarchy cycles, lane membership, date ranges and matrix indices. It does not render, route connectors, verify source truth, certify brand fidelity or validate a native export. Existing deck/profile contracts do not change.
+`python3 -B scripts/validate_visuals.py /path/to/visuals.json` validates the separate optional version-1 model used by the [complete source example](visual-model-example.json). It checks finite values, category lengths, share totals, nonnegative parts, scatter/bubble pairs, gauge/radar scales, waterfall reconciliation, source status, graph endpoints, decision branches, hierarchy cycles, lane membership, date ranges and matrix indices. It does not render, route connectors, verify source truth, certify brand fidelity or validate a native export. Existing deck/profile contracts do not change.
 
 Supported helper chart type names: `bar`, `grouped-bar`, `stacked-bar`, `stacked-share`, `line`, `area`, `pie`, `donut`, `radar`, `polar-area`, `scatter`, `bubble`, `gauge`, `waterfall`. These are data-model checks, not a claim that every host/export supports every type. Unsupported models fail explicitly.
 

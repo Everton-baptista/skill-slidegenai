@@ -8,7 +8,7 @@ The public educational entries use the neutral names **Aula**, **Aula Moderno** 
 
 ## Shared construction for all entries
 
-All 177 entries use [the same adaptive construction system](all-template-construction.md): font roles, topic covers, image/text layouts, contextual tags, appropriate effects and editable evidence objects. The nine named examples are demonstrations, not an exclusive support list. `python3 scripts/plan_template.py --id watercolor` produces a working brief for any canonical ID; `--coverage` verifies structural resolution across the catalog. This does not render or certify 177 presentations.
+All 177 entries use [the same adaptive construction system](all-template-construction.md): font roles, topic covers, image/text layouts, contextual tags, appropriate effects and editable evidence objects. The nine named examples are demonstrations, not an exclusive support list. `python3 -B scripts/plan_template.py --id watercolor` produces a working brief for any canonical ID; `--coverage` verifies structural resolution across the catalog. This does not render or certify 177 presentations.
 
 ## Use the catalog
 
@@ -44,7 +44,7 @@ The application sometimes displays a poster word rather than its catalog title. 
 | Neo Tokyo | Urban Vivid | `urban-vivid` |
 | MOVE | Kinetic | `kinetic` |
 
-Use `python3 scripts/find_templates.py --name "Acid Rave"` for an exact normalized visible name, or `--query "neo tokyo"` for substring search. Case, punctuation and accents normalize; canonical IDs remain unchanged. `--id` stays exact. No fuzzy guessing is performed. A category such as **Corporate & Education** is a group of templates, not a newly invented template ID; query it to see all source entries. If a user's spelling has no match, inspect the source or ask rather than silently selecting a different style.
+Use `python3 -B scripts/find_templates.py --name "Acid Rave"` for an exact normalized visible name, or `--query "neo tokyo"` for substring search. Case, punctuation and accents normalize; canonical IDs remain unchanged. `--id` stays exact. No fuzzy guessing is performed. A category such as **Corporate & Education** is a group of templates, not a newly invented template ID; query it to see all source entries. If a user's spelling has no match, inspect the source or ask rather than silently selecting a different style.
 
 For composition-level adaptation of the nine demonstrated directions, read [style grammars](style-grammars.md). A palette and family name alone are insufficient to reproduce their character.
 
@@ -233,10 +233,10 @@ For composition-level adaptation of the nine demonstrated directions, read [styl
 ## Query without loading all entries
 
 ```sh
-python3 scripts/find_templates.py
-python3 scripts/find_templates.py --id consulting
-python3 scripts/find_templates.py --family organic --pattern trend-line
-python3 scripts/find_templates.py --query architecture
+python3 -B scripts/find_templates.py
+python3 -B scripts/find_templates.py --id consulting
+python3 -B scripts/find_templates.py --family organic --pattern trend-line
+python3 -B scripts/find_templates.py --query architecture
 ```
 
 These commands run from the installed skill folder. Filters retrieve source options; they do not score design quality or certify output support.

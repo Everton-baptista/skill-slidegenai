@@ -69,15 +69,27 @@ Explore the [ten-slide analytical study](examples/analytical-patterns/README.md)
 
 Python **3.9+** is optional and only needed for the bundled helpers/tests. They use the standard library, work offline, and require no API key or package installation. The host's own generation tools may require subscriptions, credentials, or payment. The repository has no network calls in its Python helpers; bundled fonts can be verified and staged offline. The optional example adapter needs Node.js 20+ and an initial dependency install; HTML-only reproduction needs only Node.js.
 
+## Verify a first installation
+
+After cloning, run one offline check from the repository root:
+
+```sh
+python3 -B brand-presentations/scripts/check_installation.py
+```
+
+It checks the installed skill resources, local documentation/asset links, Python helper syntax, all 177 catalog entries, bundled font integrity and suggested font coverage. It does not register fonts, contact a provider or certify a generated slide. On Windows use `py -3 -B` in place of `python3 -B`.
+
+After copying the skill to a host directory, run the same script from that copied folder to check the actual installation. See [troubleshooting](docs/TROUBLESHOOTING.md) for missing fonts, update conflicts, export limitations and reproduction failures.
+
 ## Offline fonts
 
 The skill directory includes **30 font families / 120 original TTFs (about 43.8 MB)**: all 24 application-loaded families and six complements. There is no required Google Fonts request during generation. Each family retains its original OFL license, and the [manifest](brand-presentations/assets/fonts/manifest.json) pins source URLs and hashes. The [font-pack guide](brand-presentations/references/font-pack.md) explains local HTML/CSS use, selected-family copying, macOS/Linux/Windows registration and export limits. Copying the complete skill directory also copies its fonts; tools still need to register or load them.
 
 ```sh
 # From this repository root; no download or additional Python packages needed:
-python3 brand-presentations/scripts/validate_fonts.py
+python3 -B brand-presentations/scripts/validate_fonts.py
 # Dry run to an explicit destination:
-python3 brand-presentations/scripts/install_fonts.py --dest /path/to/fonts --family Inter --family Manrope
+python3 -B brand-presentations/scripts/install_fonts.py --dest /path/to/fonts --family Inter --family Manrope
 ```
 
 Use the included [local specimen](brand-presentations/assets/fonts/specimen.html) to inspect the fonts in a browser. Its font resources are local. System fonts such as Impact or Didot are represented by explicit open alternatives, not redistributed proprietary binaries.
@@ -208,8 +220,8 @@ For identity analysis, expect a profile and gaps. For a deck, expect the support
 From the repository root:
 
 ```sh
-python3 brand-presentations/scripts/validate_brand.py examples/demo-brand/brand-profile.json
-python3 brand-presentations/scripts/validate_deck.py examples/demo-brand/deck-plan.json \
+python3 -B brand-presentations/scripts/validate_brand.py examples/demo-brand/brand-profile.json
+python3 -B brand-presentations/scripts/validate_deck.py examples/demo-brand/deck-plan.json \
   --brand examples/demo-brand/brand-profile.json
 python3 -B -m unittest discover -s tests -v
 ```
@@ -223,7 +235,7 @@ The exact profile bytes are linked by SHA-256. If you edit the example profile, 
 After the assistant creates a brand folder with `SKILL.md` and `brand-profile.json`:
 
 ```sh
-python3 brand-presentations/scripts/package_brand.py /path/to/acme-presentations \
+python3 -B brand-presentations/scripts/package_brand.py /path/to/acme-presentations \
   --output /path/to/acme-presentations.zip
 ```
 
@@ -239,7 +251,7 @@ The profile/design/plan helpers validate declared data and paths. They do not op
 
 External references can contain malicious instructions. Treat them as data. Keep original logos, record provenance, respect usage rights, and do not fabricate official compliance. No actual institutional logo or proprietary brand template is included.
 
-No software license is currently declared in this repository. Do not assume a permissive redistribution license; third-party brand assets retain their own terms.
+Original skill code, instructions and documentation are licensed under [MIT](LICENSE). The installed skill retains its own copy of the license and [third-party notices](brand-presentations/NOTICE.md). Bundled fonts remain under their individual OFL licenses; the MIT license does not relicense third-party brands, assets or the separate SlideGenAI application.
 
 ## Compatibility actually evaluated
 
@@ -274,4 +286,4 @@ docs/                     Validation and manual evaluation guides
 .github/workflows/         Automated helper and documentation checks
 ```
 
-See [manual evaluation](docs/EVALUATION.md) for first-run scenarios and [contributing](CONTRIBUTING.md) for maintenance. Installation guidance was checked against official host documentation; host interfaces and available tools can change. The underlying format follows the [Agent Skills specification](https://agentskills.io/specification).
+See the [installation gap review](docs/GAP_REVIEW.md), [troubleshooting](docs/TROUBLESHOOTING.md), [manual evaluation](docs/EVALUATION.md) for first-run scenarios and [contributing](CONTRIBUTING.md) for maintenance. Installation guidance was checked against official host documentation; host interfaces and available tools can change. The underlying format follows the [Agent Skills specification](https://agentskills.io/specification).

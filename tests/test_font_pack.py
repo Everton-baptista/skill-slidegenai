@@ -69,9 +69,14 @@ class FontPack(unittest.TestCase):
         profile=json.loads((brand/'brand-profile.json').read_text());profile['logos']=[]
         (brand/'brand-profile.json').write_text(json.dumps(profile))
         shutil.copytree(self.root,brand/'assets/fonts')
+        shutil.copy2(ROOT/'brand-presentations/LICENSE',brand/'LICENSE')
+        shutil.copy2(ROOT/'brand-presentations/NOTICE.md',brand/'NOTICE.md')
         out=Path(self.temp.name)/'brand.zip';package(brand,out)
         with zipfile.ZipFile(out)as z:
             names=z.namelist()
+            self.assertTrue(any(n.endswith('/LICENSE')for n in names))
+            self.assertTrue(any(n.endswith('/NOTICE.md')for n in names))
+            self.assertTrue(all('\\'not in n for n in names))
             for record in self.manifest['families'][0]['files']:
                 self.assertTrue(any(n.endswith('assets/fonts/'+record['path'])for n in names))
             self.assertTrue(any(n.endswith('/OFL.txt')for n in names))

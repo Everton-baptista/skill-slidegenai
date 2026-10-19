@@ -9,7 +9,7 @@ Copy the profile, design, and deck validators together when including them; deck
 Run the validators, then:
 
 ```sh
-python3 scripts/package_brand.py /path/to/brand-presentations --output /path/to/brand-presentations.zip
+python3 -B scripts/package_brand.py /path/to/brand-presentations --output /path/to/brand-presentations.zip
 ```
 
 The helper validates the profile and optional design system, local Markdown links, declared retained sources, and local Python helper dependencies. It rejects missing assets, unsafe paths, symlinks, unexpected files, and credential-like filenames. `design-tokens.json` is a legitimate reference filename; token names alone are not credentials. The checks are not a complete secret scanner or license audit.

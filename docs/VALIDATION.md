@@ -82,3 +82,7 @@ Educational entries use the public IDs `aula`, `aula-moderno` and `aula-instituc
 The included local HTML specimen loaded all 30 family samples successfully in the Codex in-app browser using the bundled CSS/TTFs on 2026-10-18. This confirms that browser path for the specimen, not native desktop registration or every weight in every exporter.
 
 A clean Git archive of the final font bundle passed the offline font verifier and all 134 tests. Git attributes preserve the exact upstream font/license bytes, including original line endings, so integrity checks survive a fresh checkout/download.
+
+## Installation audit
+
+See the [gap review](GAP_REVIEW.md) for the confirmed Windows CI failures, targeted repairs, first-use resource checker, independent installed-copy tests, MIT adoption and broader example reproduction. The current suite has 137 tests; earlier counts in study records describe their historical snapshots.

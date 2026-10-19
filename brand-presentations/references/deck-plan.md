@@ -31,8 +31,8 @@ Data slides require `data_status`: `sourced` with nonempty `citation`, or `illus
 After actual inspection, set `rendered` to true and list the inspected slide IDs. Issues contain `slide_id`, `severity` (`blocking` or `warning`), and nonempty `message`. References must point to existing slides. A verified slide must be inspected, rendered, and have no blocking issue. Keep unresolved warnings documented.
 
 ```sh
-python3 scripts/validate_deck.py /path/to/deck-plan.json --brand /path/to/brand-profile.json
-python3 scripts/validate_deck.py /path/to/deck-plan.json --brand /path/to/brand-profile.json --require-reviewed
+python3 -B scripts/validate_deck.py /path/to/deck-plan.json --brand /path/to/brand-profile.json
+python3 -B scripts/validate_deck.py /path/to/deck-plan.json --brand /path/to/brand-profile.json --require-reviewed
 ```
 
 Use the second command for an actually inspected final artifact. Review flags are self-reported; the helper cannot prove that rendering occurred. Solid-color contrast and text-box overlaps produce warnings for manual review. Text can overflow a geometrically valid box, so inspect the export.

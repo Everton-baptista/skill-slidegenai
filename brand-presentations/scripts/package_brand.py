@@ -10,7 +10,7 @@ from pathlib import Path
 from validate_brand import validate
 
 TOP_FILES = {'SKILL.md', 'brand-profile.json'}
-OPTIONAL_FILES = {'design-system.json'}
+OPTIONAL_FILES = {'design-system.json', 'LICENSE', 'NOTICE.md'}
 EXTENSIONS = {
     'references': {'.md', '.json'},
     'agents': {'.yaml', '.yml'},
@@ -36,8 +36,8 @@ def collect(root):
             if rel.parts[0] not in EXTENSIONS:
                 raise ValueError(f'Unexpected directory: {rel}')
             continue
-        font_metadata = len(rel.parts) >= 3 and rel.parts[:2] == ('assets', 'fonts') and (str(rel) == 'assets/fonts/manifest.json' or (len(rel.parts) == 4 and path.name == 'OFL.txt'))
-        allowed = font_metadata or str(rel) in TOP_FILES | OPTIONAL_FILES or (len(rel.parts) > 1 and path.suffix.lower() in EXTENSIONS.get(rel.parts[0], set()))
+        font_metadata = len(rel.parts) >= 3 and rel.parts[:2] == ('assets', 'fonts') and (rel.as_posix() == 'assets/fonts/manifest.json' or (len(rel.parts) == 4 and path.name == 'OFL.txt'))
+        allowed = font_metadata or rel.as_posix() in TOP_FILES | OPTIONAL_FILES or (len(rel.parts) > 1 and path.suffix.lower() in EXTENSIONS.get(rel.parts[0], set()))
         if not allowed or re.search(r'(?:secret|credential|private[_-]?key|(?:access|auth|api|refresh)[_-]?token)', path.stem, re.I):
             raise ValueError(f'Unexpected or credential-named file: {rel}')
         files.append(path)
@@ -75,7 +75,7 @@ def collect(root):
             for node in ast.walk(tree):
                 modules = [node.module] if isinstance(node, ast.ImportFrom) else [x.name for x in node.names] if isinstance(node, ast.Import) else []
                 for module in modules:
-                    if module and module.split('.')[0] in ('validate_brand', 'validate_design', 'validate_deck', 'validate_fonts', 'find_templates'):
+                    if module and module.split('.')[0] in ('validate_brand', 'validate_design', 'validate_deck', 'validate_fonts', 'find_templates', 'plan_template'):
                         if not (path.parent / (module.split('.')[0] + '.py')).is_file():
                             raise ValueError(f'Missing bundled helper dependency: {module}')
     font_root = root / 'assets/fonts'
@@ -115,7 +115,7 @@ def package(root, output):
         try:
             with zipfile.ZipFile(stream, 'w', zipfile.ZIP_DEFLATED) as archive:
                 for path in files:
-                    archive.write(path, Path(root.name) / path.relative_to(root))
+                    archive.write(path, (Path(root.name) / path.relative_to(root)).as_posix())
         except Exception:
             stream.close()
             output.unlink(missing_ok=True)

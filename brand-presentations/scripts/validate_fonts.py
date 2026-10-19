@@ -51,7 +51,7 @@ def validate(root):
                 raise ValueError('Invalid font signature: ' + rel)
             if len(data) != record['bytes'] or hashlib.sha256(data).hexdigest() != record['sha256']:
                 raise ValueError('Font integrity mismatch: ' + rel)
-    actual = {str(p.relative_to(root)) for p in root.rglob('*.ttf')}
+    actual = {p.relative_to(root).as_posix() for p in root.rglob('*.ttf')}
     if actual != declared:
         raise ValueError('Unmanifested or missing font binaries')
     if not set(manifest['application_families']).issubset(names):

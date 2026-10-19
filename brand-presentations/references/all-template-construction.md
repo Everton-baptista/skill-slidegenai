@@ -5,10 +5,10 @@ Use this for **every** SlideGenAI catalog entry, including directions that have 
 ## Resolve a specific style, then compose the content
 
 ```sh
-python3 scripts/plan_template.py --id watercolor
-python3 scripts/plan_template.py --name "Swiss Style"
-python3 scripts/plan_template.py --id academic --mode faithful
-python3 scripts/plan_template.py --coverage
+python3 -B scripts/plan_template.py --id watercolor
+python3 -B scripts/plan_template.py --name "Swiss Style"
+python3 -B scripts/plan_template.py --id academic --mode faithful
+python3 -B scripts/plan_template.py --coverage
 ```
 
 The optional helper combines the original catalog record, shared rules, a family starting point and any named typography suggestion into a JSON working brief. It creates no slides and measures no visual quality. `--coverage` checks that every indexed entry resolves; it does not render 177 decks. Unknown IDs and ambiguous names fail explicitly. The original source status, missing rules and missing palette evidence remain visible in the returned record.
