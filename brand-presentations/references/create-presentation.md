@@ -16,7 +16,31 @@ Choose the mode:
 | Template to reproduce faithfully | Import/clone it where possible; preserve the supplied system |
 | Existing deck for content only | Retain its facts; do not assume its design must control the new presentation |
 
-For original work, choose a concrete concept, palette, display/body roles, image strategy and recurring alignment relationships. The [font pack](font-pack.md), [expressive typography](expressive-typography.md) and [art-direction guide](art-direction.md) provide options. Avoid choosing a generic blue sans-serif theme solely because the user supplied no brand reference. Blue and sans-serif remain valid when the subject warrants them.
+For original work, choose a concrete concept, palette, display/body roles, image strategy and recurring alignment relationships. The [font pack](font-pack.md), [expressive typography](expressive-typography.md) and [art-direction guide](art-direction.md) provide options. Avoid silently substituting a default theme for art direction. Any palette or type family can be appropriate when chosen for the actual message and audience.
+
+## Adapt across presentation needs
+
+Use these dimensions together, rather than assigning every topic a fixed template:
+
+| Dimension | Decision to make |
+| --- | --- |
+| Purpose | Explain, teach, persuade, report, compare, document or facilitate a decision; narrative and closing follow that purpose |
+| Audience and setting | Adjust assumed knowledge, vocabulary, evidence detail and viewing distance; a live talk and a reading deck need different density |
+| Content relationships | Choose image, table, chart, timeline, process, architecture, mathematical notation or typography according to what the content means |
+| Visual constraints | Preserve an exact template when required, adapt an identity when permitted, or author an original system when no reference exists |
+| Tone and aesthetics | Choose restrained, editorial, technical, expressive, organic or another suitable treatment without equating richness with more effects |
+| Scope and format | Respect single-slide requests, deck count, aspect ratio, notes, editability and export requirements |
+| Tools and assets | Select a supported authoring/imagery/inspection route; disclose the precise missing capability if an essential requirement cannot be met |
+
+Use applicable dimensions, not a mandatory questionnaire. Infer reversible choices, execute the work and ask only for blockers. New demands may combine or extend these dimensions; the list is not a closed set of presentation categories.
+
+## Decide and acquire the visual material
+
+No website does not mean no imagery. For a topic-only brief, decide what specific scene, object, illustration or diagram can carry a central idea. Use supplied material, a permitted image source/search or an available generator, then inspect the actual result. Design its crop and reading area with the title; do not add a generic stock image after completing every layout. Generated concepts are illustrations, not evidence of real products/events.
+
+Choose the visual form by its role: show a person/place/product with appropriate imagery, explain a mechanism with a diagram, compare quantitative evidence with a suitable chart, clarify criteria with an aligned comparison, or emphasize an idea through deliberate typography. Respect domain accuracy and provided references. No topic has a mandatory treatment, and no one generated example defines the skill's repertoire.
+
+Choose a representative cover and content composition that demonstrate the direction. A title-only pause or closing may be excellent; an entire deck of small titles, accent bars and repeated boxes can be an incomplete response to a request for visual range. If no image source/tool is available, make an intentional typography/diagram alternative and state the limitation rather than describing nonexistent imagery.
 
 ## Plan and author
 
@@ -29,6 +53,12 @@ A missing optional reference or asset should lead to an appropriate original/typ
 ## Working records without invented evidence
 
 Use files when batching, repeatability or packaging needs them. For an original deck, record authored choices in `design-system.json`/the plan, with no implication of official brand compliance. If a reusable package requires a version-1 profile, first save an actual local creative brief describing the supplied request and authored decisions. Reference that real `local-file` source; classify designer-selected rules as `inferred`. Do not label them `observed` or `user-approved` merely because the user requested a presentation. A normal deck does not need to become a brand-specific skill.
+
+## Target-host completion check
+
+Match the current brief to actual output: required visual material is present, required charts/tables/diagrams remain editable where supported, requested count/content is preserved, and available visual inspection was performed. Keep this check internal and concise; do not turn it into a user questionnaire or mandatory JSON file.
+
+If imagery was requested and the host can obtain/create and import it, complete that work now. Do not deliver a simplified deck and offer images as an optional later enhancement. If the host cannot complete an essential stage, describe the specific observed capability/error and mark the result partial; do not claim another environment's successful example proves this one succeeded.
 
 ## Finish the request
 

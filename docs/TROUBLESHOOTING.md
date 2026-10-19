@@ -48,6 +48,12 @@ Run `npm ci --ignore-scripts` in the particular example directory before request
 
 The portable eight-slide example can also generate HTML without npm dependencies. Its adapter and the analytical adapter are bounded fixtures, not a renderer for arbitrary 177-template plans. Start an actual presentation through the skill in a host with the required authoring/rendering tools.
 
+## The assistant read only the entrypoint and created a generic text deck
+
+The creation route requires reading the creation/art-direction guides and any selected style/font resources that actually inform the task. A clone or README read alone does not establish that those instructions were applied. If a requested resource cannot be loaded, the assistant should identify that gap and follow the entrypoint's essential workflow rather than silently claiming full resource use.
+
+For an expressive brief or explicit imagery request, actual image acquisition/generation, editor import and available visual inspection are completion conditions. An intention to add imagery later does not satisfy the current request. A genuinely missing capability requires a partial/unverified status with the specific blocker. The skill cannot enforce another model's compliance or grant missing tools; a real target-host run is the evidence of success.
+
 ## The assistant asks me to check a possible collision
 
 If preview/render/screenshot tools exist, the assistant should inspect the affected slide itself and repair it. If no such capability exists, it should identify the missing tool and deliver an explicitly unverified draft. A disclaimer does not replace an available render step.

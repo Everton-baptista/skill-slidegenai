@@ -2,6 +2,8 @@
 
 **Create a complete presentation from a topic, outline or reference—with an original visual direction or your brand identity.**
 
+The workflow adapts to your purpose, audience, content, visual constraints, output format and available tools; no website or fixed template is required.
+
 SlideGenAI Skill gives your AI assistant a reusable workflow for creating and editing presentations: typography, images, topic covers, varied layouts, editable charts, tables and diagrams. You provide a topic or content, and optionally a visual reference; the assistant uses the tools available in your session to build and review the result.
 
 The skill you install and invoke is called **`brand-presentations`**. You do not need to install the SlideGenAI application. This repository supplies instructions, resources and examples; your assistant supplies browsing, slide creation, image generation and rendering when those tools are available.

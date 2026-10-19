@@ -20,6 +20,12 @@ For solid backgrounds, [WCAG contrast guidance](https://www.w3.org/WAI/WCAG22/Un
 
 Use the critique in [art direction](art-direction.md) for new directions or creative adaptations. Inspect reading order, specific image contribution, line breaks, deliberate empty areas, and deck-level cadence. Remove generic filler and unsupported “human” annotations. An organic gesture must serve the subject and survive export; do not add randomness to satisfy an originality claim.
 
+## Brief-specific visual completeness
+
+For an expressive or image-led request, inspect whether the intended visual material actually appears. Check the cover's focal relationship, readable content pages and a meaningful change of pace across the overview. A palette change or one accent-colored page does not by itself demonstrate the intended art direction. When the brief intentionally calls for restrained typography, judge its hierarchy and composition instead of adding compulsory pictures.
+
+If an acquired/generated asset was omitted, determine whether the content or tool limit justifies that omission. Repair an accidental omission before delivery. Name a real capability gap when it changes the requested result; do not offer to add images later when the current request and tools already support them.
+
 ## Images and export
 
 Check actual image resolution, provider branding/watermarks, provenance, and allowed use. Ensure downloaded assets are present and external references do not silently disappear. Inspect the exported PPTX/PDF itself for substitutions, SVG differences, lost overlays, transparency, and layer order. A source preview alone is insufficient. For full-canvas photographs, inspect each reading region over the real image, including gradient direction/alpha, faces beneath text, and logos/page numbers on bright details. Check typographic symbols as well as words.

@@ -4,6 +4,7 @@ Automated tests verify helpers and package structure. Run these scenarios in the
 
 | Scenario | Expected behavior |
 | --- | --- |
+| Expressive topic-only brief with an image tool available | Choose and actually create/acquire a meaningful focal visual; inspect its placement and the deck overview, without inventing documentary evidence |
 | Topic/outline only, no visual reference | Choose original art direction and create the supported complete deck; do not require brand uploads |
 | Text-only web reader + separate raw-HTTP download tool + file-only editor | Try the available acquisition and import/transfer path, including embedded SVG logos; do not mistake local-file import for a requirement for human upload |
 | Text-only web reader with no alternative retrieval/transfer tool | Continue an honestly identified adaptation when acceptable; ask only for essential unavailable material |
