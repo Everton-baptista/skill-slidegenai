@@ -1,0 +1,4 @@
+interface:
+  display_name: "SlideGenAI"
+  short_description: "Create complete decks with or without a reference"
+  default_prompt: "Use $slidegenai to create a complete presentation from my topic or content, using any visual references I provide."

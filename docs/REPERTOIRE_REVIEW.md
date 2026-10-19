@@ -8,8 +8,8 @@ The skill was evaluated with fictional presentation studies in Codex desktop on 
 | --- | --- |
 | A palette change can conceal repeated composition | Compare title placement, image geometry, density, chapter and closing behavior across decks |
 | Immersive photo covers and identical dark closings narrowed an initial eight-deck study | Choose cover and closing structures from the story, including light editorial pages, typographic posters, photo bands and image-led endings |
-| Family-level recipes blurred the difference between technical, cyberpunk and urban directions | Use [style grammars](../brand-presentations/references/style-grammars.md) as optional composition-level examples |
-| Generic type weakened character | Assign display/body/label roles, load available faces, then remeasure; use the [typography guide](../brand-presentations/references/typography.md) and licensed local alternatives |
+| Family-level recipes blurred the difference between technical, cyberpunk and urban directions | Use [style grammars](../slidegenai/references/style-grammars.md) as optional composition-level examples |
+| Generic type weakened character | Assign display/body/label roles, load available faces, then remeasure; use the [typography guide](../slidegenai/references/typography.md) and licensed local alternatives |
 | Font substitutions changed optical scale and wrapping | Adjust the real frame/scale and inspect again instead of changing only the font name |
 | Chart styling and flow routing can alter interpretation | Preserve source data, meaningful geometry, readable labels and attached endpoints where supported |
 | A linear four-stage process can recur appropriately | Change topology when the content needs branching, feedback or dependencies; avoid decorative complexity without meaning |

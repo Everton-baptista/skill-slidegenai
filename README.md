@@ -6,7 +6,7 @@ The workflow adapts to your purpose, audience, content, visual constraints, outp
 
 SlideGenAI Skill gives your AI assistant a reusable workflow for creating and editing presentations: typography, images, topic covers, varied layouts, editable charts, tables and diagrams. You provide a topic or content, and optionally a visual reference; the assistant uses the tools available in your session to build and review the result.
 
-The skill you install and invoke is called **`brand-presentations`**. You do not need to install the SlideGenAI application. This repository supplies instructions, resources, examples and an optional executable visual kit; your assistant supplies browsing, slide creation, image generation and rendering when those tools are available.
+The skill you install is called **`slidegenai`**. Start your request with **`/slidegenai`**. You do not need to install the SlideGenAI application. This repository supplies instructions, resources, examples and an optional executable visual kit; your assistant supplies browsing, slide creation, image generation and rendering when those tools are available.
 
 **Start here:** [Install](#1-install-the-skill) → [Create your first deck](#2-create-your-first-presentation) → [Improve the result](#3-refine-without-starting-over).
 
@@ -26,11 +26,24 @@ Topic covers, full-page photography, contrasting typography, editable charts, ta
 
 These previews demonstrate completed studies. The catalog contains **177 style directions**, rather than 177 downloadable PowerPoint masters. All entries share the construction workflow; a complete deck has not been visually tested for every entry.
 
+## One entry point: `/slidegenai`
+
+```text
+/slidegenai Create an 8-slide presentation about [topic].
+Audience: [audience]. Language: [language].
+Use varied layouts, meaningful imagery and editable evidence where appropriate.
+Deliver the requested format and inspect the final output.
+```
+
+Claude Code and Antigravity can expose this as a native slash command after installation. Other interfaces have their own skill selectors: Codex CLI/IDE uses `$slidegenai` or `/skills`; ChatGPT uses `@` selection when available. Select the skill first if needed, then use the same request. If a host rejects an unknown slash command before sending the message, write **“Use /slidegenai: [brief]”** as plain text with the skill loaded. This prefix cannot install resources or override an application's command parser. [Host details](slidegenai/references/invocation.md).
+
+**Upgrading from brand-presentations:** version 2 uses the installable folder/name **slidegenai** and new ZIP names. Back up the previous complete folder, install the complete slidegenai folder, disable the old discovery entry and restart the host. Keep custom brand assets and accepted decks. Do not keep two active copies or overlay folders from different releases. Historical test records retain the old name; they do not certify native activation under the new name.
+
 ## 1. Install the skill
 
-**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.2.0/brand-presentations-claude-ai-1.2.0.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.2.0/brand-presentations-full-1.2.0.zip). Extract the complete ZIP before copying its brand-presentations folder for local agents.
+**Ready-made downloads:** [Claude.ai profile](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.0.0/slidegenai-claude-ai-2.0.0.zip) · [Complete skill folder ZIP](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.0.0/slidegenai-full-2.0.0.zip). Extract the complete ZIP before copying its slidegenai folder for local agents.
 
-Choose **one** installation method for the assistant you use. Install the entire `brand-presentations/` folder, including its references, scripts, assets and licenses. Copying only `SKILL.md` leaves resources missing.
+Choose **one** installation method for the assistant you use. Install the entire `slidegenai/` folder, including its references, scripts, assets and licenses. Copying only `SKILL.md` leaves resources missing.
 
 ### Download the repository
 
@@ -45,21 +58,21 @@ Without Git, use **Code → Download ZIP** on GitHub and extract it. Open a term
 
 ### Claude.ai — upload and enable the ZIP
 
-**[Download the ready-to-install Claude.ai ZIP (v1.2.0)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v1.2.0/brand-presentations-claude-ai-1.2.0.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v1.2.0). This is a preview release: the previous 1.1.3 installation was verified; the new kit’s full two-host authoring evaluation is incomplete.
+**[Download the ready-to-install Claude.ai ZIP (v2.0.0)](https://github.com/Everton-baptista/skill-slidegenai/releases/download/v2.0.0/slidegenai-claude-ai-2.0.0.zip).** No local Python is needed when using this download. [Release notes and SHA-256 checksums](https://github.com/Everton-baptista/skill-slidegenai/releases/tag/v2.0.0). This is a preview release: the previous 1.1.3 installation was verified; the new kit’s full two-host authoring evaluation is incomplete.
 
 To build it yourself from the downloaded repository folder, with Python 3.9+:
 
 ```sh
-python3 -B brand-presentations/scripts/package_skill.py --profile claude-ai --output dist/brand-presentations-claude-ai.zip
+python3 -B slidegenai/scripts/package_skill.py --profile claude-ai --output dist/slidegenai-claude-ai.zip
 ```
 
-Upload the downloaded ZIP (or your locally built **dist/brand-presentations-claude-ai.zip**) in **Customize → Skills → + → Create skill → Upload a skill**, then enable **brand-presentations**. Skills require code execution/file creation and any applicable organization permissions. Start a new conversation, say **“Use brand-presentations”**, and describe the presentation. Ask Claude to identify the installed VERSION and the resources it actually loaded. [Official Claude.ai instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
+Upload the downloaded ZIP (or your locally built **dist/slidegenai-claude-ai.zip**) in **Customize → Skills → + → Create skill → Upload a skill**, then enable **slidegenai**. Skills require code execution/file creation and any applicable organization permissions. Start a new conversation, select the enabled skill when the interface offers it, and begin your request with **`/slidegenai`**. Ask Claude to identify the installed VERSION and the resources it actually loaded. [Official Claude.ai instructions](https://support.claude.com/en/articles/12512180-use-skills-in-claude).
 
 The Claude.ai ZIP contains one installable folder with every reference/helper, all 46 font families and their original licenses. It selects a smaller set of original faces/weights, with exact inventory in DISTRIBUTION.json and the font manifest. The complete 140-font bundle was rejected by the tested Claude.ai interface because its uncompressed size exceeded 30 MB. The size-limited profile is kept below 29 MB uncompressed and uses portable filenames, with original paths recorded; no font binaries or internal font identities are modified. The packager validates resources before writing and refuses to overwrite an existing ZIP; use a new output filename for another build. The GitHub **Download ZIP** is the repository archive, not this installable package. Reading a repository link or uploading it as chat context does not prove native skill activation.
 
 **Update:** back up any custom changes, open the skill’s more-options menu → **Replace**, upload the new complete profile ZIP, confirm it remains enabled and start a fresh conversation. Confirm its VERSION; avoid mixed releases. The 30 MB uncompressed limit was observed in the tested Claude.ai interface; other hosts/accounts may differ.
 
-Native Slides and terminal/file authoring are different paths. If native Slides cannot be visually inspected, the skill directs Claude to produce and inspect an editable PPTX in that Claude session when supported; the native version retains its separate verification status. See [Claude.ai operations](brand-presentations/references/claude-ai.md).
+Native Slides and terminal/file authoring are different paths. If native Slides cannot be visually inspected, the skill directs Claude to produce and inspect an editable PPTX in that Claude session when supported; the native version retains its separate verification status. See [Claude.ai operations](slidegenai/references/claude-ai.md).
 
 ### Codex — macOS / Linux
 
@@ -68,11 +81,11 @@ Run from the downloaded repository folder:
 ```sh
 mkdir -p "$HOME/.agents/skills"
 # Stop if an installed copy already exists; see Updating below.
-test ! -e "$HOME/.agents/skills/brand-presentations" && \
-  cp -R brand-presentations "$HOME/.agents/skills/brand-presentations"
+test ! -e "$HOME/.agents/skills/slidegenai" && \
+  cp -R slidegenai "$HOME/.agents/skills/slidegenai"
 ```
 
-Open a new Codex session and invoke **`$brand-presentations`** in your message. For a project-only installation, copy the folder to `<your-project>/.agents/skills/brand-presentations` instead. [Official Codex installation locations](https://learn.chatgpt.com/docs/build-skills).
+Open a new Codex session, select the skill with **`$slidegenai`** or **`/skills`**, and use the shared **`/slidegenai`** request prefix. For a project-only installation, copy the folder to `<your-project>/.agents/skills/slidegenai` instead. [Official Codex installation locations](https://learn.chatgpt.com/docs/build-skills).
 
 ### Claude Code — macOS / Linux
 
@@ -81,11 +94,11 @@ Run from the downloaded repository folder:
 ```sh
 mkdir -p "$HOME/.claude/skills"
 # Stop if an installed copy already exists; see Updating below.
-test ! -e "$HOME/.claude/skills/brand-presentations" && \
-  cp -R brand-presentations "$HOME/.claude/skills/brand-presentations"
+test ! -e "$HOME/.claude/skills/slidegenai" && \
+  cp -R slidegenai "$HOME/.claude/skills/slidegenai"
 ```
 
-Start a Claude Code session and invoke **`/brand-presentations`**. For project scope, use `<your-project>/.claude/skills/brand-presentations`. These local paths apply to Claude Code; cloud and Cowork sessions use different discovery mechanisms. [Official Claude Code skill instructions](https://code.claude.com/docs/en/skills).
+Start a Claude Code session and invoke **`/slidegenai`**. For project scope, use `<your-project>/.claude/skills/slidegenai`. These local paths apply to Claude Code; cloud and Cowork sessions use different discovery mechanisms. [Official Claude Code skill instructions](https://code.claude.com/docs/en/skills).
 
 ### Antigravity — macOS / Linux
 
@@ -94,17 +107,17 @@ From the downloaded repository folder, install for one workspace:
 ```sh
 mkdir -p /path/to/your-project/.agents/skills
 # Replace /path/to/your-project; stop if the destination already exists.
-test ! -e /path/to/your-project/.agents/skills/brand-presentations && \
-  cp -R brand-presentations /path/to/your-project/.agents/skills/brand-presentations
+test ! -e /path/to/your-project/.agents/skills/slidegenai && \
+  cp -R slidegenai /path/to/your-project/.agents/skills/slidegenai
 ```
 
-For all workspaces, use `$HOME/.gemini/config/skills/brand-presentations` instead. Mention **brand-presentations** in a new conversation and confirm the loaded VERSION. The current workspace path is `.agents/skills`; `.agent/skills` is the legacy compatible path. [Official Antigravity documentation](https://antigravity.google/docs/skills?app=antigravity-ide). Installation instructions are documented; end-to-end Antigravity slide creation remains untested.
+For all workspaces, use `$HOME/.gemini/config/skills/slidegenai` instead. Use **`/slidegenai`** in a new conversation and confirm the loaded VERSION. The current workspace path is `.agents/skills`; `.agent/skills` is the legacy compatible path. [Official Antigravity documentation](https://antigravity.google/docs/skills?app=antigravity-ide). Installation instructions are documented; end-to-end Antigravity slide creation remains untested.
 
 ### ChatGPT and GPT-based applications
 
 In eligible ChatGPT workspaces, open **Plugins → Skills → Create → Upload from your computer**, follow the accepted file format shown by the interface, and confirm the uploaded skill is available after scanning. Availability depends on account/workspace settings. Do not assume a local Codex installation appears automatically in ChatGPT. [Official ChatGPT skills guidance](https://help.openai.com/en/articles/20001066-skills-in-chatgpt/).
 
-If the interface has no native Skills import, use the context-only instructions below. A Custom GPT instruction field, a GPT model selected in another app and a native installed skill are different integrations. No ChatGPT or API end-to-end compatibility is claimed from format compliance alone. See [host integration](brand-presentations/references/host-integration.md).
+If the interface has no native Skills import, use the context-only instructions below. A Custom GPT instruction field, a GPT model selected in another app and a native installed skill are different integrations. No ChatGPT or API end-to-end compatibility is claimed from format compliance alone. See [host integration](slidegenai/references/host-integration.md).
 
 ### Windows — PowerShell
 
@@ -112,29 +125,29 @@ Run from the downloaded repository folder. The example installs for Codex; repla
 
 ```powershell
 $skillsRoot = Join-Path $HOME '.agents/skills'
-$destination = Join-Path $skillsRoot 'brand-presentations'
+$destination = Join-Path $skillsRoot 'slidegenai'
 if (Test-Path $destination) { throw 'Back up the existing skill before installing.' }
 New-Item -ItemType Directory -Force -Path $skillsRoot | Out-Null
-Copy-Item -Recurse -Path './brand-presentations' -Destination $destination
+Copy-Item -Recurse -Path './slidegenai' -Destination $destination
 ```
 
 Then start a new assistant session and use the invocation shown above for your host.
 
 ### Other chat interfaces or context-only use
 
-If your interface supports importing skill folders, follow its import instructions. Otherwise, make `brand-presentations/SKILL.md` and the relevant `references/` files available as task context. If it cannot follow file links, attach or paste the referenced instructions needed for your task.
+If your interface supports importing skill folders, follow its import instructions. Otherwise, make `slidegenai/SKILL.md` and the relevant `references/` files available as task context. If it cannot follow file links, attach or paste the referenced instructions needed for your task.
 
-Start your request with **“Use brand-presentations”** and provide the reference material. A chat interface that can only return text can produce a storyboard; creating a PPTX requires file-authoring tools. Uploading the repository does not automatically activate a native skill.
+Start your request with **`/slidegenai`** and provide the reference material. A chat interface that can only return text can produce a storyboard; creating a PPTX requires file-authoring tools. Uploading the repository does not automatically activate a native skill.
 
 ### Check the installation — optional
 
 Python is **not required to read or use the instructions**. With Python 3.9+, check the downloaded bundle from the repository root:
 
 ```sh
-python3 -B brand-presentations/scripts/check_installation.py
+python3 -B slidegenai/scripts/check_installation.py
 ```
 
-To check the actual installed copy, open its `brand-presentations` folder and run:
+To check the actual installed copy, open its `slidegenai` folder and run:
 
 ```sh
 python3 -B scripts/check_installation.py
@@ -142,7 +155,7 @@ python3 -B scripts/check_installation.py
 
 On Windows, replace `python3 -B` with `py -3 -B`. A successful check confirms that resources, links, template entries and font files are present and valid. It does not test your assistant's slide-creation tools.
 
-**Updating:** back up or rename the old installed `brand-presentations` folder, download the latest repository and copy the complete new folder. Avoid merging different versions. Restart discovery if the skill does not appear. [Troubleshooting](docs/TROUBLESHOOTING.md).
+**Updating:** back up or rename the old installed `slidegenai` folder, download the latest repository and copy the complete new folder. Avoid merging different versions. Restart discovery if the skill does not appear. [Troubleshooting](docs/TROUBLESHOOTING.md).
 
 ## 2. Create your first presentation
 
@@ -162,7 +175,7 @@ If you only have a topic, the assistant can develop an outline and original art 
 ### Start with a topic only
 
 ```text
-$brand-presentations
+/slidegenai
 
 Create an 8-slide presentation about circular economy for small businesses.
 Audience: business owners. Language: Brazilian Portuguese.
@@ -177,10 +190,10 @@ No screenshot, website, brand guide or Python script is required for this route.
 
 ### Create from a visual reference
 
-This version uses Codex syntax. In Claude Code, replace the first line with `/brand-presentations`; in a general chat interface, use `Use brand-presentations`.
+Use the same `/slidegenai` request prefix. Activate the skill through the host’s native selector when required; see [invocation by host](slidegenai/references/invocation.md).
 
 ```text
-$brand-presentations
+/slidegenai
 
 Create a 12-slide presentation about [TOPIC] for [AUDIENCE].
 Visual reference: [WEBSITE URL or attached files].
@@ -242,17 +255,17 @@ Use your host's invocation prefix with these requests.
 | Edit an existing deck | “Update slides 3 and 5 using the attached content. Preserve the original masters, dimensions, notes, typography and native charts/tables. Compare before and after.” |
 | Create a reusable brand skill | “Create an acme-presentations skill from these references, with permitted assets, identity rules, measured layouts and a usage example. Validate and package it; report what was checked.” |
 
-Browse the [177 style directions](brand-presentations/references/template-catalog.md), including Acid Rave, Cyberpunk, NOVA, Ultimate Luxury, Bauhaus and Kinetic. A chosen direction guides composition throughout the deck; supplied brand rules take priority. [How styles adapt](brand-presentations/references/all-template-construction.md).
+Browse the [177 style directions](slidegenai/references/template-catalog.md), including Acid Rave, Cyberpunk, NOVA, Ultimate Luxury, Bauhaus and Kinetic. A chosen direction guides composition throughout the deck; supplied brand rules take priority. [How styles adapt](slidegenai/references/all-template-construction.md).
 
 ## Fonts and images
 
-**Fonts are included:** 46 openly licensed families / 140 original TTF files, about 54.1 MB. Copying the complete skill brings them with it. The size-limited Claude.ai ZIP retains all families with selected faces/weights; consult its included manifest. The authoring tool still needs to load or register the selected fonts; bundling does not automatically install them on your operating system or embed them in a PPTX. Ask the assistant to use the local pack and recheck text fit after substitutions. [Font setup and licenses](brand-presentations/references/font-pack.md) · [Local font specimen](brand-presentations/assets/fonts/specimen.html).
+**Fonts are included:** 46 openly licensed families / 140 original TTF files, about 54.1 MB. Copying the complete skill brings them with it. The size-limited Claude.ai ZIP retains all families with selected faces/weights; consult its included manifest. The authoring tool still needs to load or register the selected fonts; bundling does not automatically install them on your operating system or embed them in a PPTX. Ask the assistant to use the local pack and recheck text fit after substitutions. [Font setup and licenses](slidegenai/references/font-pack.md) · [Local font specimen](slidegenai/assets/fonts/specimen.html).
 
-**Want more expressive titles?** The pack now includes wide geometric, condensed, outline, shaded, glitch, sculptural, editorial and handwritten choices. Explore the [16-family type lab](brand-presentations/assets/fonts/expressive.html) and [when to use each family](brand-presentations/references/expressive-typography.md). Download the repository and open the lab through a local HTTP server to see the live fonts; GitHub shows HTML source.
+**Want more expressive titles?** The pack now includes wide geometric, condensed, outline, shaded, glitch, sculptural, editorial and handwritten choices. Explore the [16-family type lab](slidegenai/assets/fonts/expressive.html) and [when to use each family](slidegenai/references/expressive-typography.md). Download the repository and open the lab through a local HTTP server to see the live fonts; GitHub shows HTML source.
 
 ![Sixteen expressive typography directions with family names](docs/previews/expressive-type.png)
 
-**Website images can be collected locally:** with Python and permitted network access, the optional [asset collector](brand-presentations/scripts/collect_website_assets.py) saves selected public images and decodes embedded SVG logos. The assistant must then inspect and import those files through the slide editor. [Commands and limits](brand-presentations/references/website-assets.md). Local-file-only import does not automatically mean you must download and upload everything manually.
+**Website images can be collected locally:** with Python and permitted network access, the optional [asset collector](slidegenai/scripts/collect_website_assets.py) saves selected public images and decodes embedded SVG logos. The assistant must then inspect and import those files through the slide editor. [Commands and limits](slidegenai/references/website-assets.md). Local-file-only import does not automatically mean you must download and upload everything manually.
 
 **Images come from your assets or the host's available tools.** The skill includes no image-generation service. Availability, cost, licenses and watermarks depend on the provider or source. Preserve original logos and use assets you have permission to use.
 
@@ -294,14 +307,14 @@ The initial npm install needs network access or a populated cache. Use a new out
 
 ![Existing source slides reproduced by the adaptive kit: editorial image, trend chart, decision flow and categorical matrix](docs/previews/visual-kit.jpg)
 
-Ask your assistant: **“Use the visual kit when appropriate. Build the presentation with images, expressive typography and layouts that fit the content; render and inspect the actual deliverable.”** The assistant can still use its native editor.
+Ask your assistant: **“/slidegenai Use the visual kit when appropriate. Build the presentation with images, expressive typography and layouts that fit the content; render and inspect the actual deliverable.”** The assistant can still use its native editor.
 
 The kit supplies working covers, topic covers, editorial layouts, full-page image/gradient compositions, typographic statements, comparisons and closing slides. It also builds four chart types, tables, processes, decision flows, swimlanes, system relationships, roadmaps and matrices from data. Effects and layout recipes are optional; the content controls their selection.
 
 To reproduce the existing eight-slide source as a self-contained HTML file, install Node.js 20+ and run from the repository folder:
 
 ```sh
-node brand-presentations/assets/visual-kit/build.mjs \
+node slidegenai/assets/visual-kit/build.mjs \
   --plan examples/portable-deck/deck-plan.json \
   --design examples/portable-deck/design-system.json \
   --format html --out output/portable-html
@@ -311,7 +324,7 @@ Open **output/portable-html/presentation.html**. Select **Overview / reading** t
 
 For PPTX, install the pinned optional dependencies in your local installed copy of the skill using `npm ci --ignore-scripts` inside assets/visual-kit, then use `--format pptx` and a new output directory. Keep the repository used for packaging free of node_modules. Text, tables, charts and diagram parts remain native objects. CSS and PowerPoint have different capabilities; font weights, crop and some effects require inspection and may differ. The kit does not acquire photos or certify its own visual quality.
 
-[Commands, data fields, supported effects and format differences](brand-presentations/references/visual-kit.md). Original example-specific builders remain available; their output may differ from the adaptive kit.
+[Commands, data fields, supported effects and format differences](slidegenai/references/visual-kit.md). Original example-specific builders remain available; their output may differ from the adaptive kit.
 
 ## What has actually been tested?
 
@@ -321,12 +334,12 @@ For PPTX, install the pinned optional dependencies in your local installed copy 
 | Eight-slide portable example | Native text, table, chart/workbook and process objects checked; PPTX rendered and all slides inspected |
 | Ten-slide analytical example | Four native charts, table, diagrams, roadmap and matrix checked; checked-in deck rendered and inspected. The reproduction adapter uses free line segments that need rerouting after nodes move |
 | Nine-style study | 54 final slides and nine overviews inspected, with chart, table, connector and typography checks |
-| Python helpers and ZIPs | 158 local tests, including independently extracted ZIP execution. The previous 157-test release passed Linux/Windows with Python 3.9/3.13; [historical CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101) |
-| Adaptive visual kit 1.2.0 | 14 JavaScript behavior tests including native object checks; both existing studies reproduced in HTML/PPTX, browser fonts and offline loading checked, all pages/overviews inspected. See [kit validation](docs/VISUAL_KIT_VALIDATION.md) for differences and host limits |
+| Python helpers and ZIPs | 158 tests, including independently extracted ZIP execution. The kit implementation passed [all six CI jobs](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39257588234) before the v2 namespace migration; renamed-package CI is recorded separately. The previous 157-test release passed Linux/Windows with Python 3.9/3.13; [historical CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101) |
+| Adaptive visual kit (v2 public name: slidegenai) | 14 JavaScript behavior tests including native object checks; both existing studies reproduced in HTML/PPTX, browser fonts and offline loading checked, all pages/overviews inspected. See [kit validation](docs/VISUAL_KIT_VALIDATION.md) for differences and host limits |
 | Bundled fonts | All 140 files parsed and integrity checked; browser specimen checks are recorded in the validation guide. OS registration and all native exporters remain host-specific |
 | Catalog | All 177 entries resolve structurally; full decks have not been rendered and inspected for every entry |
 | PowerPoint, Google Slides, Keynote | Native opening/editing not tested |
-| Claude.ai | 1.1.3 installed and enabled. Real eight-slide and one-slide PPTX outputs from 1.1.2 inspected. Full evaluation incomplete: quota blocked other runs and follow-up corrections. See the per-case record. |
+| Claude.ai | Legacy brand-presentations 1.1.3 installed and enabled; renamed slidegenai package not installed in that account yet. Real eight-slide and one-slide PPTX outputs from 1.1.2 inspected. Full evaluation incomplete: quota blocked other runs and follow-up corrections. See the per-case record. |
 | Claude Code 2.1.252 | CLI available; authentication blocked the six authoring cases. No deck certified. |
 | Antigravity | Official discovery paths documented; end-to-end authoring not tested |
 | ChatGPT / GPT API applications / Gemini chat / other hosts | Integration depends on host; end-to-end use not tested |
@@ -339,33 +352,33 @@ You can use the skill without reading these. They document how it works and how 
 
 | Need | Guide |
 | --- | --- |
-| Create from a topic or reference | [Creation workflow](brand-presentations/references/create-presentation.md) |
-| Obtain website imagery and visual evidence | [Website assets and editor transfer](brand-presentations/references/website-assets.md) |
-| Understand the assistant workflow | [Skill entry point](brand-presentations/SKILL.md) |
-| Build stronger compositions | [Art direction](brand-presentations/references/art-direction.md), [typography](brand-presentations/references/typography.md), [components](brand-presentations/references/component-system.md) |
-| Build charts, flows and technical slides | [Analytical construction](brand-presentations/references/analytical-construction.md) |
-| Preserve an existing presentation | [Editing existing decks](brand-presentations/references/edit-existing.md) |
-| Package a brand-specific skill | [Packaging guide](brand-presentations/references/brand-packaging.md) |
+| Create from a topic or reference | [Creation workflow](slidegenai/references/create-presentation.md) |
+| Obtain website imagery and visual evidence | [Website assets and editor transfer](slidegenai/references/website-assets.md) |
+| Understand the assistant workflow | [Skill entry point](slidegenai/SKILL.md) |
+| Build stronger compositions | [Art direction](slidegenai/references/art-direction.md), [typography](slidegenai/references/typography.md), [components](slidegenai/references/component-system.md) |
+| Build charts, flows and technical slides | [Analytical construction](slidegenai/references/analytical-construction.md) |
+| Preserve an existing presentation | [Editing existing decks](slidegenai/references/edit-existing.md) |
+| Package a brand-specific skill | [Packaging guide](slidegenai/references/brand-packaging.md) |
 | Explore complete examples | [Eight-slide deck](examples/portable-deck/README.md), [analytical deck](examples/analytical-patterns/README.md), [three art directions](examples/art-direction-study/README.md) |
 | Validate data contracts or run tests | [Validation](docs/VALIDATION.md), [contributing](CONTRIBUTING.md) |
 | Evaluate another host | [Manual evaluation](docs/EVALUATION.md) |
 
-The installable package is `brand-presentations/`. The repository also contains `examples/`, `tests/` and `docs/`; these do not need to be copied into your host's skills directory. The workflow separates observed identity, measured design rules and presentation content. It has no mandatory slide engine or paid API dependency.
+The installable package is `slidegenai/`. The repository also contains `examples/`, `tests/` and `docs/`; these do not need to be copied into your host's skills directory. The workflow separates observed identity, measured design rules and presentation content. It has no mandatory slide engine or paid API dependency.
 
 ## License
 
-Original skill code, instructions and documentation use the [MIT License](LICENSE). Bundled fonts retain their individual OFL licenses; see [third-party notices](brand-presentations/NOTICE.md). MIT does not relicense third-party brands, assets or the separate SlideGenAI application. Reference material is treated as data, and creating a brand skill does not authorize publishing its assets.
+Original skill code, instructions and documentation use the [MIT License](LICENSE). Bundled fonts retain their individual OFL licenses; see [third-party notices](slidegenai/NOTICE.md). MIT does not relicense third-party brands, assets or the separate SlideGenAI application. Reference material is treated as data, and creating a brand skill does not authorize publishing its assets.
 
 ## Validate in your Claude environment
 
-Follow the [six-case Claude test protocol and current results](docs/CLAUDE_VALIDATION.md). Keep an [execution record](brand-presentations/references/execution-evidence.md) with the actual artifacts, imported images, resolved fonts, editable objects and inspected previews. Repeat corrections and inspection in the same target environment. Unit tests and existing Codex studies do not certify Claude output.
+Follow the [six-case Claude test protocol and current results](docs/CLAUDE_VALIDATION.md). Keep an [execution record](slidegenai/references/execution-evidence.md) with the actual artifacts, imported images, resolved fonts, editable objects and inspected previews. Repeat corrections and inspection in the same target environment. Unit tests and existing Codex studies do not certify Claude output.
 
-The current packaged skill version is in [VERSION](brand-presentations/VERSION). No instruction file can add missing host tools, grant network access or guarantee an assistant's compliance. Essential missing requirements must be reported as partial or blocked; a generated filename alone does not establish a finished presentation.
+The current packaged skill version is in [VERSION](slidegenai/VERSION). No instruction file can add missing host tools, grant network access or guarantee an assistant's compliance. Essential missing requirements must be reported as partial or blocked; a generated filename alone does not establish a finished presentation.
 
 To package every original font for hosts without the observed upload constraint:
 
 ```sh
-python3 -B brand-presentations/scripts/package_skill.py --output dist/brand-presentations-full.zip
+python3 -B slidegenai/scripts/package_skill.py --output dist/slidegenai-full.zip
 ```
 
 The default full profile is not the size-limited Claude.ai upload. Both archives retain original font licenses and are checked before creation.

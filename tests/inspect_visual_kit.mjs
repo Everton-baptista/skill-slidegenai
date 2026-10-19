@@ -7,8 +7,8 @@ import assert from "node:assert/strict";
 import {
   compile,
   json,
-} from "../brand-presentations/assets/visual-kit/core.mjs";
-import { renderHTML } from "../brand-presentations/assets/visual-kit/html.mjs";
+} from "../slidegenai/assets/visual-kit/core.mjs";
+import { renderHTML } from "../slidegenai/assets/visual-kit/html.mjs";
 import { analyticalFixture } from "./visual-kit-fixtures.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const { chromium } = await import(

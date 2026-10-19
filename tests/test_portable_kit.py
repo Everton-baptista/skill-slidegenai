@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'brand-presentations/scripts'))
+sys.path.insert(0,str(ROOT/'slidegenai/scripts'))
 from validate_design import validate, validate_binding
 from validate_deck import validate as deck_validate
 from package_brand import package

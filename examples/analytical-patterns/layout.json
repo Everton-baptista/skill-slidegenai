@@ -5,7 +5,7 @@
     "height": 720,
     "unit": "px"
   },
-  "source_model": "../../brand-presentations/references/visual-model-example.json",
+  "source_model": "../../slidegenai/references/visual-model-example.json",
   "font_family": "Arial",
   "slides": [
     {

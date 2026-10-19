@@ -40,7 +40,7 @@ def workbook_range(z,chart,part,ser,field):
         return [float(cells[match[3]+str(i)].find('s:v',NS).text) for i in range(int(match[4]),int(match[6])+1)]
 
 def check(path,require_attached=False):
-    model=json.loads((ROOT/'../../brand-presentations/references/visual-model-example.json').read_text(encoding='utf-8'));layout=json.loads((ROOT/'layout.json').read_text(encoding='utf-8'))
+    model=json.loads((ROOT/'../../slidegenai/references/visual-model-example.json').read_text(encoding='utf-8'));layout=json.loads((ROOT/'layout.json').read_text(encoding='utf-8'))
     with zipfile.ZipFile(path) as z:
         slides=[n for n in z.namelist() if re.fullmatch(r'ppt/slides/slide\d+\.xml',n)];assert len(slides)==10,'Expected ten slides.'
         count=0;connectors=0;free_lines=0;attached=0

@@ -4,10 +4,10 @@ from pathlib import Path
 import sys
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'brand-presentations/scripts'))
+sys.path.insert(0,str(ROOT/'slidegenai/scripts'))
 from find_templates import normalized,select
 class VisibleNames(unittest.TestCase):
- def setUp(self):self.catalog=json.loads((ROOT/'brand-presentations/references/template-catalog.json').read_text())
+ def setUp(self):self.catalog=json.loads((ROOT/'slidegenai/references/template-catalog.json').read_text())
  def test_preview_labels_map_to_real_ids(self):
   for name,ident in [('Acid Rave','acid-graphix'),('NOVA','fashion-editorial'),('Ultimate Luxury','premium-travel'),('Neo Tokyo','urban-vivid'),('MOVE','kinetic'),('Neo Tech','default')]:self.assertEqual([r['id'] for r in select(self.catalog,name=name)],[ident])
  def test_punctuation_case_and_accent_normalization(self):

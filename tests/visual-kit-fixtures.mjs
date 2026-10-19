@@ -12,7 +12,7 @@ export async function analyticalFixture(root) {
     await fs.readFile(
       path.join(
         root,
-        "brand-presentations/references/visual-model-example.json",
+        "slidegenai/references/visual-model-example.json",
       ),
       "utf8",
     ),

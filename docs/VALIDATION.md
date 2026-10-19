@@ -1,6 +1,6 @@
 # Data contracts and validation
 
-The authoritative version-1 contracts are [brand profile](../brand-presentations/references/brand-profile.md), [design system](../brand-presentations/references/design-system.md), and [deck plan](../brand-presentations/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Validators, packaging and installation checks are Python 3.9+ standard-library tools that work offline. The optional website collector makes explicit bounded HTTP requests when invoked; it is separate from offline validation.
+The authoritative version-1 contracts are [brand profile](../slidegenai/references/brand-profile.md), [design system](../slidegenai/references/design-system.md), and [deck plan](../slidegenai/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Validators, packaging and installation checks are Python 3.9+ standard-library tools that work offline. The optional website collector makes explicit bounded HTTP requests when invoked; it is separate from offline validation.
 
 ## Profile validator
 
@@ -49,13 +49,13 @@ Tests cover valid examples, malformed and adversarial fields, path containment, 
 
 ## Advisory composition review
 
-`python3 -B brand-presentations/scripts/review_composition.py PATH_TO_PLAN --design PATH_TO_DESIGN` checks optional `visual_intent`/`art_direction` metadata and surfaces repeated declared layouts/images or a uniform declared density for inspection. Omit `--design` when absent. Existing plans without metadata remain supported.
+`python3 -B slidegenai/scripts/review_composition.py PATH_TO_PLAN --design PATH_TO_DESIGN` checks optional `visual_intent`/`art_direction` metadata and surfaces repeated declared layouts/images or a uniform declared density for inspection. Omit `--design` when absent. Existing plans without metadata remain supported.
 
 Only malformed supplied metadata causes failure; repetition notices return success. `repeat_intent` documents deliberate recurring evidence/comparison frames. Logo reuse is excluded. These are inexpensive pattern notices, not image analysis, visual-fit validation, taste enforcement, or automatic beauty/AI detection. Never discard valid slides just to silence them.
 
 ## Analytical model and catalog
 
-`validate_visuals.py` checks a separate optional version-1 semantic source. It supports fourteen chart model names and six diagram model names; consult [analytical construction](../brand-presentations/references/analytical-construction.md) for contracts and boundaries. Checks cover real x/y pairs, explicit missing values, meaningful bar baselines, share reconciliation, finite numbers, source declarations, decision branches, graph endpoints/cycles, lane ownership, date ranges and matrix indices. It does not render a chart, validate factual truth or guarantee that any host supports all accepted types. Existing profile/deck contracts remain compatible.
+`validate_visuals.py` checks a separate optional version-1 semantic source. It supports fourteen chart model names and six diagram model names; consult [analytical construction](../slidegenai/references/analytical-construction.md) for contracts and boundaries. Checks cover real x/y pairs, explicit missing values, meaningful bar baselines, share reconciliation, finite numbers, source declarations, decision branches, graph endpoints/cycles, lane ownership, date ranges and matrix indices. It does not render a chart, validate factual truth or guarantee that any host supports all accepted types. Existing profile/deck contracts remain compatible.
 
 `find_templates.py` filters a bundled snapshot of 177 application styles by ID, family, pattern or query. Catalog tests check unique coverage, the complete Markdown index and recorded source counts (174 backend rules, 176 type declarations). The three missing backend rules and one missing type declaration are documented source gaps, not silently synthesized implementations. These checks do not certify 177 native exports.
 
@@ -84,7 +84,7 @@ Preparation with fontTools 4.67.0 parsed all 140 TTFs and checked a Portuguese a
 From the repository root:
 
 ```sh
-python3 -B brand-presentations/scripts/check_installation.py
+python3 -B slidegenai/scripts/check_installation.py
 ```
 
 The checker validates the copied skill's licenses, local Markdown resources, Python syntax, all catalog entries and font coverage/integrity. Independent-installation tests run it from a copy containing only the installable folder. A clean Git archive was also checked. The command does not register fonts, contact a provider or render slides. See [troubleshooting](TROUBLESHOOTING.md) for recovery steps.
@@ -101,15 +101,15 @@ A local acquisition check on 2026-10-18 used the EXM Partners public homepage: 6
 
 ## Generic installable ZIP
 
-`python3 -B brand-presentations/scripts/package_skill.py --output dist/brand-presentations.zip` validates the entire generic skill, including VERSION, local links, Python syntax, catalog/font coverage, font bytes and original license hashes. It accepts only documented skill resource directories/file types and rejects symlinks, hidden entries, credential-like names, unexpected files, output inside the installable folder and existing output. It excludes Python bytecode caches and .DS_Store rather than including local residue. It never downloads or executes bundled helpers. Design-token names remain valid. Review trusted sources before packaging; this is not a secret-content scanner or concurrent-mutation sandbox.
+`python3 -B slidegenai/scripts/package_skill.py --output dist/slidegenai.zip` validates the entire generic skill, including VERSION, local links, Python syntax, catalog/font coverage, font bytes and original license hashes. It accepts only documented skill resource directories/file types and rejects symlinks, hidden entries, credential-like names, unexpected files, output inside the installable folder and existing output. It excludes Python bytecode caches and .DS_Store rather than including local residue. It never downloads or executes bundled helpers. Design-token names remain valid. Review trusted sources before packaging; this is not a secret-content scanner or concurrent-mutation sandbox.
 
-The ZIP has exactly one top folder, brand-presentations; repository examples, tests, private work and app code are excluded. Tests extract the resulting archive into an independent directory and execute the installed resource checker there. Byte-for-byte resource comparison verifies retention of fonts/licenses and references. Installation checks and packaging do not prove Claude activation or visual quality; see the separate [Claude protocol](CLAUDE_VALIDATION.md).
+The ZIP has exactly one top folder, slidegenai; repository examples, tests, private work and app code are excluded. Tests extract the resulting archive into an independent directory and execute the installed resource checker there. Byte-for-byte resource comparison verifies retention of fonts/licenses and references. Installation checks and packaging do not prove Claude activation or visual quality; see the separate [Claude protocol](CLAUDE_VALIDATION.md).
 
 ### Claude.ai size-limited profile
 
-The full 140-font ZIP was actually submitted and rejected by Claude.ai at an observed 30 MB uncompressed limit. `package_skill.py --profile claude-ai --output dist/brand-presentations-claude-ai.zip` retains all 46 families and original licenses with 53 original normal/display/expressive faces. It preserves original binary hashes, normalizes font filenames for upload, rewrites the font manifest and local CSS to the retained inventory, and records omitted paths and the complete source-manifest hash in DISTRIBUTION.json. It refuses a profile exceeding 29,000,000 uncompressed bytes. Full source files remain unchanged. Profile tests independently extract/run the installed checker, compare retained originals and licenses byte-for-byte and check the archive size and complete source inventory. Reduced face coverage is an explicit distribution constraint, not a visual rendering certification.
+The full 140-font ZIP was actually submitted and rejected by Claude.ai at an observed 30 MB uncompressed limit. `package_skill.py --profile claude-ai --output dist/slidegenai-claude-ai.zip` retains all 46 families and original licenses with 53 original normal/display/expressive faces. It preserves original binary hashes, normalizes font filenames for upload, rewrites the font manifest and local CSS to the retained inventory, and records omitted paths and the complete source-manifest hash in DISTRIBUTION.json. It refuses a profile exceeding 29,000,000 uncompressed bytes. Full source files remain unchanged. Profile tests independently extract/run the installed checker, compare retained originals and licenses byte-for-byte and check the archive size and complete source inventory. Reduced face coverage is an explicit distribution constraint, not a visual rendering certification.
 
-Actual Claude.ai installation and two inspected initial artifacts are recorded separately in [Claude validation](CLAUDE_VALIDATION.md). The 1.1.2 run exposed flattened font-staging basename collisions; 1.1.3 prefixes filenames by family and regression-tests installing all retained faces together. The suite currently has 157 tests. Claude usage quota and unauthenticated Claude Code prevent full two-host acceptance; no success is inferred for their blocked cases.
+Actual Claude.ai installation and two inspected initial artifacts are recorded separately in [Claude validation](CLAUDE_VALIDATION.md). The 1.1.2 run exposed flattened font-staging basename collisions; 1.1.3 prefixes filenames by family and regression-tests installing all retained faces together. That release had 157 tests; the current suite has 158. Claude usage quota and unauthenticated Claude Code prevent full two-host acceptance; no success is inferred for their blocked cases.
 
 The implementation commit `863886442f8302399632924ff7fa3460c76d3bc3` passed the [recorded GitHub Actions run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39193657101): all four Linux/Windows × Python 3.9/3.13 validation jobs and the existing-example reproduction job completed successfully. Both distribution profiles were built by each validation job. This validates helper/distribution behavior, not the blocked provider authoring cases.
 

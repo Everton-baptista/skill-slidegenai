@@ -1,12 +1,12 @@
 # Editable analytical patterns
 
-A fictional ten-slide construction study for the portable brand-presentations skill. It extends the eight-slide identity example with evidence structures: grouped bars, a two-series line chart, 100% stacked columns, paired scatter observations, a decision with rework, responsibility lanes, system relationships, a date-scaled roadmap, a categorical matrix and a comparison table.
+A fictional ten-slide construction study for the portable slidegenai skill. It extends the eight-slide identity example with evidence structures: grouped bars, a two-series line chart, 100% stacked columns, paired scatter observations, a decision with rework, responsibility lanes, system relationships, a date-scaled roadmap, a categorical matrix and a comparison table.
 
 ## Inspect the actual output
 
 - [Editable PowerPoint](example.pptx)
 - [Rendered PDF](example.pdf), [overview](previews/overview.png) and individual PNGs in `previews/`
-- [Storyboard](storyboard.md), [measured layout](layout.json) and [semantic source](../../brand-presentations/references/visual-model-example.json)
+- [Storyboard](storyboard.md), [measured layout](layout.json) and [semantic source](../../slidegenai/references/visual-model-example.json)
 - [Review record](review.json) and [native-object checker](check_pptx.py)
 
 The checked-in deck was authored with Artifact Tool in Codex desktop on macOS, then rendered with LibreOffice and Poppler. All ten final slides and the overview were inspected. Four charts retain editable series and embedded XLSX data, the comparison is a native table, and diagram edges use 16 attached connector segments for 14 logical relationships. Nodes, roadmap bars, matrix cells and text remain native slide objects. No photograph, external API, real company identity or paid service is needed for this fixture. It uses Arial without embedding the font.
@@ -31,7 +31,7 @@ The checked-in deck also passes the stricter attachment check:
 
 ```sh
 python3 -B check_pptx.py example.pptx --require-attached
-python3 -B ../../brand-presentations/scripts/validate_visuals.py ../../brand-presentations/references/visual-model-example.json
+python3 -B ../../slidegenai/scripts/validate_visuals.py ../../slidegenai/references/visual-model-example.json
 ```
 
 The checker compares native chart caches and referenced XLSX cells to the source, verifies scatter x/y pairs and share conversion, checks node/relationship labels, native table contents and connector counts. It is scoped to this trusted fixture; it does not prove visual quality or provide a general security audit of arbitrary PPTX files.

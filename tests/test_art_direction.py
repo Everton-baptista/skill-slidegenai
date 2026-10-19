@@ -5,7 +5,7 @@ from pathlib import Path
 import sys
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'brand-presentations/scripts'))
+sys.path.insert(0,str(ROOT/'slidegenai/scripts'))
 from review_composition import review
 
 

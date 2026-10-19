@@ -7,7 +7,7 @@ import sys
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'brand-presentations/scripts'))
+sys.path.insert(0, str(ROOT / 'slidegenai/scripts'))
 from plan_template import build_brief, coverage, load_resources
 
 class AllTemplateConstruction(unittest.TestCase):
@@ -68,7 +68,7 @@ class AllTemplateConstruction(unittest.TestCase):
         self.assertEqual(set(result['families']), set(self.system['families']))
 
     def test_cli_returns_other_styles_and_rejects_unknown_ids(self):
-        script = ROOT / 'brand-presentations/scripts/plan_template.py'
+        script = ROOT / 'slidegenai/scripts/plan_template.py'
         result = subprocess.run([sys.executable, str(script), '--id', 'swiss'], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(json.loads(result.stdout)['template']['id'], 'swiss')

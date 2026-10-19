@@ -10,7 +10,7 @@ import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
 EXAMPLE=ROOT/'examples/analytical-patterns'
-SCRIPTS=ROOT/'brand-presentations/scripts'
+SCRIPTS=ROOT/'slidegenai/scripts'
 
 def module(name,path):
     spec=importlib.util.spec_from_file_location(name,path);value=importlib.util.module_from_spec(spec);spec.loader.exec_module(value);return value
@@ -64,7 +64,7 @@ class AnalyticalArtifacts(unittest.TestCase):
         self.altered_fails(lambda data:rewrite(data,'ppt/slides/slide5.xml',corrupt),'attached native connectors',True)
 
     def test_complete_canonical_model_validates(self):
-        source=json.loads((ROOT/'brand-presentations/references/visual-model-example.json').read_text());self.assertEqual(visuals.validate(source),[])
+        source=json.loads((ROOT/'slidegenai/references/visual-model-example.json').read_text());self.assertEqual(visuals.validate(source),[])
         layout=json.loads((EXAMPLE/'layout.json').read_text());self.assertEqual({s['visual_id'] for s in layout['slides'] if s['kind']=='chart'},{c['id'] for c in source['charts']});self.assertEqual({s['visual_id'] for s in layout['slides'] if s['kind']!='chart' and s['kind']!='table'},{d['id'] for d in source['diagrams']})
 
     def test_deep_valid_graph_does_not_use_recursive_cycle_walk(self):
@@ -72,7 +72,7 @@ class AnalyticalArtifacts(unittest.TestCase):
         self.assertEqual(visuals.validate({'version':1,'diagrams':[d]}),[]);d['edges'].append({'from':str(n-1),'to':'0','label':'Cycle','directed':True});self.assertTrue(visuals.validate({'version':1,'diagrams':[d]}))
 
     def test_catalog_lookup_filters_without_dropping_metadata(self):
-        catalog=json.loads((ROOT/'brand-presentations/references/template-catalog.json').read_text());row=catalog['templates'][0]
+        catalog=json.loads((ROOT/'slidegenai/references/template-catalog.json').read_text());row=catalog['templates'][0]
         self.assertEqual(finder.select(catalog,ident=row['id']),[row]);self.assertTrue(all(r['family']==row['family'] for r in finder.select(catalog,family=row['family'])));self.assertTrue(all(row['suggested_patterns'][0] in r['suggested_patterns'] for r in finder.select(catalog,pattern=row['suggested_patterns'][0])));self.assertEqual(finder.select(catalog,ident='nonexistent-template'),[])
 
 if __name__=='__main__':unittest.main()

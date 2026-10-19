@@ -41,7 +41,7 @@ node --test tests/test_visual_kit.mjs
 To enable native adapter tests, install its optional dependencies in a complete tooling copy of the skill, then set SLIDEGENAI_NATIVE_KIT to that copy's assets/visual-kit directory. Do not package node_modules.
 
 ```sh
-SLIDEGENAI_NATIVE_KIT=/tooling/brand-presentations/assets/visual-kit \
+SLIDEGENAI_NATIVE_KIT=/tooling/slidegenai/assets/visual-kit \
   node --test tests/test_visual_kit.mjs
 ```
 
@@ -57,3 +57,9 @@ The maintained browser check is tests/inspect_visual_kit.mjs. It needs Playwrigh
 | Antigravity, ChatGPT, other hosts | Not evaluated with this kit. Use documented discovery and capability checks |
 
 Passing local rendering does not close the Claude.ai/Claude Code acceptance cases. Do not label a new deck ready from render-report.json: render and inspect its actual deliverable and record font/image resolution, corrections and remaining limitations in that host.
+
+## Version 2 naming migration
+
+The same kit is now distributed under the single slidegenai folder/name, with /slidegenai as the public request prefix. The 1.2.0 results above describe the implementation tested before this rename. The renamed full/profile packages pass independent extraction/execution and the 158 Python / 14 JavaScript checks; the browser regression also passes with the renamed resource paths; native slash registration in the target hosts remains untested. See the current README for selector differences and the old-name migration.
+
+The pre-rename kit commit also passed all six CI jobs: Linux/Windows with Python 3.9/3.13, existing example reproduction, and native/browser kit regressions. [Recorded CI run](https://github.com/Everton-baptista/skill-slidegenai/actions/runs/39257588234). This is code/resource evidence, not native /slidegenai registration in an AI host.

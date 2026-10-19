@@ -9,7 +9,7 @@ import unittest
 import zipfile
 
 ROOT=Path(__file__).resolve().parents[1]
-SCRIPTS=ROOT/'brand-presentations/scripts'
+SCRIPTS=ROOT/'slidegenai/scripts'
 sys.path.insert(0,str(SCRIPTS))
 from validate_fonts import validate, DEFAULT_ROOT
 from install_fonts import stage
@@ -32,14 +32,14 @@ class FontPack(unittest.TestCase):
     def test_complete_bundle_covers_app_and_pairings(self):
         report=validate(DEFAULT_ROOT)
         self.assertEqual((report['families'],report['font_files'],report['application_families']),(46,140,24))
-        pairs=json.loads((ROOT/'brand-presentations/references/typography-pairings.json').read_text())
+        pairs=json.loads((ROOT/'slidegenai/references/typography-pairings.json').read_text())
         names={f['family']for f in json.loads((DEFAULT_ROOT/'manifest.json').read_text())['families']}
         for p in pairs['pairings']:
             self.assertTrue({p['display'],p['body'],p['label']}<=names)
     def test_expressive_choices_have_real_faces_axes_and_companions(self):
         manifest=json.loads((DEFAULT_ROOT/'manifest.json').read_text())
         families={f['family']:f for f in manifest['families']}
-        choices=json.loads((ROOT/'brand-presentations/references/expressive-fonts.json').read_text())['choices']
+        choices=json.loads((ROOT/'slidegenai/references/expressive-fonts.json').read_text())['choices']
         self.assertEqual(len({c['family']for c in choices}),16)
         for choice in choices:
             self.assertIn(choice['body_companion'],families)
@@ -84,8 +84,8 @@ class FontPack(unittest.TestCase):
         profile=json.loads((brand/'brand-profile.json').read_text());profile['logos']=[]
         (brand/'brand-profile.json').write_text(json.dumps(profile))
         shutil.copytree(self.root,brand/'assets/fonts')
-        shutil.copy2(ROOT/'brand-presentations/LICENSE',brand/'LICENSE')
-        shutil.copy2(ROOT/'brand-presentations/NOTICE.md',brand/'NOTICE.md')
+        shutil.copy2(ROOT/'slidegenai/LICENSE',brand/'LICENSE')
+        shutil.copy2(ROOT/'slidegenai/NOTICE.md',brand/'NOTICE.md')
         out=Path(self.temp.name)/'brand.zip';package(brand,out)
         with zipfile.ZipFile(out)as z:
             names=z.namelist()
@@ -98,7 +98,7 @@ class FontPack(unittest.TestCase):
             self.assertTrue(any(n.endswith('assets/fonts/manifest.json')for n in names))
     def test_neutral_educational_entries_resolve(self):
         from find_templates import select
-        c=json.loads((ROOT/'brand-presentations/references/template-catalog.json').read_text())
+        c=json.loads((ROOT/'slidegenai/references/template-catalog.json').read_text())
         for ident,title in [('aula','Aula'),('aula-moderno','Aula Moderno'),('aula-institucional','Aula Institucional')]:
             self.assertEqual(select(c,ident=ident)[0]['title'],title)
 

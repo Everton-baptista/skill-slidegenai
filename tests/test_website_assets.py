@@ -6,7 +6,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / 'brand-presentations/scripts'))
+sys.path.insert(0, str(ROOT / 'slidegenai/scripts'))
 from collect_website_assets import collect, image_type, inline_image, make_fetch, Reader, web_url
 
 PNG = b'\x89PNG\r\n\x1a\nfixture'

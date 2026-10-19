@@ -11,7 +11,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SCRIPTS = ROOT / 'brand-presentations' / 'scripts'
+SCRIPTS = ROOT / 'slidegenai' / 'scripts'
 sys.path.insert(0, str(SCRIPTS))
 from validate_brand import validate as brand_validate
 from validate_deck import validate as deck_validate, contrast
@@ -271,10 +271,10 @@ class Distribution(unittest.TestCase):
                 self.assertTrue((path.parent / target).exists(), f'{path}: {target}')
 
     def test_manifest_and_metadata(self):
-        manifest = (ROOT / 'brand-presentations/SKILL.md').read_text(encoding='utf-8')
-        self.assertTrue(manifest.startswith('---\nname: brand-presentations\n'))
+        manifest = (ROOT / 'slidegenai/SKILL.md').read_text(encoding='utf-8')
+        self.assertTrue(manifest.startswith('---\nname: slidegenai\n'))
         self.assertIn('description:', manifest)
-        self.assertIn('$brand-presentations', (ROOT / 'brand-presentations/agents/openai.yaml').read_text(encoding='utf-8'))
+        self.assertIn('$slidegenai', (ROOT / 'slidegenai/agents/openai.yaml').read_text(encoding='utf-8'))
         self.assertLess(len(manifest.splitlines()), 500)
 
     def test_distribution_has_no_symlinks_or_credentials(self):

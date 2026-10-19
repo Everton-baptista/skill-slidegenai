@@ -5,7 +5,7 @@ from pathlib import Path
 import sys
 import unittest
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/'brand-presentations/scripts'))
+sys.path.insert(0,str(ROOT/'slidegenai/scripts'))
 from validate_visuals import validate
 SRC={'status':'illustrative','label':'Fictional example'}
 
@@ -55,12 +55,12 @@ class VisualModels(unittest.TestCase):
         f=flow();old=copy.deepcopy(f);validate(f);self.assertEqual(f,old)
 class Catalog(unittest.TestCase):
     def test_snapshot_coverage_and_integrity(self):
-        c=json.loads((ROOT/'brand-presentations/references/template-catalog.json').read_text(encoding='utf-8'));rows=c['templates'];self.assertEqual(len(rows),177);self.assertEqual(len({x['id'] for x in rows}),177)
+        c=json.loads((ROOT/'slidegenai/references/template-catalog.json').read_text(encoding='utf-8'));rows=c['templates'];self.assertEqual(len(rows),177);self.assertEqual(len({x['id'] for x in rows}),177)
         self.assertEqual(sum(x['source_rule_present'] for x in rows),174);self.assertEqual(sum(x['declared_type'] for x in rows),176)
         for r in rows:
             self.assertTrue(r['title']);self.assertIn(r['family'],c['families']);self.assertTrue(r['suggested_patterns']);self.assertIn('not individually',r['status'])
         for f in c['source_files']:self.assertEqual(len(f['sha256']),64)
     def test_complete_index_has_every_catalog_id(self):
-        c=json.loads((ROOT/'brand-presentations/references/template-catalog.json').read_text(encoding='utf-8'));text=(ROOT/'brand-presentations/references/template-catalog.md').read_text(encoding='utf-8')
+        c=json.loads((ROOT/'slidegenai/references/template-catalog.json').read_text(encoding='utf-8'));text=(ROOT/'slidegenai/references/template-catalog.md').read_text(encoding='utf-8')
         for r in c['templates']:self.assertIn('`'+r['id']+'`',text)
 if __name__=='__main__':unittest.main()

@@ -49,8 +49,8 @@ On macOS, the executable may be `soffice` in the LibreOffice application bundle;
 From the repository root, validate the included data:
 
 ```sh
-python3 brand-presentations/scripts/validate_design.py examples/portable-deck/design-system.json --brand examples/portable-deck/brand-profile.json
-python3 brand-presentations/scripts/validate_deck.py examples/portable-deck/deck-plan.json --brand examples/portable-deck/brand-profile.json --design examples/portable-deck/design-system.json --require-reviewed
+python3 slidegenai/scripts/validate_design.py examples/portable-deck/design-system.json --brand examples/portable-deck/brand-profile.json
+python3 slidegenai/scripts/validate_deck.py examples/portable-deck/deck-plan.json --brand examples/portable-deck/brand-profile.json --design examples/portable-deck/design-system.json --require-reviewed
 python3 -B -m unittest discover -s tests -v
 ```
 

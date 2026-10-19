@@ -13,12 +13,12 @@ import {
   image,
   local,
   compose,
-} from "../brand-presentations/assets/visual-kit/core.mjs";
+} from "../slidegenai/assets/visual-kit/core.mjs";
 import {
   renderHTML,
   chartSVG,
-} from "../brand-presentations/assets/visual-kit/html.mjs";
-import { build } from "../brand-presentations/assets/visual-kit/build.mjs";
+} from "../slidegenai/assets/visual-kit/html.mjs";
+import { build } from "../slidegenai/assets/visual-kit/build.mjs";
 import { analyticalFixture } from "./visual-kit-fixtures.mjs";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), ".."),
   example = path.join(root, "examples/portable-deck");
@@ -70,7 +70,7 @@ test("existing eight-slide plan compiles without mutating source or inheriting v
 });
 test("all 177 styles resolve executable font defaults without 177 renderers", async () => {
   const catalog = await json(
-    path.join(root, "brand-presentations/references/template-catalog.json"),
+    path.join(root, "slidegenai/references/template-catalog.json"),
   );
   for (const entry of catalog.templates) {
     const style = await resolveStyle(entry.id);
