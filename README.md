@@ -211,6 +211,8 @@ Browse the [177 style directions](brand-presentations/references/template-catalo
 
 ![Sixteen expressive typography directions with family names](docs/previews/expressive-type.png)
 
+**Website images can be collected locally:** with Python and permitted network access, the optional [asset collector](brand-presentations/scripts/collect_website_assets.py) saves selected public images and decodes embedded SVG logos. The assistant must then inspect and import those files through the slide editor. [Commands and limits](brand-presentations/references/website-assets.md). Local-file-only import does not automatically mean you must download and upload everything manually.
+
 **Images come from your assets or the host's available tools.** The skill includes no image-generation service. Availability, cost, licenses and watermarks depend on the provider or source. Preserve original logos and use assets you have permission to use.
 
 ## Try an example without an AI provider

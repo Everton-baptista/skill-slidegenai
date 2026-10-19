@@ -1,6 +1,6 @@
 # Data contracts and validation
 
-The authoritative version-1 contracts are [brand profile](../brand-presentations/references/brand-profile.md), [design system](../brand-presentations/references/design-system.md), and [deck plan](../brand-presentations/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Helpers are Python 3.9+ standard-library tools with no network access.
+The authoritative version-1 contracts are [brand profile](../brand-presentations/references/brand-profile.md), [design system](../brand-presentations/references/design-system.md), and [deck plan](../brand-presentations/references/deck-plan.md). Unknown extra fields are permitted for host-specific extensions; required fields still apply. Validators, packaging and installation checks are Python 3.9+ standard-library tools that work offline. The optional website collector makes explicit bounded HTTP requests when invoked; it is separate from offline validation.
 
 ## Profile validator
 
@@ -91,4 +91,10 @@ The checker validates the copied skill's licenses, local Markdown resources, Pyt
 
 Inventory comparisons and ZIP members use portable forward-slash paths; root `LICENSE` and `NOTICE.md` files are retained when supplied to brand packaging. CI runs Python 3.9 and 3.13 on Linux and Windows with matrix fail-fast disabled, then reproduces both optional examples using isolated npm installs and native-object checks. The analytical adapter's free line segments remain distinct from the checked-in deck's attached connectors.
 
-The current suite contains **138 tests**. Automated validity, host behavior and visual quality are separate checks. Follow the [manual evaluation guide](EVALUATION.md) before relying on another provider or native editor.
+The current suite contains **148 tests**. Automated validity, host behavior and visual quality are separate checks. Follow the [manual evaluation guide](EVALUATION.md) before relying on another provider or native editor.
+
+## Website acquisition helper
+
+`collect_website_assets.py` inventories image candidates from one HTML page, embedded image data and a bounded set of direct stylesheets, and optionally saves original bytes to a new working directory. It checks response limits, image signatures, exact allowed hosts and redirects, preserves source hashes and reports acquisition separately from visual inspection/editor import. It does not sanitize SVG or certify a slide editor. Ten offline fixtures cover source/base/srcset/CSS resolution, embedded SVG, deduplication, byte signatures, failures, limits, explicit external hosts, non-overwrite and unsafe URL forms. These tests inject HTTP responses; CI does not contact external websites.
+
+A local acquisition check on 2026-10-18 used the EXM Partners public homepage: 64 candidates were inventoried and seven selected originals saved, including two embedded SVG logo variants and banner imagery. SVG roots/signatures were checked and two downloaded photographs visually inspected. The original files and raw page remain outside the distribution. This confirms public HTTP acquisition in this local environment, not Claude editor import, complete visual identity extraction or slide rendering. The banner itself includes an anniversary mark, so it must not silently become evidence of the company's current age.

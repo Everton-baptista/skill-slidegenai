@@ -20,7 +20,7 @@ If the assistant can create slide files, it should apply the creation, compositi
 
 ## Website reading returns text or the editor requires image files
 
-A page reader may discard styling and images even when another tool can access the original page/assets. Follow [website assets](../brand-presentations/references/website-assets.md): inspect available browser/raw-HTTP/download capabilities, acquire selected public image bytes and use the editor's documented import/upload path. A local file in a shell environment may need a separate transfer to the slide editor.
+A page reader may discard styling and images even when another tool can access the original page/assets. Follow [website assets](../brand-presentations/references/website-assets.md): inspect available browser/raw-HTTP/download capabilities, acquire selected public image bytes and use the editor's documented import/upload path. A local file in a shell environment may need a separate transfer to the slide editor. The optional `collect_website_assets.py` acquires selected image bytes and embedded SVG logos when Python/network access are available; see the linked guide for commands. Record which stage failed before requesting an upload.
 
 Do not claim exact fonts or official identity from plain text alone. With permission for adaptation, continue an explicitly authored visual direction while using observable content. Ask for uploads only when the necessary evidence or transfer capability is actually missing; do not repeatedly offer a menu instead of completing the independent deck work. Strict reproduction may require a specific missing reference.
 
@@ -47,6 +47,10 @@ The archive output must be outside the source directory, its parent must already
 Run `npm ci --ignore-scripts` in the particular example directory before requesting its optional PPTX adapter. That initial dependency installation needs network or a populated npm cache. Use the documented Node version and a new output directory. Both public examples have pinned dependencies; no provider API key is required.
 
 The portable eight-slide example can also generate HTML without npm dependencies. Its adapter and the analytical adapter are bounded fixtures, not a renderer for arbitrary 177-template plans. Start an actual presentation through the skill in a host with the required authoring/rendering tools.
+
+## The assistant asks me to check a possible collision
+
+If preview/render/screenshot tools exist, the assistant should inspect the affected slide itself and repair it. If no such capability exists, it should identify the missing tool and deliver an explicitly unverified draft. A disclaimer does not replace an available render step.
 
 ## The preview looks right but the export does not
 

@@ -24,6 +24,12 @@ Use the critique in [art direction](art-direction.md) for new directions or crea
 
 Check actual image resolution, provider branding/watermarks, provenance, and allowed use. Ensure downloaded assets are present and external references do not silently disappear. Inspect the exported PPTX/PDF itself for substitutions, SVG differences, lost overlays, transparency, and layer order. A source preview alone is insufficient. For full-canvas photographs, inspect each reading region over the real image, including gradient direction/alpha, faces beneath text, and logos/page numbers on bright details. Check typographic symbols as well as words.
 
+## Verify edits before handing them back
+
+After inserting or moving a title, illustration, logo or image, inspect the affected slide with the available render, preview, screenshot or exported-file tool. Check its actual boundaries and nearby text. Do not replace this step with “confirm it does not touch the title” when the environment offers inspection.
+
+If no visual inspection path exists, say which capability is unavailable and identify the affected slide as unverified. Geometry checks can reduce obvious collisions but do not prove font wrapping, stroke bounds, crops or appearance. Do not claim that an unverified change is visually complete. Keep material limitations concise and continue work that remains possible.
+
 ## Delivery record
 
 Report the output path/format, slide count, reference used or original direction, checks actually completed, editing limitations, substitutions, and unresolved issues. Call outputs without final visual inspection unverified drafts. Do not mark self-reported review fields true unless the inspection happened.
