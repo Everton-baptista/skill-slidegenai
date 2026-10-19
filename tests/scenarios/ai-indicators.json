@@ -1,0 +1,27 @@
+{
+  "dataset": "Fictional evaluation of three candidate AI systems",
+  "illustrative": true,
+  "period": "Synthetic evaluation batch; not a real product benchmark",
+  "currency": "BRL",
+  "rows": [
+    {"model": "Candidate A", "evaluated_tasks": 200, "accepted_tasks": 172, "p95_latency_seconds": 2.8, "batch_cost_brl": 24},
+    {"model": "Candidate B", "evaluated_tasks": 200, "accepted_tasks": 184, "p95_latency_seconds": 4.1, "batch_cost_brl": 40},
+    {"model": "Candidate C", "evaluated_tasks": 200, "accepted_tasks": 160, "p95_latency_seconds": 1.6, "batch_cost_brl": 16}
+  ],
+  "definitions": {
+    "acceptance_rate_percent": "100 * accepted_tasks / evaluated_tasks",
+    "cost_per_evaluated_task_brl": "batch_cost_brl / evaluated_tasks",
+    "p95_latency_seconds": "Supplied batch p95; never infer or average across batches",
+    "accepted_tasks": "Synthetic tasks accepted by the fictional evaluation rubric; not a general accuracy score"
+  },
+  "process": {
+    "nodes": ["request", "policy-check", "retrieval", "model-inference", "human-review", "response", "revise"],
+    "edges": [
+      ["request", "policy-check"], ["policy-check", "retrieval"],
+      ["retrieval", "model-inference"], ["model-inference", "human-review"],
+      ["human-review", "response", "approved"], ["human-review", "revise", "needs revision"],
+      ["revise", "retrieval"]
+    ]
+  },
+  "limits": ["All values are invented for a test.", "No real vendor ranking or performance claim.", "Tool-use diagrams are conceptual and do not prove a live model integration."]
+}

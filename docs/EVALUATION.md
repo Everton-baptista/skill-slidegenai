@@ -31,6 +31,10 @@ Assess reference fidelity, factual preservation, narrative/count compliance, use
 
 Use a clearly permitted real-world reference for end-to-end testing. The fictional offline example checks data contracts only; it is not evidence that a real brand has been reproduced successfully.
 
+## User-request scenarios
+
+Use the [six-case request suite](SCENARIO_EVALUATION.md) for ordinary requests, an uploaded logo, a website, an expressive topic, supplied indicators and combined charts/infographics. It includes real inputs, expected numeric transformations and scoped corrections, with results separated by host.
+
 ## Reproducible evaluation material
 
 | Material | What it exercises | Recorded boundary |

@@ -371,7 +371,7 @@ You can use the skill without reading these. They document how it works and how 
 | Package a brand-specific skill | [Packaging guide](slidegenai/references/brand-packaging.md) |
 | Explore complete examples | [Eight-slide deck](examples/portable-deck/README.md), [analytical deck](examples/analytical-patterns/README.md), [three art directions](examples/art-direction-study/README.md) |
 | Validate data contracts or run tests | [Validation](docs/VALIDATION.md), [contributing](CONTRIBUTING.md) |
-| Evaluate another host | [Manual evaluation](docs/EVALUATION.md) |
+| Evaluate another host | [Manual evaluation](docs/EVALUATION.md), [six user-request scenarios](docs/SCENARIO_EVALUATION.md) |
 
 The installable package is `slidegenai/`. The repository also contains `examples/`, `tests/` and `docs/`; these do not need to be copied into your host's skills directory. The workflow separates observed identity, measured design rules and presentation content. It has no mandatory slide engine or paid API dependency.
 

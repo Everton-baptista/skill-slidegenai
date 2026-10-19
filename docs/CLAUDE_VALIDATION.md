@@ -40,6 +40,10 @@ A scoped follow-up asked for a final customer-acceptance branch while preserving
 
 The 1.1.3 replacement was accepted; after refreshing the Skills contents view, the current enabled installation displayed VERSION 1.1.3 (UI revision v2). No 1.1.3 authoring run was possible after quota exhaustion. Its submitted ZIP SHA-256 is `df30fc63c7e4a7af138dd2d65550e7ec8a32830e7b1423835d5f8e1fb3cb701e`. The profile retains all 46 families and original licenses, with 53 original font binaries. Some styles/weights are intentionally omitted and listed in DISTRIBUTION.json; original files remain in the complete repository. Font bytes and internal family identities are unchanged. Installation/activation and authoring quality are distinct checks.
 
+## Current request coverage
+
+The [six-case request suite](SCENARIO_EVALUATION.md) adds ordinary briefs, logo-only input, website-led work, an expressive AI topic and data/infographic requests for the current `/slidegenai` skill. Run those cases in addition to the editing, long-text and strict-count edge cases below. Historical evidence above remains tied to its actual version. For new runs use `/slidegenai`, the current installed name, rather than the legacy `brand-presentations` name in the historical protocol.
+
 ## Run separately in each environment
 
 Install the full skill first using the README. Use a fresh working directory/conversation per case and retain artifacts and preview evidence. Use the same brief in both environments, but adapt the operational path to exposed tools. Do not run these authoring prompts in Codex as a substitute.
