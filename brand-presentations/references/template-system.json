@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "scope": "Shared construction guidance for every catalog entry; not a rendering engine or export certification",
+  "content_roles": ["cover", "topic-cover", "editorial-image", "explanation", "comparison", "data", "process", "closing"],
+  "shared_rules": {
+    "identity": "User choices and evidenced identity take precedence over catalog suggestions. Faithful reproduction preserves the original system.",
+    "typography": "Resolve display, body and label roles for every style. Verify actual fonts and reflow after substitution. Pairing examples are optional, not an allowlist.",
+    "images": "Choose full-bleed, crop, split, band or no-image composition by meaning. Protect reading regions and preserve actual subject detail.",
+    "effects": "Outlined text, gradients, tags, layering and organic composition are available to any style when appropriate and supported; they are not mandatory.",
+    "evidence": "Requested charts, tables and semantic diagrams remain editable when supported. Preserve source data, units, topology and proportional geometry; record an explicit alternative when unsupported.",
+    "rhythm": "Compose the requested narrative and count; vary geometry when it improves meaning. A template is not limited to its cover preview or a fixed demo sequence.",
+    "review": "Render every final slide and overview; inspect fonts, fit, contrast, crops and native evidence. Structural coverage does not certify visual quality."
+  },
+  "families": {
+    "analytical": {
+      "display": "Manrope", "body": "DM Sans", "label": "IBM Plex Mono",
+      "composition": "Evidence-led hierarchy; align comparisons and distinguish decisions from supporting detail.",
+      "image_role": "Context or conceptual anchor when useful; preserve a quiet data surface.",
+      "chapter_closing": "Use the actual decision, question or synthesis as the pause and ending."
+    },
+    "technical": {
+      "display": "Space Grotesk", "body": "Manrope", "label": "IBM Plex Mono",
+      "composition": "Precise hierarchy and relationships; derive atmosphere and density from the actual source rather than a generic technology aesthetic.",
+      "image_role": "Object, setting, observation or material that explains the subject.",
+      "chapter_closing": "A clear change of state, system boundary or next test can set the rhythm."
+    },
+    "editorial": {
+      "display": "Bodoni Moda", "body": "DM Sans", "label": "DM Sans",
+      "composition": "Headline, reading column and image counterweight; use the actual story to choose asymmetric or quiet regions.",
+      "image_role": "Narrative photograph, detail or full spread with real negative space.",
+      "chapter_closing": "Create a chapter spread and a specific editorial conclusion rather than an obligatory corporate CTA."
+    },
+    "photographic": {
+      "display": "Cormorant Garamond", "body": "Manrope", "label": "DM Sans",
+      "composition": "Let the image establish the anchor; derive type character from the source and subject, not photography alone.",
+      "image_role": "Full-bleed, split crop, band or image window according to subject and reading space.",
+      "chapter_closing": "Use a change of crop, type scale or quiet surface to separate narrative moments."
+    },
+    "organic": {
+      "display": "Syne", "body": "Manrope", "label": "DM Sans",
+      "composition": "Content-led cadence, material and asymmetry; maintain precise evidence and logo geometry.",
+      "image_role": "Natural edge, human gesture, texture or space when evidenced or intentionally inferred.",
+      "chapter_closing": "Use open space or material contrast; organic does not require blobs or rounded cards."
+    },
+    "minimal": {
+      "display": "Manrope", "body": "DM Sans", "label": "DM Sans",
+      "composition": "Economy of elements and strong optical hierarchy; choose serif or sans according to source character.",
+      "image_role": "One meaningful image or deliberate absence; avoid empty decoration.",
+      "chapter_closing": "A change of scale, position or field can provide contrast without adding clutter."
+    },
+    "experimental": {
+      "display": "Syne", "body": "DM Sans", "label": "IBM Plex Mono",
+      "composition": "Derive one expressive gesture from the particular source; a family is not a single look. Keep reading and evidence stable.",
+      "image_role": "Relevant artwork, physical material, photographic atmosphere or typography-led absence.",
+      "chapter_closing": "Vary visual mass and density deliberately; static effects do not certify animation."
+    },
+    "institutional": {
+      "display": "Manrope", "body": "DM Sans", "label": "DM Sans",
+      "composition": "Preserve evidenced identity and hierarchy; support teaching, policy or institutional narrative without borrowing another institution's identity.",
+      "image_role": "Approved institutional assets or explicitly conceptual imagery, with protected reading regions.",
+      "chapter_closing": "Mark real topic transitions and end with the relevant learning, decision or action."
+    },
+    "custom": {
+      "display": "Manrope", "body": "DM Sans", "label": "DM Sans",
+      "composition": "A custom entry has no predetermined identity. Derive a system from the user's reference or record a provisional inferred direction.",
+      "image_role": "Determine from the supplied identity and content; do not invent official assets.",
+      "chapter_closing": "Derive topic covers and closing behavior after the custom visual direction is established."
+    }
+  }
+}

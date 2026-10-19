@@ -68,3 +68,7 @@ The [analytical example](../examples/analytical-patterns/README.md) separately d
 ## Composition and typography study
 
 The [repertoire review](REPERTOIRE_REVIEW.md) records the first eight-deck critique and the completed nine-direction, 54-slide local follow-up. The follow-up included final slide/overview inspection, native chart/source checks, table values, attached connector endpoints, font-role refinement and a native outlined text example. This is host-specific qualitative evidence, separate from the 117 helper tests. Optional Google Fonts pairing suggestions were not installed or tested across providers; Mac font binaries are not distributed.
+
+## Whole-catalog construction coverage
+
+`plan_template.py --coverage` resolves all 177 catalog entries through the same construction contract, across nine families including custom. Automated tests cover each entry in adaptation and faithful modes, source-gap preservation, non-demo lookup, unknown IDs/families and isolation of mutable resources. The eight new planner tests bring the helper suite to 125 tests. This establishes deterministic planning coverage, not visual evaluation of all 177 styles. The nine rendered studies remain the recorded visual subset.

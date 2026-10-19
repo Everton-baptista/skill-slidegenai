@@ -4,6 +4,10 @@ Snapshot: 2026-10-18. All **177 interface templates** are indexed in [the portab
 
 The catalog transfers visual relationships rather than copying application prompts, JSX, remote assets or provider dependencies. Each row is **source-reviewed**, not a tested PPTX implementation. Palette samples are source observations, never authority to override a supplied brand. Third-party or institutional names indicate inspiration in the source, not affiliation or a bundled licensed master.
 
+## Shared construction for all entries
+
+All 177 entries use [the same adaptive construction system](all-template-construction.md): font roles, topic covers, image/text layouts, contextual tags, appropriate effects and editable evidence objects. The nine named examples are demonstrations, not an exclusive support list. `python3 scripts/plan_template.py --id watercolor` produces a working brief for any canonical ID; `--coverage` verifies structural resolution across the catalog. This does not render or certify 177 presentations.
+
 ## Use the catalog
 
 1. Keep the supplied identity and audience constraints. Use the family as a direction, not a new brand.

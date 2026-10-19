@@ -2,6 +2,8 @@
 
 Read this when choosing fonts, modernizing a presentation, building a style repertoire, or responding to requests for outlined type, editorial labels or typographic contrast. Typography changes the composition; replacing Arial with a fashionable name at the end does not establish a typographic system.
 
+These decisions apply to every catalog template. The nine pairing examples are not an allowlist: derive other combinations from the actual source and message, using [the shared construction system](all-template-construction.md) when no named example exists.
+
 ## Choose from evidence, then from the message
 
 1. In faithful-template mode, retain the source fonts, weights, casing and title geometry. Record missing fonts; an approximation is not exact reproduction.

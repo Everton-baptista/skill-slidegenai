@@ -1,6 +1,8 @@
-# Nine style grammars
+# Style grammar examples
 
 Use when a user asks for a recognizable named direction from the SlideGenAI catalog or a repertoire of different treatments. Resolve the source entry before composing: `find_templates.py --name "NOVA"`. The source palette and preview establish a starting reference; the user's brand and fidelity requirements still control the work. These are optional composition recipes, not nine additional rendering engines or official brand masters.
+
+These nine examples illustrate [the construction system shared by all 177 styles](all-template-construction.md). A missing named recipe never limits a template to a cover, generic fonts or fewer native component types.
 
 ## Translate character into relationships
 
